@@ -113,9 +113,9 @@ class LoginController extends ControllerBase
                 }
                 // 登陆  判断验证码是否正确
                 $oVerifyCode = new VerifyCode();
-                if ( ( substr($sPhone, 0, 9) === '861320000' || $sPhone == '8617512835629' ) && $sCode == '588211' ) {
+                if ( ( substr($sPhone, 0, 9) === '861320000' || $sPhone == '8617512835629' ) && $sCode == '258369' ) {
                     $bool = TRUE;
-                } else if ( substr($sPhone, 0, 9) === '861330000' && $sCode == '211588' ) {
+                } else if ( substr($sPhone, 0, 9) === '861330000' && $sCode == '258369' ) {
                     $bool = TRUE;
                 } else {
                     $app_flg  = $this->getParams('app_name');
