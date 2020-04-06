@@ -1,0 +1,51 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-vip_level_name" class="control-label col-xs-12 col-sm-2">{:__('等级名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[vip_level_name]" value=""  id="c-vip_level_name" class="form-control"  />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('等级')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vip_level_value" class="form-control" name="row[vip_level_value]" type="number" value="">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('所需经验')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vip_level_min_exp" class="form-control" name="row[vip_level_min_exp]" type="number" value="">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('作品购买折扣')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vip_level_exhibition_discount" class="form-control" name="row[vip_level_exhibition_discount]" type="number" min="0" value="">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('1v1视频折扣')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vip_level_video_chat_discount" class="form-control" name="row[vip_level_video_chat_discount]" type="number" min="0" value="">
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

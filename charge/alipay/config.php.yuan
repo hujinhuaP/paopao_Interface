@@ -1,0 +1,58 @@
+<?php
+$config = array (	
+		//应用ID,您的APPID。
+		'app_id' => "2018071760684284",
+
+		//商户私钥，您的原始格式RSA私钥
+		'merchant_private_key' => "
+MIIEowIBAAKCAQEAuWEU+Qbi9ga3nTWK1T3C4KDAO/JFzI981Kc/5G3o2go2diE9
+fp1ZKbwRQomgBHxjN+xvhybTj7XG8V+tmdCxpAMFXElFoX4Yh9r6k+KBo36i8azh
+POS/guEhPTsxBA/o7wx4GfXpFg68E45tBCpzPyzt6yQZgf62+nayghdE69JKfBkN
+ebicDA1SM2uPbMWyXSPTH01mFBqpsfctd0OHJ2Gjk8RWLtWXvixl6dOUSdmn4eLR
+raB/wUzgqA49gNu7K2RZLaPpyMP/YxZFWHQ1bfh28bV0eoHn1HPToHG2t2hfznzL
+5ShIR4q1dZAzuBblj4M/HGu9ZC2mswBvV3xmwQIDAQABAoIBAAmT5HuBSZSggDgV
+HhkqWbk1VPlD6StKdo6eHYT10MQDJxEvYnf6NTMczl97sNLKgm3PP2viK6gPIjoy
+UUvTJnps1YgRGRHg6++I9s1RNJV3439NCU4WG3btnsQFHOEy2TwQjtv4gpRrKnhw
+MV23u8CV160Abnjy6g1CuLJT9XGhkzFDuPVuLDu5VGYI+4hBZfGiU6wzOQU6rtAe
+ubvieqWkX74xIkrs0OZC2rhrPdOT/lGlDVm4kw8shp38n1Sh/MemzD0Acp8mZ97g
+hoDkVRbPh9WuFndEV2HZcGXnB6wN8g/U7AM0fJCOhAU57nd9HL9podNyAX8qI7aV
+Hl+Q1wkCgYEA7nuGeXrms/yR2ykModqJtX3pZGdXL5eBrjm8zdFU47pYzoAwl5l7
+3D4/Xbc0/MUoR7DKlTi25uWJRMldmvotLlNUWUtwS7Q7rb2ToLQjT64gSSuco6v2
+anVdNi7Py4dm2Fw8K5R7k2cp0AYSfoVcoEqEUuvInzFHqSk9jOkU5dMCgYEAxv79
+xQ1AKiW+Sns4jZwk1mLplkvHPsTmGL5svOYuQgl15uBmzFbRDRJ3xPa+LSe2OOeA
+pcrOUfWnC7onicipTVzbiabgBr+gIhG/U1Wfh06xHhuJdOtdePjOxWnQEfd7ZXDR
+MhKj9CerGN3g7OM496idcv0WRPi1sBBGqwlNwJsCgYA2J3K370KoKHhujfnCXz/a
+KMdw906DDiJyj8Xh7uEZ/VzhN5bRNhc8Qh5dh5bOt26YKPs3u3M9J25uYlORN7I+
+zMlgpZLQfhL3Nw9o9L73/xBxzSd6uzfvoMsT3Llu/EZMZ1V6h/Mv28NQ67ATbvFD
+rOgzdDtQev5M2YKSlvMZ5QKBgDuVSBjDYe38xSB6CrHkCeejUDuvTuZNgHPyOI7L
+ARjGymWp1T3j1M5sNC5mjwToOhiJwKxjsCk8O5s4TvRjf8XpQtbRf4ylveXVmIr0
+PUL/Xesc5ah7fM5m+UqE50cp6emywQCUMkE9y24zqVBkrL8C3rn6a7uVGJmyFebK
+b1x3AoGBAJhZ4ST6NdX/oH+0BKa4iF2njPu1R+18TuwDSv3Z58zLhqYoFSEDimjn
+Qlz55DUo+KoygLzzn9/5TpIZSQNuiBkAGupxopuNxJXNEbGQntY3bgTzDLYKhaT/
+POjwQN/3u2/Ajd+e8moSqGvDU9KtwpB1Ksy5GG6jIW+YMpBitc20",
+		
+		//异步通知地址
+		'notify_url' => "http://charge.yuyin-tv.com/alipay/alipay_notify.php",
+
+        //VIP异步通知地址
+        'notify_vip_url' => "http://charge.yuyin-tv.com/alipay/alipay_notify_vip.php",
+		
+		//同步跳转
+		'return_url' => "http://charge.yuyin-tv.com/pay.php",
+
+        //VIP充值跳转
+        'return_vip_url' => "http://charge.yuyin-tv.com/vip.php",
+
+		//编码格式
+		'charset' => "UTF-8",
+
+		//签名方式
+		'sign_type'=>"RSA2",
+
+		//支付宝网关
+		'gatewayUrl' => "https://openapi.alipay.com/gateway.do",
+
+		//支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
+		'alipay_public_key' => "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoftFgRPxTKxR0D7LtFGZk1Lo7uAolw15nxG3xFPrfeiNTkb6mfWsIkIOz3wPnUPQUwvq6suGqYYb2OqKxHS0slXR7mGZTHTHfC3HsVIvC+USrmXxoyw/62iTXcB8PHLafqdvvzbYMWxYcQDv6YTh4LvzW9rsXKHx3OHnalShiTdLRmlIZjhFu9qbo8CFCpBNGwMTHrzZd9dbDGjQSNg3vwkPiM0NkUgc4R7X9N6A4GBMIexMhVP2FvBNNqkOB32IwGQJM05ilLqW9AhxwXqE6+G3hiOF/DMr3ndjdhwts9Ef4UhnmE3+NAMJicuh42L0LSkKXtO8SZTAwjM8EkyhcwIDAQAB",
+
+);

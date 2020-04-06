@@ -1,0 +1,848 @@
+@charset "utf-8";
+/* CSS Document*/
+/**
+* Author: Sunxu
+* Version: 1.0
+* Last Changed by Sunxu
+* Last Update : 2012-08-29
+*/
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+hr {
+    border: none;
+    height: 1px;
+}
+
+body, button, input, select, textarea {
+    font: 12px/1 Arial, Tahoma, Helvetica, SimSun, san-serif;
+}
+
+body {
+    background: url("../img/reg-bg.jpg")/*tpa=http://www.huayisz168.com/img/reg-bg.jpg*//*tpa=#/img/reg-bg.jpg*/ no-repeat scroll 50% 0 #f5f6f6;
+}
+
+#reg-wrap-0828 {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+#reg-header-0828 {
+    overflow: hidden;
+    zoom: 1;
+    padding: 0 37px 3px 45px;
+}
+
+#reg-header-0828 p.fr {
+    float: right;
+    line-height: 29px;
+    background: url("../img/reg-icon.png")/*tpa=http://www.huayisz168.com/img/reg-icon.png*//*tpa=#/img/reg-icon.png*/ no-repeat 0 8px;
+    padding-left: 19px;
+}
+
+#reg-header-0828 p.fr a {
+    color: #15618f;
+    text-decoration: none;
+}
+
+#reg-header-0828 p.fr a:hover {
+    text-decoration: underline;
+}
+
+#reg-header-0828 span {
+    background: url("../img/reg-h1.png")/*tpa=http://www.huayisz168.com/img/reg-h1.png*//*tpa=#/img/reg-h1.png*/ no-repeat;
+    width: 119px;
+    height: 29px;
+    display: block;
+    text-indent: -9999px;
+}
+
+#reg-content-0828 {
+    width: 962px;
+    margin: 0 auto;
+}
+
+#reg-content-0828 .reg-content-t {
+    background: url("../img/reg-t.png")/*tpa=http://www.huayisz168.com/img/reg-t.png*//*tpa=#/img/reg-t.png*/ no-repeat;
+    width: 962px;
+    height: 12px;
+    overflow: hidden;
+}
+
+#reg-content-0828 .reg-content-b {
+    background: url("../img/reg-b.png")/*tpa=http://www.huayisz168.com/img/reg-b.png*//*tpa=#/img/reg-b.png*/ no-repeat;
+    width: 962px;
+    height: 54px;
+}
+
+#reg-content-0828 .reg-content-c {
+    background: url("../img/reg-c.png")/*tpa=http://www.huayisz168.com/img/reg-c.png*//*tpa=#/img/reg-c.png*/ repeat-y;
+    width: 962px;
+    padding: 25px 0;
+}
+
+#reg-content-0828 .reg-content-c h1 {
+    margin: 0 0 32px 28px;
+}
+
+#reg-content-0828 .reg-content-c .reg-way {
+    width: 700px;
+    margin: 0 auto;
+    background: url("../img/reg-hr.png")/*tpa=http://www.huayisz168.com/img/reg-hr.png*//*tpa=#/img/reg-hr.png*/ repeat-x;
+    height: 49px;
+    overflow: hidden;
+    zoom: 1;
+    padding-left: 50px;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li {
+    float: left;
+    display: inline;
+    width: 154px;
+    height: 49px;
+    margin: 0 5px;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li a {
+    display: block;
+    text-indent: -9999px;
+    width: 154px;
+    height: 49px;
+    background-image: url("../img/reg-tab.png")/*tpa=http://www.huayisz168.com/img/reg-tab.png*//*tpa=#/img/reg-tab.png*/;
+    background-repeat: no-repeat;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li1 a {
+    background-position: 0 0;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li2 a {
+    background-position: -154px 0;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li3 a {
+    background-position: -308px 0;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li4 a {
+    background-position: -462px 0;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li1 a.cur {
+    background-position: 0 -49px;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li2 a.cur {
+    background-position: -154px -49px;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li3 a.cur {
+    background-position: -308px -49px;
+}
+
+#reg-content-0828 .reg-content-c .reg-way li.li4 a.cur {
+    background-position: -462px -49px;
+}
+
+/* =============================================== */
+/** 02. regForm - 充值表单 */
+/* ----------------------------------------------- */
+#reg-content-0828 .reg-form {
+    font-size: 12px;
+    line-height: 40px;
+    margin: 12px;
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#reg-content-0828 .reg-form form,#register_form {
+    width: 670px;
+    margin: 0 auto;
+}
+
+#reg-content-0828 .reg-form form table {
+    width: 100%;
+}
+
+#reg-content-0828 .reg-form legend {
+    padding: 12px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+#reg-content-0828 .reg-form legend span {
+    font-family: Verdana, Geneva, sans-serif;
+    vertical-align: middle;
+    color: #FF7200;
+}
+
+#reg-content-0828 .reg-form h3.tit a {
+    float: right;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+/*map - 充值步骤*/
+.hidden {
+    display: none;
+}
+
+#reg-content-0828 .reg-form a {
+    color: #369;
+    text-decoration: none;
+}
+
+#reg-content-0828 .reg-form a:hover {
+    text-decoration: underline;
+}
+
+#reg-content-0828 .reg-form table .more-form {
+    padding-left: 43px;
+}
+
+#reg-content-0828 .reg-form table .more-form a {
+    background: url("../img/reg-icon.png")/*tpa=http://www.huayisz168.com/img/reg-icon.png*//*tpa=#/img/reg-icon.png*/ no-repeat 0 -35px;
+    color: #de780a;
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+#reg-content-0828 .reg-form table td {
+    padding: 6px;
+    vertical-align: top;
+}
+
+#reg-content-0828 .reg-form table td a.get-code {
+    background: url("../img/reg-btn-5.png")/*tpa=http://www.huayisz168.com/img/reg-btn-5.png*//*tpa=#/img/reg-btn-5.png*/ no-repeat;
+    width: 164px;
+    height: 48px;
+    text-indent: -9999px;
+    display: block;
+    float: left;
+    vertical-align: 4px;
++ vertical-align: 18 px;
+    _vertical-align: 8px;
+    margin-right: 10px;
+}
+
+#reg-content-0828 .reg-form table td a.explain-code {
+    color: #878888;
+    text-decoration: underline;
+    *vertical-align: 0px;
+}
+
+#reg-content-0828 .reg-form table td a.explain-code:hover {
+    text-decoration: none;
+}
+
+#reg-content-0828 .reg-form table td.line {
+    line-height: 6px;
+    background: url("../my.xoyo.com/application/my/view/images/line.png")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/line.png*//*tpa=http://my.xoyo.com/application/my/view/images/line.png*/ repeat-x 0 50%;
+}
+
+#reg-content-0828 .reg-form table td label {
+    float: right;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+#reg-content-0828 .reg-form table td label a {
+    font-size: 12px;
+}
+
+#reg-content-0828 .reg-form table td label b {
+    vertical-align: middle;
+    color: #FF7200;
+    margin-right: 2px;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#reg-content-0828 .reg-form table td em {
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 34px;
+    line-height: 38px \9;
+    *line-height: 34px;
+    width: 230px;
+    padding: 0 6px 0 22px;
+    display: inline-block;
+    position: absolute;
+    left: 570px;
+}
+
+#reg-content-0828 .reg-form table tr.wrong td em {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FF8585;
+    background: #fee url("../img/wrongico.png")/*tpa=http://www.huayisz168.com/img/wrongico.png*//*tpa=#/img/wrongico.png*/ no-repeat 3px 10px;
+}
+
+#reg-content-0828 .reg-form table tr.cue td em {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #47B6FF;
+    background: #DFF2FE url("../img/cueico.png")/*tpa=http://www.huayisz168.com/img/cueico.png*//*tpa=#/img/cueico.png*/ no-repeat 3px 10px;
+    z-index: 1;
+}
+
+#reg-content-0828 .reg-form table tr.right td em {
+    background: url("../img/rightico.png")/*tpa=http://www.huayisz168.com/img/rightico.png*//*tpa=#/img/rightico.png*/ no-repeat 3px 10px;
+    border: none;
+}
+
+#reg-content-0828 .reg-form table td input.text {
+    border: 1px solid #3ca2ee;
+    padding: 10px 2px;
+    font-size: 12px;
+    width: 253px;
+}
+
+#reg-content-0828 .reg-form table tr.cue input.text {
+    border: solid 2px #72a308;
+}
+
+#reg-content-0828 .reg-form table tr.current td {
+    background-color: #EFF9FE;
+    border: 1px solid #C4E8FD;
+}
+
+#reg-content-0828 .reg-form td span.statusBar {
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    padding: 1px;
+    overflow: hidden;
+    vertical-align: middle;
+    border: 1px solid #42BF26;
+}
+
+#reg-content-0828 .reg-form td span.statusBar span {
+    display: block;
+    height: 8px;
+    background-color: #42BF26;
+}
+
+#reg-content-0828 .email {
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* =============================================== */
+/** 03. sucWrap - 邮箱账号注册成功 */
+/* ----------------------------------------------- */
+#reg-content-0828 .reg-form .email-submit {
+    padding: 40px 0 70px 160px;
+}
+
+#reg-content-0828 .reg-form .email-submit p.p1 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3239;
+}
+
+#reg-content-0828 .reg-form .email-submit p.p2 {
+    font-size: 14px;
+    color: #58585c;
+}
+
+#reg-content-0828 .reg-form .email-submit p.p2 a {
+    color: #23a5ea;
+    text-decoration: underline;
+}
+
+#reg-content-0828 .reg-form .email-submit p.p2 a:hover {
+    text-decoration: none;
+}
+
+#reg-content-0828 .reg-form .email-submit .log-email a {
+    margin: 30px 0 0 160px;
+    display: block;
+    text-indent: -9999px;
+    background: url("../images/reg-btn-2.png")/*tpa=http://www.huayisz168.com/images/reg-btn-2.png*//*tpa=#/images/reg-btn-2.png*/ no-repeat 0 0;
+    width: 144px;
+    height: 45px;
+}
+
+#reg-content-0828 .reg-form .email-submit .log-email a:hover {
+    background-position: 0 -45px;
+}
+
+#reg-content-0828 .reg-form .email-tip {
+    border-top: #e3e8ea solid 1px;
+    padding: 20px 0 0 160px;
+    line-height: 1.6;
+}
+
+#reg-content-0828 .reg-form .email-tip dt {
+    color: #58585c;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#reg-content-0828 .reg-form .email-tip dd {
+    color: #78797d;
+    background: url("../img/reg-icon.png")/*tpa=http://www.huayisz168.com/img/reg-icon.png*//*tpa=#/img/reg-icon.png*/ no-repeat 0 -58px;
+    padding-left: 20px;
+}
+
+#reg-content-0828 .reg-form .email-tip dd em {
+    color: #d86008;
+    font-weight: 700;
+}
+
+#reg-content-0828 .reg-form .email-tip dd a {
+    color: #20a0e4;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+#reg-content-0828 .reg-form .email-tip dd a:hover {
+    text-decoration: none;
+}
+
+/* =============================================== */
+/** 03. sucWrap - 个性账号注册成功 */
+/* ----------------------------------------------- */
+#reg-content-0828 .reg-form .sucWrap {
+    width: 860px;
+    margin: 0 auto;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details {
+    height: 180px;
+    font-size: 14px;
+    background: #dceffb;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details h3 {
+    color: #f75e02;
+    margin-top: 30px;
+    font-size: 28px;
+    font: 700 28px/28px \5FAE\8F6F\96C5\9ED1, \9ED1\4F53, \5B8B\4F53;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details p em {
+    color: #FF7200;
+    font-weight: 700;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details p,
+#reg-content-0828 .reg-form .sucWrap .details h3 {
+    margin-left: 225px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details p.p1 {
+    color: #647784;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details p.p2 {
+    color: #325c88;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details a.myBtn {
+    display: block;
+    width: 163px;
+    height: 59px;
+    background: url("../images/reg-btn-4.png")/*tpa=http://www.huayisz168.com/images/reg-btn-4.png*//*tpa=#/images/reg-btn-4.png*/ no-repeat 0 0;
+    text-indent: -999em;
+    overflow: hidden;
+    position: absolute;
+    top: 60px;
+    left: 590px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .details img.zw {
+    width: 91px;
+    height: 91px;
+    background: url("../my.xoyo.com/application/my/view/images/img1.jpg")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/img1.jpg*//*tpa=http://my.xoyo.com/application/my/view/images/img1.jpg*/ no-repeat 0 0;
+    position: absolute;
+    top: 33px;
+    left: 80px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel,
+#reg-content-0828 .reg-form .sucWrap .safgame,
+#reg-content-0828 .reg-form .sucWrap .safcard,
+#reg-content-0828 .reg-form .sucWrap .safGlist {
+    width: 400px;
+    overflow: hidden;
+    zoom: 1;
+    clear: both;
+    line-height: 38px;
+    height: 200px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel,
+#reg-content-0828 .reg-form .sucWrap .safgame {
+    height: 140px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safgame {
+    position: absolute;
+    right: 0;
+    top: 319px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist {
+    position: absolute;
+    left: 490px;
+    top: 319px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist {
+    top: 383px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel h4.tit,
+#reg-content-0828 .reg-form .sucWrap .safcard h4.tit,
+#reg-content-0828 .reg-form .sucWrap .safGlist h4.tit {
+    font-size: 14px;
+}
+
+/*saflevel*/
+#reg-content-0828 .reg-form .sucWrap .saflevel p {
+    padding: 0 0 0 0;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    color: #0f5d7d;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel p a {
+    color: #f00;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel p a.a1 {
+    color: #e16508;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel p a.a1 {
+    color: #499306;
+}
+
+/*#reg-content-0828 .reg-form .sucWrap .saflevel p.asfl1{
+	background-image:url(//my.xoyo.com/application/my/view/images/icon1.png);}
+#reg-content-0828 .reg-form .sucWrap .saflevel p.asfl2{
+	background-image:url(//my.xoyo.com/application/my/view/images/icon2.png);}*/
+#reg-content-0828 .reg-form .sucWrap .saflevel p.asfl1 strong {
+    display: inline-block;
+    width: 181px;
+    height: 31px;
+    vertical-align: middle;
+    text-indent: -999em;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel p.asfl1 strong.m {
+    background-image: url("../img/safm.png")/*tpa=http://www.huayisz168.com/img/safm.png*//*tpa=#/img/safm.png*/;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel p.asfl1 strong.h {
+    background-image: url("../img/safh.png")/*tpa=http://www.huayisz168.com/img/safh.png*//*tpa=#/img/safh.png*/;
+}
+
+#reg-content-0828 .reg-form .sucWrap .saflevel p.asfl1 strong.l {
+    background-image: url("../img/safl.png")/*tpa=http://www.huayisz168.com/img/safl.png*//*tpa=#/img/safl.png*/;
+}
+
+/* 2011-11-24 JiZhongchun*/
+#reg-content-0828 .reg-form .sucWrap .safgame p {
+    font-size: 12px;
+}
+
+/*safcard*/
+#reg-content-0828 .reg-form .sucWrap .safcard {
+    line-height: 24px;
+    padding-top: 30px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safcard .con {
+    background: url("../my.xoyo.com/application/my/view/images/card.png")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/card.png*//*tpa=http://my.xoyo.com/application/my/view/images/card.png*/ no-repeat 0 center;
+    padding-left: 110px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safcard .con h5 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #0f5d7d;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safcard .con p {
+    font-size: 12px;
+    color: #828990;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safcard .regBtn {
+    text-align: center;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safcard .regBtn a {
+    display: inline-block;
+    width: 97px;
+    height: 36px;
+    margin: 4px;
+    background: url("../images/reg-btn-4.png")/*tpa=http://www.huayisz168.com/images/reg-btn-4.png*//*tpa=#/images/reg-btn-4.png*/ no-repeat 0 -59px;
+    text-indent: -9999px;
+}
+
+/*safGlist*/
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li a {
+    display: block;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jx3 {
+    background-position: -150px 4px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jx2wz {
+    background-position: -150px -26px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jxsj {
+    background-position: -150px -56px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.dg {
+    background-position: -300px -116px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jk {
+    background-position: -300px -86px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jxqy2 {
+    background-position: -150px -86px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jx {
+    background-position: -150px -116px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.fs3 {
+    background-position: -300px -146px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.fs {
+    background-position: -150px -146px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.fs2 {
+    background-position: -150px -176px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.xl2 {
+    background-position: -150px -206px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.ft {
+    background-position: -150px -386px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.s8 {
+    background-position: -300px -176px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.cq {
+    background-position: -150px -266px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.cqqz {
+    background-position: -150px -296px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.xd {
+    background-position: -150px -236px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.tx {
+    background-position: -150px -356px;
+}
+
+/*2011-11-24 JiZhongchun*/
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.hdzm {
+    background-position: -300px -420px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.jiutian {
+    background-position: -150px -448px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.cqzn {
+    background-position: -300px -360px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.sd {
+    background-position: -300px -300px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.dh {
+    background-position: -300px -266px;
+}
+
+#reg-content-0828 .reg-form .sucWrap .safGlist ul li.mj {
+    background-position: -300px -388px;
+}
+
+.safksgame {
+    position: absolute;
+    left: 490px;
+    top: 226px;
+    height: 140px;
+    width: 400px;
+    line-height: 26px;
+}
+
+.safksgame h4 {
+    font-size: 14px;
+}
+
+.safksgame .ksg_con {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.safksgame .ksg_con h5 {
+    color: #0762bf;
+}
+
+.safksgame .ksg_img {
+    float: left;
+    width: 156px;
+    height: 110px;
+    display: inline;
+}
+
+.safksgame .ksg_img a img {
+    border: #5693b7 solid 1px;
+    padding: 1px;
+}
+
+.safksgame .ksg_info {
+    float: right;
+    display: inline;
+}
+
+.safksgame .ksg_info p {
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    color: #0f5d7d;
+}
+
+.safksgame .ksg_info a {
+    display: block;
+    width: 83px;
+    height: 28px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url("../images/reg-btn-4.png")/*tpa=http://www.huayisz168.com/images/reg-btn-4.png*//*tpa=#/images/reg-btn-4.png*/ no-repeat 0 -95px;
+}
+
+.popbody {
+    position: absolute;
+    background: #fff;
+    top: 40%;
+    left: 50%;
+    width: 744px;
+    padding: 10px;
+    margin-left: -392px;
+    margin-top: -150px;
+    display: none;
+    z-index: 10000;
+}
+
+.pop {
+    color: #421802;
+    width: 744px;
+    overflow: hidden;
+}
+
+.pop .hd {
+    height: 24px;
+}
+
+.pop .hd .close {
+    font-size: 18px;
+    float: right;
+    margin: 6px 6px 10px 0;
+    float: right;
+    text-decoration: none;
+    color: #000;
+}
+
+.pop .bd {
+    padding: 10px 50px;
+    line-height: 1.5;
+}
+
+.pop .bd p {
+    padding: 5px 0;
+    color: #4D5D40;
+}
+
+.pop .bd p.p1 {
+    font-size: 16px;
+}
+
+.pop .bd p.p2 {
+    text-align: center;
+}
+
+.pop .bd img {
+    padding: 10px 0;
+}
+
+.pop .bd a.close {
+    background: url("../images/reg-btn-6.png")/*tpa=http://www.huayisz168.com/images/reg-btn-6.png*//*tpa=#/images/reg-btn-6.png*/ no-repeat;
+    display: block;
+    width: 143px;
+    height: 42px;
+    text-indent: -9999px;
+    margin: 0 auto;
+}

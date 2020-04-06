@@ -1,0 +1,130 @@
+<style>
+    .gift-container {
+        position: relative;
+        min-height: 200px;
+        width: 200px;
+    }
+
+    .gift-container .gift-img {
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .gift-container .gift-text {
+        display: none;
+    }
+
+    .gift-container:hover .gift-text {
+        display: block;
+        position: absolute;
+        height: auto;
+        width: 200px;
+        min-height: 200px;
+        background: #444;
+        opacity: .6;
+        color: #fff;
+        top: 0;
+        left: 0;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .gift-container button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+        opacity: 0;
+    }
+
+    .mult-upload {
+        float: left;
+        position: relative;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        min-height: 200px;
+    }
+
+    .mult-upload .btn-delone {
+        width: 25px;
+        height: 25px;
+        background-color: #555555;
+        border: 0px none;
+        border-radius: 5px;
+        position: absolute;
+        float: right;
+        top: 0px;
+        right: 0px;
+        display: block;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-short_posts_check_remark" class="control-label col-xs-12 col-sm-2">{:__('发布人')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_id]"  value="" id="c-user_id"
+                   class="form-control selectpage" data-source="user/user/selectpage" data-primary_key="user_id" data-field="user_nickname" data-orderBy="user_is_superadmin"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_flg" class="control-label col-xs-12 col-sm-2">{:__('标题')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[title]" id="c-app_flg" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-app_app_id" class="control-label col-xs-12 col-sm-2">{:__('分类')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[type]" id="c-app_id" class="form-control" data-rule="required" >
+                {foreach $video_category as $category}
+                <option value="{$category.id}" >{$category.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-app_flg" class="control-label col-xs-12 col-sm-2">{:__('视频时长（s）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[duration]" id="c-app_flg" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group type-div-video">
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('视频封面')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-cover" name="row[cover]" value="" data-rule="url"/>
+                <div class="gift-container">
+                    <img class="cover_img img-responsive plupload" src=""  width="200px" height="200px" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                    <div class="gift-text">{:__('Click to add')}</div>
+                    <button id="upload_cover_url" class="plupload" data-input-id="c-cover"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video"></div>
+    <div class="form-group type-div-video" style="margin-top: 50px;">
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('视频文件')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-down_url" name="row[play_url]" value="" data-rule="url"/>
+                <button id="plupload-down_url" class="plupload" data-input-id="c-down_url" data-url="{$upload_url}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                <input type="text" id="c-down_url2" name="row[short_posts_video]" class="form-control" value="" disabled data-rule="url"/>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+

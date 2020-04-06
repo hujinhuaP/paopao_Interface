@@ -1,0 +1,21 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-title" class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[title]" value="{$row.title}"  id="c-title" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-short_url" class="control-label col-xs-12 col-sm-2">{:__('Short url')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" disabled value="{$row.short_url}"  id="c-short_url" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

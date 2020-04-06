@@ -1,0 +1,26 @@
+
+<table class="table table-condensed">
+    <thead>
+        <colgroup>
+            <col width="10%">
+            <col>
+        </colgroup>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-right"><h4><b>{:__("Q")}：</b></h4></td>
+            <td><h4><b>{$row.question_title}</b></h4></td>
+        </tr>
+        <tr>
+            <td class="text-right"><p>{:__("A")}：</p></td>
+            <td><p>{$row.question_content}</p></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="hide layer-footer">
+    <label class="control-label col-xs-12 col-sm-2"></label>
+    <div class="col-xs-12 col-sm-8">
+        <button type="reset" class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();">{:__('Close')}</button>
+    </div>
+</div>

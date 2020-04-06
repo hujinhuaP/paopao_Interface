@@ -1,0 +1,162 @@
+{php} use app\live\model\live\Kv; {/php}
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-{:Kv::KEY_NOTICE_ANCHOR_ROOM}" class="control-label col-xs-12 col-sm-2">{:__('Anchor notice')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <textarea name="row[{:Kv::KEY_NOTICE_ANCHOR_ROOM}]" id="c-{:Kv::KEY_NOTICE_ANCHOR_ROOM}" class="form-control" maxlength="100">{$row[Kv::KEY_NOTICE_ANCHOR_ROOM]}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-{:Kv::KEY_NOTICE_USER_ROOM}" class="control-label col-xs-12 col-sm-2">{:__('User notice')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <textarea name="row[{:Kv::KEY_NOTICE_USER_ROOM}]" id="c-{:Kv::KEY_NOTICE_USER_ROOM}" class="form-control" maxlength="100">{$row[Kv::KEY_NOTICE_USER_ROOM]}</textarea>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-{:Kv::COIN_TO_DOT_RATIO_TIME}" class="control-label col-xs-12 col-sm-2">{:__('Coin to dot ratio of time')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-inline input-group">
+                <input type="number" name="row[{:Kv::COIN_TO_DOT_RATIO_TIME}]" value="{$row[Kv::COIN_TO_DOT_RATIO_TIME]}"  id="c-{:Kv::COIN_TO_DOT_RATIO_TIME}" class="form-control" min="0" max="100" data-rule="required">
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-{:Kv::COIN_TO_DOT_RATIO_GIFT}" class="control-label col-xs-12 col-sm-2">{:__('Coin to dot ratio of gift')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-inline input-group">
+                <input type="number" name="row[{:Kv::COIN_TO_DOT_RATIO_GIFT}]" value="{$row[Kv::COIN_TO_DOT_RATIO_GIFT]}"  id="c-{:Kv::COIN_TO_DOT_RATIO_GIFT}" class="form-control" min="0" max="100" data-rule="required">
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-{:Kv::COIN_TO_DOT_RATIO_VIDEO}" class="control-label col-xs-12 col-sm-2">{:__('Coin to dot ratio of video')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-inline input-group">
+                <input type="number" name="row[{:Kv::COIN_TO_DOT_RATIO_VIDEO}]" value="{$row[Kv::COIN_TO_DOT_RATIO_VIDEO]}"  id="c-{:Kv::COIN_TO_DOT_RATIO_VIDEO}" class="form-control" min="0" max="100" data-rule="required">
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-{:Kv::COIN_TO_DOT_RATIO_CHAT}" class="control-label col-xs-12 col-sm-2">{:__('Coin to dot ratio of chat')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-inline input-group">
+                <input type="number" name="row[{:Kv::COIN_TO_DOT_RATIO_CHAT}]" value="{$row[Kv::COIN_TO_DOT_RATIO_CHAT]}"  id="c-{:Kv::COIN_TO_DOT_RATIO_CHAT}" class="form-control" min="0" max="100" data-rule="required">
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+        </div>
+    </div>
+    <!--注册奖励-->
+    <div class="form-group">
+        <label  class="control-label col-xs-12 col-sm-2">{:__('是否开启注册奖励')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::REGISTER_REWARD_FLG}]" value="1" data-rule="checked" {php}if($row[Kv::REGISTER_REWARD_FLG] == '1') echo 'checked="checked"';{/php}> {:__('Open')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::REGISTER_REWARD_FLG}]"  value="0" data-rule="checked" {php}if($row[Kv::REGISTER_REWARD_FLG] == '0') echo 'checked="checked"';{/php}> {:__('Unopen')}
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::REGISTER_REWARD_COIN}" class="control-label col-xs-12 col-sm-2">{:__('注册奖励金币数')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::REGISTER_REWARD_COIN}]" min="0" value="{$row[Kv::REGISTER_REWARD_COIN]}"  id="c-{:Kv::REGISTER_REWARD_COIN}" class="form-control" data-rule="required">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-{:Kv::REGISTER_FREE_MATCH_TIMES}" class="control-label col-xs-12 col-sm-2">{:__('注册奖励免费匹配时长')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::REGISTER_FREE_MATCH_TIMES}]" min="0" value="{$row[Kv::REGISTER_FREE_MATCH_TIMES]}"  id="c-{:Kv::REGISTER_FREE_MATCH_TIMES}" class="form-control" data-rule="required">
+        </div>
+    </div>
+
+
+    <!--邀请奖励-->
+    <div class="form-group">
+        <label  class="control-label col-xs-12 col-sm-2">{:__('是否开启邀请注册奖励')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::INVITE_REGISTER_FLG}]" value="1" data-rule="checked" {php}if($row[Kv::INVITE_REGISTER_FLG] == '1') echo 'checked="checked"';{/php}> {:__('Open')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::INVITE_REGISTER_FLG}]"  value="0" data-rule="checked" {php}if($row[Kv::INVITE_REGISTER_FLG] == '0') echo 'checked="checked"';{/php}> {:__('Unopen')}
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::INVITE_REGISTER_COIN}" class="control-label col-xs-12 col-sm-2">{:__('邀请注册奖励金币数')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::INVITE_REGISTER_COIN}]" min="0" value="{$row[Kv::INVITE_REGISTER_COIN]}"  id="c-{:Kv::INVITE_REGISTER_COIN}" class="form-control" data-rule="required">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label  class="control-label col-xs-12 col-sm-2">{:__('是否开启用户邀请充值奖励')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::INVITE_RECHARGE_FLG}]" value="1" data-rule="checked" {php}if($row[Kv::INVITE_RECHARGE_FLG] == '1') echo 'checked="checked"';{/php}> {:__('Open')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::INVITE_RECHARGE_FLG}]"  value="0" data-rule="checked" {php}if($row[Kv::INVITE_RECHARGE_FLG] == '0') echo 'checked="checked"';{/php}> {:__('Unopen')}
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::INVITE_RECHARGE_RADIO}" class="control-label col-xs-12 col-sm-2">{:__('用户邀请充值奖励比例')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-inline input-group">
+                <input type="number" name="row[{:Kv::INVITE_RECHARGE_RADIO}]" value="{$row[Kv::INVITE_RECHARGE_RADIO]}"  id="c-{:Kv::INVITE_RECHARGE_RADIO}" class="form-control" min="0" max="100" data-rule="required">
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label  class="control-label col-xs-12 col-sm-2">{:__('是否开启主播邀请充值奖励')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::INVITE_ANCHOR_RECHARGE_FLG}]" value="1" data-rule="checked" {php}if($row[Kv::INVITE_ANCHOR_RECHARGE_FLG] == '1') echo 'checked="checked"';{/php}> {:__('Open')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::INVITE_ANCHOR_RECHARGE_FLG}]"  value="0" data-rule="checked" {php}if($row[Kv::INVITE_ANCHOR_RECHARGE_FLG] == '0') echo 'checked="checked"';{/php}> {:__('Unopen')}
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::INVITE_ANCHOR_RECHARGE_RADIO}" class="control-label col-xs-12 col-sm-2">{:__('主播邀请充值奖励比例')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <div class="form-inline input-group">
+                <input type="number" name="row[{:Kv::INVITE_ANCHOR_RECHARGE_RADIO}]" value="{$row[Kv::INVITE_ANCHOR_RECHARGE_RADIO]}"  id="c-{:Kv::INVITE_ANCHOR_RECHARGE_RADIO}" class="form-control" min="0" max="100" data-rule="required">
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-{:Kv::CHAT_MATCH_PRICE}" class="control-label col-xs-12 col-sm-2">{:__('匹配单价')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::CHAT_MATCH_PRICE}]" min="10" value="{$row[Kv::CHAT_MATCH_PRICE]}"  id="c-{:Kv::CHAT_MATCH_PRICE}" class="form-control" data-rule="required">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-9">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

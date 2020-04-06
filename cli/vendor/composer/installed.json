@@ -1,0 +1,97 @@
+[
+    {
+        "name": "duncan3dc/fork-helper",
+        "version": "1.1.6",
+        "version_normalized": "1.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/duncan3dc/fork-helper.git",
+            "reference": "daa572ebd192e3c489151dd659a7884815c55f9e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/duncan3dc/fork-helper/daa572ebd192e3c489151dd659a7884815c55f9e.zip",
+            "reference": "daa572ebd192e3c489151dd659a7884815c55f9e",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pcntl": "*",
+            "ext-shmop": "*",
+            "php": ">=5.4.0"
+        },
+        "time": "2017-03-01T11:20:23+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "duncan3dc\\Helpers\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Craig Duncan",
+                "email": "git@duncanc.co.uk",
+                "homepage": "https://github.com/duncan3dc",
+                "role": "Developer"
+            }
+        ],
+        "description": "Simple class to fork processes in PHP and allow multi-threading",
+        "homepage": "https://github.com/duncan3dc/fork-helper",
+        "keywords": [
+            "control",
+            "fork",
+            "multi-threading",
+            "pcntl",
+            "process"
+        ]
+    },
+    {
+        "name": "jpush/jpush",
+        "version": "v3.5.23",
+        "version_normalized": "3.5.23.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jpush/jpush-api-php-client.git",
+            "reference": "921b491fa36e96d58431cefade5f4782d09690e4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/jpush/jpush-api-php-client/921b491fa36e96d58431cefade5f4782d09690e4.zip",
+            "reference": "921b491fa36e96d58431cefade5f4782d09690e4",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "*"
+        },
+        "time": "2017-10-16T04:27:45+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "JPush\\": "src/JPush/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "JPush",
+                "email": "support@jpush.cn",
+                "homepage": "https://www.jpush.cn/",
+                "role": "Developer"
+            }
+        ],
+        "description": "JPush API PHP Client",
+        "homepage": "https://github.com/jpush/jpush-api-php-client"
+    }
+]

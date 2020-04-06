@@ -1,0 +1,3656 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 Tahoma, "宋体", \5b8b\4f53
+}
+
+.cn,
+.cn button,
+.cn input,
+.cn select,
+.cn textarea {
+    font: 12px/1.5 Tahoma, "宋体", \5b8b\4f53
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: Tahoma, "宋体"
+}
+
+small {
+    font-size: 12px
+}
+
+ul,
+ol,
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+legend {
+    color: #000
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+th {
+    font-weight: 400
+}
+
+html {
+    -webkit-text-size-adjust: none
+}
+
+b,
+strong {
+    font-weight: 400
+}
+
+i {
+    font-style: normal
+}
+
+.clearfix:after {
+    clear: both;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.main {
+    position: relative
+}
+
+iframe {
+    border: 0 none
+}
+
+.text_hidden {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.text_indent {
+    overflow: hidden;
+    text-indent: -300%;
+    *font-size: 0;
+    *line-height: 0;
+    *text-indent: 0
+}
+
+.yahei {
+    font-family: 'Microsoft Yahei'
+}
+
+.pointer {
+    cursor: pointer
+}
+
+.relative {
+    position: relative;
+    top: 0;
+    left: 0
+}
+
+.poab {
+    position: absolute
+}
+
+.inlineblock {
+    display: inline-block
+}
+
+.borderNone {
+    border: 0 none!important
+}
+
+.backNone {
+    background: none!important
+}
+
+.hide {
+    display: none!important
+}
+
+.marginNone {
+    margin: 0!important
+}
+
+.paddingNone {
+    padding: 0!important
+}
+
+.border_C {
+    border: 1px solid #CCC
+}
+
+.fn_left {
+    float: left;
+    display: inline
+}
+
+.fn_right {
+    float: right;
+    display: inline
+}
+
+.clear {
+    clear: both
+}
+
+.shadow {
+    -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, .07);
+    -moz-box-shadow: 0 0 8px 1px rgba(0, 0, 0, .07);
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, .07)
+}
+
+.shadow30 {
+    -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 8px 1px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, .3)
+}
+
+.redPoint {
+    background-position: -100px -25px;
+    width: 5px;
+    height: 5px;
+    position: absolute
+}
+
+.yj_pop {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px
+}
+
+.transition {
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s
+}
+
+.transition5 {
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s
+}
+
+.imgGray {
+    -webkit-filter: grayscale(100%);
+    -webkit-filter: grayscale(1);
+    filter: grayscale(100%);
+    filter: gray
+}
+
+body,
+html {
+    background: #FFF;
+    _overflow-x: hidden;
+    _background-image: url(about:blank)
+}
+
+a {
+    color: #333
+}
+
+img {
+    vertical-align: middle
+}
+
+input,
+textarea {
+    font-family: Verdana, Geneva, sans-serif;
+    background: #FFF
+}
+
+.text_input {
+    border: 1px solid #CCC;
+    height: 26px;
+    line-height: 26px \9;
+    padding: 0 3px;
+    margin: 0 5px;
+    vertical-align: middle
+}
+
+.radiu_input {
+    margin: 0 5px -5px 0;
+    vertical-align: middle;
+    position: relative;
+    top: -3px
+}
+
+.button_input {
+    border: 0 none;
+    background: #FF4492;
+    color: #FFF;
+    border-radius: 3px;
+    padding: 5px 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background .5s linear;
+    -webkit-transition: background .5s linear;
+    -moz-transition: background .5s linear;
+    -o-transition: background .5s linear
+}
+
+.button_input:hover {
+    background: #E02171
+}
+
+.checkbox_input {
+    vertical-align: middle;
+    border-radius: 2px
+}
+
+textarea {
+    border: 1px solid #CCC;
+    padding: 3px
+}
+
+
+/* 等级图标样式 start */
+
+.icon_live_level {
+    display: inline-block;
+    width: 23px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.icon_live_level_100 {
+    background-image: url("../Public/Images/level/100.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/100.gif?id=3*/
+}
+
+.icon_live_level_101 {
+    background-image: url("../Public/Images/level/101.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/101.gif?id=3*/
+}
+
+.icon_live_level_102 {
+    background-image: url("../Public/Images/level/102.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/102.gif?id=3*/
+}
+
+.icon_live_level_103 {
+    background-image: url("../Public/Images/level/103.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/103.gif?id=3*/
+}
+
+.icon_live_level_104 {
+    background-image: url("../Public/Images/level/104.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/104.gif?id=3*/
+}
+
+.icon_live_level_105 {
+    background-image: url("../Public/Images/level/105.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/105.gif?id=3*/
+}
+
+.icon_live_level_106 {
+    background-image: url("../Public/Images/level/106.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/106.gif?id=3*/
+}
+
+.icon_live_level_107 {
+    background-image: url("../Public/Images/level/107.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/107.gif?id=3*/
+}
+
+.icon_live_level_108 {
+    background-image: url("../Public/Images/level/108.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/108.gif?id=3*/
+}
+
+.icon_live_level_109 {
+    background-image: url("../Public/Images/level/109.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/109.gif?id=3*/
+}
+
+.icon_live_level_110 {
+    background-image: url("../Public/Images/level/110.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/110.gif?id=3*/
+}
+
+.icon_live_level_111 {
+    background-image: url("../Public/Images/level/111.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/111.gif?id=3*/
+}
+
+.icon_live_level_112 {
+    background-image: url("../Public/Images/level/112.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/112.gif?id=3*/
+}
+
+.icon_live_level_113 {
+    background-image: url("../Public/Images/level/113.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/113.gif?id=3*/
+}
+
+.icon_live_level_114 {
+    background-image: url("../Public/Images/level/114.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/114.gif?id=3*/
+}
+
+.icon_live_level_115 {
+    background-image: url("../Public/Images/level/115.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/115.gif?id=3*/
+}
+
+.icon_live_level_116 {
+    background-image: url("../Public/Images/level/116.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/116.gif?id=3*/
+}
+
+.icon_live_level_117 {
+    background-image: url("../Public/Images/level/117.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/117.gif?id=3*/
+}
+
+.icon_live_level_118 {
+    background-image: url("../Public/Images/level/118.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/118.gif?id=3*/
+}
+
+.icon_live_level_119 {
+    background-image: url("../Public/Images/level/119.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/119.gif?id=3*/
+}
+
+.icon_live_level_120 {
+    background-image: url("../Public/Images/level/120.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/120.gif?id=3*/
+}
+
+.icon_live_level_121 {
+    background-image: url("../Public/Images/level/121.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/121.gif?id=3*/
+}
+
+.icon_live_level_122 {
+    background-image: url("../Public/Images/level/122.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/122.gif?id=3*/
+}
+
+.icon_live_level_123 {
+    background-image: url("../Public/Images/level/123.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/123.gif?id=3*/
+}
+
+.icon_live_level_124 {
+    background-image: url("../Public/Images/level/124.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/124.gif?id=3*/
+}
+
+.icon_live_level_125 {
+    background-image: url("../Public/Images/level/125.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/125.gif?id=3*/
+}
+
+.icon_live_level_126 {
+    background-image: url("../Public/Images/level/126.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/126.gif?id=3*/
+}
+
+.icon_live_level_127 {
+    background-image: url("../Public/Images/level/127.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/127.gif?id=3*/
+}
+
+.icon_live_level_128 {
+    background-image: url("../Public/Images/level/128.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/128.gif?id=3*/
+}
+
+.icon_live_level_129 {
+    background-image: url("../Public/Images/level/129.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/129.gif?id=3*/
+}
+
+.icon_live_level_130 {
+    background-image: url("../Public/Images/level/130.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/130.gif?id=3*/
+}
+
+.icon_rich_level,
+.icon_rich_level_yunyin,
+.icon_rich_level_mystery {
+    display: inline-block;
+    height: 16px;
+    width: 43px;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.icon_rich_level_0 {
+    background-image: url("../Public/Images/level/0.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/0.gif?id=3*/
+}
+
+.icon_rich_level_1 {
+    background-image: url("../Public/Images/level/1.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/1.gif?id=3*/
+}
+
+.icon_rich_level_2 {
+    background-image: url("../Public/Images/level/2.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/2.gif?id=3*/
+}
+
+.icon_rich_level_3 {
+    background-image: url("../Public/Images/level/3.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/3.gif?id=3*/
+}
+
+.icon_rich_level_4 {
+    background-image: url("../Public/Images/level/4.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/4.gif?id=3*/
+}
+
+.icon_rich_level_5 {
+    background-image: url("../Public/Images/level/5.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/5.gif?id=3*/
+}
+
+.icon_rich_level_6 {
+    background-image: url("../Public/Images/level/6.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/6.gif?id=3*/
+}
+
+.icon_rich_level_7 {
+    background-image: url("../Public/Images/level/7.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/7.gif?id=3*/
+}
+
+.icon_rich_level_8 {
+    background-image: url("../Public/Images/level/8.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/8.gif?id=3*/
+}
+
+.icon_rich_level_9 {
+    background-image: url("../Public/Images/level/9.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/9.gif?id=3*/
+}
+
+.icon_rich_level_10 {
+    background-image: url("../Public/Images/level/10.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/10.gif?id=3*/
+}
+
+.icon_rich_level_11 {
+    background-image: url("../Public/Images/level/11.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/11.gif?id=3*/
+}
+
+.icon_rich_level_12 {
+    background-image: url("../Public/Images/level/12.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/12.gif?id=3*/
+}
+
+.icon_rich_level_13 {
+    background-image: url("../Public/Images/level/13.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/13.gif?id=3*/
+}
+
+.icon_rich_level_14 {
+    background-image: url("../Public/Images/level/14.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/14.gif?id=3*/
+}
+
+.icon_rich_level_15 {
+    background-image: url("../Public/Images/level/15.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/15.gif?id=3*/
+}
+
+.icon_rich_level_16 {
+    background-image: url("../Public/Images/level/16.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/16.gif?id=3*/
+}
+
+.icon_rich_level_17 {
+    background-image: url("../Public/Images/level/17.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/17.gif?id=3*/
+}
+
+.icon_rich_level_18 {
+    background-image: url("../Public/Images/level/18.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/18.gif?id=3*/
+}
+
+.icon_rich_level_19 {
+    background-image: url("../Public/Images/level/19.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/19.gif?id=3*/
+}
+
+.icon_rich_level_20 {
+    background-image: url("../Public/Images/level/20.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/20.gif?id=3*/
+}
+
+.icon_rich_level_21 {
+    background-image: url("../Public/Images/level/21.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/21.gif?id=3*/
+}
+
+.icon_rich_level_22 {
+    background-image: url("../Public/Images/level/22.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/22.gif?id=3*/
+}
+
+.icon_rich_level_23 {
+    background-image: url("../Public/Images/level/23.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/23.gif?id=3*/
+}
+
+.icon_rich_level_24 {
+    background-image: url("../Public/Images/level/24.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/24.gif?id=3*/
+}
+
+.icon_rich_level_25 {
+    background-image: url("../Public/Images/level/25.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/25.gif?id=3*/
+}
+
+.icon_rich_level_26 {
+    background-image: url("../Public/Images/level/26.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/26.gif?id=3*/
+}
+
+.icon_rich_level_27 {
+    background-image: url("../Public/Images/level/27.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/27.gif?id=3*/
+}
+
+.icon_rich_level_28 {
+    background-image: url("../Public/Images/level/28.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/28.gif?id=3*/
+}
+
+.icon_rich_level_29 {
+    background-image: url("../Public/Images/level/29.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/29.gif?id=3*/
+}
+
+.icon_rich_level_yunyin {
+    background-image: url("../Public/Images/level/yunying.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/yunying.png?id=3*/
+}
+
+.icon_rich_level_mystery {
+    background-image: url("../Public/Images/room/mysteryIcon.png")/*tpa=http://www.huayisz168.com/Public/Images/room/mysteryIcon.png*/
+}
+
+.vip800001,
+.vip800002,
+.vip800003,
+.vip800004 {
+    display: inline-block;
+    width: 43px;
+    height: 16px;
+    background-repeat: no-repeat
+}
+
+.vip800001 {
+    background-image: url("../Public/Images/common/vip1.gif")/*tpa=http://www.huayisz168.com/Public/Images/common/vip1.gif*/
+}
+
+.vip800002 {
+    background-image: url("../Public/Images/common/vip2.gif")/*tpa=http://www.huayisz168.com/Public/Images/common/vip2.gif*/
+}
+
+.vip800003 {
+    background-image: url("../Public/Images/common/vip3.gif")/*tpa=http://www.huayisz168.com/Public/Images/common/vip3.gif*/
+}
+
+.vip800004 {
+    background-image: url("../Public/Images/common/vip4.gif")/*tpa=http://www.huayisz168.com/Public/Images/common/vip4.gif*/
+}
+
+.star_shining {
+    display: inline-block;
+    height: 16px;
+    position: relative
+}
+
+.star_shining .start_img {
+    display: inline-block;
+    width: 43px;
+    height: 18px;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    margin-left: -19px;
+    z-index: 2;
+    background-repeat: no-repeat
+}
+
+.star_shining .star_shining_1 {
+    background-image: url("../Public/Images/level/star_shining_1.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/star_shining_1.gif?id=3*/
+}
+
+.star_shining .star_shining_2 {
+    background-image: url("../Public/Images/level/star_shining_2.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/star_shining_2.gif?id=3*/
+}
+
+.star_shining .star_shining_3 {
+    background-image: url("../Public/Images/level/star_shining_3.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/star_shining_3.gif?id=3*/
+}
+
+.star_shining .star_shining_4 {
+    background-image: url("../Public/Images/level/star_shining_4.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/star_shining_4.gif?id=3*/
+}
+
+.star_shining .star_shining_5 {
+    background-image: url("../Public/Images/level/star_shining_5.gif-id=3")/*tpa=http://www.huayisz168.com/Public/Images/level/star_shining_5.gif?id=3*/
+}
+
+.robstar {
+    top: 2px;
+    left: 2px;
+    z-index: 4
+}
+
+.robstar,
+.robstar em {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url("../img/robstar.png")/*tpa=http://www.huayisz168.com/img/robstar.png*/ no-repeat
+}
+
+.robstar .robstar_2 {
+    background: url("../img/robstar1.gif")/*tpa=http://www.huayisz168.com/img/robstar1.gif*/ no-repeat
+}
+
+.robstar .robstar_3 {
+    background: url("../img/robstar2.gif")/*tpa=http://www.huayisz168.com/img/robstar2.gif*/ no-repeat
+}
+
+.robstar .robstar_4 {
+    background: url("../img/robstar3.gif")/*tpa=http://www.huayisz168.com/img/robstar3.gif*/ no-repeat
+}
+
+.robstar .robstar_5 {
+    background: url("../img/robstar4.gif")/*tpa=http://www.huayisz168.com/img/robstar4.gif*/ no-repeat
+}
+
+.robstar .robstar_6 {
+    background: url("../img/robstar5.gif")/*tpa=http://www.huayisz168.com/img/robstar5.gif*/ no-repeat
+}
+
+.gz_ico {
+    background: url("../Public/Images/common/gz_ico.png")/*tpa=http://www.huayisz168.com/Public/Images/common/gz_ico.png*/ no-repeat;
+    display: inline-block;
+    /* 等级图标样式 End */
+    width: 19px;
+    height: 20px;
+    vertical-align: middle;
+    *position: relative;
+    *top: 50%;
+    *margin-top: -20px
+}
+
+.g90001_1 {
+    background-position: 0 0
+}
+
+.g90001_2 {
+    background-position: -20px 0
+}
+
+.g90001_3 {
+    background-position: -40px 0
+}
+
+.g90001_4 {
+    background-position: -60px 0
+}
+
+.g90001_5 {
+    background-position: -80px 0
+}
+
+.g90001_6 {
+    background-position: -100px 0
+}
+
+.g90001_7 {
+    background-position: -120px 0
+}
+
+.g90002_1 {
+    background-position: 0 -25px
+}
+
+.g90002_2 {
+    background-position: -20px -25px
+}
+
+.g90002_3 {
+    background-position: -40px -25px
+}
+
+.g90002_4 {
+    background-position: -60px -25px
+}
+
+.g90002_5 {
+    background-position: -80px -25px
+}
+
+.g90002_6 {
+    background-position: -100px -25px
+}
+
+.g90002_7 {
+    background-position: -120px -25px
+}
+
+.g90003_1 {
+    background-position: 0 -50px
+}
+
+.g90003_2 {
+    background-position: -20px -50px
+}
+
+.g90003_3 {
+    background-position: -40px -50px
+}
+
+.g90003_4 {
+    background-position: -60px -50px
+}
+
+.g90003_5 {
+    background-position: -80px -50px
+}
+
+.g90003_6 {
+    background-position: -100px -50px
+}
+
+.g90003_7 {
+    background-position: -120px -50px
+}
+
+.g90004_1 {
+    background-position: 0 -75px
+}
+
+.g90004_2 {
+    background-position: -20px -75px
+}
+
+.g90004_3 {
+    background-position: -40px -75px
+}
+
+.g90004_4 {
+    background-position: -60px -75px
+}
+
+.g90004_5 {
+    background-position: -80px -75px
+}
+
+.g90004_6 {
+    background-position: -100px -75px
+}
+
+.g90004_7 {
+    background-position: -120px -75px
+}
+
+.face_box {
+    position: relative;
+    z-index: 2
+}
+
+.face_list {
+    background: #FFF;
+    overflow: hidden;
+    zoom: 1;
+    border: 1px solid #CCC;
+    position: absolute;
+    width: 311px;
+    padding: 5px;
+    height: auto;
+    top: -165px;
+    left: 0
+}
+
+.face_list a {
+    float: left;
+    width: 24px;
+    height: 24px;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 3px
+}
+
+.face_list a img {
+    width: 24px;
+    height: 24px
+}
+
+.face_border {
+    overflow: hidden;
+    zoom: 1;
+    border-left: 1px solid #DDD;
+    border-top: 1px solid #DDD
+}
+
+.page_box {
+    text-align: center;
+    padding: 20px 0 35px
+}
+
+.page_box a,
+.page_box strong {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+    margin-left: 5px
+}
+
+.page_box .page_last,
+.page_box .page_next {
+    border: 1px solid #CCC;
+    height: 27px;
+    width: 60px
+}
+
+.page_box a:hover,
+.page_box strong {
+    background: #FF0096;
+    color: #FFF;
+    border-color: #FF0096
+}
+
+.Popup {
+    background: #FFF;
+    position: fixed;
+    _position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 306px;
+    border: 1px solid #CBCBCB;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 5001;
+    margin: -100px 0 0 -153px
+}
+
+.Popup .hd {
+    background: url("../Public/Images/room/Popup_hd_back.png")/*tpa=http://www.huayisz168.com/Public/Images/room/Popup_hd_back.png*/ repeat-x;
+    height: 35px;
+    border-bottom: 1px solid #DDD;
+    padding: 0 10px;
+    line-height: 35px
+}
+
+.Popup .hd span {
+    color: #f69;
+    font-size: 15px
+}
+
+.Popup .hd a {
+    color: #737373;
+    font-size: 15px
+}
+
+.Popup .hd .li {
+    height: 33px;
+    line-height: 35px
+}
+
+.Popup .hd a.curr,
+.Popup .hd a:hover {
+    color: #f69
+}
+
+.Popup .hd .li:hover {
+    border-bottom: 2px solid #f69
+}
+
+.Popup .hd b {
+    padding: 0 16px;
+    color: #d3d3d3
+}
+
+.popup_close {
+    background: url("../Public/Images/room/public.png")/*tpa=http://www.huayisz168.com/Public/Images/room/public.png*/ no-repeat;
+    width: 11px;
+    height: 11px;
+    overflow: hidden;
+    margin-top: 12px;
+    line-height: 0;
+    font-size: 0!important
+}
+
+.popup_close:hover {
+    background-position: 0 -15px
+}
+
+.Popup .bd {
+    font-size: 12px;
+    color: #737373;
+    padding: 15px
+}
+
+.Popup .bd a {
+    color: #737373
+}
+
+.Popup .popup_but {
+    padding: 15px;
+    padding-bottom: 0;
+    text-align: center
+}
+
+.Popup .popup_but input {
+    border: 0 none;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    background: #F69;
+    color: #FFF;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 2px;
+    margin: 0 5px
+}
+
+.Popup .popup_but input:hover {
+    background: #FA4D83
+}
+
+.Popup .popup_common {
+    text-align: center
+}
+
+.Popup .popup_common a,
+.Popup .popup_common p {
+    line-height: 180%;
+    margin-bottom: 10px
+}
+
+.Popup .popup_common a {
+    color: #F69;
+    text-decoration: underline
+}
+
+.bg {
+    background: url("img/public.png")/*tpa=http://www.huayisz168.com/tong_files/img/public.png*/ no-repeat;
+    overflow: hidden
+}
+
+.barbox {
+    height: 14px;
+    overflow: hidden;
+    position: relative;
+    background: #BCBCBC;
+    border-radius: 8px
+}
+
+.barcont {
+    height: 100%;
+    background: #E8337B;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 8px
+}
+
+.bar_txt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #FFF;
+    line-height: 14px;
+    z-index: 2;
+    font-size: 12px
+}
+
+.bar_tips {
+    background: #F69;
+    color: #FFF;
+    position: absolute;
+    z-index: 100;
+    padding: 1px 5px;
+    border-radius: 3px
+}
+
+.bar_tips span {
+    padding: 0 5px
+}
+
+.rig_nav_back {
+    background: url("../img/rig_back.png")/*tpa=http://www.huayisz168.com/img/rig_back.png*/ no-repeat;
+    display: inline-block;
+    overflow: hidden
+}
+
+.rig_nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    _position: absolute;
+    z-index: 1001;
+    _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight))
+}
+
+.rig_nav a {
+    display: block;
+    margin-top: 5px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    right: 0
+}
+
+.rig_nav .rig_4 {
+    width: 90px;
+    height: 33px;
+    background: url("../img/xs.png")/*tpa=http://www.huayisz168.com/img/xs.png*/ no-repeat;
+    bottom: 40px
+}
+
+.rig_nav .rig_4 span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url("../img/jb.gif")/*tpa=http://www.huayisz168.com/img/jb.gif*/ no-repeat;
+    margin: 7px 0 0 7px
+}
+
+.rig_nav .rig_6 {
+    width: 89px;
+    height: 34px;
+    background: url("../img/laba.png")/*tpa=http://www.huayisz168.com/img/laba.png*/ no-repeat;
+    bottom: 0
+}
+
+.rig_nav_Box {
+    width: 34px;
+    position: fixed;
+    bottom: 41px;
+    right: 0;
+    z-index: 1000;
+    _position: absolute;
+    _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-41))
+}
+
+.rig_nav_Box .bd {
+    padding: 0
+}
+
+.rig_nav_Box .Popup {
+    position: absolute;
+    margin: 0;
+    top: auto;
+    left: auto;
+    bottom: 35px;
+    right: -550px;
+    overflow: visible;
+    border: 1px solid #CBCBCB
+}
+
+.rig_nav_Box .hd span {
+    font-weight: 700
+}
+
+.Newbie_task {
+    width: 296px;
+    border-radius: 0
+}
+
+.Newbie_task .hd {
+    background: #F7F7F7;
+    height: 33px
+}
+
+.Newbie_task .hd span {
+    font-size: 12px;
+    color: #494949;
+    font-weight: 400
+}
+
+.Newbie_task .bd {
+    padding: 0 6px
+}
+
+.Newbie_task li em {
+    vertical-align: middle;
+    color: #555F62
+}
+
+.Newbie_task li {
+    border-bottom: 1px solid #DDD;
+    padding: 8px 0
+}
+
+.rig_icon1 {
+    background-position: 0 0
+}
+
+.rig_icon2 {
+    background-position: 0 -32px
+}
+
+.rig_icon3 {
+    background-position: 0 -64px
+}
+
+.rig_icon4 {
+    background-position: 0 -96px
+}
+
+.rig_icon5 {
+    background-position: 0 -128px
+}
+
+.rig_icon6 {
+    background-position: 0 -160px
+}
+
+.rig_icon4 b {
+    display: none
+}
+
+.rig_nav .rig_6 {
+    display: none
+}
+
+.Newbie_task a.newbie_but {
+    width: 54px;
+    height: 19px;
+    background: #09B4F0;
+    text-align: center;
+    line-height: 18px;
+    color: #FFF;
+    border: 1px solid #7FC81E
+}
+
+.newbie_gold {
+    display: inline-block;
+    width: 245px;
+    vertical-align: middle;
+    padding-left: 5px
+}
+
+.newbie_txt {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle
+}
+
+.Newbie_task a.newbie_but_none {
+    background: #E5E5E5;
+    color: #616161;
+    border: 1px solid #CDCDCD
+}
+
+.newbie_gold em {
+    display: block
+}
+
+.Newbie_task li em .color7FC81E {
+    color: #7FC81E
+}
+
+.gz_color1_1,
+.gz_color1_2,
+.gz_color1_3 {
+    color: #0edc60!important
+}
+
+.gz_color1_4,
+.gz_color1_5,
+.gz_color1_6 {
+    color: #00d8ff!important
+}
+
+.gz_color1_7 {
+    color: #ec6dff!important
+}
+
+.gz_color2_1,
+.gz_color2_2,
+.gz_color2_3 {
+    color: #ff5144!important
+}
+
+.gz_color2_4,
+.gz_color2_5,
+.gz_color2_6 {
+    color: #ffae2e!important
+}
+
+.gz_color2_7 {
+    color: #ffef37!important
+}
+
+.vipsendcolor {
+    color: #86fed0!important
+}
+
+.viplistcolor {
+    color: #FF9D45!important
+}
+
+.erweimaBox {
+    display: block;
+    width: 123px;
+    height: 187px;
+    background: url("../img/er.png")/*tpa=http://www.huayisz168.com/img/er.png*/ no-repeat;
+    z-index: 10;
+    position: fixed;
+    _position: absolute;
+    left: 0;
+    top: 470px
+}
+
+.erweimaBox a {
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 10
+}
+
+.flicker_box {
+    position: relative;
+    overflow: hidden
+}
+
+.flicker_cont {
+    pointer-events: none;
+    *display: none;
+    position: absolute;
+    top: -50px;
+    left: -200px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+    transform: skew(-25deg);
+    -webkit-transform: skew(-25deg);
+    -moz-transform: skew(-25deg);
+    -o-transform: skew(-25deg)
+}
+
+.flicker_box:hover .flicker_cont {
+    left: 200px;
+    transition: left .5s;
+    -webkit-transition: left .5s;
+    -moz-transition: left .5s;
+    -o-transition: left .5s
+}
+
+#loading {
+    position: fixed;
+    *position: absolute;
+    margin-left: -30px;
+    margin-top: -30px;
+    left: 50%;
+    top: 50%;
+    z-index: 8888
+}
+
+.QQonline a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    background: url("../img/newQQonline.png")/*tpa=http://www.huayisz168.com/img/newQQonline.png*/ 0 -22px no-repeat;
+    margin-right: 5px
+}
+
+.QQonline .Qonline {
+    background-position: 0 0
+}
+
+.dialoger {
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5000
+}
+
+.dialoger .cover_ifr {
+    position: fixed;
+    _position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=0);
+    opacity: 0
+}
+
+.dialoger .cover {
+    position: fixed;
+    _position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    filter: alpha(opacity=50);
+    opacity: .5
+}
+
+.OneLogin_animate {
+    width: 501px;
+    height: 191px;
+    background: url("../img/package.png")/*tpa=http://www.huayisz168.com/img/package.png*/ no-repeat;
+    position: fixed;
+    _position: absolute;
+    z-index: 3500;
+    top: 0;
+    left: 50%;
+    margin-left: -250px;
+    display: none
+}
+
+.OneLogin_animate a {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background: #000;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.fam_badge_0 {
+    display: inline-block;
+    width: 40px;
+    height: 17px;
+    text-align: center;
+    line-height: 17px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #fff;
+    background: url("../Public/Images/common/fmBadge/fam_badge.png")/*tpa=http://www.huayisz168.com/Public/Images/common/fmBadge/fam_badge.png*/ left top no-repeat;
+    overflow: hidden
+}
+
+.fm_badge_honor {
+    background-image: url("../Public/Images/common/fm_honor_userlist.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/fm_honor_userlist.png?id=3*/;
+    width: 43px;
+    height: 16px
+}
+
+.fm_badge_honor6 {
+    background-position: 0 0
+}
+
+.fm_badge_honor5 {
+    background-position: 0 -17px
+}
+
+.fm_badge_honor4 {
+    background-position: 0 -34px;
+    color: #792900
+}
+
+.fm_badge_honor3 {
+    background-position: 0 -51px;
+    color: #790000
+}
+
+.fm_badge_honor2 {
+    background-position: 0 -68px;
+    color: #003D5C
+}
+
+.fm_badge_honor1 {
+    background-position: 0 -85px;
+    color: #444451
+}
+
+.fm_honor_icon6,
+.fm_honor_icon5,
+.fm_honor_icon4,
+.fm_honor_icon3,
+.fm_honor_icon2,
+.fm_honor_icon1 {
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+    overflow: hidden;
+    line-height: 16px;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    background: url("../Public/Images/common/fm_honor_icon.png")/*tpa=http://www.huayisz168.com/Public/Images/common/fm_honor_icon.png*/ no-repeat;
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.fm_honor_icon6 {
+    background-position: 0 0
+}
+
+.fm_honor_icon5 {
+    background-position: 0 -18px
+}
+
+.fm_honor_icon4 {
+    background-position: 0 -36px
+}
+
+.fm_honor_icon3 {
+    background-position: 0 -54px
+}
+
+.fm_honor_icon2 {
+    background-position: 0 -72px
+}
+
+.fm_honor_icon1 {
+    background-position: 0 -90px;
+    color: #7d7d80
+}
+
+.fisrtRun_l,
+.fisrtRun_r {
+    background: url("../Public/Images/common/fisrtRunway_ico.png")/*tpa=http://www.huayisz168.com/Public/Images/common/fisrtRunway_ico.png*/ no-repeat;
+    width: 10px;
+    height: 33px;
+    top: 2px
+}
+
+.fisrtRun_l {
+    left: 0;
+    background-position: left 0
+}
+
+.fisrtRun_r {
+    right: 0;
+    background-position: right 0
+}
+
+.globalWarp {
+    background: #FFF;
+    position: fixed;
+    _position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 546px;
+    border: 1px solid #CBCBCB;
+    overflow: hidden;
+    z-index: 4800;
+    margin: -149px 0 0 -273px;
+    height: 298px
+}
+
+.globalWarp h2 {
+    background: url("../Public/Images/room/Popup_hd_back.png")/*tpa=http://www.huayisz168.com/Public/Images/room/Popup_hd_back.png*/ repeat-x;
+    height: 35px;
+    border-bottom: 1px solid #FF077E;
+    padding: 0 10px;
+    line-height: 35px
+}
+
+.globalWarp h2 span {
+    color: #f69;
+    font-size: 16px
+}
+
+.globalWarp .globalBox {}
+
+.changeBox {
+    text-align: center;
+    padding-top: 40px;
+    height: 223px
+}
+
+.changeAhoBox p {
+    font-size: 16px;
+    color: #ff077e
+}
+
+.changeAhoBox input {
+    border: 2px solid #b9b9b9;
+    background: #fff!important;
+    width: 372px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #B8B4B4;
+    display: block;
+    margin: 36px auto;
+    text-align: center
+}
+
+.changeUserBox {
+    background: url("../Public/Images/common/changeRoomUserBg.png")/*tpa=http://www.huayisz168.com/Public/Images/common/changeRoomUserBg.png*/ 11px 35px no-repeat
+}
+
+.changeUserBox .changeBut {
+    margin: 0 10px
+}
+
+.changeUserBox p.tip {
+    font-size: 16px;
+    color: #454545;
+    font-weight: 700
+}
+
+.changeUserBox p.tip b {
+    color: #ff077e;
+    font-size: 18px;
+    padding: 0 10px
+}
+
+.changeUserBox .link {
+    font-size: 16px;
+    color: #454545;
+    background: url("../Public/Images/common/changRoomLinkBg.png")/*tpa=http://www.huayisz168.com/Public/Images/common/changRoomLinkBg.png*/ repeat;
+    width: 296px;
+    height: 35px;
+    line-height: 36px;
+    text-align: center;
+    margin: 39px auto;
+    border-radius: 5px
+}
+
+.changeBut {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    background: #fc1685;
+    width: 113px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 5px
+}
+
+.changePointBox {
+    position: relative
+}
+
+.changePointBox b.redPoint {
+    right: 4px;
+    top: 18px
+}
+
+.changePointBox .aho_changeRoom b.redPoint {
+    right: -6px;
+    top: -1px
+}
+
+.showSign img {
+    position: absolute;
+    right: 5px;
+    top: -2px
+}
+
+.signIcon {
+    background: url("../Public/Images/common/SignIcon.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/SignIcon.png?id=3*/ 0 0 no-repeat;
+    display: inline-block
+}
+
+.signWrap {
+    width: 770px;
+    height: 443px;
+    margin: -221px 0 0 -385px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 4999
+}
+
+.signClose {
+    right: 13px;
+    top: 14px;
+    background-position: -150px 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10
+}
+
+.signStock {
+    left: 267px;
+    top: -10px;
+    background: url("../Public/Images/common/SignIcon2.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/SignIcon2.png?id=3*/ 0 0 repeat-y;
+    height: 443px;
+    width: 42px;
+    z-index: 2
+}
+
+.signTimeNum .type2 {
+    cursor: pointer
+}
+
+.signFlashBox {
+    left: 30px;
+    bottom: 29px;
+    background: #fdfbef
+}
+
+.signRewardBox {
+    width: 283px;
+    border: 1px solid #75b18b;
+    background: #fdfbef;
+    height: 421px;
+    padding-top: 20px
+}
+
+.signLink {
+    right: 34px;
+    top: 6px;
+    z-index: 10
+}
+
+.signLink a {
+    display: inline-block;
+    width: 62px;
+    height: 54px;
+    background-position: -118px -117px
+}
+
+.signRewardBox h2 {
+    width: 108px;
+    height: 38px;
+    left: -10px;
+    top: 0
+}
+
+.signRewardBox .signDiaryBox h2 {
+    background-position: 0 0
+}
+
+.signRewardBox .signChestBox h2 {
+    background-position: 0 -38px
+}
+
+.signRewardBox .signDiaryBox,
+.signRewardBox .signChestBox {
+    padding-top: 46px
+}
+
+.signDiaryBox {
+    height: 177px
+}
+
+.signDiaryBox .signReward {
+    height: 124px
+}
+
+.signDiaryBox .signRewardCont {
+    text-align: center
+}
+
+.signDiaryBox .signRewardDay {
+    width: 164px;
+    background-position: 0 -76px
+}
+
+.signDiaryBox .signRewardDay b {
+    display: inline-block;
+    width: 35px;
+    text-align: center;
+    color: #f26708;
+    font-size: 20px;
+    line-height: normal;
+    padding-left: 96px
+}
+
+.signDiaryBox .signRewardImg {
+    height: 98px;
+    line-height: 98px
+}
+
+.signDiaryBox .signRewardImg img {
+    max-width: 157px
+}
+
+.signDiaryBox .signRewardTipBox {
+    color: #666;
+    text-align: center;
+    line-height: 2em
+}
+
+.signDiaryBox .signRewardTipBox a {
+    text-decoration: underline
+}
+
+.signDiaryBox .signRewardTipBox a,
+.signDiaryBox .signRewardTipBox span {
+    color: #52b598;
+    margin: 0 5px
+}
+
+.signChestBox .signChest {
+    background: url("../Public/Images/common/SignIcon5.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/SignIcon5.png?id=3*/ 0 0 no-repeat;
+    height: 73px;
+    padding: 60px 30px 0 155px
+}
+
+.signChestBox .signChest li {
+    text-align: right
+}
+
+.signChestBox .signChestBtn {
+    width: 90px;
+    height: 31px;
+    background-position: 0 -192px;
+    cursor: pointer
+}
+
+.signChestBox .signChestBtn_on {
+    background-position: 0 -155px
+}
+
+.signChestBox .signChestBtn_on:active {
+    width: 90px;
+    height: 31px;
+    background-position: 0 -118px;
+    cursor: pointer
+}
+
+.signChestBox .signChestBtn_out,
+.signChestBox .signChestBtn_out:hover,
+.signChestBox .signChestBtn_out:active {
+    background-position: -97px -192px
+}
+
+.signChestBox .signChest li a {
+    color: #f26708;
+    text-decoration: underline
+}
+
+.signTimeBox {
+    width: 478px;
+    border: 1px solid #75b18b;
+    background: #fdfbef;
+    background: #fdfbef;
+    height: 441px
+}
+
+.signTimeTit {
+    height: 49px;
+    background: #c0eac6;
+    line-height: 50px;
+    text-align: center
+}
+
+.signTimeTit .signTimeOper a {
+    width: 8px;
+    height: 12px;
+    padding: 0 10px
+}
+
+.signTimeTit .signTimeOper b {
+    color: #47956b;
+    font-size: 16px
+}
+
+.signTimeTit .signTimeOper .signTimeBefore {
+    background-position: 9px -472px
+}
+
+.signTimeTit .signTimeOper .signTimeAfter {
+    background-position: -123px -472px
+}
+
+.signTimeWrap .signBtn {
+    width: 120px;
+    height: 39px;
+    background-position: 0 -229px;
+    margin-top: 39px
+}
+
+.signTimeWrap .signBtn_out {
+    background-position: 0 -274px
+}
+
+.signTime {
+    padding: 10px 30px 0 24px;
+    width: 266px
+}
+
+.signTime .signTimeDay li {
+    float: left;
+    margin: 6px 2px;
+    width: 34px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    background: url("../Public/Images/common/SignIcon.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/SignIcon.png?id=3*/ -140px -38px no-repeat
+}
+
+.signTime .signTimeNum li {
+    float: left;
+    margin: 4px 2px;
+    width: 34px;
+    height: 33px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    background: url("../Public/Images/common/SignIcon.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/SignIcon.png?id=3*/ 0 -322px no-repeat
+}
+
+.signTime .signTimeNum li.type1 {
+    background-position: -38px -322px;
+    position: relative
+}
+
+.signTime .signTimeNum li.type2 {
+    background-position: -76px -322px;
+    color: #db910c
+}
+
+.signTime .signTimeNum li.type1 b {
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+    background-position: -222px 0;
+    width: 16px;
+    height: 16px
+}
+
+.signTimeRbox {
+    width: 133px
+}
+
+.signTimeRbox dl {
+    margin-top: 30px
+}
+
+.signTimeRbox dl dt {
+    color: #52b598;
+    font-size: 14px;
+    text-align: center;
+    line-height: 2em
+}
+
+.signTimeRbox dl dd {
+    color: #666;
+    line-height: 2em
+}
+
+.signTimeRbox a.signToplay {
+    color: #52b598;
+    text-decoration: underline;
+    display: inline-block;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%
+}
+
+.signTimeRbox a.signToplay b {
+    background-position: -191px -38px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.signStageWarp {
+    width: 85%;
+    margin: 0 auto
+}
+
+.signStagetiao {
+    width: 100%;
+    height: 2px;
+    background: #dcdacf;
+    top: 33px;
+    overflow: hidden
+}
+
+.signStagetiao p {
+    left: 0;
+    top: 0;
+    height: 2px;
+    background: #f26846
+}
+
+.signGiftBox .listBox {
+    text-align: center;
+    width: 60px;
+    top: 0;
+    margin-left: -30px
+}
+
+.signGiftBox .listBox p.tis {
+    color: #000
+}
+
+.signGiftBox .listBox p.tis b {
+    color: #f0f;
+    font-size: 16px
+}
+
+.signGiftBox .listBox p.stage {
+    text-align: center;
+    height: 12px;
+    line-height: 12px;
+    overflow: hidden
+}
+
+.signGiftBox .listBox p.stage b.stageIcon {
+    background-position: -232px -38px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    overflow: hidden
+}
+
+.signGiftBox .listBox p.giftImg img {
+    max-width: 100%
+}
+
+.signGiftBox .listBox p.giftImg .giftImgOut {
+    background-position: -184px -238px;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px
+}
+
+.liveRemindPop,
+.aapop {
+    position: fixed;
+    right: 0;
+    bottom: 33px;
+    z-index: 12;
+    width: 274px;
+    height: 72px;
+    background: #383b43;
+    text-align: center;
+    padding-top: 20px
+}
+
+.aapop {
+    bottom: 200px
+}
+
+.liveRemindPop a.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 21px;
+    height: 21px;
+    background: url("img/closeIcon.png")/*tpa=http://www.huayisz168.com/tong_files/img/closeIcon.png*/ -8px -37px;
+    right: 0;
+    top: 0;
+    display: inline-block
+}
+
+.liveRemindPop .txt {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 13px
+}
+
+.liveRemindPop .txt span {
+    color: #fa265d;
+    padding: 0 5px
+}
+
+.liveRemindPop .goLiveRoom {
+    display: inline-block;
+    width: 85px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid #fa265d;
+    color: #fa265d;
+    border-radius: 3px;
+    font-size: 14px
+}
+
+.liveRemindPop .goLiveRoom:hover {
+    color: #fff;
+    background: #fa265d
+}
+
+.liveRemindWeek {
+    height: 175px;
+    padding-top: 0;
+    background: #fff
+}
+
+.liveRemindWeek p {
+    color: #fff;
+    padding: 0 10px
+}
+
+.liveRemindWeek .txt {
+    color: #000;
+    margin-top: 10px
+}
+
+.liveRemindWeek .weekAho {
+    padding: 10px 0;
+    background: #fa265d
+}
+
+.liveRemindWeek .weekAho p span {
+    display: block
+}
+
+.liveRemindWeek .weekAho p {
+    text-align: left
+}
+
+.liveRemindWeek .weekAho .imgBox {
+    width: 100px;
+    text-align: right;
+    padding-right: 0
+}
+
+.liveRemindWeek .weekAho img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%
+}
+
+.liveRemindWeek .weekAho em {
+    vertical-align: middle;
+    margin: 5px 0 10px
+}
+
+.liveRemindWeek .goLiveRoom {
+    border-radius: 15px
+}
+
+.m1200s00 {
+    width: 1200px;
+    margin: auto;
+    overflow: hidden
+}
+
+.layleft {
+    width: 940px;
+    float: left;
+    _display: inline;
+    overflow: hidden
+}
+
+.layright {
+    width: 240px;
+    float: right;
+    _display: inline;
+    overflow: hidden
+}
+
+.layright .rightwarps {
+    position: absolute;
+    width: 240px
+}
+
+.m1200_1010s00 {
+    min-width: 1010px;
+    max-width: 1200px;
+    _width: 1010px;
+    margin: auto
+}
+
+.m400c400s400 {
+    width: 1200px;
+    margin: auto
+}
+
+.m400c400s400 .m,
+.m400c400s400 .c,
+.m400c400s400 .s {
+    float: left;
+    width: 384px;
+    margin-left: 21px
+}
+
+.m400c400s400 .m {
+    margin-left: 0
+}
+
+.topper {
+    margin-bottom: 12px
+}
+
+.vui {
+    margin-bottom: 5px
+}
+
+.rui {
+    margin-bottom: 10px
+}
+
+.w1200 {
+    width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto
+}
+
+.web_nav_bbg {
+    height: 61px;
+    z-index: 20;
+    background: #262626;
+    min-width: 1280px
+}
+
+.web_nav {
+    height: 61px;
+    margin: 0 auto;
+    width: 1200px;
+    z-index: 3
+}
+
+.web_nav .logo {
+    margin-right: 20px;
+    width: 110px;
+    height: 61px;
+    background: url("../Public/Images/logo.png")/*tpa=http://www.huayisz168.com/Public/Images/logo.png*/ left center no-repeat
+}
+
+.web_nav .nav_list li {
+    float: left;
+    height: 61px;
+    line-height: 69px
+}
+
+.web_nav .nav_list li a {
+    color: #f3f3f3;
+    font-size: 14px;
+    padding: 0 16px;
+    line-height: 61px;
+    display: inline-block;
+    height: 61px;
+    float: left
+}
+
+.web_nav .nav_list li span.item_line {
+    border-right: 1px solid #686868;
+    vertical-align: -3px;
+    margin: 0 2px
+}
+
+.web_nav .nav_list li a:hover {
+    background: #fa265d
+}
+
+.web_nav .nav_list li.download .downloadBox {
+    left: -14px;
+    top: 61px;
+    background: #262626;
+    color: #fff
+}
+
+.web_nav .nav_list li.download .downloadBox p {
+    line-height: 34px
+}
+
+.web_nav .nav_list li.download .downloadBox a {
+    font-size: 14px;
+    color: #bbc1ca;
+    height: 34px;
+    line-height: 34px;
+    display: inline-block;
+    width: 90px
+}
+
+.web_nav .nav_list li.download .downloadBox a:hover {
+    color: #fff;
+    background: 0
+}
+
+.loginIcon {
+    background-image: url("img/loginIcon.png")/*tpa=http://www.huayisz168.com/tong_files/img/loginIcon.png*/;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    background-repeat: no-repeat
+}
+
+.web_nav .user_info {
+    height: 61px
+}
+
+.web_nav .user_info li {
+    color: #E6E6E6;
+    float: left;
+    margin-left: 5px
+}
+
+.web_nav .user_info li a {
+    color: #E6E6E6
+}
+
+.web_nav .user_info .uesrname {
+    padding-top: 21px
+}
+
+.web_nav .user_info .uesrname b {
+    vertical-align: middle
+}
+
+.web_nav .user_info .uesrname .headName {
+    max-width: 84px;
+    display: inline-block
+}
+
+.web_nav .user_info .user_img {
+    position: relative;
+    padding: 10px 0 0
+}
+
+.web_nav .user_info .user_img img {
+    width: 37px;
+    height: 37px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    vertical-align: middle
+}
+
+.web_nav .user_info .user_img p {
+    right: 0;
+    top: 34px;
+    z-index: 2;
+    width: 16px
+}
+
+.web_nav .user_info .user_img p a,
+.web_nav .user_info .user_img p span {
+    background-image: url("img/indexIcon.png")/*tpa=http://www.huayisz168.com/tong_files/img/indexIcon.png*/;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px
+}
+
+.web_nav .user_info .user_img p .state_on {
+    background-position: -193px 0
+}
+
+.web_nav .user_info .user_img p .state_out {
+    background-position: -173px 0
+}
+
+.web_nav .user_info .iconLi {
+    text-align: center;
+    padding-top: 21px;
+    height: 40px;
+    cursor: pointer;
+    width: 50px
+}
+
+.web_nav .user_info .iconLi:hover {
+    background: #383B44
+}
+
+.web_nav .user_info .iconName {
+    display: block;
+    margin-top: 5px
+}
+
+.web_nav .user_info .iconLiLogin {
+    padding-top: 16px;
+    height: 45px;
+    margin-right: 10px;
+    font-size: 14px;
+    width: 80px
+}
+
+.web_nav .user_info .iconLiLogin a {
+    color: #bbc1ca
+}
+
+.web_nav .user_info li:hover .iconName {
+    color: #fa265d
+}
+
+.web_nav .user_info .userMoveOper {
+    width: 20px;
+    padding: 22px 0 0 10px;
+    height: 39px;
+    cursor: pointer
+}
+
+.web_nav .user_info .liOn {
+    background: #383b44
+}
+
+.web_nav .userMoveOper .moveArrow {
+    background-position: 0 -56px;
+    width: 9px;
+    height: 6px
+}
+
+.web_nav .userMoveOper .userMoveBox {
+    top: 61px;
+    right: 0;
+    background: #383b44;
+    width: 169px;
+    padding: 10px;
+    cursor: default
+}
+
+.web_nav .userMoveOper .userMoveBox div {
+    border-bottom: 1px solid #4c4f58
+}
+
+.web_nav .userMoveOper .userMoveBox p {
+    margin: 10px 0
+}
+
+.web_nav .userMoveOper .userMoveBox p span {
+    color: #727584
+}
+
+.web_nav .userMoveOper .userMoveBox .detail b {
+    width: 27px;
+    height: 14px;
+    background-position: -42px -56px;
+    margin-right: 9px
+}
+
+.web_nav .userMoveOper .userMoveBox .detail2 b {
+    width: 27px;
+    height: 14px;
+    background-position: -12px -56px;
+    margin-right: 9px
+}
+
+.web_nav .userMoveOper .userMoveBox b,
+.web_nav .userMoveOper .userMoveBox em,
+.web_nav .userMoveOper .userMoveBox span {
+    vertical-align: middle
+}
+
+.web_nav .userEditeBox .editeInput input {
+    width: 109px;
+    border: 0;
+    height: 20px;
+    *line-height: 20px
+}
+
+.web_nav .userEditeBox .editeInput input#newnickname {
+    background: #fff
+}
+
+.web_nav .userEditeBox .editeBtn {
+    text-align: center
+}
+
+.web_nav .userEditeBox .editeBtn #updatenickname_button {
+    background: #fb265e;
+    width: 72px;
+    height: 23px;
+    line-height: 23px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 0
+}
+
+.web_nav .userMoveBox .eidteInfo {
+    color: #878d9b
+}
+
+.web_nav_nologin .user_info {}
+
+.web_nav_nologin .user_info li b {
+    background-image: url("img/loginIcon.png")/*tpa=http://www.huayisz168.com/tong_files/img/loginIcon.png*/;
+    background-repeat: no-repeat
+}
+
+.user_info li .header_loginIcon {
+    background-position: 0 0;
+    width: 20px;
+    height: 20px
+}
+
+.user_info li:hover .header_loginIcon {
+    background-position: 0 -31px
+}
+
+.user_info li .header_setIcon {
+    background-position: -79px 0;
+    width: 20px;
+    height: 20px
+}
+
+.user_info li .header_helpIcon {
+    background-position: -40px 0;
+    width: 20px;
+    height: 20px
+}
+
+.web_nav_nologin .user_info li a,
+.web_nav_nologin .user_info li b {
+    display: inline-block
+}
+
+.header_login {
+    color: #FFF;
+    margin-left: 20px
+}
+
+.header_login b img {
+    margin-right: 5px
+}
+
+.headSearch_box {
+    padding-top: 16px
+}
+
+.headSearch_box .search_form {
+    width: 193px;
+    height: 28px;
+    border: 1px solid #3f3f3f;
+    border-radius: 15px;
+    background: #262626
+}
+
+.headSearch_box .headSearch_txt {
+    border: 0;
+    height: 28px;
+    width: 138px;
+    padding-left: 12px;
+    color: #828282;
+    float: left;
+    line-height: 32px\9;
+    background: 0
+}
+
+.headSearch_box .headSearch_but {
+    border: 0;
+    width: 31px;
+    height: 28px;
+    float: left;
+    cursor: pointer;
+    background: url("../Public/Images/common/hear_search_btn.png")/*tpa=http://www.huayisz168.com/Public/Images/common/hear_search_btn.png*/
+}
+
+.web_nav .user_info .userSetupLi {
+    width: 50px
+}
+
+.web_nav .userSetupBox {
+    top: 61px;
+    right: 0;
+    background: #383b44;
+    width: 220px;
+    padding: 10px;
+    cursor: default
+}
+
+.web_nav .userSetupBox .userSetupInfo {
+    text-align: center;
+    border-bottom: 1px solid #262930
+}
+
+.web_nav .userSetupBox .userSetupInfo img {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #5f6269;
+    border-radius: 50%
+}
+
+.web_nav .userSetupBox .userSetupInfo .infoName {
+    margin: 10px
+}
+
+.web_nav .userSetupBox .userSetupInfo .infoOper {
+    margin-bottom: 10px
+}
+
+.web_nav .userSetupBox .userSetupInfo .item_line {
+    font-size: 0;
+    width: 1px;
+    height: 16px;
+    margin: 0 5px;
+    border-right: 1px solid #4d5057;
+    border-left: 1px solid #262930;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 0;
+    vertical-align: -3px
+}
+
+.web_nav .userSetupBox .userSetup {
+    border-top: 1px solid #4d5057
+}
+
+.web_nav .userSetupBox .userSetup a {
+    width: 49%;
+    display: inline-block;
+    margin: 10px 0
+}
+
+.web_nav .userSetupBox .userSetup a b {
+    margin-right: 5px
+}
+
+.web_nav .userSetIcon1 {
+    background-position: 0 -75px;
+    width: 16px;
+    height: 18px
+}
+
+.web_nav .userSetIcon2 {
+    background-position: -19px -75px;
+    width: 20px;
+    height: 18px
+}
+
+.web_nav .userSetIcon3 {
+    background-position: -42px -75px;
+    width: 18px;
+    height: 17px
+}
+
+.web_nav .userSetIcon4 {
+    background-position: -63px -75px;
+    width: 18px;
+    height: 16px
+}
+
+.web_nav .userSetIcon5 {
+    background-position: -84px -75px;
+    width: 18px;
+    height: 14px
+}
+
+.web_nav .userSetIcon6 {
+    background-position: -105px -76px;
+    width: 18px;
+    height: 17px
+}
+
+.web_nav .userSetIcon7 {
+    background-position: -24px -98px;
+    width: 15px;
+    height: 15px
+}
+
+.web_nav .userSetIcon8 {
+    background-position: -41px -97px;
+    width: 19px;
+    height: 20px
+}
+
+.header-sprite,
+.header-1,
+.header-2,
+.header-3,
+.header-4,
+.header-5,
+.header-6,
+.header-7,
+.header-8,
+.header-9,
+.header-10,
+.header-state_jt01,
+.header-state_jt02,
+.header-state_on,
+.header-state_out,
+.header-top_icon1,
+.header-top_icon2,
+.header-top_icon3,
+.header-top_icon3_h,
+.header-top_icon4,
+.header-top_icon4_h,
+.header-vlogo,
+.redPoint {
+    background-image: url("../Public/Images/common/header-se85ec5d538.png-id=3")/*tpa=http://www.huayisz168.com/Public/Images/common/header-se85ec5d538.png?id=3*/;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.header-1,
+.header-2,
+.header-3,
+.header-4,
+.header-5,
+.header-6,
+.header-7,
+.header-8,
+.header-9,
+.header-10 {
+    width: 20px;
+    height: 19px
+}
+
+.header-1 {
+    background-position: 0 0
+}
+
+.header-2 {
+    background-position: 0 -23px
+}
+
+.header-3 {
+    background-position: 0 -47px
+}
+
+.header-4 {
+    background-position: 0 -69px
+}
+
+.header-5 {
+    background-position: 0 -89px
+}
+
+.header-6 {
+    background-position: 0 -112px
+}
+
+.header-7 {
+    background-position: 0 -135px
+}
+
+.header-8 {
+    background-position: 0 -159px
+}
+
+.header-9 {
+    background-position: -87px 0
+}
+
+.header-10 {
+    background-position: -85px -41px
+}
+
+.header-top_icon1 {
+    background-position: 0 -233px
+}
+
+.header-top_icon2 {
+    background-position: 0 -254px
+}
+
+.header-top_icon3 {
+    background-position: 0 -275px
+}
+
+.header-top_icon3_h {
+    background-position: 0 -298px
+}
+
+.header-top_icon4 {
+    background-position: 0 -321px
+}
+
+.header-top_icon4_h {
+    background-position: 0 -346px
+}
+
+.header-vlogo {
+    width: 102px;
+    height: 44px;
+    background-position: 0 -371px
+}
+
+.aa {
+    width: 11px;
+    height: 0;
+    font-size: 0
+}
+
+.footer {
+    width: 100%;
+    margin-top: 50px;
+    border-top: 1px solid #EDEDED;
+    background-color: #000;
+}
+
+.footer .warp {
+    padding: 29px 0;
+    width: 1200px;
+    margin: auto;
+    position: relative
+}
+
+.footer a {
+    float: left;
+    position: absolute;
+    z-index: 5;
+    top: 30px;
+    left: 25px
+}
+
+.footer .copyright {
+    color: #a2a2a2;
+    line-height: 180%;
+    text-align: center
+}
+
+.g_back {
+    background: url("../img/loginback1.png")/*tpa=http://www.huayisz168.com/img/loginback1.png*/ no-repeat;
+    overflow: hidden
+}
+
+.login_guide {
+    width: 591px;
+    height: 390px;
+    padding: 15px;
+    background: #FFF url("../public/login_back/1.jpg")/*tpa=http://www.huayisz168.com/public/login_back/1.jpg*/ top center no-repeat;
+    border-radius: 4px;
+    overflow: hidden;
+    position: fixed;
+    _position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -210px 0 0 -310px;
+    z-index: 6010;
+    -moz-box-shadow: 0 3px 5px #6F6F6F;
+    -webkit-box-shadow: 0 3px 5px #6F6F6F;
+    box-shadow: 0 3px 5px #6F6F6F
+}
+
+.login_g_close {
+    margin-bottom: 22px
+}
+
+.login_guide .login_g_close {
+    text-align: right
+}
+
+.login_g_close a {
+    font-size: 16px;
+    color: #FFF
+}
+
+.login_g_close a:hover {
+    text-decoration: underline
+}
+
+.login_g_title1 {
+    width: 150px;
+    height: 45px;
+    margin: 0 auto 30px;
+    background-position: -183px -12px
+}
+
+.login_g_title2 {
+    width: 514px;
+    height: 35px;
+    margin: 0 auto;
+    background-position: 0 -60px
+}
+
+.g_threeLgoin {
+    text-align: center;
+    padding: 30px 0 32px
+}
+
+.g_threeLgoin a {
+    position: relative
+}
+
+.g_threeLgoin a:hover {
+    top: -2px
+}
+
+.g_back_qq,
+.g_back_sina,
+.g_back_baidu,
+.g_back_three {
+    display: inline-block;
+    width: 73px;
+    height: 73px;
+    margin: 0 15px
+}
+
+.g_back_qq {
+    background-position: -70px -105px
+}
+
+.g_back_sina {
+    background-position: -170px -105px
+}
+
+.g_back_baidu {
+    background-position: -270px -105px
+}
+
+.g_back_three {
+    background-position: -370px -105px
+}
+
+.login_guide p {
+    text-align: center;
+    color: #FFF
+}
+
+.threeP {
+    font-size: 16px;
+    padding-bottom: 22px
+}
+
+.guide_logins {
+    position: relative
+}
+
+.guide_logins a {
+    color: #FFF;
+    font-size: 14px;
+    padding: 0 5px;
+    border-bottom: 1px solid #FFF;
+    position: relative
+}
+
+.guide_logins .fn_right {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.guide_logins a:hover {
+    top: -1px
+}
+
+.login_bg {
+    width: 665px;
+    height: 150px;
+    background: url("../Public/Images/common/1.jpg")/*tpa=http://www.huayisz168.com/Public/Images/common/1.jpg*/ no-repeat
+}
+
+.login_back {
+    background: url("../Public/Images/common/loginBg.png")/*tpa=http://www.huayisz168.com/Public/Images/common/loginBg.png*/ no-repeat;
+    display: inline-block;
+    overflow: hidden
+}
+
+.login_newIcon {
+    background: url("../Public/Images/common/newLoginIcon.png")/*tpa=http://www.huayisz168.com/Public/Images/common/newLoginIcon.png*/ no-repeat;
+    display: inline-block;
+    overflow: hidden
+}
+
+.loginsTab {
+    border-bottom: 1px solid #eee;
+    margin-bottom: -1px;
+    height: 38px
+}
+
+.loginsTab span {
+    color: #636363;
+    padding: 0 15px;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-block;
+    height: 38px;
+    line-height: 38px
+}
+
+.loginsTab span:hover,
+.loginsTab span.on {
+    color: #f60;
+    border-bottom: 1px solid #f60
+}
+
+.logins_box {
+    width: 560px;
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -315px;
+    margin-top: -170px;
+    z-index: 6000;
+    padding: 15px 30px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, .25);
+    -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .25);
+    background: #FFF
+}
+
+.logins_box .box {
+    padding-top: 27px;
+    display: none;
+}
+
+.logins_box .show {
+    display: block
+}
+
+.logins_box .hd {
+    width: 295px;
+    padding-left: 32px;
+    float: right;
+    border-left: 1px solid #eee
+}
+
+.logins_box .hd .warp {
+    margin-top: -25px
+}
+
+.logins_box .bd {
+    float: left;
+    width: 200px;
+    padding-left: 20px;
+    overflow: hidden
+}
+
+.logins_box .hd .warp {}
+
+.logins_box .hd .tit {
+    display: block;
+    margin-left: 25px
+}
+
+.logins_box .hd .zctitle {
+    width: 271px;
+    height: 18px;
+    background-position: 0 -250px
+}
+
+.logins_box .hd .zctitle2 {
+    background-position: 0 -250px
+}
+
+.logins_box .hd .tit span {
+    font-size: 28px;
+    color: #ff1d83
+}
+
+.logins_box .hd .li {
+    position: relative;
+    padding-top: 25px
+}
+
+.logins_box .hd .hint {
+    height: 14px;
+    line-height: 11px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    line-height: 14px\9
+}
+
+.logins_box .hd .hint span {
+    display: block;
+    height: 14px;
+    margin-top: 5px;
+    color: #f10;
+    font-size: 12px;
+    padding: 0 10px 0 18px;
+    background-position: -161px -144px
+}
+
+.logins_box .hd .hint a {
+    color: #666
+}
+
+.logins_box .hd .inputer {
+    height: 36px;
+    position: relative
+}
+
+.logins_box .hd .inputer .reloadImg {
+    color: #c2c2c2;
+    display: inline-block;
+    width: 40px;
+    margin: 0 10px
+}
+
+.logins_box .hd .inputer .reloadImg:hover {
+    color: #FA265D
+}
+
+.logins_box .hd .lable {
+    display: block;
+    color: #CCC;
+    height: 34px;
+    overflow: hidden;
+    zoom: 1;
+    font-size: 12px;
+    position: absolute;
+    left: 10px;
+    top: 0
+}
+
+.logins_box .hd .lable em {
+    margin-right: 8px;
+    top: 7px;
+    vertical-align: top;
+    position: relative;
+    border-right: 1px solid #CDCDCD;
+    padding-right: 6px
+}
+
+.logins_box .hd .lable strong {
+    position: relative;
+    top: 8px;
+    font-size: 14px
+}
+
+.logins_box .hd .text_input {
+    width: 208px;
+    height: 34px;
+    line-height: 34px \9;
+    font-size: 12px;
+    float: left;
+    margin: 0;
+    color: #9D9D9D;
+    padding: 0 3px 0 10px;
+    outline: 0;
+    border: 1px solid #BEBEBE;
+    border-radius: 3px;
+    background: #fff
+}
+
+.logins_box .hd .text_input:focus {
+    border: 1px solid #FF50A5;
+    -webkit-box-shadow: 0 0 5px 1px rgba(251, 40, 142, .25);
+    -moz-box-shadow: 0 0 5px 1px rgba(251, 40, 142, .25);
+    box-shadow: 0 0 5px 1px rgba(251, 40, 142, .25)
+}
+
+.logins_box .dynamic .text_input {
+    width: 31px
+}
+
+.logins_box .dynamic img {
+    float: left;
+    width: 94px;
+    height: 34px;
+    border: 1px solid #ccc;
+    margin-left: 15px;
+    cursor: pointer
+}
+
+.logins_box .hd .btn {
+    overflow: hidden;
+    padding-top: 15px
+}
+
+.logins_box .btn input {
+    padding: 0 40px;
+    height: 40px;
+    border: 0 none;
+    cursor: pointer;
+    background: #f60;
+    color: #FFF;
+    font-size: 16px;
+    border-radius: 5px
+}
+
+.logins_box .btn .none {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    cursor: text
+}
+
+.logins_box .btn input:hover {
+    background: #ec6043
+}
+
+.logins_box .btn .regist_but {}
+
+.logins_box .btn .regist_but:hover {}
+
+.logins_box .btn .noneCick {
+    background: #BFBFBF;
+    color: #FFF;
+    cursor: default
+}
+
+.logins_box .hd .radio {
+    color: #999;
+    padding-top: 10px
+}
+
+.logins_box .hd .radio a {
+    display: inline-block;
+    width: 70px;
+    color: gray;
+    padding-left: 5px;
+    margin-left: 5px;
+    text-decoration: underline
+}
+
+.logins_box .hd .radio .useragreement {
+    display: inline;
+    color: #3091f5;
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+    text-decoration: none
+}
+
+.logins_box .radio i {
+    width: 16px;
+    float: left;
+    height: 16px;
+    font-size: 12px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: -584px -184px;
+    cursor: pointer
+}
+
+.logins_box .radio span {
+    margin-left: 5px
+}
+
+.logins_box .checkbox_input {
+    width: 14px;
+    height: 14px;
+    color: #F09
+}
+
+.logins_box .bd .zc_but_box {
+    font-size: 12px;
+    font-family: '微软雅黑';
+    color: #999;
+    padding-bottom: 15px
+}
+
+.logins_box .bd .zc_but_box span {
+    font-size: 16px;
+    color: #666
+}
+
+.logins_box .zc_but {
+    color: #fb288e;
+    font-family: '微软雅黑';
+    position: relative;
+    display: block;
+    font-size: 17px;
+    padding-bottom: 5px
+}
+
+.login_box .zc_but:hover {
+    top: -1px
+}
+
+.qq_sina_loginbox {
+    overflow: hidden;
+    *zoom: 1
+}
+
+.QQlogin,
+.wxlogin,
+.baidulogin {
+    width: 180px;
+    height: 40px;
+    margin-bottom: 10px
+}
+
+.sinalogin,
+.threelogin {
+    width: 21px;
+    height: 18px
+}
+
+.sinalogin {
+    background-position: 0 -136px
+}
+
+.threelogin {
+    background-position: -26px -136px
+}
+
+.otherLogin span {
+    color: #c2c2c2
+}
+
+.otherLogin span,
+.otherLogin a {
+    vertical-align: middle;
+    margin: 0 5px
+}
+
+.QQlogin {
+    background-position: 0 -44px
+}
+
+.QQlogin:hover {
+    background-position: -185px -44px
+}
+
+.wxlogin {
+    background-position: 0 0
+}
+
+.wxlogin:hover {
+    background-position: -185px 0
+}
+
+.baidulogin {
+    background-position: 0 -88px
+}
+
+.baidulogin:hover {
+    background-position: -185px -88px
+}
+
+.loginButton {
+    position: relative;
+    top: 20px;
+    left: 25px
+}
+
+.login_form {}
+
+.login_aaa {
+    font-size: 10px
+}
+
+.login_close {
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.login_close span {
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-position: -51px -134px;
+    position: relative;
+    z-index: 5;
+    left: 12px;
+    top: 12px
+}
+
+.login_close em {
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-position: -125px -139px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #FFF;
+    opacity: .15;
+    filter: alpha(opacity=15);
+    display: none
+}
+
+.login_close:hover em {
+    display: block
+}
+
+.login_box .dynamic {
+    display: none
+}
+
+.usericon {
+    width: 21px;
+    height: 21px;
+    background-position: -40px -139px
+}
+
+.passicon {
+    width: 21px;
+    height: 21px;
+    background-position: -66px -139px
+}
+
+.login_box .hd .lable em.passiconYz {
+    background-position: -95px -141px;
+    top: 9px
+}
+
+.opacity {
+    display: block;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: -999999
+}
+
+.sub_nav {
+    border-top: 4px solid #FF64B6;
+    border-radius: 5px 5px 0 0
+}
+
+.mod_rank {
+    margin-bottom: 15px
+}
+
+.mod_rank .hd {
+    color: #585f64
+}
+
+.mod_rank .top {
+    color: #535353;
+    height: 30px
+}
+
+.mod_rank .top li {
+    float: left;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 5px
+}
+
+.mod_rank .top li em {
+    border-right: 1px solid #AAA;
+    display: inline-block;
+    height: 12px;
+    line-height: 11px;
+    *line-height: 13px;
+    padding: 0 17px
+}
+
+.mod_rank .top li i {
+    position: absolute;
+    width: 44px;
+    height: 6px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -22px;
+    background-position: -115px -108px;
+    display: none;
+    _bottom: -1px;
+    overflow: hidden
+}
+
+.mod_rank .top .curr i {
+    display: block
+}
+
+.mod_rank .inner {
+    padding-top: 9px
+}
+
+.mod_rank .inner a {
+    display: block;
+    overflow: hidden;
+    height: 40px;
+    padding: 3px 0;
+    transition: background .2s linear;
+    -webkit-transition: background .2s linear;
+    -moz-transition: background .2s linear;
+    -o-transition: background .2s linear
+}
+
+.mod_rank .inner li {
+    border-bottom: 1px dashed #F0E3EB
+}
+
+.mod_rank .inner i,
+.mod_rank .inner .img,
+.mod_rank .inner .txt {
+    float: left
+}
+
+.mod_rank .inner a i {
+    width: 15px;
+    height: 14px;
+    margin: 15px 10px 0
+}
+
+.mod_rank .inner .backNums1 {
+    background-position: 0 -107px
+}
+
+.mod_rank .inner .backNums2 {
+    background-position: -19px -107px
+}
+
+.mod_rank .inner .backNums3 {
+    background-position: -38px -107px
+}
+
+.mod_rank .inner .backNums4 {
+    background-position: -57px -107px
+}
+
+.mod_rank .inner .backNums5 {
+    background-position: -76px -107px
+}
+
+.mod_rank .inner .backNums6 {
+    background-position: -95px -107px
+}
+
+.mod_rank .inner a:hover {
+    background: #FCFCFC
+}
+
+.mod_rank .inner a .icon_rich_level {
+    float: right;
+    _display: inline
+}
+
+.mod_rank .inner .img {
+    width: 40px;
+    height: 40px;
+    overflow: hidden
+}
+
+.mod_rank .inner img {
+    width: 40px
+}
+
+.mod_rank .inner a .txt {
+    line-height: 20px;
+    padding-left: 10px
+}
+
+.mod_rank .inner a .m_tit {
+    color: #626262;
+    max-width: 85px;
+    _width: 85px
+}
+
+.mod_rank .inner a .s_tit {
+    color: #A9A9A9
+}
+
+.mod_rank .inner .hot a .s_tit,
+.mod_rank .inner a:hover .s_tit {
+    color: #A9A9A9
+}
+
+.mod_rank .icon_live_level,
+.mod_rank .icon_rich_level {
+    float: right;
+    display: block;
+    margin: 12px 12px 0 0
+}
+
+.mod_rank .bd .inner {
+    display: none;
+    min-height: 282px;
+    _height: 282px
+}
+
+.mod_rank .bd .show {
+    display: block
+}
+
+.mod_rank .hot a .txt {
+    padding-left: 10px
+}
+
+.mod_all_rank {
+    border-top: 0
+}
+
+.mod_all_rank .banner {
+    text-align: center;
+    padding: 35px 0 17px
+}
+
+.mod_all_rank .line {
+    line-height: 0;
+    font-size: 0;
+    height: 3px;
+    background: #ff4190;
+    border-radius: 8px 8px 0 0
+}
+
+.mod_all_rank .hd {
+    height: 40px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc
+}
+
+.mod_all_rank .hd li {
+    float: left;
+    width: 25%;
+    border-bottom: 1px solid #f1f1f1;
+    *width: 24.9999999%
+}
+
+.mod_all_rank .hd li a {
+    border-right: 1px solid #e8d5e2;
+    display: block;
+    height: 39px;
+    line-height: 39px;
+    text-align: center;
+    color: #666;
+    background: #f9f9f9
+}
+
+.mod_all_rank .hd li a:hover,
+.pop_rank .hd .curr a {
+    background: #fff
+}
+
+.mod_all_rank .hd .last a {
+    border-right: 0
+}
+
+.mod_all_rank .bd {
+    border: 1px solid #ccc;
+    border-top: 0;
+    min-height: 481px;
+    _height: 481px
+}
+
+.gift_rank .bd {
+    overflow: hidden;
+    zoom: 1;
+    _height: auto
+}
+
+.mod_all_rank .bd a {
+    display: block;
+    overflow: hidden;
+    height: 47px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-left: 20px
+}
+
+.mod_all_rank .bd a:hover {
+    background: #f9f9f9;
+    color: #ff4190
+}
+
+.mod_all_rank .bd a i {
+    display: block;
+    float: left;
+    width: 33px;
+    height: 25px;
+    margin-top: 11px;
+    color: #888;
+    line-height: 25px;
+    text-align: center;
+    font-size: 16px
+}
+
+.mod_all_rank .bd a span {
+    float: left;
+    line-height: 47px
+}
+
+.mod_all_rank .bd a .tit {
+    padding-left: 9px;
+    width: 165px
+}
+
+.mod_all_rank .bd a b {
+    float: right;
+    display: block;
+    margin: 15px 20px 0 0;
+    _display: inline
+}
+
+.mod_all_rank .bd a img {
+    float: left;
+    border: 1px solid #ccc;
+    width: 34px;
+    height: 34px;
+    margin: 5px 0 0 30px;
+    _display: inline
+}
+
+.mod_all_rank .bd a .first {
+    background-position: 3px -246px
+}
+
+.mod_all_rank .bd a .second {
+    background-position: 3px -276px
+}
+
+.mod_all_rank .bd a .third {
+    color: #ff4190
+}
+
+.m199c00s249 .m .vui {
+    margin-bottom: 12px
+}

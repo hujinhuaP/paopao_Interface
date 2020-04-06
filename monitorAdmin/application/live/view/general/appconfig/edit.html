@@ -1,0 +1,88 @@
+{php} use app\live\model\live\Kv; {/php}
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-{:Kv::KEY_CONTACT_US}" class="control-label col-xs-12 col-sm-2">{:__('Contact phone number')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="text" name="row[{:Kv::KEY_CONTACT_US}]" value="{$row[Kv::KEY_CONTACT_US]}"  id="c-{:Kv::KEY_CONTACT_US}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::KEY_COIN_NAME}" class="control-label col-xs-12 col-sm-2">{:__('Rechargeable coin')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="text" name="row[{:Kv::KEY_COIN_NAME}]" value="{$row[Kv::KEY_COIN_NAME]}"  id="c-{:Kv::KEY_COIN_NAME}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::KEY_DOT_NAME}" class="control-label col-xs-12 col-sm-2">{:__('Withdraw coin')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="text" name="row[{:Kv::KEY_DOT_NAME}]" value="{$row[Kv::KEY_DOT_NAME]}"  id="c-{:Kv::KEY_DOT_NAME}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::PRIVATE_PRICE_MIN}" class="control-label col-xs-12 col-sm-2">私聊价格(最小):</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::PRIVATE_PRICE_MIN}]" value="{$row[Kv::PRIVATE_PRICE_MIN]}"  id="c-{:Kv::PRIVATE_PRICE_MIN}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::PRIVATE_PRICE_MAX}" class="control-label col-xs-12 col-sm-2">私聊价格(最大):</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::PRIVATE_PRICE_MAX}]" value="{$row[Kv::PRIVATE_PRICE_MAX]}"  id="c-{:Kv::PRIVATE_PRICE_MAX}" class="form-control" data-rule="required">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-{:Kv::CHARGE_VIDEO_PRICE_MIN}" class="control-label col-xs-12 col-sm-2">私密视频价格(最小):</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::CHARGE_VIDEO_PRICE_MIN}]" value="{$row[Kv::CHARGE_VIDEO_PRICE_MIN]}"  id="c-{:Kv::CHARGE_VIDEO_PRICE_MIN}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::CHARGE_VIDEO_PRICE_MAX}" class="control-label col-xs-12 col-sm-2">私密视频价格(最大):</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::CHARGE_VIDEO_PRICE_MAX}]" value="{$row[Kv::CHARGE_VIDEO_PRICE_MAX]}"  id="c-{:Kv::CHARGE_VIDEO_PRICE_MAX}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::CHAT_FREE_COUNT}" class="control-label col-xs-12 col-sm-2">私聊免费条数:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::CHAT_FREE_COUNT}]" value="{$row[Kv::CHAT_FREE_COUNT]}"  id="c-{:Kv::CHAT_FREE_COUNT}" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::CHAT_PRICE}" class="control-label col-xs-12 col-sm-2">单条私聊价格:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::CHAT_PRICE}]" value="{$row[Kv::CHAT_PRICE]}"  id="c-{:Kv::CHAT_PRICE}" min="0" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::VIP_VIDEO_DISCOUNT}" class="control-label col-xs-12 col-sm-2">VIP私密视频观看折扣（%）:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::VIP_VIDEO_DISCOUNT}]" value="{$row[Kv::VIP_VIDEO_DISCOUNT]}"  id="c-{:Kv::VIP_VIDEO_DISCOUNT}" min="0" max="100" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-{:Kv::NEW_USER_VIDEO_PLAY_TIME}" class="control-label col-xs-12 col-sm-2">新用户诱导匹配视频播放时长（如果为0则表示关闭）:</label>
+        <div class="col-xs-12 col-sm-9">
+            <input type="number" name="row[{:Kv::NEW_USER_VIDEO_PLAY_TIME}]" value="{$row[Kv::NEW_USER_VIDEO_PLAY_TIME]}"  id="c-{:Kv::NEW_USER_VIDEO_PLAY_TIME}" min="0" max="60" class="form-control" data-rule="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">苹果上线:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::APPLE_ONLINE}]"  value="1"  {$apple_online == "1" ? "checked" : ""} > 开启
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[{:Kv::APPLE_ONLINE}]"  value="2"  {$apple_online == "2" ? "checked" : ""} > 关闭
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-9">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

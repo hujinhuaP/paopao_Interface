@@ -1,0 +1,149 @@
+<style>
+    .gift-container {
+        position:relative;
+        width:500px;
+    }
+    .gift-container .gift-img{
+        width:500px;
+        height:100px;
+    }
+    .gift-container .gift-text {
+        display:none;
+    }
+    .gift-container:hover .gift-text {
+        display:block;
+        position:absolute;
+        height:100px;
+        width:100px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .gift-container button{
+        position:absolute;
+        top:0;left:0;width:500px;height:100px;opacity: 0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-carousel_title" class="control-label col-xs-12 col-sm-2">{:__('标题')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[carousel_title]" value=""  id="c-carousel_title" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-carousel_app_id" class="control-label col-xs-12 col-sm-2">{:__('所属APP')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[carousel_app_id]" id="c-carousel_app_id" class="form-control" data-rule="required" >
+                <option value="0">{:__('所有')}</option>
+                {foreach $row_app as $appItem}
+                <option value="{$appItem.id}" >{$appItem.app_name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-carousel_category_id" class="control-label col-xs-12 col-sm-2">{:__('Image position')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[carousel_category_id]" id="c-carousel_category_id" class="form-control" data-rule="required" >
+                <option value="">{:__('Select')}</option>
+                {foreach $row_category as $category}
+                    <option value="{$category.carousel_category_id}">{$category.carousel_category_name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-carousel_target_type" class="control-label col-xs-12 col-sm-2">{:__('跳转类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[carousel_target_type]" id="c-carousel_target_type" class="form-control" data-rule="required" >
+                <option value="">{:__('Select')}</option>
+                <option value="externally" >外链</option>
+                <option value="inviteFriend">邀请好友</option>
+                <option value="recharge" >充值</option>
+                <option value="todaySignIn">签到</option>
+                <option value="download">直接下载</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-carousel_href" class="control-label col-xs-12 col-sm-2">{:__('Link')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[carousel_href]" value=""  id="c-carousel_href" class="form-control" data-rule="url" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-carousel_url" class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-carousel_url" name="row[carousel_url]" value="" data-rule="url|required"/>
+                <div class="gift-container">
+                    <img class="carousel_url-img img-responsive plupload" src="" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                    <div class="gift-text">{:__('Click to edit')}</div>
+                    <button id="plupload-carousel_url" class="plupload" data-input-id="c-carousel_url"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+
+                <span>{:__('Carousel upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-carousel_and_show" class="control-label col-xs-12 col-sm-2">{:__('安卓是否显示')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[carousel_and_show]" checked  id="c-carousel_and_show"  value="Y" >是
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[carousel_and_show]"   id="c-carousel_and_show"  value="N" >否
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-carousel_ios_show" class="control-label col-xs-12 col-sm-2">{:__('iOS是否显示')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[carousel_ios_show]" checked  id="c-carousel_ios_show" value="Y" >是
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[carousel_ios_show]"   id="c-carousel_ios_show" value="N" >否
+            </label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否为广告:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[is_ad]"  value="Y" > 是
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[is_ad]"  value="N" checked  > 否
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-carousel_sort" class="control-label col-xs-12 col-sm-2">{:__('Sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[carousel_sort]" value=""  id="c-carousel_sort" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

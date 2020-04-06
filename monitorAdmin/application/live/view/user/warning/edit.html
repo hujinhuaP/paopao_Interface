@@ -1,0 +1,258 @@
+<style type="text/css">
+    .sm-st {
+        background:#fff;
+        padding:20px;
+        -webkit-border-radius:3px;
+        -moz-border-radius:3px;
+        border-radius:3px;
+        margin-bottom:20px;
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+    }
+    .sm-st-icon {
+        width:60px;
+        height:60px;
+        display:inline-block;
+        line-height:60px;
+        text-align:center;
+        font-size:30px;
+        background:#eee;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        float:left;
+        margin-right:10px;
+        color:#fff;
+    }
+    .sm-st-info {
+        font-size:12px;
+        padding-top:2px;
+    }
+    .sm-st-info span {
+        display:block;
+        font-size:24px;
+        font-weight:600;
+    }
+    .orange {
+        background:#fa8564 !important;
+    }
+    .tar {
+        background:#45cf95 !important;
+    }
+    .sm-st .green {
+        background:#86ba41 !important;
+    }
+    .pink {
+        background:#AC75F0 !important;
+    }
+    .yellow-b {
+        background: #fdd752 !important;
+    }
+    .stat-elem {
+
+        background-color: #fff;
+        padding: 18px;
+        border-radius: 40px;
+
+    }
+
+    .stat-info {
+        text-align: center;
+        background-color:#fff;
+        border-radius: 5px;
+        margin-top: -5px;
+        padding: 8px;
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        font-style: italic;
+    }
+
+    .stat-icon {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .st-red {
+        background-color: #F05050;
+    }
+    .st-green {
+        background-color: #27C24C;
+    }
+    .st-violet {
+        background-color: #7266ba;
+    }
+    .st-blue {
+        background-color: #23b7e5;
+    }
+
+    .stats .stat-icon {
+        color: #28bb9c;
+        display: inline-block;
+        font-size: 26px;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px;
+        float:left;
+    }
+
+    .stat {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        margin-right: 10px; }
+    .stat .value {
+        font-size: 20px;
+        line-height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500; }
+    .stat .name {
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    .stat.lg .value {
+        font-size: 26px;
+        line-height: 28px; }
+    .stat.lg .name {
+        font-size: 16px; }
+    .stat-col .progress {height:2px;}
+    .stat-col .progress-bar {line-height:2px;height:2px;}
+
+    .item {
+        padding:30px 0;
+    }
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="sm-st clearfix">
+                            <h4><b>{:__('Rule')}：</b></h4>
+                            <h4>1.{$row['config']['coin_name']}偏差 = 当前所有用户{$row['config']['coin_name']} + 送礼 + 看播 + 飘屏（弹幕） + 购买VIP + 观看回放 - {$row['config']['coin_name']}补单 - 平台总充值{$row['config']['coin_name']} </h4>
+                            <h4>2.阀值：{$row['config']['coin_name']}偏差 <= 阀值时，状态正常；否则异常报警</h4><br/>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <form class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="/live/user/warning/multi">
+                                        <input type="hidden" name="type" value="1" >
+                                        <button type="submit" class="btn btn-success btn-embossed">{:__('Instant recovery')}</button>
+                                    </form>
+                                </div>
+                                <div class="col-xs-1">
+                                    <form class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="/live/user/warning/multi">
+                                        <input type="hidden" name="type" value="2" >
+                                        <button type="submit" class="btn btn-warning btn-embossed">{:__('Freeze withdrawals')}</button>
+                                    </form>
+                                </div>
+                                <div class="col-xs-1">
+                                    <form class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="/live/user/warning/multi">
+                                        <input type="hidden" name="type" value="3" >
+                                        <button type="submit" class="btn btn-warning btn-embossed">{:__('Freeze recharge')}</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{$row['config']['coin_name']}{:__('Coin is normal')}</div>
+                            <div class="panel-body">
+                                <h1><b>{$row['config']['normal_status']}</b></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{:__('Balance setting')}</div>
+                            <div class="panel-body">
+                                <form class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="/live/user/warning/multi">
+                                    <input type="hidden" name="type" value="4" >
+                                    <div class="form-group">
+                                        <label for="coin_threshold" class="col-sm-2 control-label">{:__('Coin threshold')}：</label>
+                                        <div class="col-sm-2">
+                                            <input type="number" name = "coin_threshold" class="form-control" id="coin_threshold" value="{$row['config']['coin_threshold']}"data-rule="required" >
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p>{:__('Threshold note')}</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="admin_phone" class="col-sm-2 control-label">{:__('Admin phone')}：</label>
+                                        <div class="col-sm-2">
+                                            <input type="number" name="admin_phone" class="form-control" id="admin_phone" value="{$row['config']['admin_phone']}" data-rule="required">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <p>{:__('Admin phone note')}</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-success">{:__('Save')}</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15px;">
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{$row['config']['coin_name']}{:__('Deviation')}</div>
+                            <div class="box-body">{$row['static']['deviation']}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today send gift')}</div>
+                            <div class="box-body">{$row['static']['today_gift_total']}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today watch live')}</div>
+                            <div class="box-body">{$row['static']['today_watch_live_total']}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today barrage')}</div>
+                            <div class="box-body">{$row['static']['today_barrage_total']}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:15px;">
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today buy vip')}</div>
+                            <div class="box-body">{$row['static']['today_buy_vip_total']}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today watch playback')}</div>
+                            <div class="box-body">{$row['static']['today_watch_playback_total']}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today budan')}</div>
+                            <div class="box-body">{$row['static']['today_budan_total']}</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="box">
+                            <div class="box-header">{:__('Today sign in')}</div>
+                            <div class="box-body">{$row['static']['today_sign_coin_total']}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

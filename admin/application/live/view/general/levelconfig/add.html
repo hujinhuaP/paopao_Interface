@@ -1,0 +1,110 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-level_type" class="control-label col-xs-12 col-sm-2">{:__('类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[level_type]" id="c-level_type" class="form-control" data-rule="required">
+                <option value="guard" data-last-value="{$last_guard_config.level_value}"  data-last_exp="{$last_guard_config.level_exp}">{:__('守护')}</option>
+                <option value="intimate" data-last-value="{$last_intimate_config.level_value}"  data-last_exp="{$last_intimate_config.level_exp}">{:__('亲密')}</option>
+                <option value="user" data-last-value="{$last_user_config.level_value}"  data-last_exp="{$last_user_config.level_exp}">{:__('用户')}</option>
+                <option value="anchor" data-last-value="{$last_anchor_config.level_value}"  data-last_exp="{$last_anchor_config.level_exp}">{:__('主播')}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_flg" class="control-label col-xs-12 col-sm-2">{:__('等级')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[level_value]" id="c-level_value" class="form-control" disabled value="{$last_guard_config.level_value + 1}" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-level_name" class="control-label col-xs-12 col-sm-2">{:__('等级名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[level_name]" id="c-level_name" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-level_exp" class="control-label col-xs-12 col-sm-2">{:__('等级所需经验')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[level_exp]" id="c-level_exp" class="form-control" data-rule="required" min="{$last_guard_config.level_exp + 1}" value="" />
+        </div>
+    </div>
+
+    <div class="form-group type-change userDiv" id="backColorDiv" style="display: none;">
+        <label for="c-level_extra" class="control-label col-xs-12 col-sm-2">{:__('等级背景颜色')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control jscolor {onFineChange:'updatecolor(this)'}"  value="" />
+            <input type="hidden" name="row[level_extra]" id="c-level_extra"  value="" />
+        </div>
+    </div>
+
+    <div class="form-group type-change userDiv" id="rewardDiv" style="display: none;">
+        <label for="c-reward_coin" class="control-label col-xs-12 col-sm-2">{:__('奖励金币')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[reward_coin]" id="c-reward_coin" class="form-control" min="0" value="" />
+        </div>
+    </div>
+
+
+    <div class="form-group type-change guardDiv" id="guardDiv">
+        <label for="c-level_exp" class="control-label col-xs-12 col-sm-2">{:__('守护免费时长')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[level_extra_guard]" id="c-level_exp" class="form-control" min="0" value="" />
+        </div>
+    </div>
+
+    <div class="form-group type-change anchorDiv" style="display: none;">
+        <label for="c-level_extra" class="control-label col-xs-12 col-sm-2">{:__('等级背景颜色')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control jscolor {onFineChange:'updatecolor2(this)'}"  value="" />
+            <input type="hidden" name="row[anchor_color]" id="c-anchor_color"  value="" />
+        </div>
+    </div>
+
+    <div class="form-group type-change anchorDiv" style="display: none;">
+        <label for="c-level_exp" class="control-label col-xs-12 col-sm-2">{:__('聊天价格最小值')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" disabled id="c-level_exp" class="form-control" value="{$private_price_min}" />
+        </div>
+    </div>
+
+    <div class="form-group type-change anchorDiv" style="display: none;">
+        <label for="c-level_exp" class="control-label col-xs-12 col-sm-2">{:__('聊天价格最大值')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[max_chat_price]" id="c-level_exp" class="form-control" min="0" value="" />
+        </div>
+    </div>
+
+    <div class="form-group type-change intimateDiv" style="display: none;">
+    <label for="c-task_on" class="control-label col-xs-12 col-sm-2">{:__('免费文字聊天')}:</label>
+    <div class="col-xs-12 col-sm-8">
+        <label class="radio-inline">
+            <input type="radio" name="row[level_intimate_chat_flg]" id="level_intimate_chat_flg" value="Y"   > {:__('Yes')}
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="row[level_intimate_chat_flg]" id="level_intimate_chat_flg" value="N"  > {:__('No')}
+        </label>
+    </div>
+
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+<script src="https://cdn.staticfile.org/jscolor/2.0.4/jscolor.min.js"></script>
+<script>
+    function updatecolor(picker){
+        $("#c-level_extra").val( Math.round(picker.rgb[0]) + ',' +  Math.round(picker.rgb[1]) + ',' +  Math.round(picker.rgb[2]));
+    }
+    function updatecolor2(picker){
+        $("#c-anchor_color").val( Math.round(picker.rgb[0]) + ',' +  Math.round(picker.rgb[1]) + ',' +  Math.round(picker.rgb[2]));
+    }
+</script>

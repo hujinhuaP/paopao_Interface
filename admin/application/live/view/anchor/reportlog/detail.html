@@ -1,0 +1,52 @@
+<table class="table table-bordered table-condensed table-hover">
+    <thead>
+    <colgroup>
+        <col width="25%">
+        <col>
+    </colgroup>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="text-right">{:__("举报用户ID")}：</td>
+        <td>{$reportUser.user_id}</td>
+    </tr>
+    <tr>
+        <td class="text-right">{:__("举报用户昵称")}：</td>
+        <td>{$reportUser.user_nickname}</td>
+    </tr>
+    <tr>
+        <td class="text-right">{:__("被举报用户ID")}：</td>
+        <td>{$reportedUser.user_id}</td>
+    </tr>
+    <tr>
+        <td class="text-right">{:__("被举报用户昵称")}：</td>
+        <td>{$reportedUser.user_nickname}</td>
+    </tr>
+    <tr>
+        <td class="text-right">{:__("类型")}：</td>
+        <td>{$row.anchor_report_title}</td>
+    </tr>
+
+    <tr>
+        <td class="text-right">{:__("内容描述")}：</td>
+        <td>{$row.anchor_report_log_content}</td>
+    </tr>
+
+
+    <tr>
+        <td class="text-right">{:__("图片")}：</td>
+        <td>
+            <div class="form-inline">
+                <div id="reportImage">
+                    {volist name="imagesArr" id="imageItem"}
+                    <label class="radio-inline">
+                        <img src="{$imageItem}" alt="" style="width: 100px; height: 100px;">
+                    </label>
+                    {/volist}
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    </tbody>
+</table>

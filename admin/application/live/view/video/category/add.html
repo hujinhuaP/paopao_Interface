@@ -1,0 +1,65 @@
+<style>
+    .gift-container {
+        position:relative;
+        width:80px;
+    }
+    .gift-container .gift-img{
+        width:80px;
+        height:80px;
+    }
+    .gift-container .gift-text {
+        display:none;
+    }
+    .gift-container:hover .gift-text {
+        display:block;
+        position:absolute;
+        height:80px;
+        width:80px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 80px;
+        text-align: center;
+    }
+    .gift-container button{
+        position:absolute;
+        top:0;left:0;width:80px;height:80px;opacity: 0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-name" class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[name]" value=""  id="c-name" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-logo" class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-logo" name="row[logo]" value="" data-rule="url|required"/>
+                <div class="gift-container">
+                    <img class="logo-img img-responsive plupload" src="" onerror="this.src='__CDN__/assets/img/80x80.png'" alt="">
+                    <div class="gift-text">{:__('Click to edit')}</div>
+                    <button id="plupload-logo" class="plupload" data-input-id="c-logo"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-sort" class="control-label col-xs-12 col-sm-2">{:__('Sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[sort]" value=""  id="c-sort" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

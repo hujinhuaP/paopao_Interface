@@ -1,0 +1,83 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-task_name" class="control-label col-xs-12 col-sm-2">{:__('名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[task_name]" value="{$row.task_name}"  id="c-task_name" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-task_name" class="control-label col-xs-12 col-sm-2">{:__('描述')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea class="form-control" rows="5" disabled> {$row.task_detail}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-task_type" class="control-label col-xs-12 col-sm-2">{:__('类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" disabled  name="row[task_type]" id="task_type" value="once" data-rule="checked" {$row.task_type == "once" ? "checked" : ""} > {:__('一次性')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" disabled name="row[task_type]" id="user_sex" value="daily" data-rule="checked" {$row.task_type == "daily" ? "checked" : ""} > {:__('每日')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" disabled name="row[task_type]" id="task_type" value="anchor_daily" data-rule="checked" {$row.task_type == "anchor_daily" ? "checked" : ""} > {:__('主播每日')}
+            </label>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="c-task_finish_times" class="control-label col-xs-12 col-sm-2">{:__('完成所需次数')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[task_finish_times]" value="{$row.task_finish_times}"  id="c-task_finish_times" class="form-control"  min="0"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-task_reward_coin" class="control-label col-xs-12 col-sm-2">{:__('奖励金币（主播无效）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[task_reward_coin]" value="{$row.task_reward_coin}"  id="c-task_reward_coin" class="form-control"  min="0"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-task_reward_dot" class="control-label col-xs-12 col-sm-2">{:__('奖励佣金（用户无效）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[task_reward_dot]" value="{$row.task_reward_dot}"  id="c-task_reward_dot" class="form-control"  min="0"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-task_reward_exp" class="control-label col-xs-12 col-sm-2">{:__('奖励经验（主播为魅力值）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[task_reward_exp]" value="{$row.task_reward_exp}"  id="c-task_reward_exp" class="form-control"  min="0"/>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-task_on" class="control-label col-xs-12 col-sm-2">{:__('是否开启')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[task_on]" id="task_on" value="Y" data-rule="checked" {$row.task_on == "Y" ? "checked" : ""} > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[task_on]" id="task_on" value="N" data-rule="checked" {$row.task_on == "N" ? "checked" : ""} > {:__('No')}
+            </label>
+        </div>
+
+    </div>
+
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

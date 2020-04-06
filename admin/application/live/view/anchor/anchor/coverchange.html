@@ -1,0 +1,171 @@
+<style>
+    .profile-avatar-container {
+        position:relative;
+        width:100px;
+    }
+    .profile-avatar-container .profile-user-img{
+        width:400px;
+        height:400px;
+    }
+    .profile-avatar-container .profile-avatar-text {
+        display:none;
+    }
+    .profile-avatar-container:hover .profile-avatar-text {
+        display:block;
+        position:absolute;
+        width:400px;
+        height:400px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .profile-avatar-container button{
+        position:absolute;
+        top:0;left:0;width:400px;height:400px;opacity: 0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-user_intro" class="control-label col-xs-12 col-sm-2">{:__('用户个性签名')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_intro]" value="{$userrow.user_intro}"  id="c-user_intro" class="form-control"  />
+        </div>
+    </div>
+    <hr />
+
+
+    <input type="hidden" name="row[anchor_video_cover]" id="c-avatar" value="{$row.anchor_video_cover}" />
+    <div class="form-group">
+        <label for="c-live_gift_detail" class="control-label col-xs-12 col-sm-2">{:__('封面标题')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[anchor_private_title]" value="{$row.anchor_private_title}"  id="c-anchor_private_title" class="form-control"  />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-anchor_video" class="control-label col-xs-12 col-sm-2">{:__('视频地址')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[anchor_video]" value="{$row.anchor_video}"  id="c-anchor_video" class="form-control"  />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">视频封面</label>
+        <div class="col-xs-12 col-sm-4">
+            <div class="profile-avatar-container">
+                <img class="profile-user-img plupload" src="{$row.anchor_video_cover}" alt="">
+                <div class="profile-avatar-text">{:__('Click to edit')}</div>
+                <button id="plupload-avatar" class="plupload" data-mimetype="png,jpg,jpeg,gif" data-input-id="c-avatar"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="role_id" class="control-label col-xs-12 col-sm-2">{:__('专属小标签')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[anchor_tip][]', $anchor_tip, $anchor_tip_exists, ['class'=>'form-control selectpicker', 'multiple'=>'', 'required'=>''])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_character" class="control-label col-xs-12 col-sm-2">{:__('性格')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[anchor_character][]', $anchor_character, $anchor_character_exists, ['class'=>'form-control selectpicker', 'multiple'=>'', 'required'=>''])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_good_topic" class="control-label col-xs-12 col-sm-2">{:__('擅长话题')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[anchor_good_topic][]', $anchor_good_topic, $anchor_good_topic_exists, ['class'=>'form-control selectpicker', 'multiple'=>'', 'required'=>''])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_dress" class="control-label col-xs-12 col-sm-2">{:__('最爱穿')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[anchor_dress][]', $anchor_dress, $anchor_dress_exists, ['class'=>'form-control selectpicker', 'multiple'=>'', 'required'=>''])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_stature" class="control-label col-xs-12 col-sm-2">{:__('身材')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[anchor_stature][]', $anchor_stature, $anchor_stature_exists, ['class'=>'form-control selectpicker', 'multiple'=>'', 'required'=>''])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_chat_price" class="control-label col-xs-12 col-sm-2">{:__('价格')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[anchor_chat_price]" value="{$row.anchor_chat_price}"  id="c-anchor_chat_price" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_wechat" class="control-label col-xs-12 col-sm-2">{:__('亲密度微信号')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_wechat]" value="{$userrow.user_wechat}"  id="c-user_wechat" class="form-control"  />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_wechat_price" class="control-label col-xs-12 col-sm-2">{:__('亲密度微信值')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_wechat_price]" value="{$userrow.user_wechat_price}"  id="c-user_wechat_price" class="form-control" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('接通率显示类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[anchor_connection_rate_flg]" value="auto"
+                       data-rule="checked" {$row.anchor_connection_rate_flg == "auto" ? "checked" : ""} > {:__('默认')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[anchor_connection_rate_flg]" value="custom"
+                       data-rule="checked" {$row.anchor_connection_rate_flg == "custom" ? "checked" : ""} > {:__('自定义')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_connection_custom_rate" class="control-label col-xs-12 col-sm-2">{:__('自定义接通率')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[anchor_connection_custom_rate]" value="{$row.anchor_connection_custom_rate}"  id="c-anchor_connection_custom_rate" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_custom_title" class="control-label col-xs-12 col-sm-2">{:__('自定义标签')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[anchor_custom_title]" value="{$row.anchor_custom_title}"  id="c-anchor_custom_title" class="form-control"  />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-user_v_wechat" class="control-label col-xs-12 col-sm-2">{:__('大V微信号')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_v_wechat]" value="{$userrow.user_v_wechat}"  id="c-user_v_wechat" class="form-control"  />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_v_wechat_price" class="control-label col-xs-12 col-sm-2">{:__('大V微信价格')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_v_wechat_price]" value="{$userrow.user_v_wechat_price}"  id="c-user_v_wechat_price" class="form-control" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

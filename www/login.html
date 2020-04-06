@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript"> var kbi_time_start = new Date(); </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>雨音科技通行证登录</title>
+    <link href="css/login.css" tppabs="http://www.huayisz168.com/css/login.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js" tppabs="http://www.huayisz168.com/js/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">
+        <p class="my-logo">&emsp;</p>
+    </div><!--header-->
+    <div class="section">
+        <h1 class="bg">雨音科技通行证</h1>
+        <ul class="introduction">
+            <li>
+                <h3>手机安全令牌</h3>
+                <p>使用便利完全免费</p>
+                <p>支持多手机平台</p>
+            </li>
+        </ul><!--introduction-->
+        <div class="login">
+            <div class="details">
+                <h3 class="tit">雨音科技通行证登录</h3>
+                <form method="post" onsubmit="return verify();" target="login">
+                    <fieldset>
+                        <legend>填写通行证账号与密码</legend>
+                        <div id="warning" class="warning" style="display:none;"></div><!--warning-->
+
+                        <p class="field field-usr">
+                            <label for="username_1" class="iconfont">󰄭</label>
+                            <span class="ph-label">手机号/会员名/邮箱</span>
+                            <input type="text" name="name" id="name" class="text usr" maxlength="32" tabindex="1"
+                                   value="" AUTOCOMPLETE="off">
+                            <span id="" class="nickx" href="javascript:void(0)" style="display:none;"></span>
+                        </p>
+                        <p class="field field-psw">
+                            <label for="username_2" class="iconfont"></label>
+                            <input type="password" name="pwd" id="pwd" class="text psw" tabIndex="2" maxlength="32">
+                        </p>
+                        <p class="forget">
+                            <a href="#">忘记密码？</a>
+                        </p>
+                        <p>
+                            <input type="hidden" id="passport" name="passport" value=""/>
+                            <input type="submit" class="submit-btn" value="登	录"/>
+                        </p>
+                    </fieldset>
+                </form>
+                <div class="registration">
+                    <p>
+                        <a class="reg-btn" href="enrollPhone.html" tppabs="http://www.huayisz168.com/enrollPhone.html">立即注册</a>
+                        <!--                                    <a class="new-btn" href="//my.xoyo.com/register/newcard/" >激活新手卡</a>-->
+                    </p>
+                </div><!--registration-->
+
+
+            </div><!--details-->
+        </div><!--login-->
+    </div><!--section-->
+</div><!--wrap-->
+
+<script src="js/footer.js" tppabs="http://www.huayisz168.com/js/footer.js"></script>
+
+<script>
+
+    $('#name').bind({
+        focus: function () {
+            $(this).parent('.field').addClass('ph-focus');
+        },
+        blur: function () {
+            $(this).parent('.field').removeClass('ph-focus');
+        },
+        keyup: function () {
+            if ($(this).val().length > 0) {
+                $(this).siblings('.ph-label').hide().siblings('.nickx').show();
+            }
+            else {
+                $(this).siblings('.ph-label').show().siblings('.nickx').hide();
+            }
+        }
+    });
+
+    //点击span获得焦点
+    $('.ph-label').click(function () {
+        $(this).siblings('input:text').focus();
+    });
+    //清除按钮
+    $('.nickx').bind('click', function () {
+        $('#name').val('');
+        $(this).siblings('.ph-label').show()
+        $(this).hide();
+    });
+
+    function clrError() {
+        $('#warning').hide();
+    }
+
+    function showError(msg) {
+        $('#warning').show();
+        $('#warning').html('<p>' + msg + '</p>');
+    }
+
+    function verify() {
+        clrError();
+        var name = document.getElementById('name').value;
+        var pwd = document.getElementById('pwd').value;
+
+        if (name == '') {
+            showError('手机号/会员名/邮箱不能为空');
+            return false;
+        }
+
+        if (name.indexOf(' ') >= 0) {
+            showError('手机号/会员名/邮箱中间不能有空格符');
+            return false;
+        }
+        if (name.length < 4 || name.length > 32) {
+            showError('手机号/会员名/邮箱长度错误');
+            return false;
+        }
+        if (pwd == '') {
+            showError('密码不能为空');
+            return false;
+        }
+        if (pwd.length < 5 || pwd.length > 33) {
+            showError('密码长度错误');
+            return false;
+        }
+        window.location.href = 'index.html'/*tpa=http://www.huayisz168.com/index.html*/;
+        return false;
+    }
+
+    //为了适应防沉迷补填时的人性化体验
+    if ($('#name').val() != '') {
+        $('#pwd').focus();
+    } else {
+        $('#name').focus();
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIP</title>
+    <link rel="stylesheet" type="text/css" href="/static/libs/css/style.css">
+
+    <script src="/static/libs/js/jquery.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="body">
+    <div class="reward-div">
+        <img src="/static/imgs/user/reward.png" class="center-block reward-image">
+        <P class="text-center" id="userExpP">会员经验值：{$user_exp}</P>
+    </div>
+    <div class="waic progress">
+        <div class="yixif" style=" height: 20px;">
+            <div class="xianpa" style="">
+                <div class="hengxian">
+                    <div class="hongxian" style="width: {$totalPercent}%;"></div>
+                </div>
+            </div>
+            <div class="flexbox djwai">
+                {foreach from=$vipData key=key item=item}
+                    <div class="yifen dengji"><img src="/static/imgs/user/juyuandian.png">
+                        <div class="jucol">{$item.vip_level_name}</div>
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+        <P class="text-center" id="userExpNotice">{$show_level_info}</P>
+    </div>
+    <div class="center-block" id="detailDiv">
+        <b>会员如何实现分级，不同会员有什么权益？</b>
+        <span id="detailSpan">
+            <p>1.会员等级与会员经验值直接相关；</p>
+            <p>2.购买会员时长，1天=1经验值； （例：购买1次月卡会员=30点会员经验值） </p>
+            <p>3.会员特权仅在会员有效期内享有</p>
+            <p>4.如会员过期，您的会员等级与会员经验值将保留，重新购 买会员后即可恢复特权；</p>
+            <p>5.会员等级对应会员经验值与等级特权如下图所示：</p>
+        </span>
+    </div>
+    <div class="center-block">
+        <table class="table" rules=cols>
+            <thead>
+            <tr>
+                <th width="15%">等级</th>
+                <th width="30%">会员经验</th>
+                <th width="27%">作品集折扣</th>
+                <th width="28%">视频1v1折扣</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach from=$vipData key=key item=item}
+                <tr>
+                    <td>{$item.vip_level_name}</td>
+                    <td>{$item.exp_show}</td>
+                    <td>{$item.vip_level_exhibition_discount_show}</td>
+                    <td>{$item.vip_level_video_chat_discount_show}</td>
+                </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var geshu = $(".djwai").children(".dengji").length;
+            // alert(geshu);
+            var wid = $(".djwai").width() / geshu / 2;
+            // alert(wid);
+            var widt = wid + "px";
+            // alert(widt);
+            $(".xianpa").css('padding-left',widt);
+            $(".xianpa").css('padding-right',widt);
+        },500);
+
+    });
+
+</script>
+
+
+</body>
+</html>

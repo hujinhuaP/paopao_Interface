@@ -1,0 +1,16 @@
+#!/bin/sh
+if [[ $1 -gt 0 ]]
+then
+    sleep $1
+fi
+basepath=$(cd `dirname $0`;pwd)
+cd $basepath
+$basepath/taskQueue
+$basepath/chatHeartbeat
+$basepath/changeMatchRoom
+$basepath/videoChatPay
+$basepath/delayoffline
+$basepath/changeMatchRoomBeauty
+$basepath/scrollMessage
+$basepath/anchorOfflineModify
+$basepath/checkMatchError

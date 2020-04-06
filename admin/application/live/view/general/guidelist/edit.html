@@ -1,0 +1,114 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+
+    <div class="form-group">
+        <label for="c-location_type" class="control-label col-xs-12 col-sm-2">{:__('诱导位置')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[location_type]" id="c-location_type" class="form-control" data-rule="required">
+                <option value="video" {$row.location_type == 'video' ? 'selected' : ''}>{:__('视频诱导')}</option>
+                <option value="index" {$row.location_type == 'index' ? 'selected' : ''}>{:__('首页')}</option>
+                <option value="profile" {$row.location_type == 'profile' ? 'selected' : ''}>{:__('个人资料')}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-first_msg_type" class="control-label col-xs-12 col-sm-2">{:__('第一句话诱导类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[first_msg_type]" id="c-first_msg_type" class="form-control msgTypeSelect" data-voicediv="voiceDiv1" data-rule="required">
+                <option value="word" {$row.first_msg_type == 'word' ? 'selected' : ''}>{:__('文字')}</option>
+                <option value="image" {$row.first_msg_type == 'image' ? 'selected' : ''}>{:__('图片')}</option>
+                <option value="video" {$row.first_msg_type == 'video' ? 'selected' : ''}>{:__('视频')}</option>
+                <option value="voice" {$row.first_msg_type == 'voice' ? 'selected' : ''}>{:__('语音(请上传语音地址，并填入内容区域)')}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_name" class="control-label col-xs-12 col-sm-2">{:__('第一句话')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea  class="form-control" id="contentVoiceInput1" name="row[first_content]" data-rule="required">{$row.first_content}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group" id="voiceDiv1" {$row.first_msg_type == 'voice' ? '' : 'style="display:none"'}>
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('Mp3 file')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <button id="contentVoiceUploadBtn1" class="plupload" data-input-id="c-down_url" data-url="{$upload_url}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                时长（秒）：<input type="text" name="row[first_extra]" class="form-control" value="{$row.first_extra}" />
+                <span>{:__('Mp3 upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-second_msg_type" class="control-label col-xs-12 col-sm-2">{:__('第二句话诱导类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[second_msg_type]" id="c-second_msg_type" class="form-control msgTypeSelect" data-voicediv="voiceDiv2" data-rule="required">
+                <option value="empty" {$row.second_msg_type == 'empty' ? 'selected' : ''}>{:__('不发')}</option>
+                <option value="word" {$row.second_msg_type == 'word' ? 'selected' : ''}>{:__('文字')}</option>
+                <option value="image" {$row.second_msg_type == 'image' ? 'selected' : ''}>{:__('图片')}</option>
+                <option value="video" {$row.second_msg_type == 'video' ? 'selected' : ''}>{:__('视频')}</option>
+                <option value="voice" {$row.second_msg_type == 'voice' ? 'selected' : ''}>{:__('语音(请上传语音地址，并填入内容区域)')}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_name" class="control-label col-xs-12 col-sm-2">{:__('第二句话')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea  class="form-control" id="contentVoiceInput2" name="row[second_content]" >{$row.second_content}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group" id="voiceDiv2" {$row.second_msg_type == 'voice' ? '' : 'style="display:none"'}>
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('Mp3 file')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <button id="contentVoiceUploadBtn2" class="plupload" data-input-id="c-down_url" data-url="{$upload_url}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                时长（秒）：<input type="text" name="row[second_extra]" class="form-control" value="{$row.second_extra}" />
+                <span>{:__('Mp3 upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-third_msg_type" class="control-label col-xs-12 col-sm-2">{:__('第三句话诱导类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[third_msg_type]" id="c-third_msg_type" class="form-control msgTypeSelect" data-voicediv="voiceDiv3" data-rule="required">
+                <option value="empty" {$row.third_msg_type == 'empty' ? 'selected' : ''}>{:__('不发')}</option>
+                <option value="word" {$row.third_msg_type == 'word' ? 'selected' : ''}>{:__('文字')}</option>
+                <option value="image" {$row.third_msg_type == 'image' ? 'selected' : ''}>{:__('图片')}</option>
+                <option value="video" {$row.third_msg_type == 'video' ? 'selected' : ''}>{:__('视频')}</option>
+                <option value="voice" {$row.third_msg_type == 'voice' ? 'selected' : ''}>{:__('语音(请上传语音地址，并填入内容区域)')}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_name" class="control-label col-xs-12 col-sm-2">{:__('第三句话')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea  class="form-control" id="contentVoiceInput3" name="row[third_content]" >{$row.third_content}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group" id="voiceDiv3" {$row.third_msg_type == 'voice' ? '' : 'style="display:none"'}>
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('Mp3 file')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <button id="contentVoiceUploadBtn3" class="plupload" data-input-id="c-down_url" data-url="{$upload_url}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                时长（秒）：<input type="text" name="row[third_extra]" class="form-control" value="{$row.third_extra}" />
+                <span>{:__('Mp3 upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

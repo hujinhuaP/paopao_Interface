@@ -1,0 +1,127 @@
+<style>
+    .gift-container {
+        position:relative;
+        width:100px;
+    }
+    .gift-container .gift-img{
+        width:100px;
+        height:100px;
+    }
+    .gift-container .gift-text {
+        display:none;
+    }
+    .gift-container:hover .gift-text {
+        display:block;
+        position:absolute;
+        height:100px;
+        width:100px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .gift-container button{
+        position:absolute;
+        top:0;left:0;width:100px;height:100px;opacity: 0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-live_gift_name" class="control-label col-xs-12 col-sm-2">{:__('Gift name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[live_gift_name]" value="{$row.live_gift_name}"  id="c-live_gift_name" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-live_gift_detail" class="control-label col-xs-12 col-sm-2">{:__('Gift detail')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[live_gift_detail]" value="{$row.live_gift_detail}"  id="c-live_gift_detail" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_type" class="control-label col-xs-12 col-sm-2">{:__('权限')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[live_gift_type]" id="c-live_gift_type" class="form-control" data-rule="required">
+                <option value="0" {$row.live_gift_type == 0 ? 'selected' : ''}>普通</option>
+                <option value="1" {$row.live_gift_type == 1 ? 'selected' : ''}>打赏</option>
+                <option value="2" {$row.live_gift_type == 2 ? 'selected' : ''}>VIP</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_category_id" class="control-label col-xs-12 col-sm-2">{:__('Gift type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[live_gift_category_id]" id="c-live_gift_category_id" class="form-control" data-rule="required">
+                <option value="">{:__('Select')}</option>
+                {foreach $row_category as $category}
+                <option value="{$category.live_gift_category_id}" {$category.live_gift_category_id == $row.live_gift_category_id ? 'selected' : ''}>{$category.live_gift_category_name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Gift Logo')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-live_gift_logo" data-rule="required" class="form-control" size="50" name="row[live_gift_logo]" type="text" value="{$row.live_gift_logo}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-live_gift_logo" class="btn btn-danger plupload" data-input-id="c-live_gift_logo" data-mimetype="image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-live_gift_logo"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-live_gift_logo"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-live_gift_logo"></ul>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('礼物SVGA资源')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-live_gift_source" class="form-control" size="50" name="row[live_gift_source]" type="text" value="{$row.live_gift_source}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-live_gift_source" class="btn btn-danger plupload" data-url="{php} echo \think\Config::get('upload.uploadurl_svga') {/php}" data-input-id="c-live_gift_source"  data-multiple="false" data-preview-id="p-live_gift_source"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-live_gift_source"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-live_gift_source"></ul>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_coin" class="control-label col-xs-12 col-sm-2">{:__('Gift coin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[live_gift_coin]" value="{$row.live_gift_coin}"  id="c-live_gift_coin" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_notice_flg" class="control-label col-xs-12 col-sm-2">{:__('送礼飘屏')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[live_gift_notice_flg]" id="c-live_gift_notice_flg" class="form-control" data-rule="required">
+                <option value="Y" {$row.live_gift_notice_flg == 'Y' ? 'selected' : ''}>打开</option>
+                <option value="N" {$row.live_gift_notice_flg == 'N' ? 'selected' : ''}>关闭</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_sort" class="control-label col-xs-12 col-sm-2">{:__('Sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[live_gift_sort]" value="{$row.live_gift_sort}"  id="c-live_gift_sort" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

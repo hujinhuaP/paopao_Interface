@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>砸蛋玩法</title>
+</head>
+<style>
+    thead > tr > th {
+        background-color: #EB349F;
+        color: #FFFFFF;
+        opacity:0.5;
+    }
+
+    .notice_rate {
+        color: #EB349F;
+    }
+
+    td,th{
+        text-align: center;
+    }
+    .notice_rate > p,.notice_rate >span> p{
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    .table {
+        font-size: 0.8rem;
+    }
+    .title{
+        color: #EB349F;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .detail-content{
+        font-size:0.8rem;
+        font-weight:400;
+        color:rgba(102,102,102,1);
+        line-height:1rem;
+    }
+    .table tbody tr td{
+        vertical-align: middle;
+    }
+</style>
+<body>
+<div class="wrapper">
+    <div class="content-main" style="padding: 1rem">
+        <div class="detail-content">
+            <p>1.您可以使用锤子进行游戏；</p>
+            <p>2.点击“<img src="https://cskj-1257854899.image.myqcloud.com/image/20191216/1576478765113400.png" width="15.3px" height="15.3px">”号可以使用金币够买锤子；</p>
+            <p>3.您有机会在金蛋中获取各种高价值礼物及VIP会员；</p>
+            <p>4.高价值礼物会发送全服公告，您可以点击设置关闭公告；</p>
+            <p>5.点击自动砸蛋会自动进行单次砸蛋并且扣除您锤子的数量；</p>
+            <p>6.点击停止砸蛋，关闭砸蛋页面或锤子为0时自动砸蛋会停止。</p>
+        </div>
+        <p class="title">奖品显示</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th width="25%">礼物名</th>
+                <th width="25%">价值</th>
+                <th width="25%">礼物名</th>
+                <th width="25%">价值</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach from=$eggGoodsData key=key item=item}
+                {if $key%2 eq 0}
+                    <tr class="active">
+                    <td>
+                        <img src="{$item.egg_goods_image}" style="width: 70%"/>
+                        <p>{$item.egg_goods_name}</p>
+                    </td>
+                    {if $item.egg_goods_notice_flg == 'Y'}
+                        <td class="notice_rate">
+                            <span>
+                            <p>{$item.egg_goods_value_show}</p>
+                            <p>(稀有)</p>
+                                </span>
+                        </td>
+                    {else}
+                        <td>
+                            <p>{$item.egg_goods_value_show}</p>
+                        </td>
+                    {/if}
+                    {if $total_count eq $key + 1}
+                        <td></td>
+                        <td></td>
+                        </tr>
+                    {/if}
+                {else}
+                    <td>
+                        <img src="{$item.egg_goods_image}" style="width: 70%"/>
+                        <p>{$item.egg_goods_name}</p>
+                    </td>
+                    {if $item.egg_goods_notice_flg == 'Y'}
+                        <td class="notice_rate">
+                            <p>{$item.egg_goods_value_show}</p>
+                            <p>(稀有)</p>
+                        </td>
+                    {else}
+                        <td>
+                            <p>{$item.egg_goods_value_show}</p>
+                        </td>
+                    {/if}
+                    </tr>
+                {/if}
+            {/foreach}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

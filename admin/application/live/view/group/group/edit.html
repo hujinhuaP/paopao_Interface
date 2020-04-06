@@ -1,0 +1,117 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-group_name" class="control-label col-xs-12 col-sm-2">{:__('Group name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[group_name]" value="{$row.group_name}"  id="c-group_name" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-group_type" class="control-label col-xs-12 col-sm-2">{:__('Group type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[group_type]" id="c-group_type" class="form-control" data-rule="required" >
+                <option value="0" {$row.group_type == 0 ? 'selected' : ''}>{:__('Official group')}</option>
+                <option value="1" {$row.group_type == 1 ? 'selected' : ''}>{:__('Third group')}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-divid_type" class="control-label col-xs-12 col-sm-2">{:__('Divid type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[divid_type]" id="c-divid_type" class="form-control" data-rule="required" >
+                <option value="0" {$row.divid_type == 0 ? 'selected' : ''}>{:__('Devid by anchor income')}</option>
+                <option value="1" {$row.divid_type == 1 ? 'selected' : ''}>{:__('Devid by anchor water')}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-divid_precent" class="control-label col-xs-12 col-sm-2">{:__('Divid precent')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_precent]" value="{$row.divid_precent}"  id="c-divid_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-divid_time_precent" class="control-label col-xs-12 col-sm-2">{:__('Divid precent of live time')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_time_precent]" value="{$row.divid_time_precent}"  id="c-divid_time_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-divid_gift_precent" class="control-label col-xs-12 col-sm-2">{:__('Divid precent of get gift')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_gift_precent]" value="{$row.divid_gift_precent}"  id="c-divid_gift_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-divid_video_precent" class="control-label col-xs-12 col-sm-2">{:__('Divid precent of video')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_video_precent]" value="{$row.divid_video_precent}"  id="c-divid_video_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-divid_chat_precent" class="control-label col-xs-12 col-sm-2">{:__('Divid precent of chat')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_chat_precent]" value="{$row.divid_chat_precent}"  id="c-divid_chat_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-divid_chat_game" class="control-label col-xs-12 col-sm-2">{:__('主播游戏分成比例')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_chat_game]" value="{$row.divid_chat_game}"  id="c-divid_chat_game" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-divid_posts_precent" class="control-label col-xs-12 col-sm-2">{:__('动态收益分成')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_posts_precent]" value="{$row.divid_posts_precent}"  id="c-divid_posts_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-divid_wechat_precent" class="control-label col-xs-12 col-sm-2">{:__('微信收益分成')}(%):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[divid_wechat_precent]" value="{$row.divid_wechat_precent}"  id="c-divid_wechat_precent" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-video_chat_reward_config" class="control-label col-xs-12 col-sm-2">{:__('通话时长奖励配置')}(按照最高档给与奖励):</label>
+        <div class="col-xs-12 col-sm-9">
+            <dl class="fieldlist" data-name="row[video_chat_reward_config]" data-template="addVideoChatRewardConfig">
+                <dd>
+                    <ins>{:__('有收益通话时长')}</ins>
+                    <ins>{:__('额外奖励时长分成比例')}</ins>
+                </dd>
+                <dd><a href="javascript:;" class="btn btn-sm btn-success btn-append"><i class="fa fa-plus"></i> {:__('Append')}</a></dd>
+                <textarea name="row[video_chat_reward_config]" id="c-video_chat_reward_config" class="form-control hide" cols="30" rows="5">{$row['video_chat_reward_config']}</textarea>
+            </dl>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[status]" id="c-status" class="form-control" data-rule="required" >
+                <option value="Y" {$row.status == 'Y' ? 'selected' : ''}>{:__('Enable')}</option>
+                <option value="N" {$row.status == 'N' ? 'selected' : ''}>{:__('Disable')}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+
+<div id="addVideoChatRewardConfig" class="hidden">
+    <dd class="form-inline">
+        >=<input type="text" name="<%=name%>[<%=index%>][minute]" class="form-control" value="<%=row.minute%>" style="width: 15%" />分钟
+        <input type="number" name="<%=name%>[<%=index%>][reward_radio]" class="form-control" value="<%=row.reward_radio%>" style="width: 15%;" />%
+        <span class="btn btn-sm btn-danger btn-remove"><i class="fa fa-times"></i></span>
+        <span class="btn btn-sm btn-primary btn-dragsort"><i class="fa fa-arrows"></i></span>
+    </dd>
+</div>

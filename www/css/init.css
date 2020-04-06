@@ -1,0 +1,1498 @@
+/**
+ * @file:      Neat.css V1.1.0
+ * @author:    涓€涓�
+ * @update:    2013-11-22 14:55:29;
+ * @copyright: 鍩轰簬 normalize.css | MIT License
+ * @doc:
+*/
+
+/**
+ * Neat.css 瑙ｅ喅鐨勯棶棰�
+ * 鍩轰簬涓氬姟闇€瑕佸吋瀹圭殑娴忚鍣ㄥ仛鍒颁互涓嬪嚑鐐癸細
+ * 1.瑙ｅ喅BUG锛岀壒鍒槸浣庣骇娴忚鍣ㄧ殑甯歌BUG锛�
+ * 2.缁熶竴鏁堟灉锛屼絾涓嶇洸鐩拷姹傞噸缃负0锛�
+ * 3.鍚戝悗鍏煎锛�
+ * 4.鑰冭檻鍝嶅簲寮忥紱
+ * 5.鑰冭檻绉诲姩璁惧銆�
+ */
+
+/* ==========================================================================
+   鏈夊嵆鏄棤锛屾棤鍗虫槸鏈�
+   ========================================================================== */
+body, dl, dd, /* dt, 榛樿娌¤竟璺� */
+ul, ol, /*li, 榛樿娌¤竟璺� */
+h1, h2, h3, h4, h5, h6, pre, /* code, 榛樿娌¤竟璺� */
+form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu, dir,
+thead, tbody, tfoot, th, td /* th, td 榛樿 padding:1px */
+{
+    margin:0;
+    padding:0;
+}
+
+/**
+ * 闈炲ぇ闈㈢Н鏂囧瓧鎺掔増缃戠珯閫氬父涓嶉渶瑕佸垪琛ㄩ」锛屽鏋滈渶瑕佸彲鍗曠嫭璁剧疆
+ */
+ul, ol {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+
+/* ==========================================================================
+   閾炬帴
+   ========================================================================== */
+
+/**
+ * 鍘婚櫎閾炬帴榛樿鐨勪笅鍒掔嚎锛屾彁楂樻枃瀛楀彲璇绘€�
+ */
+a {
+    text-decoration: none;
+}
+
+/**
+* 鍘绘帀 IE 10+ 鐐瑰嚮閾炬帴鏃剁殑鐏拌壊鑳屾櫙
+*/
+a:active {
+    background-color: transparent;
+}
+
+/**
+ * 鍘绘帀鐐瑰嚮鏃剁殑鐒︾偣妗嗭紝鍚屾椂淇濊瘉浣跨敤閿洏鍙互鏄剧ず鐒︾偣妗�
+ */
+a:active,
+a:hover {
+    outline: 0 none;
+}
+
+/**
+ * 缁熶竴 Chrome 鍜� Safari 鐨勭劍鐐规鏍峰紡
+ * Chrome 涓� thin 鍏抽敭瀛楁斁澶ч〉闈㈠悗鐒︾偣妗嗕笉浼氭斁澶� http://jsbin.com/ehakom/1
+ * Firefox 涓� box-shadow 浼氬鑷寸劍鐐规浣嶇疆鍋忕Щ锛岄渶鐢ㄣ€宱utline-offset銆嶄慨姝�
+ *
+ */
+a:focus {
+    /*outline: 1px dotted;*/
+    outline: none;
+}
+
+/* ==========================================================================
+   瀛椾綋鍜屽熀纭€鎺掔増
+   ========================================================================== */
+
+/**
+ * 1.闃叉 iOS 妯睆瀛楀彿鏀惧ぇ锛屽悓鏃朵繚璇佸湪PC涓� zoom 鍔熻兘姝ｅ父
+ */
+html {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 1 */
+    text-size-adjust: 100%;
+    font-size: 62.5%; /* 10/16=62.5% */
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/**
+ * 鎵€鏈� font-family 灏忓啓锛屽瓨鍦ㄧ┖鏍肩殑瀛椾綋鍚嶅姞鍗曞紩鍙�
+ * @default-font: 'helvetica neue', tahoma, \5B8B\4F53, sans-serif;
+ * @heading-font: 'helvetica neue', tahoma, 'hiragino sans gb', stheiti,
+    \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, 'wenquanyi micro hei', sans-serif;
+ * @code-font: monaco, menlo, consolas, monospace;
+ */
+
+/**
+ * 涓枃浼樺厛浣跨敤鍐潚榛戜綋绠€浣�(OS X)銆佸井杞泤榛�(Windows)鍜屾枃娉夐┛寰背榛�(Linux)
+ * 瑗挎枃浣跨敤 tahoma
+ * 1. 闃叉鍏冪礌涓€宖ont-family銆嶄笉鑳界户鎵�
+ * 2. 瑗挎枃瀛椾綋鍜� OS X 瀛椾綋鍐欏湪鍓嶉潰
+ * 3. Opera 12.1 涔嬪墠鐗堟湰涓嶆敮鎸佷腑鏂囧瓧浣撶殑鑻辨枃鍚嶇О
+ * 4. 寰蒋闆呴粦銆孿5FAE\8F6F\96C5\9ED1銆�,涓槗瀹嬩綋銆孿5B8B\4F53銆�
+ */
+body,
+button, /* 1 */
+input, /* 1 */
+select, /* 1 */
+textarea  /* 1 */
+{
+    font-family: 'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;
+    -ms-text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis; /* 5 */
+    text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis; /* 5 */
+}
+
+/**
+ * 涓枃灏忎簬 12px 鍙鎬у緢宸�
+ * 1. 缁熶竴 IE 6-7 涓瓧浣撳ぇ灏�
+ * 2. 缁熶竴 Firefox 4+锛孲afari 5 鍜� Chrome 涓€宻ection銆嶅拰銆宎rticle銆嶅唴鐨勫瓧浣撳ぇ灏�
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+/**
+ * 淇銆宎bbr銆嶅厓绱犲湪 Firefox 澶栧叾浠栨祻瑙堝櫒娌℃湁涓嬪垝绾跨殑闂
+ * 娣诲姞闂彿鍏夋爣锛屾槑纭涔�
+ */
+abbr,
+acronym {
+    border-bottom: 1px dotted; /* 1 */
+    cursor:help; /* 2 */
+}
+
+/**
+ * Firefox3+锛孲afari4/5 鍜� Chrome 涓粺涓€璁剧疆涓虹矖浣�
+ */
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * 淇 Safari5 鍜� Chrome 涓病鏈夋牱寮忕殑闂
+ */
+dfn {
+    font-style: italic;
+}
+
+/**
+ * 淇 Firefox 鍜屽叾浠栨祻瑙堝櫒涔嬮棿鐨勫樊寮�
+ */
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * 缃戦〉鏍囪锛岃崸鍏夌瑪
+ * 淇 IE6-11 涓病鏈夋牱寮忕殑闂
+ */
+mark {
+    background-color: #D2E5FF;
+    color: #000;
+}
+
+/**
+ * 缁熶竴浠ｇ爜鐨勫瓧浣撹缃�
+ * 瀛椾綋瑕佽兘鏄庣‘鍖哄垎鏁板瓧 0 鍜屽瓧姣� o
+ * Mac 浼樺厛浣跨敤 Monaco锛學indows 浼樺厛浣跨敤 Consolas
+ * XP鑷甫 Courier New
+ * Windows 7寮€濮嬭嚜甯︾殑 Consolas
+ * Mac涓婅嚜甯︾殑Monaco锛孫saka-Mono
+ */
+code,
+kbd,
+pre,
+samp {
+    font-family: monaco, menlo, consolas, 'courier new', courier, monospace;
+}
+
+/**
+ * 澧炲己鎵€鏈夋祻瑙堝櫒涓� pre 鏍囩涓枃鏈殑鍙鎬�
+ * 1. IE 6-7 涓嶆敮鎸� pre-wrap
+ * 2. pre 鏍囩搴斿綋鍖呭惈婊氭孩鍑�
+ */
+pre {
+    white-space: pre;
+    white-space: pre-wrap; /* 1 */
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+/**
+ * 琛屽唴寮曠敤
+ * IE 6-7 涓嶆敮鎸� quotes 灞炴€�
+ * 鐜颁唬娴忚鍣ㄥ幓闄� quotes 鍐呭
+ */
+q {
+    quotes: none;
+}
+
+/**
+ * Safari 4 涓嶆敮鎸�<q>鏍囩
+ */
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+
+/**
+ * 涓枃缃戦〉<small>鍏冪礌瀛楀彿灏忎簬 12px 涓嶆槗闃呰
+ */
+small {
+    font-size: 85.7%; /* 12/14=0.8571428571 */
+}
+
+/**
+ * 闃叉鎵€鏈夋祻瑙堝櫒涓殑<sub>鍜�<sup>褰卞搷琛岄珮
+ * http://jsbin.com/usoyal/1/edit
+ */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   琛ㄦ牸
+   ========================================================================== */
+
+/**
+ * 鍚堝苟鍗曞厓鏍艰竟妗�
+ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**
+ * 淇 IE 涓� th 涓嶈兘缁ф壙 text-align 鐨勯棶棰樺苟缁熶竴宸﹀榻�
+ * http://jsbin.com/evoxif/2/edit
+ */
+th {
+    text-align: left;
+}
+
+/**
+ * 鍗曞厓鏍兼坊鍔犺竟妗�
+ */
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+}
+
+/**
+ * 琛ㄥご搴曢儴杈规
+ */
+table th {
+    font-weight: inherit;
+    border-bottom-width: 2px;
+    border-bottom-color: #ccc;
+}
+
+/* ==========================================================================
+   宓屽叆鍏冪礌
+   ========================================================================== */
+
+/**
+ * 1. 鍘婚櫎 IE6-9 鍜� Firefox 3 涓� a 鍐呴儴 img 鍏冪礌榛樿鐨勮竟妗�
+ * 2. 淇 IE8 鍥剧墖娑堝けbug
+ * 3. 闃叉 img 鎸囧畾銆宧eight銆嶆椂鍥剧墖楂樺害涓嶈兘鎸夌収瀹藉害绛夋瘮缂╂斁锛屽鑷村浘鐗囧彉褰�
+      http://jsbin.com/aJoTUca/2
+ * 4. 璁╁浘鐗囨敮鎸佸搷搴斿紡
+ * 5. 鍘婚櫎鐜颁唬娴忚鍣ㄥ浘鐗囧簳閮ㄧ殑绌洪殭
+ * 6. 淇 IE7 鍥剧墖缂╂斁澶辩湡
+ */
+img {
+    border: 0 none; /* 1 */
+    width: auto\9; /* 2 */
+    height: auto; /* 3 */
+    max-width: 100%; /* 4 */
+    vertical-align: top;/* 5 */
+    -ms-interpolation-mode: bicubic; /* 6 */
+}
+
+/**
+ * 淇 IE9 涓殑銆宱verflow銆嶇殑鎬紓琛ㄧ幇
+ */
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   琛ㄥ崟
+   ========================================================================== */
+
+/**
+ * 瀹氫箟涓€鑷寸殑杈规銆佸杈硅窛鍜屽唴杈硅窛
+ */
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. 淇 IE 6-9 涓鑹蹭笉鑳界户鎵跨殑闂
+ * 2. 淇 Firefox3 涓枃瀛椾笉鎹㈣鐨勯棶棰�
+ * 3. 淇 IE6-7 涓€紓鐨勫榻愭柟寮�
+ */
+legend {
+    border: 0 none; /* 1 */
+    white-space: normal; /* 2 */
+    *margin-left: -7px; /* 3 */
+}
+
+/**
+ * 1. 淇鎵€鏈夋祻瑙堝櫒涓瓧浣撲笉缁ф壙鐨勯棶棰�
+ * 2. 淇鎵€鏈夋祻瑙堝櫒涓瓧鍙蜂笉缁ф壙鐨勯棶棰�
+ * 3. 淇 Firefox 3+锛� Safari5 鍜� Chrome 涓杈硅窛涓嶅悓鐨勯棶棰�
+ * 4. 鏀瑰杽鍦ㄦ墍鏈夋祻瑙堝櫒涓嬬殑鍨傜洿瀵归綈鏂瑰紡
+ */
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+    vertical-align: baseline; /* 4 */
+    *vertical-align: middle; /* 4 */
+}
+
+/**
+ * 淇 IE7 闅忕潃瀛楁暟澧炲姞杈硅窛涓嶆柇澧炲姞鐨勯棶棰�
+ */
+input,
+button {
+    *overflow: visible;
+}
+
+/**
+ * 缁熶竴鍚勬祻瑙堝櫒銆宼ext-transform銆嶄笉浼氱户鎵跨殑闂
+ * http://jsbin.com/iqecic/1/edit
+ * http://tjvantoll.com/2012/07/10/default-browser-handling-of-the-css-text-transform-property/
+ */
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. 閬垮厤 Android 4.0.* 涓殑 WebKit bug 锛岃bug浼氱牬鍧忓師鐢熺殑
+   銆宎udio銆� 鍜屻€寁ideo銆嶇殑鎺у埗鍣�
+ * 2. 鏇存 iOS 涓棤娉曡缃彲鐐瑰嚮鐨勩€宨nput銆嶇殑闂
+ * 3. 缁熶竴鍏朵粬绫诲瀷鐨勩€宨nput銆嶇殑鍏夋爣鏍峰紡
+ */
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * 閲嶇疆鎸夐挳绂佺敤鏃跺厜鏍囨牱寮�
+ */
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. 淇 IE 8/9 box-sizing 琚缃负銆宑ontent-box銆嶇殑闂
+ * 2. 绉婚櫎 IE 8/9 涓浣欑殑鍐呰竟璺�
+ * 3. 绉婚櫎 IE7 涓浣欑殑鍐呰竟璺�(IE6 涓换鐒跺瓨鍦�)
+ */
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    *height: 13px; /* 3 */
+    *width: 13px; /* 3 */
+}
+
+/**
+ * 1. 淇 Safari 5 鍜� Chrome 涓€宎ppearance銆嶈璁剧疆涓恒€宻earchfield銆嶇殑闂
+ * 2. 淇 Safari 5 鍜� Chrome 涓€宐ox-sizing銆嶈璁剧疆涓� 銆宐order-box銆嶇殑闂
+ */
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * 1.绉婚櫎 OS X 涓� Safari5 鍜� Chrome 鎼滅储妗嗗唴渚х殑宸﹁竟璺�
+ * 2.濡傛灉闇€瑕侀殣钘忔竻闄ゆ寜閽渶瑕佸姞涓�
+   input[type="search"]::-webkit-search-cancel-button
+ */
+input[type="search"]::-webkit-search-decoration /* 1 */
+{
+    -webkit-appearance: none;
+}
+
+/**
+ * 绉婚櫎 Firefox 3+ 鐨勫唴杈硅窛
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 淇 Chrome 涓� input [type="number"] 鍦ㄧ壒瀹氶珮搴﹀拰 font-size 鏃�,
+ * 涓嬮潰涓€涓澶村厜鏍囧彉鎴愩€宑ursor: text銆�
+ * @demo: http://jsfiddle.net/FFXEc/
+ * 鍔ㄧ敾婕旂ず锛歨ttp://gtms04.alicdn.com/tps/i4/T18kd8FCtaXXc_FhcF-330-350.gif
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+ * 1. 绉婚櫎 IE6-11 涓粯璁ょ殑鍨傜洿婊氬姩鏉�
+ * 2. 绂佹姘村钩鎷栧姩锛岄槻姝㈢牬鍧忓竷灞€
+ */
+textarea {
+    overflow: auto; /* 1 */
+    resize: vertical; /* 2 */
+}
+
+/**
+ * 淇 Chrome 30- option 涓枃瀛楁棤娉曟樉绀虹殑闂
+ * http://jsbin.com/avujas/1/edit
+ */
+select:disabled option:checked,
+option:disabled:checked {
+    color: #D2D2D2;
+}
+
+/**
+ * 淇 Safari 3+, Chrome 1+ Placeholder 灞呬腑闂
+ */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input {
+        line-height: normal !important;
+    }
+}
+
+/**
+ * 淇 Firefox 19+ Placeholder 璁剧疆浜唎pacity 鐨勯棶棰�
+ */
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: darkGray;
+    opacity: 1;
+}
+
+/**
+ * label 鍏冪礌缁欎簣鎵嬪瀷锛屾殫绀烘澶勫彲鐐瑰嚮
+ */
+label {
+    cursor: pointer;
+}
+
+/**
+ * 缁熶竴 select 鏍峰紡, Firefox 涓湁 padding:1px 0
+ * http://jsbin.com/avujas/1/edit
+ */
+select[size],
+select[multiple],
+select[size][multiple] {
+    border: 1px solid #AAA;
+    padding:0;
+}
+
+/* ==========================================================================
+   HTML5 鍏冪礌
+   ========================================================================== */
+
+/**
+ * 淇鏈畾涔変负銆宐lock銆嶇殑鍏冪礌
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * 1. 淇鏈畾涔変负銆宨nline-block銆嶇殑鍏冪礌
+ * 2. 淇 Chrome銆丗irefox銆丱pera 涓� 銆宲rogress銆嶅厓绱� vertical-align 榛樿鍊间笉涓€鑷�
+ */
+audio,
+canvas,
+video,
+progress {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+}
+
+/**
+ * 1.闃叉鐜颁唬娴忚鍣ㄥ皢娌℃湁銆宑ontrols銆嶅睘鎬х殑 銆宎udio銆嶅厓绱犳樉绀哄嚭鏉�
+ * 2.鍘绘帀 iOS 5 涓浣欑殑楂樺害
+ */
+audio:not([controls]) {
+    display: none; /* 1 */
+    height: 0; /* 2 */
+}
+
+/**
+ * 淇 IE 7/8/9锛孎irefox 3 鍜� Safari 4 涓� 銆宧idden銆嶅睘鎬т笉璧蜂綔鐢ㄧ殑闂
+ * 鍦↖E銆丼afari銆丗irefox 22- 涓殣钘忋€宼emplate銆嶅厓绱�
+ */
+[hidden], template {
+    display: none;
+}
+
+/**
+ * 涓哄彲鎷栧姩鍏冪礌娣诲姞鎷栧姩鐨勫厜鏍�
+ * http://jsbin.com/apavod/1/edit
+ */
+[draggable] {
+    cursor: move;
+}
+
+/**
+ * 灞呬腑 HTML5 dialog 鍏冪礌
+ * Chrome 31 鏀寔锛岄渶寮€鍚� chrome://flags/#enable-experimental-web-platform-features
+ * Chrome 28 涔嬪墠銆丗irefox 涓笉鏀寔 height:fit-content;
+   https://src.chromium.org/viewvc/blink?revision=148314&view=revision
+ * ::backdrop 瀹氫箟閬僵鏍峰紡
+ * @demo: http://jsbin.com/iPACab/1
+ */
+dialog {
+    border: 1px solid;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+}
+
+dialog::backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/*
+ * 鍩虹甯冨眬
+ * @ Name:        layout.css V1.0.0
+ * @ Author:      涓€涓�
+ * @ Update:      2013-9-30 15:39:51;
+ * @ Copyright:   MIT License
+ */
+
+/*
+ *@ Name:       inline-block 缁勪欢
+ *@ Author:     涓€涓�
+ *@ Update:     2013-9-29 16:05:04
+ *@ Usage:      娓呴櫎绌洪殭闇€鍦ㄥ灞傚鍣ㄥ姞涓� dib-box锛宒ib 鍙崟鐙娇鐢�
+ */
+
+.dib {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.dib-box {
+    font-size: 0; /* 鎵€鏈夋祻瑙堝櫒 */
+    *word-spacing: -1px; /* IE6/7 */
+}
+
+@media (-webkit-min-device-pixel-ratio:0) {
+    .dib-box {
+        letter-spacing: -5px; /* Safari 5- 绛変笉鏀寔 font-size: 0 鐨勬祻瑙堝櫒*/
+    }
+}
+
+.dib-box .dib {
+    vertical-align: top;
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: inherit;
+}
+
+/*
+ *@ Name:        鑷€傚簲涓ょ瀵归綈缁勪欢
+ *@ Author:      涓€涓�
+ *@ Update:      2013-9-29 16:05:04
+ *@ Rely锛�       渚濊禆 inline-block 瑙ｅ喅鏂规
+ *@ Usage:       澶栧眰鍔犱笂 justify锛屽唴閮ㄩ渶瑕佷袱绔榻愮殑鍏冪礌閮藉姞涓� dib,dib 涓� justify 涓嶈鍚屾椂鍑虹幇
+ *@ Demo:        http://jsbin.com/OsEcOMA/1/
+ */
+
+/**
+ * 闃叉琛岄珮澧炲ぇ
+ * 灏介噺涓嶈鍦ㄧ埗鍏冪礌涓婅缃楂�
+ */
+
+.justify,
+.dib-box .justify {
+    font-size: 0;
+    line-height: inherit;
+}
+
+.justify {
+    text-align: justify;
+    text-justify: inter-ideograph; /* IE 6-7 */
+    *zoom: 1; /* IE 6-7 瑙﹀彂 hasLayout 浣夸竴琛屼篃鑳戒袱绔榻� */
+    -moz-text-align-last: justify;
+    -webkit-text-align-last: justify;
+    text-align-last: justify;/* IE 8+ */
+}
+
+/**
+ * 涓嶆敮鎸� text-align-last 鐨勬祻瑙堝櫒鐢ㄤ吉鍏冪礌妯℃嫙
+ * 1. margin-left:100% 浠� WebKit 鏀寔
+ */
+
+.justify:after {
+    content: "";
+    display: inline-block;
+    width: 100%; /* 1 */
+}
+
+/* 瀛愬厓绱犲彇娑堜袱绔榻� */
+.justify .dib {
+    -moz-text-align-last: auto;
+    -webkit-text-align-last: auto;
+    text-align-last: auto;
+    text-justify: auto;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+/*
+ *@ Name:       CSS 涓夎褰㈢粍浠�
+ *@ Author:     涓€涓�
+ *@ Update:     2013-9-29 16:05:04
+ *@ Usage:
+ */
+.arrow {
+    font-size: 0;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align: -2px;
+    border: 0 dashed transparent;
+    border-width: 6px;
+}
+
+.arrow-top {
+    border-bottom-style: solid;
+    border-bottom-color: #2AB2DF;
+}
+
+.arrow-bottom {
+    border-top-style: solid;
+    border-top-color: #2AB2DF;
+}
+
+.arrow-left {
+    border-right-style: solid;
+    border-right-color: #2AB2DF;
+}
+
+.arrow-right {
+    border-left-style: solid;
+    border-left-color: #2AB2DF;
+}
+
+/* 鈼ゅ乏涓婅 */
+.arrow-left-top {
+    border-top-style: solid;
+    border-top-color: #2AB2DF;
+    border-left-width: 0 !important;
+}
+
+/* 鈼ュ彸涓婅 */
+.arrow-right-top {
+    border-top-style: solid;
+    border-top-color: #2AB2DF;
+    border-right-width: 0 !important;
+}
+
+/* 鈼ｅ乏涓嬭 */
+.arrow-left-bottom {
+    border-bottom-style: solid;
+    border-bottom-color: #2AB2DF;
+    border-left-width: 0 !important;
+}
+
+/* 鈼㈠彸涓嬭 */
+.arrow-right-bottom {
+    border-bottom-style: solid;
+    border-bottom-color: #2AB2DF;
+    border-right-width: 0 !important;
+}
+
+/*
+ *@ Name:       鏇挎崲鍏冪礌绛夋瘮缂╂斁缁勪欢
+ *@ Author:     涓€涓�
+ *@ Update:     2013-9-29 16:05:04
+ *@ Usage:      涓嶅悓鐨勮棰戠綉绔欑敱浜庢帶鍒舵爮楂樺害涓嶅悓锛岄渶瑕丣S閰嶅悎娣诲姞瀵瑰簲鐨� class
+ */
+
+.fluid-media {
+    position: relative;
+}
+
+/* 瀹瑰櫒 */
+.fluid-media div,
+.fluid-media video,
+.fluid-media embed,
+.fluid-media object,
+.fluid-media iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0
+}
+
+/* 甯歌鐨勮棰戞瘮渚� */
+.widescreen {
+    padding-bottom: 56.25%; /* 瀹藉睆 16:9=56.25% */
+}
+
+.narrowscreen {
+    padding-bottom: 75%; /* 绐勫睆 4:3=75% */
+}
+
+/* 鎾斁鍣ㄦ帶鍒舵爮鐨勯珮搴︼紝鏇村缃戠珯鎸夐渶鎵╁睍 */
+.youku {
+    padding-top: 40px; /* 浼橀叿 */
+}
+
+.wole {
+    padding-top: 40px; /* 鎴戜箰 56.com */
+}
+
+.tudou {
+    padding-top: 50px; /* 鍦熻眴 */
+}
+
+.iqiyi {
+    padding-top: 45px; /* 鐖卞鑹� */
+}
+
+.youtube {
+    padding-top: 30px; /* Youtube */
+}
+
+/*
+ *@ Name:       鏈煡楂樺害鍨傜洿灞呬腑缁勪欢
+ *@ Author:     涓€涓�
+ *@ Update:     2013-10-13 17:08:36
+ *@ Usage:      鏀寔鍥剧墖锛屽崟琛屾垨澶氳鏂囧瓧锛屼互鍙婂浘鏂囨贩鎺�
+ */
+
+/* 鍘婚櫎 inline-block 鐨勭┖闅� */
+.center-box {
+    font-size: 0;
+    *word-spacing: -1px; /* IE6銆�7 */
+    height: 100%; /* 缁ф壙鐖剁骇楂樺害 */
+}
+
+/* 淇 Safari 5- inline-block 鐨勭┖闅� */
+@media (-webkit-min-device-pixel-ratio:0) {
+    .center-box {
+        letter-spacing: -5px;
+    }
+}
+
+/* 浣跨敤绌烘爣绛剧敓鎴愪竴涓珮搴�100%鐨勫弬鐓у厓绱� */
+.center-box .center-hack {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 0;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.center-box .center-body {
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 12px;
+    vertical-align: middle; /* 淇濊瘉鏂囧瓧鍨傜洿灞呬腑 */
+    padding: 0 !important; /* 闃叉璁剧疆杈硅窛瀵艰嚧灞呬腑澶辨晥 */
+    margin: 0 !important;
+    width: 100%; /* 淇濊瘉杩炵画瀛楃涔熻兘灞呬腑 */
+    white-space: normal; /* 淇濊瘉杩炵画瀛楃鎹㈣ */
+    word-wrap: break-word;
+}
+
+.center-box .center-img {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 100%;
+    text-align: center; /* 鍥剧墖榛樿姘村钩灞呬腑 */
+    vertical-align: middle;
+    padding: 0 !important; /* 闃叉璁剧疆杈硅窛瀵艰嚧灞呬腑澶辨晥 */
+    margin: 0 !important;
+    font-size:0;
+}
+
+.center-box img {
+    vertical-align: middle; /* 鍘婚櫎鐜颁唬娴忚鍣� img 搴曢儴绌洪殭 */
+}
+
+/* ==========================================================================
+   鍩虹宸ュ叿
+   *@ Name:        utils.css V1.0.0
+   *@ Author:      涓€涓�
+   *@ Update:      2013-9-30 15:39:57;
+   *@ Copyright:   MIT License
+   ========================================================================== */
+
+/**
+* 闂悎娴姩
+* @Author: 涓€涓�
+* @Doc: http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /* IE6-7 瑙﹀彂 hasLayout */
+}
+
+/*
+ *@ Name:       鑷€傚簲鍥炬枃娣锋帓缁勪欢
+ *@ Update:     2013-9-29 19:23:27
+ *@ Usage:      濡傛灉鏈夋孩鍑虹殑鍐呭闇€瑕佹樉绀鸿浣跨敤 clearcell
+ *@ demo:       http://jsbin.com/EMIvoJohU/1/edit
+ */
+
+.clearall {
+    overflow: hidden;
+    _overflow: visible;
+    *zoom: 1;
+}
+
+.clearcell {
+    display: table-cell;
+    *zoom: 1;
+}
+
+.clearcell:after {
+    clear: both;
+    display: block;
+    visibility: visible;
+    overflow: hidden;
+    height: 0 !important;
+    line-height: 0;
+    font-size: xx-large;
+    content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+/* 寮哄埗涓嶆崲琛� */
+.nowrap {
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+/* 杩炵画瀛楃鎹㈣ */
+.wrap {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.hidden, .hide {
+    display: none;
+}
+
+/**
+* 鏂囧瓧婧㈠嚭鏄剧ず鐪佺暐鍙�
+* 1. Opera 9-10.6
+* 2. Chrome 21+ bug https://bugs.webkit.org/show_bug.cgi?id=121902
+*/
+
+.ellipsis {
+    display: block;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    -o-text-overflow: ellipsis; /* 1 */
+    text-overflow: ellipsis;
+    text-align: left; /* 2 */
+}
+
+
+/* --------------------------------------------------------------------------
+   鍥剧墖鏇挎崲
+   -------------------------------------------------------------------------- */
+
+/** 闅愯棌鏂囧瓧
+* 1.text-indent:-999em 瀛樺湪鎬ц兘闂锛�
+*   http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+*/
+.text-hide {
+    text-indent: 100%; /* 1 */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/**
+ * 瑁佸壀鏂瑰紡闅愯棌鍏冪礌
+ * 1. IE6-8 鏈変弗閲嶆紡娲烇紝璇峰嬁浣跨敤 https://www.hkcert.org/my_url/zh/101104_ms_ie_css_tagparsing_vuln
+ * 2. VoiceOver 鏃犳硶璇诲嚭瀹介珮涓� 0 鐨勫厓绱�
+ */
+.clip-hide {
+    position: absolute !important; /*clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); /* 1 */
+    padding: 0 !important;
+    border: 0 none!important;
+    height: 1px !important; /* 2 */
+    width: 1px !important;
+    overflow: hidden;
+}
+
+/* img replace锛岄€氳繃瀹氫綅鏂瑰紡闅愯棌鍐呭 */
+.ir {
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.ir-bg {
+    position: relative;
+    z-index: 1;
+}
+
+/**
+ * 绂佺敤涓枃杈撳叆娉�
+ * 1. 榛樿鍏抽棴杈撳叆娉曪紝浣嗙敤鎴疯繕鍙互鎵嬪姩寮€鍚紝Firefox Linux 鐗堜笉鏀寔銆�
+ * @note: 浠� IE 5+锛孎irefox 3+ 鏀寔
+ * @doc:  https://developer.mozilla.org/en-US/docs/Web/CSS/ime-mode
+*/
+.ime-inactive {
+    ime-mode: inactive!important; /* 1 */
+}
+
+/**
+ * 闅愯棌<select>鍏冪礌鐨勪笅鎷夌澶�
+ * 1. 闅愯棌 WebKit 涓殑涓嬫媺绠ご
+ * 2. Firefox 瀛樺湪bug锛岃灞炴€т笉瀹屽叏鐢熸晥锛�
+      https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+ * 3. 瀹為獙鏁板€硷紝Firefox for Android text-indent 闇€瑕佽缃ぇ浜� 5px
+ * @doc: https://gist.github.com/joaocunha/6273016
+ * @demo: http://jsbin.com/EdiZuvO/1/edit
+*/
+.select-no-appearance{
+    -webkit-appearance: none; /* 1 */
+    -moz-appearance: none; /* 2 */
+    appearance: none;
+    text-overflow:""; /* 3 */
+    text-indent: .01px; /* 3 */
+}
+
+/*
+ * 1. 闃叉 OS X 涓� Webfont 瑙嗚涓婄湅璧锋潵鍙樼矖
+ * 2. Fiefox 25 寮€濮嬫敮鎸併€�-moz-osx-font-smoothing:auto(榛樿)|grayscale銆�
+ * Demo: http://jsbin.com/iWItiQe/2
+ */
+.antialiased {
+    -webkit-font-smoothing: antialiased; /* 1 */
+    -moz-osx-font-smoothing: grayscale; /* 2 */
+}
+
+/**
+ * 缁熶竴鐢ㄥ弻绾挎樉绀轰汉姘戝竵绗﹀彿銆屄�(锟�)銆�
+ */
+.rmb,
+.yuan {
+    font-family: arial;
+    font-style: normal;
+}
+
+/**
+ *@ name:        iconfont.css V1.1.0
+ *@ author:      涓€涓�
+ *@ update:      2013-12-24 15:28:59
+ * 1. 闃叉璇诲睆鍣ㄨ鍑烘棤鎰忎箟鐨勫浘鏍�
+ * 2. 闃叉 OS X 涓浘鏍囪瑙夊彉绮楀拰缁嗚妭涓㈠け鐨勯棶棰�
+ * 3. Fiefox 25 寮€濮嬫敮鎸併€�-moz-osx-font-smoothing:auto(榛樿)|grayscale銆�
+ * Demo: http://jsbin.com/iWItiQe/2
+ */
+.iconfont,
+.type .iconfont, [class^="icon-"]:before,
+[class*=" icon-"]:before,
+.type [class^="icon-"]:before,
+.type [class*=" icon-"]:before {
+    font-family: "iconfont";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    display: inline-block;
+    /* 1 */
+    speak: none;
+    /* 2 */
+    -webkit-font-smoothing: antialiased;
+    /* 3 */
+    -moz-osx-font-smoothing: grayscale; }
+
+/**
+ * 寮曞叆 Web font
+ * 娉ㄦ剰锛氫娇鐢╢ont-face闇€瑕� CSS 绾夸笂鍦板潃鍜屽紩鐢ㄧ殑 font 绾夸笂鍦板潃鍚屽煙锛屽惁鍒� IE9  浼氭湁 CSS3117 闂
+ * CSS3117: @font-face failed cross-origin request. Resource access is restricted.
+ */
+@font-face {
+    font-family: "iconfont";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.eot")/*tpa=http://www.huayisz168.com/t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.eot*//*tpa=http://t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.eot*/;
+    src: url("../t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.eot-#iefix")/*tpa=http://www.huayisz168.com/t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.eot-#iefix*//*tpa=http://t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.eot?#iefix*/ format("embedded-opentype"), url("../t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.woff")/*tpa=http://www.huayisz168.com/t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.woff*//*tpa=http://t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.woff*/ format("woff"), url("../t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.ttf")/*tpa=http://www.huayisz168.com/t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.ttf*//*tpa=http://t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.ttf*/ format("truetype"), url("../t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.svg#iconfont")/*tpa=http://www.huayisz168.com/t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.svg#iconfont*//*tpa=http://t.tbcdn.cn/apps/e/brix/fonts/uxiconfont.svg#iconfont*/ format("svg"); }
+
+/* 榛樿鎸夐挳鏍峰紡 */
+.btn {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    display: inline-block;
+    border: 1px solid #ddd;
+    *border: 0 none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    *margin-right: .3em;
+    margin-bottom: 0;
+    padding: 0 10px;
+    *padding: 1px 10px;
+    width: auto;
+    height: 21px;
+    line-height: 21px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom-color: #bbb !important;
+    background-color: #f4f4f4;
+    background-image: -moz-linear-gradient(top, #f8f8f8, #eeeeee);
+    background-image: -ms-linear-gradient(top, #f8f8f8, #eeeeee);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f8f8f8), to(#eeeeee));
+    background-image: -webkit-linear-gradient(top, #f8f8f8, #eeeeee);
+    background-image: -o-linear-gradient(top, #f8f8f8, #eeeeee);
+    background-image: linear-gradient(top, #f8f8f8, #eeeeee);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#eeeeee', GradientType=0);
+}
+
+.btn,
+.btn:hover,
+.btn:visited {
+    color: #333!important;
+}
+
+.btn:hover {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #ededed;
+    background-image: -moz-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: -o-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#e6e6e6', GradientType=0);
+}
+
+.btn:active {
+    background-color: #ebebeb;
+    background-image: -moz-linear-gradient(top, #e6e6e6, #f2f2f2);
+    background-image: -ms-linear-gradient(top, #e6e6e6, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#f2f2f2));
+    background-image: -webkit-linear-gradient(top, #e6e6e6, #f2f2f2);
+    background-image: -o-linear-gradient(top, #e6e6e6, #f2f2f2);
+    background-image: linear-gradient(top, #e6e6e6, #f2f2f2);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#f2f2f2', GradientType=0);
+}
+
+
+/* 閿欒 */
+.btn-error {
+    border-color: transparent;
+    border-bottom-color: #c21b1b !important;
+    background-color: #ff3636;
+    background-image: -moz-linear-gradient(top, #ff4444, #ff2222);
+    background-image: -ms-linear-gradient(top, #ff4444, #ff2222);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff4444), to(#ff2222));
+    background-image: -webkit-linear-gradient(top, #ff4444, #ff2222);
+    background-image: -o-linear-gradient(top, #ff4444, #ff2222);
+    background-image: linear-gradient(top, #ff4444, #ff2222);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4444', endColorstr='#ff2222', GradientType=0);
+}
+
+.btn-error,
+.btn-error:hover,
+.btn-error:visited {
+    color: #FFF!important;
+}
+
+.btn-error:hover {
+    background-color: #e41b1b;
+    background-image: -moz-linear-gradient(top, #ee2020, #d51314);
+    background-image: -ms-linear-gradient(top, #ee2020, #d51314);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee2020), to(#d51314));
+    background-image: -webkit-linear-gradient(top, #ee2020, #d51314);
+    background-image: -o-linear-gradient(top, #ee2020, #d51314);
+    background-image: linear-gradient(top, #ee2020, #d51314);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee2020', endColorstr='#d51314', GradientType=0);
+}
+
+.btn-error:active {
+    background-color: #df1819;
+    background-image: -moz-linear-gradient(top, #d51314, #ee2020);
+    background-image: -ms-linear-gradient(top, #d51314, #ee2020);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d51314), to(#ee2020));
+    background-image: -webkit-linear-gradient(top, #d51314, #ee2020);
+    background-image: -o-linear-gradient(top, #d51314, #ee2020);
+    background-image: linear-gradient(top, #d51314, #ee2020);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d51314', endColorstr='#ee2020', GradientType=0);
+}
+
+/* 璀﹀憡 */
+.btn-warning {
+    border-color: transparent;
+    border-bottom-color: #cf370c !important;
+    background-color: #ff4e00;
+    background-image: -moz-linear-gradient(top, #ff5500, #ff4400);
+    background-image: -ms-linear-gradient(top, #ff5500, #ff4400);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff5500), to(#ff4400));
+    background-image: -webkit-linear-gradient(top, #ff5500, #ff4400);
+    background-image: -o-linear-gradient(top, #ff5500, #ff4400);
+    background-image: linear-gradient(top, #ff5500, #ff4400);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5500', endColorstr='#ff4400', GradientType=0);
+}
+
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:visited {
+    color: #FFF!important;
+}
+
+.btn-warning:hover {
+    background-color: #ef4000;
+    background-image: -moz-linear-gradient(top, #ff4400, #d73900);
+    background-image: -ms-linear-gradient(top, #ff4400, #d73900);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff4400), to(#d73900));
+    background-image: -webkit-linear-gradient(top, #ff4400, #d73900);
+    background-image: -o-linear-gradient(top, #ff4400, #d73900);
+    background-image: linear-gradient(top, #ff4400, #d73900);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4400', endColorstr='#d73900', GradientType=0);
+}
+
+.btn-warning:active {
+    background-color: #e73d00;
+    background-image: -moz-linear-gradient(top, #d73900, #ff4400);
+    background-image: -ms-linear-gradient(top, #d73900, #ff4400);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d73900), to(#ff4400));
+    background-image: -webkit-linear-gradient(top, #d73900, #ff4400);
+    background-image: -o-linear-gradient(top, #d73900, #ff4400);
+    background-image: linear-gradient(top, #d73900, #ff4400);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d73900', endColorstr='#ff4400', GradientType=0);
+}
+
+
+/* 涓昏 */
+.btn-primary {
+    border-color: transparent;
+    border-bottom-color: #0960ab !important;
+    background-color: #4288c5;
+    background-image: -moz-linear-gradient(top, #488fcd, #3a7db8);
+    background-image: -ms-linear-gradient(top, #488fcd, #3a7db8);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#488fcd), to(#3a7db8));
+    background-image: -webkit-linear-gradient(top, #488fcd, #3a7db8);
+    background-image: -o-linear-gradient(top, #488fcd, #3a7db8);
+    background-image: linear-gradient(top, #488fcd, #3a7db8);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#488fcd', endColorstr='#3a7db8', GradientType=0);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:visited {
+    color: #FFF!important;
+}
+
+.btn-primary:hover {
+    background-color: #3579b5;
+    background-image: -moz-linear-gradient(top, #4087c6, #25659c);
+    background-image: -ms-linear-gradient(top, #4087c6, #25659c);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4087c6), to(#25659c));
+    background-image: -webkit-linear-gradient(top, #4087c6, #25659c);
+    background-image: -o-linear-gradient(top, #4087c6, #25659c);
+    background-image: linear-gradient(top, #4087c6, #25659c);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4087c6', endColorstr='#25659c', GradientType=0);
+}
+
+.btn-primary:active {
+    background-color: #3073ad;
+    background-image: -moz-linear-gradient(top, #25659c, #4087c6);
+    background-image: -ms-linear-gradient(top, #25659c, #4087c6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#25659c), to(#4087c6));
+    background-image: -webkit-linear-gradient(top, #25659c, #4087c6);
+    background-image: -o-linear-gradient(top, #25659c, #4087c6);
+    background-image: linear-gradient(top, #25659c, #4087c6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#25659c', endColorstr='#4087c6', GradientType=0);
+}
+
+.btn-disabled {
+    border: 1px solid #e0e0e0;
+    border-bottom-color: #ccc !important;
+    cursor: default;
+}
+
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:visited {
+    color: #ccc !important;
+    background-color: #ededed;
+    background-image: -moz-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: -ms-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: -o-linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-image: linear-gradient(top, #f2f2f2, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#e6e6e6', GradientType=0);
+}
+
+/* ==========================================================================
+   鎸夐挳缁勫悎
+   ========================================================================== */
+
+.btn-group{
+    overflow: hidden;
+}
+.btn-group .btn {
+    float: left;
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-left-width: 0;
+}
+
+.btn-group .btn:first-child {
+    border-left-width: 1px;
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+}
+
+.btn-group .btn:last-child {
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+}
+
+
+
+/* ==========================================================================
+   鎸夐挳灏哄
+   ========================================================================== */
+
+.btn-xlarge {
+    padding: 0 20px;
+    height: 43px;
+    line-height: 43px;
+    font-size: 18px;
+}
+
+.btn-xlarge .iconfont {
+    font-size: 18px!important;
+}
+
+.btn-large {
+    padding: 0 20px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+}
+
+.btn-medium {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 20px;
+}
+
+.btn-small {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px;
+}
+
+.btn-xsmall {
+    height: 23px;
+    line-height: 23px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.btn .iconfont {
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.btn-small .iconfont {
+    font-size: 14px;
+}
+
+.btn-medium .iconfont,
+.btn-large .iconfont {
+    font-size: 16px;
+}
+
+
+/*
+ * 琛ㄦ牸
+ * @ name:        table.css V1.0.0
+ * @ author:      涓€涓�
+ * @ update:      2014-1-8 19:34:24;
+ */
+
+/**
+ * 鍙樉绀烘按骞宠竟妗�
+ * .table
+ */
+.table th,
+.table table th{
+    border: 0 none;
+    border-bottom: 2px solid #ccc;
+}
+
+.table td,
+.table table td{
+    border: 0 none;
+    border-top: 1px solid #ddd;
+}
+
+/**
+ * 闅旇鎹㈣壊
+ * .table-striped
+ */
+.table-striped tbody tr:nth-child(odd) td {
+    background-color: #fafafa;
+}
+
+/**
+ * 榧犳爣 hover 鏃舵崲鑹�
+ * .table-hover
+ */
+.type .table-hover tbody tr:hover td,
+.type .table-hover thead tr:hover th {
+    background-color: #f6f6f6;
+}
+
+/**
+ * 鍝嶅簲寮忚〃鏍�
+ */
+@media (max-width: 767px) {
+    .table-responsive {
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        border-right: 1px solid #ddd;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-responsive  table {
+        margin: 0;
+    }
+
+    .table-responsive th,
+    .table-responsive td {
+        white-space: nowrap;
+    }
+
+    .table-responsive .table {
+        border: 0 none;
+    }
+}

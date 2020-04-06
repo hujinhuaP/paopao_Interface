@@ -1,0 +1,81 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-user_recharge_combo_coin" class="control-label col-xs-12 col-sm-2">{:__('Coin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_recharge_combo_coin]" value=""  id="c-user_recharge_combo_coin" class="form-control" min="1" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_recharge_combo_fee" class="control-label col-xs-12 col-sm-2">{:__('Amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_recharge_combo_fee]" value=""  id="c-user_recharge_combo_fee" class="form-control" min="1" data-rule="required"" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-first_recharge_reward_vip_day" class="control-label col-xs-12 col-sm-2">{:__('首充赠送VIP天数')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[first_recharge_reward_vip_day]" value=""  id="c-first_recharge_reward_vip_day" class="form-control" min="0" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_level" class="control-label col-xs-12 col-sm-2">{:__('IOS')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_recharge_combo_type]" id="user_recharge_combo_type" value="yes" data-rule="required" > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_recharge_combo_type]" id="user_recharge_combo_type" value="no" data-rule="required" checked > {:__('No')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_recharge_combo_apple_id" class="control-label col-xs-12 col-sm-2">{:__('Apple pay combo id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_recharge_combo_apple_id]" value="" id="c-user_recharge_combo_apple_id" class="form-control" disabled data-rule="required" />
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="c-user_recharge_is_first" class="control-label col-xs-12 col-sm-2">{:__('首充套餐')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_recharge_is_first]" id="user_recharge_is_first" value="Y" data-rule="required" > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_recharge_is_first]" id="user_recharge_is_first" value="N" data-rule="required" checked > {:__('No')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_recharge_combo_has_notify" class="control-label col-xs-12 col-sm-2">{:__('是否充值有飘屏')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_recharge_combo_has_notify]" id="c-user_recharge_combo_has_notify" value="Y" data-rule="required" > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_recharge_combo_has_notify]" id="c-user_recharge_combo_has_notify" value="N" data-rule="required" checked > {:__('No')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_recharge_vip_reward_coin" class="control-label col-xs-12 col-sm-2">{:__('VIP用户购买赠送金币')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_recharge_vip_reward_coin]" value=""  id="c-user_recharge_vip_reward_coin" class="form-control" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,137 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><b>{:__('Basic setup')}</b></label>
+        <div class="col-xs-12 col-sm-8"></div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('The number of rounds (%s is an infinite round)', 0)}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[round]" value="{$row.round}"  id="c-round" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Round interval time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[idle]" value="{$row.idle}"  id="c-idle" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('s')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Turn on animation time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[start_countdown]" value="{$row.start_countdown}"  id="c-start_countdown" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('s')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Winning animation time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[answer_countdown]" value="{$row.answer_countdown}"  id="c-answer_countdown" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('s')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Game countdown')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[interval]" value="{$row.interval}"  id="c-interval" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('s')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Announce the countdown')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[flop_time]" value="{$row.flop_time}"  id="c-flop_time" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('s')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Single Bureau injection upper limit')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[bet_limit]" value="{$row.bet_limit}"  id="c-bet_limit" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('Coin')}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group"></div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><b>{:__('Odds setting')}</b></label>
+        <div class="col-xs-12 col-sm-8"></div>
+    </div>
+
+    {foreach $row.odds as $k=>$v}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{$row.oddsname[$k]}{:__('Odds')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[odds{$k}]" value="{$v}"  id="c-odds{$k}" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('Redoubled')}</div>
+            </div>
+            
+        </div>
+    </div>
+    {/foreach}
+
+    <div class="form-group"></div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><b>{:__('Weight setting')}</b></label>
+        <div class="col-xs-12 col-sm-8"><span class="text-danger">{:__('Game weight setting tips')}</span></div>
+    </div>
+
+    {foreach $row.chance as $k=>$v}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('%sWeight', 'A'.($k+1))}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[chance{$k}]" value="{$v}"  id="c-chance{$k}" class="form-control" data-rule="required" min="0" />
+                <div class="input-group-addon">{:__('%')}</div>
+            </div>
+            
+        </div>
+    </div>
+    {/foreach}
+
+    <div class="form-group"></div>
+
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><b>{:__('Game rules')}</b></label>
+        <div class="col-xs-12 col-sm-8"></div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Game rules')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[rule]" id="c-rule" class="form-control" data-rule="required" maxlength="1000" rows="10">{$row.rule}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group"></div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

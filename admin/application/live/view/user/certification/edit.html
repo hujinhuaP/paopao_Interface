@@ -1,0 +1,207 @@
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#realnameDiv" data-toggle="tab">{:__('实名认证')}</a></li>
+            <li><a href="#videoDiv" data-toggle="tab">视频认证</a></li>
+            <li><a href="#imagesDiv" data-toggle="tab">图片认证</a></li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="realnameDiv">
+                <table class="table table-bordered table-condensed table-hover">
+                    <tbody>
+                    <tr>
+                        <td class="text-right">{:__("Realname")}：</td>
+                        <td>{$row.user_realname}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("ID card No.")}：</td>
+                        <td>{$row.user_certification_number}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("Contact phone number")}：</td>
+                        <td>{$row.user_phone}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("Front of ID card")}：</td>
+                        <td>
+                            <a href="{$row.user_front_img ?: '__CDN__/assets/img/avatar.png'}" target="_blank">
+                                <img src="{$row.user_front_img}" alt="" height="200"
+                                     onerror="this.src='__CDN__/assets/img/avatar.png'">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("Back of ID card")}：</td>
+                        <td>
+                            <a href="{$row.user_back_img ?: '__CDN__/assets/img/avatar.png'}" target="_blank">
+                                <img src="{$row.user_back_img}" alt="" height="200"
+                                     onerror="this.src='__CDN__/assets/img/avatar.png'">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("Front view of handheld ID card")}：</td>
+                        <td>
+                            <a href="{$row.user_img ?: '__CDN__/assets/img/avatar.png'}" target="_blank">
+                                <img src="{$row.user_img}" alt="" height="200"
+                                     onerror="this.src='__CDN__/assets/img/avatar.png'">
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST"
+                      action="">
+                    <div class="form-group">
+                        <label for="c-user_certification_status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+                        <div class="col-xs-12 col-sm-8">
+                            <label class="radio-inline">
+                                <input type="radio" name="row[user_certification_status]" id="user_certification_status"
+                                       value="Y" data-rule="checked" {$row.user_certification_status== "Y" ? "checked" :
+                                ""} > {:__('Pass')}
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="row[user_certification_status]" id="user_certification_status"
+                                       value="N" data-rule="checked" {$row.user_certification_status== "N" ? "checked" :
+                                ""} > {:__('Refuse')}
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="row[user_certification_status]" id="user_certification_status"
+                                       value="D" data-rule="checked" {$row.user_certification_status== "D" ? "checked" :
+                                ""} > {:__('Forbid certification')}
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="c-user_certification_result" class="control-label col-xs-12 col-sm-2">{:__('Check
+                            result')}:</label>
+                        <div class="col-xs-12 col-sm-8">
+                            <textarea name="row[user_certification_result]" id="c-user_certification_result"
+                                      class="form-control" maxlength="250">{$row.user_certification_result}</textarea>
+                        </div>
+                    </div>
+                    {if condition="$row.user_certification_status eq 'C'"}
+                    <div class="form-group hide layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+
+                            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                        </div>
+                    </div>
+                    {/if}
+                </form>
+            </div>
+            <div class="tab-pane fade active" id="videoDiv">
+                {notempty name='videoUrl'}
+                <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.0.js" charset="utf-8"></script>
+                <div id="video"></div>
+
+                <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST"
+                      action="/live/user/certification/video">
+                    <input type="hidden" name="row[user_certification_id]" value="{$row.user_certification_id}"/>
+                    <div class="form-group">
+                        <label for="c-user_certification_status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+                        <div class="col-xs-12 col-sm-8">
+                            <label class="radio-inline">
+                                <input type="radio" name="row[user_certification_video_status]"
+                                       id="user_certification_status" value="Y" data-rule="checked"
+                                       {$row.user_certification_video_status== "Y" ? "checked" : ""} > {:__('Pass')}
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="row[user_certification_video_status]"
+                                       id="user_certification_status" value="N" data-rule="checked"
+                                       {$row.user_certification_video_status== "N" ? "checked" : ""} > {:__('Refuse')}
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="c-user_certification_result" class="control-label col-xs-12 col-sm-2">{:__('Check result')}:</label>
+                        <div class="col-xs-12 col-sm-8">
+                            <textarea name="row[video_certification_result]" id="c-user_certification_result"
+                                      class="form-control" maxlength="250">{$videoSource.result}</textarea>
+                        </div>
+                    </div>
+                    {if condition="$row.user_certification_video_status eq 'C'"}
+                    <div class="form-group hide layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+
+                            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                        </div>
+                    </div>
+                    {/if}
+                </form>
+                <script>
+                    var player = new TcPlayer('video', {
+                        "mp4": "{$videoSource.source_url}",
+                        "m3u8": "", //请替换成实际可用的播放地址
+                        "flv": "", //请替换成实际可用的播放地址
+                        "autoplay": true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+                        "coverpic": "",
+                        "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
+                        "height": '500'//视频的显示高度，请尽量使用视频分辨率高度
+                    });
+                </script>
+                {/notempty}
+            </div>
+            <label class="tab-pane fade active" id="imagesDiv">
+                <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST"
+                      action="/live/user/certification/image">
+                    <input type="hidden" name="user_certification_id" value="{$row.user_certification_id}"/>
+                    <table class="table table-bordered table-condensed table-hover">
+                        <tbody>
+                        {volist name="imageSource" id="imageItem"}
+                        <tr>
+                            <td class="text-right">
+                                {if condition="$imageItem.sort_num eq 0"}
+                                {:__("封面")}：
+                                {/if}
+                            </td>
+                            <td>
+                                <a href="{$imageItem.source_url}" target="_blank">
+                                    <img src="{$imageItem.source_url}" alt="" height="200">
+                                </a>
+                            </td>
+                            <td>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{$imageItem.sort_num}][user_certification_image_status]"
+                                           id="user_certification_status" value="Y" data-rule="checked"
+                                           {$row.user_certification_image_status== "Y" ? "checked" : ""} > {:__('Pass')}
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{$imageItem.sort_num}][user_certification_image_status]"
+                                           id="user_certification_status" value="N" data-rule="checked"
+                                           {$row.user_certification_image_status== "N" ? "checked" : ""} >
+                                    {:__('Refuse')}
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="hidden" value="{$imageItem.id}" name="row[{$imageItem.sort_num}][id]" />
+                                    {:__('Check result')}:
+                                    <textarea name="row[{$imageItem.sort_num}][user_image_certification_result]"
+                                              id="c-user_certification_result" class="form-control" maxlength="250">{$row.user_certification_result}</textarea>
+                                </label>
+                            </td>
+                        </tr>
+                        {/volist}
+                        </tbody>
+                    </table>
+                    {if condition="$row.user_certification_image_status eq 'C'"}
+                    <div class="form-group hide layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                        </div>
+                    </div>
+                    {/if}
+                </form>
+            </label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    
+    <div class="form-group">
+        <label for="c-question_title" class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[system_message_content]" id="c-question_title" class="form-control" data-rule="required" rows="5"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-system_message_push_type" class="control-label col-xs-12 col-sm-2">{:__('Select')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" id="c-system_message_push_type" name="row[system_message_push_type]" data-rule="required">
+                <option value="0" selected>{:__('All user')}</option>
+                <option value="2">{:__('All anchor')}</option>
+                <option value="1">{:__('Select user')}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_id" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[user_id]" id="c-user_id" class="form-control" data-rule="required" rows="4" disabled placeholder='{:__('Select user').'。 '.__('Please input user id').'，'.__('Divide by "%s"', ',')}'></textarea>
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

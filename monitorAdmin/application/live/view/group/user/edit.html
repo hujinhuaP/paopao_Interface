@@ -1,0 +1,25 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-group_id" class="control-label col-xs-12 col-sm-2">{:__('Group name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[group_id]" id="c-group_id" class="form-control" data-rule="required" >
+                {foreach $row_group as $group}
+                <option value="{$group.id}" {$row.user_group_id == $group.id ? 'selected' : ''}>{$group.group_name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_id" class="control-label col-xs-12 col-sm-2">{:__('Anchor')} ID:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" disabled value="{$row.user_id}"  id="c-user_id" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

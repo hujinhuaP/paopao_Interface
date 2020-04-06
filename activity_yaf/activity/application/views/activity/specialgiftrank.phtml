@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{$activityTitle}</title>
+</head>
+<style>
+    img{
+        width: 100%;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        font-size: 0;
+        margin-top: -1px;
+    }
+    .rank_div{
+        width: 100%;
+        background: url(/static/imgs/activity/bg3.jpg) center no-repeat;
+        background-size: cover;
+        position: relative;
+        padding: 1px;
+        overflow: hidden;
+        display: table;
+    }
+    .rank_list{
+        margin-left: auto;
+        margin-right: auto;
+        height: 25.5rem;
+        vertical-align: middle;
+        text-align: center;
+
+    }
+    .rank1{
+        background: url(/static/imgs/activity/bg4.jpg) center no-repeat;
+        background-size: 86% 100%;
+    }
+    .rank2{
+        background: url(/static/imgs/activity/bg5.jpg) center no-repeat;
+        background-size: 86% 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .rank_list ul div{
+        float: left;
+    }
+
+    .rank_list ol{
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .rank_list li {
+        display: table-cell;
+        padding: 5px 10px;
+    }
+    .rank_list ol li {
+        color: #ffffff;
+    }
+
+    .rank_list ul{
+        color: #F9DC2F;
+    }
+    .rank_list ol, .rank_list ul {
+        line-height: 1.7rem;
+        display: table-row;
+    }
+
+    .rank_list .avatar {
+        width: 2rem;
+        height: 2rem;
+        background: no-repeat center;
+        background-size: cover;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 100rem;
+        border: solid 1px #eee;
+    }
+    .ul-div{
+        padding-top: 3.875rem;
+        margin-top: 2rem;
+        text-align: center;
+        display: inline-block;
+    }
+    * {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+        outline: none;
+        font-style: normal;
+    }
+
+    .rank2_div{
+        margin-top: 50px;
+    }
+
+</style>
+<body>
+<div class="wrapper">
+    <img src="/static/imgs/activity/bg1-1.jpg">
+    <img src="/static/imgs/activity/bg1-2.jpg">
+    <img src="/static/imgs/activity/bg2.jpg">
+    <div class="rank_div">
+        <div class="rank_list center-block rank1">
+            <div class="ul-div">
+            <ul class="list-unstyled"><li></li><li>用户</li><li>昵称</li><li>获赠数(人)</li></ul>
+                {foreach from=$rank key=key item=item}
+                    <ol><li><div class="rank">{$key+1}</div></li><li><div class="avatar" style="background-image:url({$item.user_avatar})"></div></li><li>{$item.user_nickname}</li><li>{$item.total_number}</li></ol>
+                {/foreach}
+            </div>
+        </div>
+
+        <div class="rank_list center-block rank2">
+            <div class="ul-div">
+                <ul class="list-unstyled"><li></li><li>用户</li><li>昵称</li><li>获赠数(人)</li></ul>
+                {foreach from=$rank2 key=key item=item}
+                    <ol><li><div class="rank">{$key+1}</div></li><li><div class="avatar" style="background-image:url({$item.user_avatar})"></div></li><li>{$item.user_nickname}</li><li>{$item.total_number}</li></ol>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1317 @@
+body {
+	background:#edeff5;
+	min-width:1280px
+}
+.indexWrap {
+	margin:0 auto;
+	width:1424px
+}
+.indexBox {
+	margin-top:30px
+}
+.indexWrap span,.indexWrap b,.indexWrap em,.indexWrap i,.indexWrap a {
+	display:inline-block;
+	vertical-align:middle
+}
+.indexLeft {
+	width:1110px
+}
+.indexRight {
+	width:294px
+}
+.indexRightBgF {
+	background:#fff;
+	padding:0 15px;
+	margin-bottom:10px;
+	border-bottom:5px solid #fafafc
+}
+.moduleImgBox {
+	position:relative
+}
+.moduleImgBox img {
+	width:100%;
+	height:auto
+}
+.moduleImgBox .moduleBg {
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	padding-top:25px;
+	background:url("img/imgBoxBg.png")/*tpa=http://www.huayisz168.com/tong_files/img/imgBoxBg.png*/;
+	z-index:5;
+	opacity:0;
+	filter:alpha(opacity=0);
+	-moz-transition:all .5s;
+	-webkit-transition:all .5s;
+	-o-transition:all .5s;
+	transition:all .5s
+}
+.moduleImgBox .moduleBg p {
+	color:#fff;
+	margin-bottom:5px;
+	padding-left:8px
+}
+.moduleImgBox .moduleBg p b {
+	margin-right:5px
+}
+.moduleImgBox .moduleBg p em {
+	margin-right:5px
+}
+.item_line {
+	font-size:0;
+	width:1px;
+	height:16px;
+	margin:0 8px;
+	border-right:1px solid #b7b9c0;
+	overflow:hidden;
+	display:inline-block;
+	line-height:0
+}
+.indexPer {
+	margin-top:40px
+}
+.indexPerLiveBox {
+	margin-top:10px
+}
+.indexPerLiveBox h3 {
+	width:262px;
+	height:25px;
+	margin-bottom:1px
+}
+.indexPerLiveBox h3 a {
+	display:inline-block;
+	width:86px;
+	color:#959597;
+	text-align:center;
+	height:25px;
+	line-height:25px;
+	background:#dcdfe7;
+	float:left
+}
+.indexPerLiveBox h3 a:hover,.indexPerLiveBox h3 a.on {
+	background:#eef0f6;
+	color:#383838
+}
+.indexPerLiveBox .liveBox {
+	margin-top:1px;
+	width:262px;
+	height:197px;
+	position:relative;
+	background:#ddd;
+	overflow:hidden
+}
+.indexPerLiveBox .liveBox a.goRid {
+	}.indexPerLiveBox .liveBox .inRoom {
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:url("img/indexPerBg1.png")/*tpa=http://www.huayisz168.com/tong_files/img/indexPerBg1.png*/ repeat;
+	width:262px;
+	height:29px;
+	line-height:29px
+}
+.indexPerLiveBox .liveBox .inRoom b {
+	margin:0 10px
+}
+.indexPerLiveBox .liveBox .inRoom em {
+	color:#fff;
+	display:inline-block;
+	width:125px
+}
+.indexPerLiveBox .liveBox .inRoom .btn {
+	background:url("img/indexPerBg2.png")/*tpa=http://www.huayisz168.com/tong_files/img/indexPerBg2.png*/ repeat;
+	width:73px;
+	height:19px;
+	line-height:19px;
+	display:inline-block;
+	text-align:center;
+	border-radius:3px;
+	color:#494949
+}
+.liveBox img {
+	width:100%
+}
+.bannerBox {
+	position:relative;
+	background:#000;
+	margin-top:20px
+}
+.bannerBox .ImgList {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	height:182px
+}
+.bannerBox .butLine {
+	width:100%;
+	z-index:9;
+	text-align:center;
+	height:22px;
+	position:absolute;
+	bottom:9px;
+	left:0
+}
+.bannerBox .butLine a {
+	margin:0 4px;
+	width:14px;
+	height:14px;
+	background-position:-49px 0
+}
+.bannerBox .butLine a.on {
+	background-position:-32px 0
+}
+.bannerBox .imgAnimate {
+	width:800%;
+	-moz-transition:all 1s;
+	-webkit-transition:all 1s;
+	-o-transition:all 1s;
+	transition:all 1s
+}
+.bannerBox .imgAnimate a {
+	float:left
+}
+.bannerBox .imgAnimate a img {
+	width:100%;
+	height:auto
+}
+.indexAhoTitle .titleName {
+	position:relative;
+	font-size:20px;
+	color:#393939;
+	padding-right:10px;
+	float:left;
+	font-weight:700
+}
+.indexAhoTitle .titleCont {
+	float:right
+}
+.moveTitle em {
+	margin-right:5px
+}
+.indexAhoBox {
+	background:#fff
+}
+.indexAhoBox .moduleImgBox {
+	width:165px;
+	height:124px;
+	margin:10px 10px 7px;
+	overflow:hidden;
+	background:#c5c5c5
+}
+.indexAhoBox .moduleImgBox img {
+	-moz-transition:all .5s;
+	-webkit-transition:all .5s;
+	-o-transition:all .5s;
+	transition:all .5s
+}
+.indexAhoBox .moduleImgBox:hover img {
+	-webkit-transform:scale(1.2);
+	-o-transform:scale(1.2);
+	transform:scale(1.2);
+	-moz-transform:scale(1.2)
+}
+.indexAhoBox .moduleImgBigBox {
+	width:350px;
+	height:265px
+}
+.indexAhoBox .moduleImgBigBox .moduleBg {
+	padding-top:150px
+}
+.indexAhoBox .moduleImgBigBox .moduleBg p {
+	font-size:14px
+}
+.indexAhoBox .nodata {
+	width:100%;
+	height:300px;
+	background:#fff url("img/loading.gif")/*tpa=http://www.huayisz168.com/tong_files/img/loading.gif*/ center center no-repeat
+}
+.fisrtRun_l,.fisrtRun_r,.livelaba,.RunwayTime,.RunwayTF {
+	display:none!important
+}
+.indexlaba {
+	display:block!important
+}
+.first_runway {
+	position:relative;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	font-size:14px;
+	padding:2px 0;
+	height:24px;
+	line-height:24px
+}
+.first_runway embed {
+	position:absolute;
+	z-index:5
+}
+.first_runway em {
+	margin:0 10px 0 84px;
+	overflow:hidden
+}
+.first_runway i {
+	vertical-align:middle
+}
+.first_runway .icons {
+	width:16px;
+	height:16px;
+	position:relative;
+	right:3px;
+	top:5px;
+	background:url("img/iconsBg.png")/*tpa=http://www.huayisz168.com/tong_files/img/iconsBg.png*/ left top no-repeat
+}
+.first_runway .RunwayTime {
+	font-style:normal;
+	margin:2px 5px 0
+}
+.first_runway .laba {
+	top:-12px;
+	left:-1px
+}
+.first_runway .txcolor {
+	color:#3d9cdb
+}
+.ti {
+	position:absolute;
+	z-index:5;
+	right:-50px;
+	top:0
+}
+.first_runway .newtime {
+	display:none
+}
+.first_runway span {
+	display:inline-block;
+	padding:0 2px;
+	vertical-align:middle
+}
+.first_runway span.icon_rich_level,.room_ynew li span.icon_live_level {
+	padding:0
+}
+.first_runway img {
+	width:23px;
+	height:23px
+}
+.tipBoxRunway {
+	position:absolute;
+	right:0;
+	top:30px;
+	background:#383b43;
+	font-style:normal;
+	font-size:12px;
+	width:300px;
+	white-space:normal;
+	padding:5px 10px 10px;
+	z-index:100
+}
+.tipBoxRunway p {
+	line-height:180%;
+	padding-top:5px;
+	color:#fff
+}
+.hotTab {
+	padding-left:15px
+}
+.hotTab a {
+	font-size:18px;
+	color:#7E7E80
+}
+.hotTab a.on {
+	color:#fa265d
+}
+.indexRightBgFLogin {
+	display:none
+}
+.indexNoneLoginBox {
+	padding-top:20px
+}
+.indexNoneLoginBox .noLoginBtn {
+	width:262px;
+	height:52px;
+	border-radius:3px;
+	border:1px solid #fa265d;
+	color:#fa265d;
+	font-size:22px;
+	text-align:center;
+	line-height:52px;
+	cursor:pointer;
+	margin-bottom:20px
+}
+.indexNoneLoginBox .noLoginBtn:hover {
+	background:#fa265d;
+	color:#fff
+}
+.indexNoneLoginBox .thrLogin {
+	margin-bottom:20px
+}
+.indexNoneLoginBox .thrLogin a {
+	width:84px;
+	height:26px;
+	border-radius:3px;
+	color:#fff;
+	text-align:center;
+	font-size:14px;
+	margin:0
+}
+.indexNoneLoginBox .thrLogin a em {
+	margin-left:5px
+}
+.indexNoneLoginBox .thrLogin a.QQlogin {
+	background:#5ac1e8
+}
+.indexNoneLoginBox .thrLogin a.QQlogin:hover {
+	background:#2eb5e7
+}
+.indexNoneLoginBox .thrLogin a.wxlogin {
+	background:#96d959;
+	margin:0 6px
+}
+.indexNoneLoginBox .thrLogin a.wxlogin:hover {
+	background:#7fd134
+}
+.indexNoneLoginBox .thrLogin a.baidulogin {
+	background:#63b1ff
+}
+.indexNoneLoginBox .thrLogin a.baidulogin:hover {
+	background:#42a1ff
+}
+.indexNoneLoginBox .otherLogin {
+	margin-bottom:10px;
+	text-align:center
+}
+.indexNoneLoginBox .otherLogin a {
+	margin:0 10px
+}
+.indexNoneLoginBox .otherLogin em {
+	color:#84868e
+}
+.indexNoneLoginBox .noLoginRegist {
+	color:#2693ff
+}
+.indexLoginBox {
+	margin-bottom:24px
+}
+.indexLoginBox .loginT {
+	height:83px;
+	padding:20px 0 0 13px
+}
+.indexLoginBox .loginT .imgBox {
+	position:relative;
+	float:left
+}
+.indexLoginBox .loginT .imgBox img {
+	width:72px;
+	height:72px;
+	border-radius:50%
+}
+.indexLoginBox .loginT .imgBox .invisibleBox {
+	right:0;
+	top:52px;
+	cursor:pointer;
+	width:16px
+}
+.indexLoginBox .loginT .imgBox .invisibleBox span {
+	width:16px;
+	height:16px;
+	cursor:default
+}
+.indexLoginBox .loginT .imgBox .invisibleBox a {
+	width:16px;
+	height:16px
+}
+.indexLoginBox .loginT .imgBox .invisibleBox .state_on {
+	background-position:-193px 0
+}
+.indexLoginBox .loginT .imgBox .invisibleBox .state_out {
+	background-position:-173px 0
+}
+.indexLoginBox .loginT .infoBox {
+	float:right;
+	width:150px
+}
+.indexLoginBox .loginT .infoBox dt {
+	color:#898989;
+	margin:5px 0
+}
+.indexLoginBox .loginT .infoBox dd {
+	color:#898989
+}
+.indexLoginBox .loginT .infoBox b {
+	margin-right:5px
+}
+.indexLoginBox .liveLevel .levelNowNum {
+	background:#2e88c7
+}
+.indexLoginBox .wealthLevel .levelNowNum {
+	background:#fb265c
+}
+.indexLoginBox .levelBox {
+	margin:15px 0
+}
+.indexLoginBox .levelBox span {
+	margin:0 8px
+}
+.indexLoginBox .levelBox em {
+	margin-right:3px
+}
+.indexLoginBox .levelBox b {
+	border-bottom:3px solid #cacccb;
+	width:75px;
+	text-align:right;
+	position:relative
+}
+.indexLoginBox .levelBox .levelNowTxt {
+	color:#fd6059
+}
+.indexLoginBox .liveLevel .levelNowTxt {
+	color:#2e88c7
+}
+.indexLoginBox .levelBox .levelNowNum {
+	position:absolute;
+	left:0;
+	bottom:-3px;
+	height:3px;
+	overflow:hidden
+}
+.indexLoginBox .loginOper {
+	text-align:center;
+	margin-bottom:5px
+}
+.indexLoginBox .loginOper .item_line {
+	height:12px
+}
+.indexLoginBox .loginOper a {
+	color:#898989;
+	font-size:14px
+}
+.indexLoginBox .loginOper a:hover {
+	color:#3d9cdc
+}
+.mycommend h3 a {
+	text-align:center;
+	float:left;
+	display:inline-block;
+	width:132px;
+	height:25px;
+	line-height:20px;
+	background:#dcdfe7;
+	color:#888;
+	margin-right:1px
+}
+.mycommend h3 a.on,.mycommend h3 a:hover {
+	background:#eef0f6;
+	color:#383838
+}
+.mycommend h3 a span {
+	font-size:14px;
+	padding-right:5px
+}
+.mycommendListBox {
+	position:relative
+}
+.mycommendListBox .nodata {
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	line-height:89px;
+	color:#fff;
+	text-align:center;
+	background:#fff url("img/loading.gif")/*tpa=http://www.huayisz168.com/tong_files/img/loading.gif*/ center center no-repeat;
+	z-index:10
+}
+.mycommendListBox .listPage {
+	text-align:right;
+	background:#f1f1f1;
+	line-height:21px;
+	padding-right:9px;
+	height:23px;
+	margin-top:1px
+}
+.mycommendListBox .listPage span {
+	margin-right:10px;
+	vertical-align:top;
+	color:#9c9ba0
+}
+.mycommendListBox .listPage em {
+	width:10px;
+	height:15px;
+	cursor:pointer;
+	margin-right:3px
+}
+.mycommendListBox .listPage .leftPageBtn {
+	background-position:-173px -93px
+}
+.mycommendListBox .listPage .leftPageBtn:hover {
+	background-position:-173px -109px
+}
+.mycommendListBox .listPage .rightPageBtn {
+	background-position:-184px -109px
+}
+.mycommendListBox .listPage .rightPageBtn:hover {
+	background-position:-184px -93px
+}
+.mycommendListBox .listBox {
+	position:absolute;
+	left:-15px;
+	top:23px;
+	z-index:99;
+	width:264px;
+	background:#fff;
+	height:0;
+	overflow:hidden;
+	padding:0 15px 15px;
+	border-bottom:5px solid #fafafc
+}
+.mycommendListBox .listBox li {
+	height:42px;
+	background:#f1f1f1;
+	padding:5px 10px;
+	margin-top:1px;
+	overflow:hidden
+}
+.mycommendListBox .listBox li:hover {
+	background:#fff
+}
+.mycommendListBox .listBoxAho li img {
+	width:39px;
+	height:39px;
+	border-radius:50%
+}
+.mycommendListBox .listBox li img {
+	width:39px;
+	height:39px;
+	border-radius:50%
+}
+.mycommendListBox .listBox li em {
+	margin-left:10px;
+	line-height:45px
+}
+.mycommendListBox .listBox li .ahoInfo {
+	width:120px;
+	margin:0 5px
+}
+.mycommendListBox .listBox li .ahoName a {
+	margin-right:5px;
+	width:75px
+}
+.mycommendListBox .listBox li .ahoLiveTime {
+	color:#ff9d4c
+}
+.mycommendListBox .listBox li .ahoLiveTimeNone {
+	color:#40a3dc
+}
+.mycommendListBox .listBox li .ahoNoneLive {
+	color:#C2C2C2
+}
+.mycommendListBox .listBox li .recIcon {
+	}.mycommendListBox .listBox li .ahoName,.mycommendListBox .listBox li .ahoLiveTime {
+	display:block
+}
+.mycommendListBoxUser {
+	position:relative
+}
+.mycommendAho h3 a {
+	width:130px
+}
+.listBoxAho {
+	margin-top:1px;
+	padding:20px 0 20px 11px
+}
+.listBoxAho li {
+	margin:5px 11px 5px 0;
+	float:left
+}
+.listBoxAho li .photoimg {
+	width:38px;
+	height:38px;
+	border-radius:50%;
+	-moz-transition:all .5s;
+	-webkit-transition:all .5s;
+	-o-transition:all .5s;
+	transition:all .5s
+}
+.listBoxAho li:hover .photoimg {
+	-webkit-transform:scale(1.1);
+	-o-transform:scale(1.1);
+	transform:scale(1.1);
+	-moz-transform:scale(1.1)
+}
+.indexPerLiveBox .listBoxAho {
+	padding:10px 0 0 11px
+}
+.indexPerLiveBox .listBoxAho li {
+	border-bottom:3px solid #fff;
+	padding-bottom:10px;
+	cursor:pointer;
+	position:relative
+}
+.indexPerLiveBox .listBoxAho li .status {
+	position:absolute;
+	right:0;
+	bottom:10px;
+	z-index:2
+}
+.indexPerLiveBox .listBoxAho li.on {
+	border-bottom:3px solid #fa265d
+}
+.rightBannerBox {
+	position:relative;
+	padding-top:16px
+}
+.rightBannerBox .ImgList {
+	position:relative;
+	width:262px;
+	overflow:hidden
+}
+.rightBannerBox .butLine {
+	width:100%;
+	z-index:9;
+	text-align:center;
+	height:22px
+}
+.rightBannerBox .butLine a {
+	margin:0 4px;
+	width:8px;
+	height:8px;
+	background-position:-300px 0
+}
+.rightBannerBox .butLine a.on {
+	background-position:-288px 0
+}
+.rightBannerBox .imgAnimate {
+	width:4000px;
+	height:363px;
+	-moz-transition:all 1s;
+	-webkit-transition:all 1s;
+	-o-transition:all 1s;
+	transition:all 1s
+}
+.rightBannerBox .imgAnimate a {
+	float:left
+}
+.rightBannerBox .imgAnimate a img {
+	width:262px;
+	height:363px;
+	float:left
+}
+.ahoRecruit {
+	margin-bottom:10px
+}
+.ahoRecruit a {
+	float:left;
+	width:147px;
+	height:46px;
+	text-align:center;
+	color:#fff;
+	font-size:14px;
+	line-height:46px
+}
+.ahoRecruit a.go_live {
+	background:#fa265d;
+	border-radius:5px 0 0 5px
+}
+.ahoRecruit a.go_live:hover {
+	background:#E2144A
+}
+.ahoRecruit a.go_deluxeRoom {
+	background:#ff6d27;
+	border-radius:0 5px 5px 0
+}
+.ahoRecruit a.go_deluxeRoom:hover {
+	background:#F25A10
+}
+.deluxeOther {
+	padding-bottom:10px
+}
+.deluxeOther li {
+	border-bottom:1px solid #dcdcdc;
+	margin-top:10px
+}
+.deluxeOther li img {
+	width:262px;
+	height:70px
+}
+.deluxeOther li p {
+	margin:10px 0
+}
+.deluxeOther li .time {
+	color:#9b9b9b;
+	float:left
+}
+.deluxeOther li .name {
+	float:right
+}
+.index_notice {
+	padding-bottom:10px
+}
+.noticeList li {
+	background:url("img/li_style.png")/*tpa=http://www.huayisz168.com/tong_files/img/li_style.png*/ left center no-repeat;
+	padding-left:15px;
+	width:247px;
+	line-height:2.5em
+}
+.noticeList li a {
+	font-size:14px;
+	color:#7d7d80
+}
+.noticeList li a:hover {
+	color:#fb288e
+}
+.index_rank {
+	padding-bottom:10px
+}
+.index_rank .index_title {
+	margin-top:10px
+}
+.index_rank .index_title .index_t_img {
+	background-position:0 -623px;
+	width:60px
+}
+.index_rank .index_title .index_t_line {
+	width:192px
+}
+.index_rank_tab {
+	text-align:center;
+	color:#7d7d80
+}
+.index_rank_tab .tab_type_box {
+	background:url("img/index_line.jpg")/*tpa=http://www.huayisz168.com/tong_files/img/index_line.jpg*/ left 31px repeat-x
+}
+.index_rank_tab .tab_type_box span {
+	background:url("img/index_y_line.jpg")/*tpa=http://www.huayisz168.com/tong_files/img/index_y_line.jpg*/ right 9px no-repeat;
+	display:inline-block
+}
+.index_rank_tab .tab_type_box span em {
+	display:inline-block;
+	padding:0 25px;
+	cursor:pointer;
+	font-size:16px;
+	height:32px;
+	line-height:34px
+}
+.index_rank_tab .tab_type_box span:hover em,.index_rank_tab .tab_type_box .on em {
+	background:url("img/index_tab.png")/*tpa=http://www.huayisz168.com/tong_files/img/index_tab.png*/ center bottom no-repeat;
+	color:#fb288e
+}
+.index_rank_tab .tab_item_box {
+	cursor:pointer
+}
+.index_rank_tab .tab_item_box b {
+	display:inline-block;
+	height:32px;
+	line-height:32px;
+	width:46px;
+	text-align:center
+}
+.index_rank_tab .tab_item_box b:hover,.index_rank_tab .tab_item_box b.on {
+	color:#fb288e;
+	font-size:14px
+}
+.index_rank_box .index_rank_list {
+	display:none
+}
+.index_rank_box .curr {
+	display:block
+}
+.rankListBox .top_rank {
+	height:100px
+}
+.rankListBox .top_rank .top_rank_item {
+	width:74px;
+	height:74px
+}
+.rankListBox .top_rank .top_rank_item em {
+	right:0;
+	top:0;
+	color:#fff;
+	width:29px;
+	height:27px;
+	padding:2px 0 0;
+	text-align:right
+}
+.rankListBox .top_rank .top_rank_item img {
+	width:74px;
+	height:74px
+}
+.rankListBox .top_rank .top_rank_item a.text_hidden,.rankListBox .top_rank .top_rank_item i {
+	text-align:center;
+	display:inline-block;
+	width:78px;
+	height:24px;
+	line-height:24px;
+	color:#7d7d80;
+	font-size:14px
+}
+.rankListBox .top_rank .top_rank_item a:hover {
+	color:#fb288e
+}
+.rankListBox .top_rank .top_rank_item b {
+	left:2px;
+	bottom:2px
+}
+.rankListBox .top_rank .top_rank_item .star_shining {
+	position:absolute!important
+}
+.rankListBox .top_rank .rank_item1 {
+	left:92px;
+	top:0;
+	border:2px solid #b9c3c5
+}
+.rankListBox .top_rank .rank_item2 {
+	left:0;
+	top:0;
+	border:2px solid #ffc207
+}
+.rankListBox .top_rank .rank_item3 {
+	right:0;
+	top:0;
+	border:2px solid #fa9022
+}
+.rankListBox .top_rank .rank_item1 em {
+	background-position:-198px -19px
+}
+.rankListBox .top_rank .rank_item2 em {
+	background-position:-234px -19px
+}
+.rankListBox .top_rank .rank_item3 em {
+	background-position:-270px -19px
+}
+.rankListBox .moveRank li {
+	font-size:14px;
+	line-height:2em;
+	vertical-align:middle
+}
+.rankListBox .moveRank li span {
+	color:#fb288e;
+	vertical-align:middle;
+	display:inline-block;
+	width:25px
+}
+.rankListBox .moveRank li a,.rankListBox .moveRank li i {
+	font-size:14px;
+	color:#7d7d80;
+	vertical-align:middle;
+	display:inline-block;
+	width:195px
+}
+.rankListBox .moveRank li a:hover {
+	color:#fb288e
+}
+.rankListBox .moveRank li em {
+	display:inline-block;
+	width:20px;
+	height:20px;
+	text-align:right;
+	color:#7d7d80;
+	vertical-align:top
+}
+.rankListBox .moveRank li em b {
+	vertical-align:middle
+}
+.index_qq {
+	padding:20px 0 10px
+}
+.index_qq .level8 {
+	background-position:0 -482px;
+	width:250px;
+	text-align:center;
+	height:34px;
+	line-height:34px;
+	font-size:14px;
+	color:#fa265d;
+	padding-left:12px
+}
+.index_qq .level8:hover {
+	background-position:0 -517px;
+	color:#fff
+}
+.index_qq .qqCont {
+	color:#7d7d80
+}
+.index_qq .qqCont p {
+	margin:10px 0
+}
+.index_qq .qqCont a {
+	display:inline-block;
+	margin-right:2px
+}
+.index_qq .qqCont span {
+	font-size:14px
+}
+.index_qq .qqCont .photo {
+	font-size:14px
+}
+.toTop {
+	width:66px;
+	position:fixed;
+	z-index:100;
+	bottom:15px;
+	right:10px;
+	transition:bottom .2s;
+	color:#999;
+	_position:absolute
+}
+.toTop .toTopHB {
+	background:#FFF;
+	border-radius:3px;
+	height:0;
+	-webkit-transition:height .3s;
+	transition:height .3s;
+	overflow:hidden;
+	visibility:hidden
+}
+.toTop .toTopHBItem {
+	height:27px;
+	padding:15px 0 0;
+	border-top:1px solid #edeff5;
+	text-align:center;
+	background:#fff url("img/rigback2.png")/*tpa=http://www.huayisz168.com/tong_files/img/rigback2.png*/ no-repeat 19px 13px;
+	cursor:pointer
+}
+.toTop .toTopHB .top {
+	border:0
+}
+.toTop .toTopHB .fav {
+	height:23px;
+	padding:18px 0 0;
+	background-position:21px -124px
+}
+.toTop .toTopHB .app {
+	height:22px;
+	padding:19px 0 0;
+	display:block;
+	background:url("img/rigback2.png")/*tpa=http://www.huayisz168.com/tong_files/img/rigback2.png*/ no-repeat 25px -78px;
+	text-align:center;
+	color:#999;
+	z-index:101;
+	position:relative;
+	border-top:1px solid #edeff5
+}
+.toTop .toTopHB .app .img {
+	display:none
+}
+.toTop .toTopHB .app-hover {
+	width:56px;
+	border-radius:0 3px 0 0;
+	background:#fff;
+	color:#999;
+	height:50px;
+	padding:12px 0 0
+}
+.toTop .toTopHB .app-hover .img {
+	display:block
+}
+.toTop .toTopHB .app-hover .text {
+	display:none
+}
+.toTop .toTopHB .qr {
+	display:block;
+	width:125px;
+	height:153px;
+	position:absolute;
+	left:-127px;
+	z-index:-1;
+	border:1px solid #edeff5;
+	background:#FFF;
+	display:none;
+	top:-29px
+}
+.toTop .toTopHB .qr .code {
+	display:block;
+	width:112px;
+	height:112px;
+	padding:6px 7px;
+	background:url("../Public/Images/ewm.png")/*tpa=http://www.huayisz168.com/Public/Images/ewm.png*/ no-repeat center center
+}
+.toTop .toTopHB .qr .text2 {
+	display:block;
+	height:27px;
+	line-height:27px;
+	color:#fe0198;
+	background:#f8f8f8;
+	border-top:1px solid #e7e7e7;
+	text-align:center
+}
+.toTop .toTopHB .qr:hover {
+	text-decoration:none
+}
+.toTop .downIndex {
+	height:22px;
+	padding:20px 0 0;
+	background:#fff url("img/rigback2.png")/*tpa=http://www.huayisz168.com/tong_files/img/rigback2.png*/ no-repeat 20px -33px;
+	text-align:center;
+	color:#999;
+	display:inline-block;
+	width:66px;
+	color:#999
+}
+.toTop-expand .toTopHB {
+	height:131px;
+	visibility:visible;
+	overflow:inherit
+}
+.toTop .tipsToP {
+	overflow:hidden;
+	position:relative
+}
+.toTop .tips {
+	display:block;
+	width:66px;
+	height:42px;
+	text-align:center;
+	line-height:42px;
+	background:#fa265d;
+	color:#fff;
+	font-size:14px;
+	position:absolute;
+	top:42px;
+	left:0
+}
+.web_nav_bbg_fixed {
+	position:fixed;
+	width:100%;
+	padding-bottom:0;
+	background:url("img/heardeFixedBg.png")/*tpa=http://www.huayisz168.com/tong_files/img/heardeFixedBg.png*/ left top repeat;
+	top:0
+}
+.itemTag {
+	position:absolute;
+	left:0;
+	top:0;
+	height:100%;
+	z-index:1
+}
+.tag_meili {
+	width:41px;
+	height:41px;
+	background:url("img/ml.png-id=1")/*tpa=http://www.huayisz168.com/tong_files/img/ml.png?id=1*/ no-repeat
+}
+.tag_crazy {
+	width:41px;
+	height:41px;
+	background:url("img/crazy.png")/*tpa=http://www.huayisz168.com/tong_files/img/crazy.png*/ no-repeat
+}
+.tag_pk {
+	width:41px;
+	height:41px;
+	background:url("img/pk.png")/*tpa=http://www.huayisz168.com/tong_files/img/pk.png*/ no-repeat
+}
+.robstar {
+	width:41px;
+	height:40px;
+	background:url("img/zx.png-id=2")/*tpa=http://www.huayisz168.com/tong_files/img/zx.png?id=2*/ no-repeat;
+	top:0;
+	left:0
+}
+.tag_box {
+	display:block;
+	left:2px;
+	bottom:3px;
+	z-index:1;
+	width:24px;
+	height:24px;
+	background:url("img/sr.png")/*tpa=http://www.huayisz168.com/tong_files/img/sr.png*/ no-repeat;
+	position:absolute;
+	bottom:5px;
+	left:5px
+}
+.rig_nav {
+	display:none
+}
+.rig_nav_Box {
+	right:50px;
+	bottom:-20px
+}
+.qjsimg {
+	position:absolute;
+	left:70px;
+	top:0;
+	z-index:5;
+	opacity:0;
+	filter:alpha(opacity=0)
+}
+.index_qq .qqCont b,.index_qq .qqCont a {
+	width:22px;
+	height:22px;
+	background:url("img/newQQonline.png")/*tpa=http://www.huayisz168.com/tong_files/img/newQQonline.png*/ 0 -22px no-repeat;
+	display:inline-block;
+	margin-right:2px
+}
+.QQonline .Qonline {
+	background-position:0 0!important
+}
+.resizeBox {
+	overflow:hidden
+}
+.indexLeft .indexAhoTitle {
+	margin:18px 0 10px;
+	height:30px;
+	line-height:30px
+}
+.indexLeft .indexAhoTitle em,.indexLeft .indexAhoTitle a {
+	display:inline;
+	vertical-align:top
+}
+.indexLeft .indexAhoTitle .item_line {
+	vertical-align:-3px
+}
+.indexLeft .indexAhoBox {
+	width:100%
+}
+.indexRight .indexAhoTitle {
+	padding:15px 0;
+	border-bottom:1px solid #edeff5;
+	line-height:30px
+}
+.index_cat {
+	width:62px;
+	height:83px
+}
+.indexAhoTitleTab .titleName a {
+	margin-right:20px;
+	color:#999
+}
+.indexAhoTitleTab .titleName a.on {
+	color:#393939
+}
+.indexProfitRoom .moduleImgBigBox .moduleBg {
+	padding-top:155px
+}
+.indexProfitRoom .moduleBg {
+	padding-top:26px
+}
+.liveFireIcon {
+	background:url("img/liveFireIcon.png")/*tpa=http://www.huayisz168.com/tong_files/img/liveFireIcon.png*/ no-repeat;
+	width:11px;
+	height:16px
+}
+.indexAhoTitleTab .titleName {
+	color:#999;
+	font-weight:400
+}
+.indexAhoTitleTab .titleName a {
+	padding:0 10px;
+	margin:0;
+	font-weight:600
+}
+.indexAhoTitleTab .titleName .a1 {
+	padding-left:10px
+}
+.indexNewBox {
+	height:145px
+}
+.indexRecBox {
+	height:290px
+}
+.indexIcon,.fateBox a,.bannerBox .butLine a,.rightBannerBox .butLine a,.listPage em,.indexLoginBox .invisibleBox a,.indexLoginBox .invisibleBox span {
+	background-image:url("img/indexIcon.png-id=2")/*tpa=http://www.huayisz168.com/tong_files/img/indexIcon.png?id=2*/;
+	display:inline-block;
+	vertical-align:middle;
+	overflow:hidden;
+	background-repeat:no-repeat
+}
+.indexPerLiveBg0 {
+	background-position:0 -259px
+}
+.indexPerLiveBg1 {
+	background-position:0 -306px
+}
+.indexPerLiveBg2 {
+	background-position:0 -354px
+}
+.audienceIcon {
+	width:13px;
+	height:13px;
+	background-position:0 0
+}
+.audienceIcon2 {
+	width:13px;
+	height:13px;
+	background-position:-312px 0
+}
+.liveTimeIcon {
+	width:13px;
+	height:13px;
+	background-position:-16px 0
+}
+.liveing {
+	width:35px;
+	height:18px;
+	background-position:-84px 0;
+	position:absolute;
+	right:0;
+	top:0
+}
+.mobileliveing {
+	width:35px;
+	height:18px;
+	background-position:0 -32px;
+	position:absolute;
+	right:0;
+	top:0
+}
+.titleIcon {
+	width:13px;
+	height:17px;
+	background-position:-67px 0
+}
+.noLoginImg {
+	width:80px;
+	height:80px;
+	background-position:0 -110px
+}
+.qqLoginIcon {
+	width:16px;
+	height:17px;
+	background-position:-291px -145px
+}
+.wxLoginIcon {
+	width:18px;
+	height:16px;
+	background-position:-311px -145px
+}
+.baiduLoginIcon {
+	width:16px;
+	height:17px;
+	background-position:-333px -145px
+}
+.sinaLoginIcon {
+	width:24px;
+	height:21px;
+	background-position:-217px -145px
+}
+.sinaLoginIcon:hover {
+	background-position:-217px -169px
+}
+.login360Icon {
+	width:17px;
+	height:20px;
+	background-position:-265px -145px
+}
+.login360Icon:hover {
+	background-position:-265px -169px
+}
+.index_jb {
+	width:27px;
+	height:14px;
+	background-position:-228px 0
+}
+.index_jd {
+	width:27px;
+	height:14px;
+	background-position:-259px 0
+}
+.moveIcon {
+	width:15px;
+	height:15px;
+	background-position:-153px 0
+}
+.recIcon {
+	width:34px;
+	height:35px;
+	background-position:-127px -93px
+}

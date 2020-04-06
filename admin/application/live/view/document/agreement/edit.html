@@ -1,0 +1,18 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-agreement_content" class="control-label col-xs-12 col-sm-2">{:__('Agreement content')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <script id="agreement" type="text/plain" style="height:500px;" name="row[agreement_content]"></script>
+            <script type="text/javascript">
+                var agreement_content = '{$row.agreement_content}';
+            </script>
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-9">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

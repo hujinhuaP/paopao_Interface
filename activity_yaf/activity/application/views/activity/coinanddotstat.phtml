@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>年终盛典</title>
+    <style>
+        body{
+            color: #ffffff;
+        }
+        .top-div{
+            position: relative;
+        }
+        .top-div>img{
+            width: 100%;
+        }
+        .stat-div{
+            border:0.1rem solid rgba(249,218,95,1);
+            border-radius:1rem;
+            width: 90%;
+            position: absolute;
+            bottom: 5%;
+            left: 10%;
+            padding: 3%;
+        }
+        .stat-div>div>img{
+            width: 80%;
+        }
+        .stat-div>div>div>p>span{
+            color: #F9DA5F;
+        }
+        .word-div{
+          padding-left: 0;
+        }
+        .img-div{
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+        <div class="top-div">
+            <img class="img-responsive" src="/static/imgs/coinanddot/top.jpg">
+            <div class="stat-div row">
+                <div class="col-xs-3 col-sm-3 img-div">
+                    <img class="img-responsive" src="{$userAvatar}" />
+                </div>
+                <div class="col-xs-9 col-sm-9 word-div">
+                    <div>
+                        <p>累计充值:&nbsp;&nbsp;<span>{$totalRechargeCoin|intval}</span></p>
+                    </div>
+                    <div>
+                        <p>累计收益魅力：&nbsp;&nbsp;<span>{$totalGetDot}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <img class="img-responsive" src="/static/imgs/coinanddot/img1.jpg">
+    <img class="img-responsive"  src="/static/imgs/coinanddot/img2.jpg">
+    <img class="img-responsive"  src="/static/imgs/coinanddot/img3.jpg">
+</div>
+
+
+
+</body>
+</html>

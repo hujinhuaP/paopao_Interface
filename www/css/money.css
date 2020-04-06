@@ -1,0 +1,1901 @@
+@charset "utf-8";
+/**
+* Author: Charies
+* Author URI: http://www.google.com/profiles/charies.html
+* Name: charge.css 个人中心充值样式
+* Last edit : Handi
+* Last Update : 2013-05-20
+*/
+
+/* =============================================== */
+/** Xoyo CSS Reset 0.3, (c)2009 Xoyo UED Team, Some rights reserved */
+/* ----------------------------------------------- */
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+hr {
+    border: none;
+    height: 1px;
+}
+
+body, button, input, select, textarea {
+    font: 12px/1 Arial, Tahoma, Helvetica, SimSun, san-serif;
+}
+
+/* =============================================== */
+/** 01. chgWrap - 充值页面 */
+/* ----------------------------------------------- */
+a {
+    color: #3971DE;
+    font-family: Arial, Tahoma, Helvetica, SimSun, san-serif;
+}
+
+body {
+    background-color: #FFC;
+    padding: 20px;
+}
+
+.chgWrap {
+    width: 713px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* =============================================== */
+/** 02. map - 充值步骤 */
+/* ----------------------------------------------- */
+.chgWrap .map ol {
+    margin-left: 110px;
+}
+
+.chgWrap .map ol li b {
+    font: italic 700 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #D0D0D0;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+}
+
+.chgWrap .map ol li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.chgWrap .map ol li.current b {
+    color: #5E94F6;
+}
+
+.chgWrap .map ol li.current {
+    font-weight: 700;
+}
+
+.chgWrap .map ol li {
+    float: left;
+    display: inline;
+    height: 36px;
+    padding-right: 30px;
+    margin-left: 4px;
+    background: url("../img/chg-map.png")/*tpa=http://www.huayisz168.com/img/chg-map.png*//*tpa=#/img/chg-map.png*/ no-repeat right center;
+}
+
+.chgWrap .map ol li.last {
+    background: none;
+    padding-right: 0;
+}
+
+/* =============================================== */
+/** 03. sort - 游戏分类 */
+/* ----------------------------------------------- */
+.chgWrap .sort dl {
+    border-bottom: 1px solid #E3E3E3;
+    padding: 12px 0;
+    margin: 0 24px;
+}
+
+.chgWrap .sort dl dt {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 6px 0 6px 24px;
+    background: url("../img/chg-sort.png")/*tpa=http://www.huayisz168.com/img/chg-sort.png*//*tpa=#/img/chg-sort.png*/ no-repeat 0 center;
+}
+
+.chgWrap .sort dl dd {
+    float: left;
+    display: inline;
+    margin: 0 12px;
+}
+
+.chgWrap .sort .sort-wx dd {
+    margin: 0 0 0 8px;
+}
+
+.chgWrap .sort dl dd .swl a {
+    display: block;
+    width: 140px;
+    height: 76px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+/*.chgWrap .sort dl dd .swl a.jx3 {*/
+/*background-image: url(../img/chg-jx3.jpg);*/
+/*}*/
+
+/*.chgWrap .sort dl dd .swl a.jxsj {*/
+/*background-image: url(../img/chg-jxsj.jpg);*/
+/*}*/
+
+.chgWrap .sort dl dd .swl a.jw {
+    background-image: url("../img/chg-jw.jpg")/*tpa=http://www.huayisz168.com/img/chg-jw.jpg*//*tpa=#/img/chg-jw.jpg*/;
+}
+
+/*.chgWrap .sort dl dd .swl a.xd {*/
+/*background-image: url(../img/chg-xd.jpg);*/
+/*}*/
+
+.chgWrap .sort dl dd .swl a.jx {
+    background-image: url("../img/chg-jx.jpg")/*tpa=http://www.huayisz168.com/img/chg-jx.jpg*//*tpa=#/img/chg-jx.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.jx2 {
+    background-image: url("../img/chg-jx2.jpg")/*tpa=http://www.huayisz168.com/img/chg-jx2.jpg*//*tpa=#/img/chg-jx2.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.fs {
+    background-image: url("../img/chg-fs.jpg")/*tpa=http://www.huayisz168.com/img/chg-fs.jpg*//*tpa=#/img/chg-fs.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.ifs {
+    background-image: url("../img/chg-ifs.jpg")/*tpa=http://www.huayisz168.com/img/chg-ifs.jpg*//*tpa=#/img/chg-ifs.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.fs2 {
+    background-image: url("../img/chg-fs2.jpg")/*tpa=http://www.huayisz168.com/img/chg-fs2.jpg*//*tpa=#/img/chg-fs2.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.fs3 {
+    background-image: url("../img/chg-fs3.jpg")/*tpa=http://www.huayisz168.com/img/chg-fs3.jpg*//*tpa=#/img/chg-fs3.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.xl2 {
+    background-image: url("../img/chg-xl2.jpg")/*tpa=http://www.huayisz168.com/img/chg-xl2.jpg*//*tpa=#/img/chg-xl2.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.cq {
+    background-image: url("../img/chg-cq.jpg")/*tpa=http://www.huayisz168.com/img/chg-cq.jpg*//*tpa=#/img/chg-cq.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl a.cw {
+    background-image: url("../img/chg-cw.jpg")/*tpa=http://www.huayisz168.com/img/chg-cw.jpg*//*tpa=#/img/chg-cw.jpg*/;
+}
+
+.chgWrap .sort dl dd .swr ul li a {
+    display: block;
+    height: 20px;
+    width: 88px;
+    line-height: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 4px;
+    border: 1px solid #B4B4B4;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-box-shadow: 0 2px 2px #B4B4B4;
+    -webkit-box-shadow: 0 2px 2px #B4B4B4;
+    background: url("../img/btn1.jpg")/*tpa=http://www.huayisz168.com/img/btn1.jpg*//*tpa=#/img/btn1.jpg*/ repeat-x 0 0;
+}
+
+.chgWrap .sort dl dd .swr ul li a:hover {
+    color: #333;
+    background-image: url("../img/btn1-h.jpg")/*tpa=http://www.huayisz168.com/img/btn1-h.jpg*//*tpa=#/img/btn1-h.jpg*/;
+}
+
+.chgWrap .sort dl dd .swl,
+.chgWrap .sort dl dd .swr {
+    float: left;
+}
+
+.chgWrap .sort dl dd .swr {
+    /* border-right:1px solid #E3E3E3;
+    padding-right:8px; */
+    height: 70px;
+    position: relative;
+    top: 0px;
+}
+
+/* =============================================== */
+/** 04. channel - 充值方式 */
+/* ----------------------------------------------- */
+.chgWrap .channel {
+    margin: 0 24px;
+}
+
+.chgWrap .channel .curgame p {
+    text-align: right;
+}
+
+.chgWrap .channel .curgame p b {
+    position: relative;
+    top: 8px;
+}
+
+.chgWrap .channel .chaWrap {
+    zoom: 1;
+    position: relative;
+    top: -32px;
+}
+
+.chgWrap .channel .chaWrap dd span.discount2 {
+    display: block;
+    width: 63px;
+    height: 62px;
+    text-indent: -999em;
+    /*background: url(../images/discount.png) no-repeat 0 0;*/
+    position: absolute;
+}
+
+.chgWrap .channel .chaWrap dd span.discount {
+    display: block;
+    width: 63px;
+    height: 62px;
+    text-indent: -999em;
+    /*background: url(../images/discount.png) no-repeat 0 0;*/
+    position: absolute;
+}
+
+.chgWrap .channel .chaWrap dd span.yhk {
+    top: -4px;
+    *top: -4px;
+    left: 140px;
+}
+
+/*S 页游单独定义*/
+.chgWrap .channel .chaWrap dl.yeyou dd span.yhk {
+    left: 260px;
+}
+
+/*E 页游单独定义*/
+.chgWrap .channel .chaWrap dd span.havetmall {
+    top: 28px;
+    *top: 46px;
+    left: 365px;
+}
+
+/*S 页游单独定义*/
+.chgWrap .channel .chaWrap dl.yeyou dd span.havetmall {
+    left: 588px;
+}
+
+/*E 页游单独定义*/
+.chgWrap .channel .chaWrap dl dt {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 18px 0 6px;
+}
+
+.chgWrap .channel .chaWrap dl dd {
+    width: 180px;
+    height: 176px;
+    margin: 8px;
+    float: left;
+    display: inline;
+    padding: 0 10px;
+    background: url("../img/chg-chawrap.jpg")/*tpa=http://www.huayisz168.com/img/chg-chawrap.jpg*//*tpa=#/img/chg-chawrap.jpg*/ repeat-x 0 bottom;
+    border: 1px solid #E0E0E0;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-box-shadow: 1px 1px 4px #B4B4B4;
+    -webkit-box-shadow: 1px 1px 4px #B4B4B4;
+    position: relative;
+}
+
+/*S 页游单独定义*/
+.chgWrap .channel .chaWrap dl.yeyou dd {
+    width: 289px;
+}
+
+/*E 页游单独定义*/
+.chgWrap .channel .chaWrap dl dd p {
+    line-height: 22px;
+    color: #656565;
+}
+
+.chgWrap .channel .chaWrap .paopao {
+    background: url("../img/bubble_bak.png")/*tpa=http://www.huayisz168.com/img/bubble_bak.png*//*tpa=#/img/bubble_bak.png*/ no-repeat;
+    width: 55px;
+    height: 21px;
+    position: absolute;
+    top: -3px;
+    left: 134px;
+    _left: 86px;
+}
+
+.chgWrap .channel .chaWrap .chaBtn {
+    text-align: center;
+    position: relative
+}
+
+.chgWrap .channel .chaWrap .chaBtn a,
+.chgWrap .channel .chaForm .chaBtn a {
+    display: inline-block;
+    width: 78px;
+    height: 20px;
+    margin: 4px 2px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    background: #5B92EC;
+    border: 1px solid #2189D0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    cursor: pointer;
+}
+
+#totalMoney {
+    color: #F87C02;
+}
+
+#TB_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+/*.chgWrap .channel .chaWrap .chaBtn a:hover,*/
+/*.chgWrap .channel .chaForm .chaBtn a:hover {*/
+/*background-image: none;*/
+/*}*/
+
+.chgWrap .channel .chaWrap dl dd h2 {
+    color: #f00;
+    font-size: 14px;
+    height: 54px;
+    margin-top: 4px;
+    line-height: 54px;
+    padding-left: 60px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    text-align: right;
+}
+
+.chgWrap .channel .chaWrap dl dd h2.cha1,
+.chgWrap .channel .chaWrap dl dd h2.cha2 {
+    width: 121px;
+    height: 27px;
+    margin: 12px 0;
+    overflow: hidden;
+    text-indent: -999em;
+    background-position: center 0;
+    text-align: center;
+}
+
+.chgWrap .channel .chaWrap dl dd h2.cha1 {
+    background-image: url("../img/chg-yhk.png")/*tpa=http://www.huayisz168.com/img/chg-yhk.png*//*tpa=#/img/chg-yhk.png*/;
+    background-position: center;
+}
+
+#TB_ajaxContent, #m_box1 {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 200px;
+    margin: auto;
+    width: 580px;
+    height: 300px;
+    display: none;
+}
+
+#gotoPayment {
+    cursor: pointer;
+    margin-right: 10px;
+    color: green;
+    font-size: 18px;
+}
+
+#reSelect {
+    cursor: pointer;
+
+}
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha2 {*/
+/*background-image: url(../images/chg-ykt.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha3 {*/
+/*background-image: url(../images/chg-szx.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha4 {*/
+/*background-image: url(../images/chg-zglt.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha5 {*/
+/*background-image: url(../images/chg-zxd.png);*/
+/*}*/
+
+.chgWrap .channel .chaWrap dl dd h2.cha6 {
+    background-image: url("../img/alipay.jpg")/*tpa=http://www.huayisz168.com/img/alipay.jpg*//*tpa=#/img/alipay.jpg*/;
+    background-position: center;
+}
+
+.codeBox {
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.codeBox img {
+    width: 100%;
+}
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha7 {*/
+/*background-image: url(../images/chg-wbc.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha8 {*/
+/*background-image: url(../images/chg-sxdh.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha9 {*/
+/*background-image: url(../images/chg-jsb.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha10 {*/
+/*background-image: url(../images/chg-tmall.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha11 {*/
+/*background-image: url(../images/chg-zgdx.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha12 {*/
+/*background-image: url(../images/wyzxpoto_new.png);*/
+/*margin-left: 70px;*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha13 {*/
+/*background-image: url(../images/fussms.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha14 {*/
+/*background-image: url(../images/mo9.png);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha15 {*/
+/*background-image: url(../images/alipay.jpg);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.cha16 {*/
+/*background-image: url(../images/jd_s_logo.jpg);*/
+/*}*/
+
+/*.chgWrap .channel .chaWrap dl dd h2.chasmss {*/
+/*background-image: url(../images/smss-pay.png);*/
+/*}*/
+
+.chgWrap .channel .chaWrap dl dd h2.chaweixin {
+    background-image: url("../img/weixin-recharge-new.png")/*tpa=http://www.huayisz168.com/img/weixin-recharge-new.png*//*tpa=#/img/weixin-recharge-new.png*/;
+}
+
+.chgWrap .channel .chaWrap dl dd h2 img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.channel .curgame p span {
+    color: red;
+}
+
+/*S 页游单独定义*/
+.chgWrap .channel .chaWrap dl.yeyou dd h2.cha1 {
+    background-image: url("../img/chg-yhk.png")/*tpa=http://www.huayisz168.com/img/chg-yhk.png*//*tpa=#/img/chg-yhk.png*/;
+    background-position: 12px 0;
+    width: 90px;
+    height: 27px;
+    margin: 12px auto;
+}
+
+.chgWrap .channel .chaWrap dl.yeyou dd h2.cha6 {
+    background-image: url("../img/alipay.jpg")/*tpa=http://www.huayisz168.com/img/alipay.jpg*//*tpa=#/img/alipay.jpg*/;
+    background-position: 78px 10px;
+    text-align: center;
+}
+
+/*E 页游单独定义*/
+/* =============================================== */
+/** 05. chaForm - 表单填写 */
+/* ----------------------------------------------- */
+.chgWrap hr {
+    border-bottom: 1px solid #E0E0E0;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.chgWrap .chaForm {
+    font-size: 14px;
+    line-height: 24px;
+    position: relative;
+    top: -18px;
+}
+
+.chgWrap .chaForm h2.chaTit b {
+    color: #F87C02;
+}
+
+.chgWrap .chaForm legend {
+    display: none;
+}
+
+.chgWrap .chaForm input.radio {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.chgWrap .chaForm label {
+    display: inline-block;
+    width: 170px;
+    text-align: right;
+}
+
+.chgWrap .chaForm span {
+    font-size: 12px;
+}
+
+.chgWrap .chaForm strong {
+    font-size: 14px;
+    color: #f00;
+}
+
+.chgWrap .chaForm input.text {
+    height: 18px;
+    line-height: 18px;
+    width: 170px;
+}
+
+.chgWrap .chaForm select {
+    width: 174px;
+}
+
+.chgWrap .chaForm ul.bankList {
+    width: 440px;
+    margin: -30px 0 0 170px;
+}
+
+.chgWrap .chaForm ul.bankList li,
+.chgWrap .chaForm ul.bankList li input {
+    float: left;
+    display: inline;
+}
+
+.chgWrap .chaForm ul.bankList li input {
+    margin-top: 6px;
+}
+
+.chgWrap .chaForm ul.bankList li {
+    margin: 4px;
+}
+
+.chgWrap .chaForm ul.bankList li a {
+    display: block;
+    width: 108px;
+    height: 26px;
+    overflow: hidden;
+    border: 1px solid #D9D9D9;
+    float: left;
+}
+
+.chgWrap .chaForm ul.bankList li a.done,
+.chgWrap .chaForm ul.bankList li a:hover {
+    border-color: #B2995B;
+}
+
+.chgWrap .channel .chaForm .chaBtn a {
+    padding: 5px 6px;
+    cursor: pointer;
+}
+
+.chgWrap .chaForm a.sp-color-lnk {
+    font-size: 12px;
+    color: #999;
+}
+
+.chgWrap .chaForm a.sp-color-lnk:hover {
+    color: #408FCA;
+}
+
+.chgWrap .channel .chaForm .chaDetail {
+    width: 490px;
+    margin: -24px 0 0 170px;
+}
+
+.chgWrap .channel .chaForm .chaDetail ul li {
+    float: left;
+    display: inline;
+    margin: 4px;
+}
+
+.chgWrap .channel .chaForm .chaDetail li span {
+    cursor: pointer;
+    display: block;
+    width: 143px;
+    height: 54px;
+    padding: 2px 4px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    border: 2px solid #8BAFD3;
+    /*background: #E3EFFE url(../images/chg-chaDetail.jpg) repeat-x 0 bottom;*/
+    -moz-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 1px 1px 2px #B4B4B4;
+    -webkit-box-shadow: 1px 1px 2px #B4B4B4;
+    overflow: hidden;
+}
+
+.chgWrap .channel .chaForm .chaDetail li span:hover,
+.chgWrap .channel .chaForm .chaDetail li span.current {
+    border-color: #B2995B;
+    background-image: none;
+    background-color: #FFF5CE;
+    -moz-box-shadow: 1px 1px 2px #F1CA7F;
+    -webkit-box-shadow: 1px 1px 2px #F1CA7F;
+}
+
+.chgWrap .channel .chaForm .chaDetail li span p {
+    line-height: 20px;
+}
+
+.chgWrap .channel .chaForm .chaDetail li span p b {
+    font-size: 14px;
+    color: #408FCA;
+}
+
+.chgWrap .channel .chaForm .chaDetail li span p b em {
+    font: italic 700 26px Georgia, "Times New Roman", Times, serif;
+    margin-right: 4px;
+    letter-spacing: -3px;
+}
+
+.chgWrap .channel .chaForm .chaDetail li span p input.text {
+    width: 28px;
+}
+
+.chgWrap .chaForm .scode img {
+    vertical-align: middle;
+}
+
+.chgWrap .chaForm .scode input {
+    width: 4em;
+}
+
+.chgWrap .chaForm .scode .changeScode {
+    color: #666;
+}
+
+.chgWrap .chaForm-servers {
+    width: 500px;
+    margin: -24px 0 0 164px;
+    line-height: 30px;
+}
+
+.chgWrap .chaForm-servers label {
+    width: auto;
+    margin: 0 10px;
+}
+
+.chgWrap .chaForm-servers input {
+    vertical-align: middle;
+    margin: 0 4px 0 0;
+}
+
+.chgWrap .chaForm-servers .cs-free {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+/* =============================================== */
+/** 06. chaSucceed - 充值成功 */
+/* ----------------------------------------------- */
+.chgWrap .chaForm .chaSucceed h2.chaSTit {
+    font-size: 16px;
+    color: #f00;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#smsChaSC {
+    text-align: center;
+}
+
+.chgWrap .chaForm .chaSucceed p b {
+    color: #336799;
+}
+
+.chgWrap .chaForm .chaSucceed {
+    width: 516px;
+    height: 378px;
+    margin: 0 auto;
+    background: url("../img/chg-chasucceed.jpg")/*tpa=http://www.huayisz168.com/img/chg-chasucceed.jpg*//*tpa=#/img/chg-chasucceed.jpg*/ no-repeat 0 0;
+}
+
+.chgWrap .chaForm .chaSucceed .chaSC {
+    width: 272px;
+    padding: 12px 24px;
+}
+
+.chgWrap .chaForm .chaSucceed .chaSC .chaBtn {
+    text-align: center;
+    margin-top: 24px;
+}
+
+/* =============================================== */
+/** 07. .chaFail - 充值失败
+ * @ JiZhongchun 2011-10-14
+ */
+/* ----------------------------------------------- */
+.chgWrap .chaForm .chaFail h2.chaFTit {
+    font-size: 16px;
+    color: #f00;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.chgWrap .chaForm .chaFail p b {
+    color: #336799;
+}
+
+#smsChaFL {
+    text-align: center;
+}
+
+.chgWrap .chaForm .chaFail {
+    width: 516px;
+    height: 378px;
+    margin: 0 auto;
+    background: url("../img/chg-chasucceed-no.jpg")/*tpa=http://www.huayisz168.com/img/chg-chasucceed-no.jpg*//*tpa=#/img/chg-chasucceed-no.jpg*/ no-repeat 0 0;
+}
+
+.chgWrap .chaForm .chaFail .chaFL {
+    width: 272px;
+    padding: 12px 24px;
+}
+
+.chgWrap .chaForm .chaFail .chaFL .chaBtn {
+    text-align: center;
+    margin-top: 24px;
+}
+
+/*update by Jxchen 2011-08-15*/
+
+/*页面充值*/
+.rechargeCon {
+    border: 1px solid #daf0ff;
+    background-color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.rechargeCon .hd {
+    height: 50px;
+    margin: 1px;
+    position: relative;
+    background: #FFF url("../img/recharge_icon.png")/*tpa=http://www.huayisz168.com/img/recharge_icon.png*//*tpa=#/img/recharge_icon.png*/ repeat-x 0 -82px;
+}
+
+.rechargeCon .hd h2 {
+    text-indent: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #385176;
+    font-family: \5B8B\4F53;
+}
+
+.rechargeCon .row {
+    overflow: hidden;
+    zoom: 1;
+    margin-top: -2px;
+    margin-bottom: 2px;
+    padding: 20px 10px 0;
+    background: url("../img/recharge_line.png")/*tpa=http://www.huayisz168.com/img/recharge_line.png*//*tpa=#/img/recharge_line.png*/ no-repeat center top;
+}
+
+.rechargeCon .row h3 {
+    float: left;
+    padding: 0 15px 0 0;
+    color: #333333;
+    font-size: 14px;
+    font-family: \5B8B\4F53;
+}
+
+.rechargeCon .row ul {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.rechargeCon .row li {
+    overflow: hidden;
+    zoom: 1;
+    width: 160px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.rechargeCon .row li span {
+    float: left;
+    width: 48px;
+    height: 44px;
+    margin-right: 10px;
+    display: inline;
+}
+
+.rechargeCon .row li:nth-child(1) span {
+    background: url("../img/1-1512101U026362.png")/*tpa=http://www.huayisz168.com/img/1-1512101U026362.png*//*tpa=#/img/1-1512101U026362.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(2) span {
+    background: url("../img/1-160P213554Q02.png")/*tpa=http://www.huayisz168.com/img/1-160P213554Q02.png*//*tpa=#/img/1-160P213554Q02.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(3) span {
+    background: url("../img/1-15121021251S53.png")/*tpa=http://www.huayisz168.com/img/1-15121021251S53.png*//*tpa=#/img/1-15121021251S53.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(4) span {
+    background: url("../img/1-16053119325Y63.png")/*tpa=http://www.huayisz168.com/img/1-16053119325Y63.png*//*tpa=#/img/1-16053119325Y63.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(5) span {
+    background: url("../img/1-151210202Z94B.png")/*tpa=http://www.huayisz168.com/img/1-151210202Z94B.png*//*tpa=#/img/1-151210202Z94B.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(6) span {
+    background: url("../img/1-1601141A341438.png")/*tpa=http://www.huayisz168.com/img/1-1601141A341438.png*//*tpa=#/img/1-1601141A341438.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(7) span {
+    background: url("../img/1-15122Q35GI40.png")/*tpa=http://www.huayisz168.com/img/1-15122Q35GI40.png*//*tpa=#/img/1-15122Q35GI40.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(8) span {
+    background: url("../img/1-160114164141440.png")/*tpa=http://www.huayisz168.com/img/1-160114164141440.png*//*tpa=#/img/1-160114164141440.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(9) span {
+    background: url("../img/1-151210205224b6.png")/*tpa=http://www.huayisz168.com/img/1-151210205224b6.png*//*tpa=#/img/1-151210205224b6.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(10) span {
+    background: url("../img/1-151210214532111.png")/*tpa=http://www.huayisz168.com/img/1-151210214532111.png*//*tpa=#/img/1-151210214532111.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(11) span {
+    background: url("../img/1-151225142934612.png")/*tpa=http://www.huayisz168.com/img/1-151225142934612.png*//*tpa=#/img/1-151225142934612.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(12) span {
+    background: url("../img/1-151210220436300.png")/*tpa=http://www.huayisz168.com/img/1-151210220436300.png*//*tpa=#/img/1-151210220436300.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(13) span {
+    background: url("../img/1-1512102154342R.png")/*tpa=http://www.huayisz168.com/img/1-1512102154342R.png*//*tpa=#/img/1-1512102154342R.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(14) span {
+    background: url("../img/1-15121021191Y26.png")/*tpa=http://www.huayisz168.com/img/1-15121021191Y26.png*//*tpa=#/img/1-15121021191Y26.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li:nth-child(15) span {
+    background: url("../img/1-151210203929551.png")/*tpa=http://www.huayisz168.com/img/1-151210203929551.png*//*tpa=#/img/1-151210203929551.png*/ no-repeat 0 0;
+    background-size: contain;
+}
+
+.rechargeCon .row li span a {
+    display: block;
+    height: 44px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.rechargeCon .row li div {
+    overflow: hidden;
+    zoom: 1;
+    border-left: 1px dotted #a2a2a2;
+    padding-left: 10px;
+}
+
+.rechargeCon .row li h4 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.rechargeCon .row li a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.rechargeCon .row li a:hover {
+    color: #3971DE;
+    text-decoration: underline;
+}
+
+.rechargeCon .row .oneLine {
+    line-height: 44px;
+}
+
+.rechargeCon .row .twoLine {
+    line-height: 22px;
+}
+
+.rechargeCon .row .row-s {
+    width: 220px;
+}
+
+.rechargeCon .row .row-a span {
+    background-position: 0 0;
+}
+
+.rechargeCon .row .row-b span {
+    background-position: -49px 0;
+}
+
+.rechargeCon .row .row-c span {
+    background-position: -98px 0;
+}
+
+.rechargeCon .row .row-d span {
+    background-position: -147px 0;
+}
+
+.rechargeCon .row .row-e span {
+    background-position: -196px 0;
+}
+
+.rechargeCon .row .row-f span {
+    background-position: -245px 0;
+}
+
+.rechargeCon .row .row-s span {
+    background-position: -294px 0;
+}
+
+.rechargeCon .row .row-g span {
+    background-position: 0 -49px;
+}
+
+.rechargeCon .row .row-h span {
+    background-position: -49px -50px;
+}
+
+.rechargeCon .row .row-i span {
+    background-position: -98px -50px;
+}
+
+.rechargeCon .row .row-j span {
+    background-position: -147px -50px;
+}
+
+.rechargeCon .row .row-k span {
+    background-position: -196px -50px;
+}
+
+.rechargeCon .row .row-hdzm span {
+    background-position: -294px -98px;
+}
+
+.rechargeCon .row .row-jtian span {
+    background-position: -245px -98px;
+}
+
+.rechargeCon .row .row-l span {
+    background-position: -245px -50px;
+}
+
+.rechargeCon .row .row-m span {
+    background-position: -293px -50px;
+}
+
+.rechargeCon .row .row-n span {
+    background-position: 0 -98px;
+}
+
+.rechargeCon .row .row-o span {
+    background-position: -49px -98px;
+}
+
+.rechargeCon .row .row-p span {
+    background-position: -98px -98px;
+}
+
+.rechargeCon .row .row-q span {
+    background-position: -147px -98px;
+}
+
+.rechargeCon .row .row-r span {
+    background-position: -196px -98px;
+}
+
+.rechargeCon .row .row-y-a span {
+    background-position: -0px -150px;
+}
+
+.rechargeCon .row .row-y-b span {
+    background-position: -49px -150px;
+}
+
+.rechargeCon .row .row-y-c span {
+    background-position: -97px -150px;
+}
+
+.rechargeCon .row .row-y-d span {
+    background-position: -147px -150px;
+}
+
+.rechargeCon .row .row-y-e span {
+    background-position: -196px -150px;
+}
+
+.rechargeCon .row .row-y-f span {
+    background-position: -245px -150px;
+}
+
+.rechargeCon .row .row-y-g span {
+    background-position: -293px -150px;
+}
+
+.rechargeCon .row .row-sy-a span {
+    background-position: -0px -200px;
+}
+
+.rechargeCon .row .row-sy-b span {
+    /*background: url('../img/zhengwangji-index.png');*/
+    width: 41px;
+    height: 41px;
+}
+
+.rechargeCon .row .row-y-g-wssg span {
+    /*background: url('../img/wssg-index.png');*/
+    width: 41px;
+    height: 41px;
+}
+
+.rechargeCon .row .row-y-g-bayu span {
+    background: url("../img/bayu-index.png")/*tpa=http://www.huayisz168.com/img/bayu-index.png*//*tpa=#/img/bayu-index.png*/;
+    width: 41px;
+    height: 41px;
+}
+
+/*.rechargeCon .row .row-y-g-shenqu span {*/
+/*background: url('../img/shenqu-zhifu.jpg');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+/*.rechargeCon .row .row-y-g-fox3k span {*/
+/*background: url('../img/fox3k-index.png');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+/*.rechargeCon .row .row-y-g-tulong span {*/
+/*background: url('../img/tulong-index.png');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+/*.rechargeCon .row .row-y-g-jxsj2 span {*/
+/*background: url('../img/jxsj-20180527.png');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+/*.rechargeCon .row .row-y-g-cs span {*/
+/*background: url('../img/xd-108.jpg');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+/*.rechargeCon .row .row-y-g-jxsjls span {*/
+/*background: url('../img/jxsjls-20180527.png');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+/*.rechargeCon .row .row-y-g-jx2xz span {*/
+/*background: url('../img/jx2xz-index.png');*/
+/*width: 41px;*/
+/*height: 41px;*/
+/*}*/
+
+.chgWrap .channel .chaForm .chaBtn .noHit,
+.cpopUp .ccon .cbtn .noHit {
+    cursor: default;
+    border: 1px solid #989898;
+    background: #989898;
+}
+
+/* Float Clear */
+.chgWrap .map ol,
+.chgWrap .sort dl,
+.chgWrap .sort dl dd,
+.chgWrap .chaWrap dl,
+.chgWrap .chaForm ul.bankList,
+.chgWrap .channel .chaForm .chaDetail ul {
+    zoom: 1;
+}
+
+.chgWrap .map ol:after,
+.chgWrap .sort dl:after,
+.chgWrap .sort dl dd:after,
+.chgWrap .chaWrap dl:after,
+.chgWrap .chaForm ul.bankList:after,
+.chgWrap .channel .chaForm .chaDetail ul:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*弹出层样式*/
+.cpopUp h2, .cpopUp p {
+    margin: 0;
+    padding: 0;
+}
+
+.cpopUp {
+    font: 12px/1 Arial, Tahoma, Helvetica, SimSun, san-serif;
+    border: 1px solid #E0E0E0;
+    width: 580px;
+}
+
+.cpopUp .ctit h2 {
+    background-color: #EEEEEE;
+    font-size: 14px;
+    color: #f00;
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.cpopUp .ctit a {
+    float: right;
+    margin: 4px 6px 0 0;
+    line-height: 22px;
+    color: #999;
+    display: none;
+}
+
+.cpopUp .ccon {
+    padding: 12px;
+    overflow: hidden;
+    line-height: 24px;
+    font-size: 14px;
+    background-color: #fff;
+    width: 556px;
+}
+
+.cpopUp .ccon p b {
+    font-weight: 400;
+    display: inline-block;
+    text-align: right;
+    width: 10em;
+}
+
+.cpopUp .ccon p span, .cpopUp .ccon p a {
+    color: #f00;
+}
+
+.cpopUp .ccon .cbtn {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.cpopUp .ccon .cbtn a {
+    cursor: pointer;
+}
+
+/*.cpopUp .ccon .cbtn a {*/
+/*display: inline-block;*/
+/*padding: 0 12px;*/
+/*margin: 0 8px;*/
+/*text-decoration: none;*/
+/*font-size: 14px;*/
+/*font-weight: 700;*/
+/*color: #fff;*/
+/*background: #5B92EC url(images/chg-chaBtn.png) repeat-x 0 bottom;*/
+/*border: 1px solid #E0E0E0;*/
+/*-moz-border-radius: 4px;*/
+/*-khtml-border-radius: 4px;*/
+/*-webkit-border-radius: 4px;*/
+/*}*/
+
+.cpopUp .ccon .cbtn a:hover {
+    background-image: none;
+}
+
+/*.cpopUp .ccon .cbtn a.w {*/
+/*color: #000;*/
+/*background: #fff url(../images/btn1.jpg) repeat-x 0 bottom;*/
+/*}*/
+
+/*.cpopUp .ccon .cbtn a.w:hover {*/
+/*color: #333;*/
+/*background-image: url(../images/btn1-h.jpg);*/
+/*}*/
+
+/*自定义*/
+.chaForm .line {
+    margin-left: 174px;
+}
+
+.chaForm .first {
+    margin-top: -26px;
+}
+
+.widget-modify {
+    display: inline;
+}
+
+.table_warp {
+    padding: 11px 0px 0px 11px;
+}
+
+.table_warp table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.table_warp table td, .table_warp table th {
+    border: 1px solid #e3e3e3;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.table_warp table th {
+    background-color: #f5f5f5;
+}
+
+.table_warp table td a {
+    color: #448DFF;
+    text-decoration: underline;
+}
+
+.table_warp table td a:hover {
+    text-decoration: none;
+}
+
+.table_warp p {
+    color: #999;
+}
+
+/*---2013-05-20 by Handi star---*/
+.payimgList {
+    width: 710px;
+    height: 190px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+}
+
+.payimgList ul {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.payimgList ul li {
+    float: left;
+    display: inline;
+    border-right: 1px solid #ccc;
+    height: 176px;
+    padding: 7px;
+}
+
+.payimgList ul li.border0 {
+    border: 0 none;
+}
+
+.payimgList p {
+    position: relative;
+    width: 222px;
+    height: 42px;
+}
+
+.payimgList p span {
+    display: block;
+}
+
+.payimgList .tit {
+    font: 700 14px/24px \5B8B\4F53;
+    color: #000;
+}
+
+.payimgList .note {
+    font: 300 12px/16px \5B8B\4F53;
+    color: #999;
+}
+
+.payimgList .pl_btn {
+    position: absolute;
+    top: 6px;
+    right: 0px;
+    background: url("../img/btnbg.png")/*tpa=http://www.huayisz168.com/img/btnbg.png*//*tpa=#/img/btnbg.png*/ no-repeat 0 -122px;
+    width: 66px;
+    height: 28px;
+    text-align: center;
+    color: #333;
+    font: 300 12px/28px \5B8B\4F53;
+    text-decoration: none;
+}
+
+.rechargeCon .row li {
+    width: 140px;
+    margin: 0 4px;
+    background: url("../img/btnbg.png")/*tpa=http://www.huayisz168.com/img/btnbg.png*//*tpa=#/img/btnbg.png*/ no-repeat right 0;
+}
+
+.rechargeCon .row li .ltbg {
+    background: url("../img/btnbg.png")/*tpa=http://www.huayisz168.com/img/btnbg.png*//*tpa=#/img/btnbg.png*/ no-repeat 0 -58px;
+    height: 58px;
+    padding-top: 4px;
+}
+
+.rechargeCon .row li div {
+    border: 0 none;
+}
+
+.rechargeCon .row .row-s {
+    width: 148px;
+}
+
+.rechargeCon .row li span {
+    margin-right: 0;
+}
+
+.rechargeCon .row li div {
+    padding-left: 8px;
+}
+
+/*---2013-05-20 by Handi end---*/
+.code-wrap {
+    position: absolute;
+    margin: 0px 0 0 500px;
+}
+
+.code-wrap p {
+    text-align: center;
+    line-height: 26px;
+}
+
+.code-wrap-img-bd {
+    border: #ddd 1px solid;
+    background: #FFF;
+    border-radius: 6px;
+}
+
+.code-wrap-img {
+    padding: 7px;
+    width: 150px;
+    height: 150px;
+    vertical-align: middle;
+    border-radius: 6px;
+}
+
+.code-wrap-text {
+    font-weight: bold;
+}
+
+.code-wrap-flag a {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.code-wrap-flag a:hover {
+    color: orange;
+}
+
+/*---2015-12-01  end---*/
+
+.code-wrap-c {
+    position: absolute;
+    margin: 0px 0 0 530px;
+}
+
+.code-wrap-c p {
+    text-align: center;
+    line-height: 17px;
+}
+
+.code-wrap-c-img-bd {
+    border: #ddd 3px solid;
+    background: #0d2825;
+    border-radius: 6px;
+}
+
+.code-wrap-c-img {
+    padding: 6px;
+    width: 140px;
+    height: 140px;
+    vertical-align: middle;
+    border-radius: 6px;
+}
+
+.code-wrap-c-text {
+    font-weight: bold;
+    color: #fff;
+}
+
+.code-wrap-c-flag a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+}
+
+.code-wrap-c-flag a:hover {
+    color: orange;
+}
+
+/*---2016-01-04---*/
+
+/*
+ * author:jinxiaochen
+ * date:2011-08-15
+ * version:1.0
+ */
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre,
+dl, dd, menu, ol, ul,
+caption, th, td,
+form, fieldset, legend, input, button, textarea {
+    margin: 0;
+    padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+menu, ol, ul {
+    list-style: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+code, kbd, pre, samp {
+    font-family: 'courier new', courier, monospace
+}
+
+input, button, textarea, select {
+    font-size: 100%
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+
+body, input, button, textarea, select, option, optgroup {
+    font: 12px/1.5 tahoma, \5b8b\4f53, sans-serif
+}
+
+legend {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+/* Float Clear
+.content:after
+{content:"\20";display:block;height:0;clear:both;visibility:hidden;}
+
+.content{zoom:1;} */
+body {
+    background-color: #FFF;
+}
+
+/*S 閫氱敤澶撮儴*/
+#head {
+    width: 960px;
+    height: 70px;
+    line-height: 22px;
+    margin: 0 auto 5px;
+}
+
+#head a {
+    color: #333;
+}
+
+#content {
+    width: 960px;
+}
+
+#content .con, #foot {
+    background-color: #fff;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#head .h_1 {
+    height: 64px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kingsoft_v_xoyo {
+    position: absolute;
+    top: 14px;
+    left: 5px;
+}
+
+.kingsoft_v_xoyo a {
+    display: block;
+}
+
+.login, .leave {
+    text-align: right;
+    clear: both;
+    margin: 4px 0 5px;
+}
+
+.login a {
+    margin: 0 0 0 10px;
+    text-decoration: underline;
+}
+
+#head .login a:hover {
+    text-decoration: none;
+    color: #FF9900;
+}
+
+.leave .out {
+    background: url("../img/leave.png")/*tpa=http://www.huayisz168.com/img/leave.png*//*tpa=#/img/leave.png*/ no-repeat 0 0;
+    padding: 0 0 0 22px;
+    margin: 0 0 0 10px;
+    color: #333;
+}
+
+.leave a:hover {
+    color: #f90;
+}
+
+.leave a.t_mail,
+.leave a.f_mail {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.leave a.t_mail {
+    background-image: url("../img/t-mail.png")/*tpa=http://www.huayisz168.com/img/t-mail.png*//*tpa=#/img/t-mail.png*/;
+}
+
+.leave a.f_mail {
+    background-image: url("../img/f-mail.png")/*tpa=http://www.huayisz168.com/img/f-mail.png*//*tpa=#/img/f-mail.png*/;
+}
+
+.login span.kingsoft_pass {
+    text-decoration: none;
+    padding: 0 0 0 20px;
+    background: url("../img/kingsoft_pass.png")/*tpa=http://www.huayisz168.com/img/kingsoft_pass.png*//*tpa=#/img/kingsoft_pass.png*/ no-repeat 0 0;
+}
+
+.extra_nav {
+    height: 31px;
+}
+
+.extra_nav ul {
+    float: right;
+}
+
+.extra_nav ul li {
+    float: left;
+    display: inline;
+    margin: 0 0 0 5px;
+}
+
+.extra_nav ul li a {
+    display: block;
+    height: 31px;
+    line-height: 28px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+}
+
+.extra_nav ul li.e_n_1 a {
+    width: 64px;
+    background: url("../img/e_n_1.png")/*tpa=http://www.huayisz168.com/img/e_n_1.png*//*tpa=#/img/e_n_1.png*/ no-repeat 0 0;
+    padding: 0 0 0 34px;
+}
+
+.extra_nav ul li.e_n_2 a {
+    width: 42px;
+    background: url("../img/e_n_2.png")/*tpa=http://www.huayisz168.com/img/e_n_2.png*//*tpa=#/img/e_n_2.png*/ no-repeat 0 0;
+    padding: 0 0 0 36px;
+}
+
+.extra_nav ul li.e_n_3 a {
+    width: 57px;
+    background: url("../img/e_n_3.png")/*tpa=http://www.huayisz168.com/img/e_n_3.png*//*tpa=#/img/e_n_3.png*/ no-repeat 0 0;
+    padding: 0 0 0 30px;
+}
+
+.extra_nav ul li.e_n_4 a {
+    width: 44px;
+    background: url("../img/e_n_4.png")/*tpa=http://www.huayisz168.com/img/e_n_4.png*//*tpa=#/img/e_n_4.png*/ no-repeat 0 0;
+    padding: 0 0 0 34px;
+}
+
+/*E 閫氱敤澶撮儴*/
+
+/*---瀵艰埅 S---*/
+.nav {
+    width: 960px;
+    margin: 0 auto 10px;
+    background: url("../img/recharge_nav.png")/*tpa=http://www.huayisz168.com/img/recharge_nav.png*//*tpa=#/img/recharge_nav.png*/ no-repeat 0 0;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav ul {
+    overflow: hidden;
+    zoom: 1;
+    padding-top: 3px;
+}
+
+.nav ul li {
+    float: left;
+    margin-left: 50px;
+    display: inline;
+}
+
+.nav ul li a,
+.nav ul li a span {
+    float: left;
+    color: #FFFFFF;
+    font: bold 14px/31px \5B8B\4F53;
+}
+
+.nav ul li a {
+    padding-left: 15px;
+}
+
+.nav ul li a span {
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.nav ul li a:hover,
+.nav ul .cur a {
+    background: #FFF url("../img/recharge_nav.png")/*tpa=http://www.huayisz168.com/img/recharge_nav.png*//*tpa=#/img/recharge_nav.png*/ no-repeat 0 -36px;
+    color: #333333;
+}
+
+.nav ul li a:hover span,
+.nav ul .cur a span {
+    background: url("../img/recharge_nav.png")/*tpa=http://www.huayisz168.com/img/recharge_nav.png*//*tpa=#/img/recharge_nav.png*/ no-repeat right -36px;
+    color: #333333;
+}
+
+/*---瀵艰埅 E---*/
+
+/*---content S---*/
+.content {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/*---content E---*/
+
+.main {
+    float: left;
+    width: 715px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+/*---aside S---*/
+.aside {
+    width: 230px;
+    float: right;
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.box .hd {
+    padding: 1px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.box .hd h2 {
+    text-indent: 10px;
+    line-height: 29px;
+    font-family: \5B8B\4F53;
+    font-size: 14px;
+    color: #385176;
+    background: url("../img/recharge_icon.png")/*tpa=http://www.huayisz168.com/img/recharge_icon.png*//*tpa=#/img/recharge_icon.png*/ repeat-x 0 0;
+}
+
+.box .bd {
+    padding: 5px 10px;
+    line-height: 2;
+}
+
+.box li a {
+    color: #959799;
+    text-decoration: none;
+}
+
+.box li a:hover {
+    text-decoration: underline;
+}
+
+.ks_money span {
+    display: block;
+    margin: 0 auto;
+}
+
+.ks_money span a {
+    display: block;
+    width: 199px;
+    height: 49px;
+    margin: 0 auto;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url("../img/recharge_nav.png")/*tpa=http://www.huayisz168.com/img/recharge_nav.png*//*tpa=#/img/recharge_nav.png*/ no-repeat 0 -69px;
+}
+
+.ks_money li {
+    padding-left: 15px;
+    background: url("../img/recharge_icon.png")/*tpa=http://www.huayisz168.com/img/recharge_icon.png*//*tpa=#/img/recharge_icon.png*/ no-repeat 0 -31px;
+}
+
+.ks_money_comment img {
+    margin: 0 auto;
+    display: block;
+}
+
+.ks_money_comment ul {
+    padding: 5px 10px;
+}
+
+.ks_money_comment li,
+.finger li,
+.purchasing_guide li {
+    padding-left: 15px;
+    line-height: 24px;
+    background: url("../img/recharge_icon.png")/*tpa=http://www.huayisz168.com/img/recharge_icon.png*//*tpa=#/img/recharge_icon.png*/ no-repeat 0 -53px;
+}
+
+.purchasing_guide {
+    margin-top: -13px;
+}
+
+.V2-FT-XOYO {
+    background: #222;
+    padding: 20px 0
+}
+
+#V2-footer {
+    color: #cbcbcb;
+    font-family: microsoft yahei;
+    font-size: 12px;
+    text-align: center;
+    line-height: 22px
+}
+
+#V2-footer a {
+    color: #cbcbcb;
+    text-decoration: none;
+    transition: color .5s;
+    -moz-transition: color .5s;
+    -webkit-transition: color .5s;
+    -o-transition: color .5s
+}
+
+#V2-footer a:hover {
+    color: #ffa200
+}
+
+#V2-footer .ft-links {
+    line-height: 26px
+}
+
+#V2-footer p a {
+    margin: 0 6px
+}
+
+#V2-footer img {
+    border: 0;
+}

@@ -1,0 +1,244 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>手机账号</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link type="text/css" href="css/enrollPh.css" tppabs="http://www.huayisz168.com/css/enrollPh.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.min.js" tppabs="http://www.huayisz168.com/js/jquery.min.js"></script>
+</head>
+<body>
+<div id="reg-wrap-0828">
+    <div id="reg-header-0828">
+        <p class="fr"><a href="index.html" tppabs="http://www.huayisz168.com/index.html" title="返回金山逍遥首页">返回雨音科技首页</a></p>
+        <span>账号注册</span>
+    </div><!--reg-header-0828-->
+    <div id="reg-content-0828">
+        <div class="reg-content-t"></div>
+        <div class="reg-content-c">
+            <h1><a href="login.html" tppabs="http://www.huayisz168.com/login.html"><br /><br /><br /><br /></a></h1>
+            <ul class="reg-way">
+                <li class="li1"><a class="cur">手机账号</a></li>
+                <!--<li class="li2"><a href="/register/email/" title="邮箱账号">邮箱账号</a></li>-->
+                <!--<li class="li3"><a href="/register/normal/" title="个性账号">个性账号</a></li>-->
+                <!--<li class="li4"><a href="/register/modereg/" title="短信注册">短信注册</a></li>-->
+            </ul>
+            <div class="reg-form">
+                <div  id="register_form">
+                    <fieldset><legend><b>注册信息</b>（<span>*</span>号为必填）</legend>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td style="width:145px;"><label><b>*</b>手机账号：</label></td>
+                                <td><input type="text"  name="account" class="text" id="p_phone" onblur="inputBlur(0);" onfocus="inputFocus(0)"></td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+                            <tr>
+                                <td style="width:145px;"><label>&nbsp;&nbsp;</label></td>
+                                <td>&nbsp;&nbsp;<a class="get-code" href="#" style="cursor:pointer"  >获取手机验证码</a></td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+                            <tr style="display:none;"><td><input type="hidden" value="mobile" name="type"></td><td colspan="2" id="exist"></td></tr>
+                            <tr>
+                                <td style="width:145px;"><label><b>*</b>验证码：</label></td>
+                                <td><input type="text" name="pcode" class="text" id="p_pcode" onfocus="inputFocus(3)" onblur="inputBlur(3);"></td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+                            <tr>
+                                <td><label><b>*</b>登录密码：</label></td>
+                                <td><input type="password" name="password" id="password" class="text" onfocus="inputFocus(4)" onblur="inputBlur(4)">
+                                    <div style="font-size:12px; display:none;">密码强度：<span class="statusBar"><span style="width:30%;"></span></span> <b>弱</b></div>
+                                </td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+                            <tr>
+                                <td><label><b>*</b>确认登录密码：</label></td>
+                                <td><input type="password"  name="password_2" id="password_2" class="text" onfocus="inputFocus(5)" onblur="inputBlur(5)"/></td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+
+                            <tr>
+                                <td><label><b>*</b>真实姓名：</label></td>
+                                <td><input type="text" value=""  name="id_name" class="text" id="id_name" onfocus="inputFocus(6)" onblur="inputBlur(6)"/></td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+                            <tr id="id_block">
+                                <td><label><b>*</b>身份证号码：</label></td>
+                                <td><input type="text" value=""  name="id_number" class="text" id="id_number" onfocus="inputFocus(7)" onblur="inputBlur(7)"></td>
+                                <td><em>&nbsp;</em></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align:middle;"><input type="checkbox" checked="true" name="agreement" id="agreement" style="float:right; position:relative; top:-10px;"></td>
+                                <td style="line-height:20px;" colspan="2">
+                                    <label for="agreement" style="float:left;">我已看过并同意<br>
+                                        <a href="text.html" tppabs="http://www.huayisz168.com/text.html" >雨音科技服务使用协议</a><br>
+                                        <!--<a href="//my.xoyo.com/protocol/help/privacy" >金山通行证隐私权政策</a>-->
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;" colspan="3"><a id="LinSubmit"><img alt="确认提交" title="确认提交" src="img/reg-btn-1.png" tppabs="http://www.huayisz168.com/img/reg-btn-1.png" onclick="submit()"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </div>
+            </div><!--reg-form-->
+        </div>
+        <div class="reg-content-b"></div>
+    </div><!--reg-content-0828-->
+</div>
+<div class="pop tp3-tip popbody" id="popbody01">
+    <div class="hd">
+        <a href="#" title="关闭" class="close" id="close">×</a>
+    </div>
+    <div class="bd">
+        <p class="p1">为了保障您的帐号安全，我们会给您的手机发送一条免费短信，其中包含一组6位纯数字的验证码，请在页面上填写。</p>
+        <p class="p2">您可以按照以下步骤，获取并填写验证码：</p>
+        <!--<img src="./img/pop-img.jpg" width="644" height="213" />-->
+        <a href="#" title="我知道了" class="close">我知道了</a>
+    </div>
+</div>
+<script>
+    var phone = false,code = false,passwords = false,rePass = false,username = false,ID = false;
+    function inputBlur(key) {
+        switch (key){
+            case 0:
+                var tel = $('.text').eq(key).val();
+                if (!(/^1[34578]\d{9}$/.test(tel))) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key).text('请输入您真实的手机号码！');
+                    phone = false;
+                } else {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','right');
+                    $('#reg-content-0828 .reg-form table em').eq(key).html('&nbsp;');
+                    phone = true;
+                }
+                break;
+            case 3:
+                var num = $('.text').eq(1).val().trim();
+                if (num.length != 6) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).text('手机验证失败，请重试');
+                    code = false;
+                } else {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','right');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).html('&nbsp;');
+                    code = true;
+                }
+                break;
+            case 4:
+                var keywords = $('.text').eq(2).val();
+                if(!/^[a-zA-Z]\w{7,31}$/.test(keywords)) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).text('请以字母开头，密码长度8-32个字符');
+                    passwords = false;
+                } else {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','right');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).html('&nbsp;');
+                    passwords = true;
+                }
+                break;
+            case 5:
+                var keywords1 = $('.text').eq(2).val();
+                var reKeywords = $('.text').eq(3).val();
+                if (keywords1 != reKeywords) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).text('两次输入的密码不一致');
+                    rePass = false;
+                } else if (!reKeywords) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).text('需要再次输入密码');
+                    rePass = false;
+                } else {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','right');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).html('&nbsp;');
+                    rePass = true;
+                }
+                break;
+            case 6:
+                var name = $('.text').eq(4).val();
+                if (!/^([\u4e00-\u9fa5]){2,7}$/.test(name)) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).text('真实姓名必须为汉字');
+                    username = false;
+                } else {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','right');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).html('&nbsp;');
+                    username = true;
+                }
+                break;
+            case 7:
+                var idCord = $('.text').eq(5).val();
+                var reg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+                if (!reg.test(idCord)) {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','wrong');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).text('您输入的身份证号不正确');
+                    ID = false;
+                } else {
+                    $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','right');
+                    $('#reg-content-0828 .reg-form table em').eq(key-1).html('&nbsp;');
+                    ID = true;
+                }
+                break;
+        }
+    }
+
+    function inputFocus(key) {
+        switch (key) {
+            case 0:
+                $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','cue');
+                $('#reg-content-0828 .reg-form table em').eq(key).text('请填写您的手机号码，验证通过后完成注册');
+                break;
+            case 3:
+                $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','cue');
+                $('#reg-content-0828 .reg-form table em').eq(key-1).text('请输入手机短信验证码');
+                break;
+            case 4:
+                $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','cue');
+                $('#reg-content-0828 .reg-form table em').eq(key-1).text('密码有8-32位字母数字组成，以字母开头，字母区分大小写');
+                break;
+            case 5:
+                $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','cue');
+                $('#reg-content-0828 .reg-form table em').eq(key-1).text('请再次输入登录密码');
+                break;
+            case 6:
+                $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','cue');
+                $('#reg-content-0828 .reg-form table em').eq(key-1).text('姓名为2-8个汉字');
+                break;
+            case 7:
+                $('#reg-content-0828 .reg-form table').find('tr').eq(key).attr('class','cue');
+                $('#reg-content-0828 .reg-form table em').eq(key-1).text('身份证号作为判断账号归属的最终依据，一旦填写将与账号绑定');
+                break;
+
+        }
+    };
+
+    function submit() {
+        var data = false;
+        (phone && code && passwords && rePass && username && ID) && (data = true);
+        console.log(data);
+        if (data) {
+            alert('保存成功');
+        } else {
+            if (!phone) {
+                inputBlur(0);
+            } else if (!code) {
+                inputBlur(3);
+            } else if (!passwords) {
+                inputBlur(4);
+            } else if (!rePass) {
+                inputBlur(5);
+            } else if (!username) {
+                inputBlur(6);
+            } else {
+                inputBlur(6);
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

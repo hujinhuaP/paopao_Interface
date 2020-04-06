@@ -1,0 +1,79 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    {if condition="$row.auth_type eq 'video'"}
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div id="video"></div>
+            <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.0.js" charset="utf-8"></script>
+            <script>
+                var player = new TcPlayer('video', {
+                    "mp4": "{$detail.source_url}",
+                    "m3u8": "", //请替换成实际可用的播放地址
+                    "flv": "", //请替换成实际可用的播放地址
+                    "autoplay": true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+                    "coverpic": "",
+                    "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
+                    "height": '500'//视频的显示高度，请尽量使用视频分辨率高度
+                });
+            </script>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_certification_status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[status]"
+                       id="user_certification_status" value="Y" data-rule="checked"
+                       {$row.status== "Y" ? "checked" : ""} > {:__('Pass')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[status]"
+                       id="user_certification_status" value="N" data-rule="checked"
+                       {$row.status== "N" ? "checked" : ""} > {:__('Refuse')}
+            </label>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="c-user_certification_result" class="control-label col-xs-12 col-sm-2">{:__('Check result')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                            <textarea name="row[result]" id="c-result"
+                                      class="form-control" maxlength="250">{$detail.result}</textarea>
+        </div>
+    </div>
+    {else /}
+    <div class="form-group">
+        {volist name="detail" id="imageItem"}
+        <input type="hidden" name="row[{$imageItem.sort_num}][id]" value="{$imageItem.id}" />
+        <label for="c-system_withdraw_ratio" class="control-label col-xs-12 col-sm-2">
+            {if condition="$imageItem.sort_num eq 0"}
+            {:__("封面")}：
+            {/if}
+        </label>
+        <div class="form-inline">
+            <div>
+                <label class="radio-inline">
+                    <a href="{$imageItem.source_url}" target="_blank">
+                        <img src="{$imageItem.source_url}" alt="" style="width: 200px;">
+                    </a>
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="row[{$imageItem.sort_num}][status]"
+                           id="user_certification_status" value="Y" data-rule="checked"
+                           {$imageItem.status== "Y" ? "checked" : ""} > {:__('Pass')}
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="row[{$imageItem.sort_num}][status]"
+                           id="user_certification_status" value="N" data-rule="checked"
+                           {$imageItem.status== "N" ? "checked" : ""} > {:__('Refuse')}
+                </label>
+                <label class="radio-inline">
+                    <textarea name="row[{$imageItem.sort_num}][result]" id="c-result"
+                              class="form-control" maxlength="250">{$imageItem.result}</textarea>
+                </label>
+            </div>
+        </div>
+        {/volist}
+    </div>
+    {/if}
+</form>

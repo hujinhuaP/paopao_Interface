@@ -1,0 +1,77 @@
+<style>
+    .profile-avatar-container {
+        position:relative;
+        width:100px;margin:0 auto;
+    }
+    .profile-avatar-container .profile-user-img{
+        width:100px;
+        height:100px;
+    }
+    .profile-avatar-container .profile-avatar-text {
+        display:none;
+    }
+    .profile-avatar-container:hover .profile-avatar-text {
+        display:block;
+        position:absolute;
+        height:100px;
+        width:100px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .profile-avatar-container button{
+        position:absolute;
+        top:0;left:0;width:100px;height:100px;opacity: 0;
+    }
+    .profile-user-nickname {
+        font-size: 21px;
+        margin-top: 5px;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" id="c-avatar" name="row[user_avatar]" value="" data-rule="url"/>
+    <div class="profile-avatar-container">
+        <img class="profile-img img-responsive img-circle plupload" src="" onerror="this.src='__CDN__/assets/img/avatar.png'" alt="">
+        <div class="profile-avatar-text img-circle">{:__('Click to edit')}</div>
+        <button id="plupload-avatar" class="plupload" data-input-id="c-avatar"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+    </div>
+
+    <h3 class="profile-user-nickname text-center"></h3>
+
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_nickname]" value=""  id="c-nickname" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_intro" class="control-label col-xs-12 col-sm-2">{:__('User intro')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_intro]" value=""  id="c-user_intro" class="form-control" placeholder="{:__('Empty intro')}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_consume_total" class="control-label col-xs-12 col-sm-2">{:__('Coin consume total')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_consume_total]" value="{:mt_rand(100, 999)}"  id="c-user_consume_total" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_collect_total" class="control-label col-xs-12 col-sm-2">{:__('Dot collect total')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_collect_total]" value="{:mt_rand(100, 999)}"  id="c-user_collect_total" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,80 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">审核状态:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_status]"  value="C"  {$row.short_posts_status == "C" ? "checked" : ""} > 审核中
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_status]"  value="Y"  {$row.short_posts_status == "Y" ? "checked" : ""} > 通过
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_status]"  value="N"  {$row.short_posts_status == "N" ? "checked" : ""} > 拒绝
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-short_posts_check_remark" class="control-label col-xs-12 col-sm-2">{:__('审核原因')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[short_posts_check_remark]" value="{$row.short_posts_check_remark}"  id="c-short_posts_check_remark" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_user_id" class="control-label col-xs-12 col-sm-2">{:__('发布人')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" readonly value="{$row.short_posts_user_id}"  id="c-short_posts_user_id" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_get_user_id" class="control-label col-xs-12 col-sm-2">{:__('购买收益人(没有填则为发布人)')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[short_posts_get_user_id]"  value="{$row.short_posts_get_user_id}" id="c-short_posts_get_user_id"
+                   class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">付费类型:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_pay_type]" value="free" {$row.short_posts_pay_type == "free" ? "checked" : ""}> 免费
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_pay_type]" value="part_free" {$row.short_posts_pay_type == "part_free" ? "checked" : ""}> 图片前两张免费
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_pay_type]" value="pay" {$row.short_posts_pay_type == "pay" ? "checked" : ""}> 付费
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_price" class="control-label col-xs-12 col-sm-2">{:__('价格')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[short_posts_price]" class="form-control" id="c-short_posts_price">
+                <option value="0">0</option>
+                {foreach name="priceList" item="vo" }
+                <option value="{$vo}" {$row.short_posts_price == $vo ? "selected" : ""}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_check_remark" class="control-label col-xs-12 col-sm-2">{:__('文字内容')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea class="form-control" name="row[short_posts_word]" rows="20">{$row.short_posts_word}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

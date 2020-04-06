@@ -1,0 +1,5 @@
+<?php
+    require_once '../config.php';
+
+    //创建订单
+    echo createWxOrder();

@@ -1,0 +1,24 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-user_v_wechat" class="control-label col-xs-12 col-sm-2">{:__('大V微信号')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_v_wechat]" value="{$userrow.user_v_wechat}"  id="c-user_v_wechat" class="form-control"  />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_v_wechat_price" class="control-label col-xs-12 col-sm-2">{:__('大V微信价格')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[user_v_wechat_price]" value="{$userrow.user_v_wechat_price}"  id="c-user_v_wechat_price" class="form-control" min="0" />
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

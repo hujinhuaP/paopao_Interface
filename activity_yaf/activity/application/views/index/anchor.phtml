@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>主播榜</title>
+<link rel="stylesheet" href="http://lebolive-1255651273.file.myqcloud.com/static/activity/css/animate.min.css">
+<link rel="stylesheet" href="http://lebolive-1255651273.file.myqcloud.com/static/activity/css/common.css">
+<script src="http://lebolive-1255651273.file.myqcloud.com/static/activity/js/jquery-1.8.3.min.js"></script>
+<script src="http://lebolive-1255651273.file.myqcloud.com/static/activity/js/media.js"></script>
+<style>
+</style>
+</head>
+<body>
+<div class="sub-content">
+    <img class="line animated fadeIn" src="http://lebolive-1255651273.file.myqcloud.com/static/activity/images/line.png">
+	<img class="curtain animated fadeInDown delay-1" src="http://lebolive-1255651273.file.myqcloud.com/static/activity/images/curtain.png">
+    <img class="cloud-2 animated fadeInUp delay-1" src="http://lebolive-1255651273.file.myqcloud.com/static/activity/images/cloud-2.png">
+    <img class="title animated bounceIn delay-15" src="http://lebolive-1255651273.file.myqcloud.com/static/activity/images/title-zbb.png">
+    <?php if($user_id){ ?>
+    <a href="/index/index/log/anchor_id/<?php echo $user_id; ?>"><img class="sub-title animated fadeInRight delay-15" src="http://lebolive-1255651273.file.myqcloud.com/static/activity/images/float-wdjl.png"></a>
+    <?php } ?>
+    <div class="table table-2 animated fadeIn delay-1">
+    	<div>
+        	<ul><li>当前排名</li><li>头像</li><li>昵称</li><li>累计时长</li></ul>
+            <?php foreach($rank as $key => $rankItem){ ?>
+                <ol><li><div class="rank"><?php echo $key + 1; ?></div></li><li><div class="avatar" style="background-image:url(<?php echo $rankItem['user_avatar'] ?>)"></div></li><li><?php echo $rankItem['user_nickname'] ?></li><li><?php echo $rankItem['duration'] ?></li></ol>
+            <?php } ?>
+        </div>
+    </div>
+    <div class="attention">
+    	注：本次活动本着公平公正公开规则举办，所有奖励请自行<br>在活动结束后七天内添加平台客服微信领取奖励。
+        <div style="color:#ffeaa4; text-align:center;">客服账号：Yuyin-zb</div>
+        禁止使用虚假用户账号进行刷单等违备公平竞争的操作，<br>一经发现封停涉事账号取消奖励，排名顺位移动。
+    </div>
+    <?php if($user_id){ ?>
+    <div class="total-box animated fadeIn delay-2">
+    	<div class="total">您当前累计时长为：<span><?php echo $my_rank['duration'] ?></span></div>
+    	<div class="rank">排名：<span><?php echo $my_rank['rank'] ?></span></div>
+    </div>
+    <?php } ?>
+</div>
+</body>
+</html>

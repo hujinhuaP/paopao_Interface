@@ -1,0 +1,72 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane  active in" id="one">
+                <table class="table table-bordered table-condensed table-hover">
+                    <tbody>
+                    <tr>
+                        <td class="text-right">{:__("User id")}：</td>
+                        <td>{$oUser.user_id}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("用户昵称")}：</td>
+                        <td>{$oUser.user_nickname}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("用户头像")}：</td>
+                        <td>
+                            <a href="{$oUser.user_avatar ?: '__CDN__/assets/img/avatar.png'}" target="_blank">
+                                <img src="{$oUser.user_avatar}" alt="" height="200"
+                                     onerror="this.src='__CDN__/assets/img/avatar.png'">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right">{:__("文字内容")}：</td>
+                        <td>{$row.short_posts_word}</td>
+                    </tr>
+                    {if $row->short_posts_type == 'image'}
+                    {volist name="imageSource" id="imageItem"}
+                    <tr>
+                        <td class="text-right">
+                            图片
+                        </td>
+                        <td>
+                            <a href="{$imageItem}" target="_blank">
+                                <img src="{$imageItem}" alt="" height="200">
+                            </a>
+                        </td>
+                    </tr>
+                    {/volist}
+                    {/if}
+                    {if $row->short_posts_type == 'video'}
+                    <tr>
+                        <td class="text-right">
+                            视频
+                        </td>
+                        <td>
+                            <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.0.js" charset="utf-8"></script>
+                            <div id="video"></div>
+                            <script>
+                                var player = new TcPlayer('video', {
+                                    "mp4": "{$videoSource}",
+                                    "m3u8": "", //请替换成实际可用的播放地址
+                                    "flv": "", //请替换成实际可用的播放地址
+                                    "autoplay": false,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+                                    "coverpic": "{$imageSource[0]}",
+                                    "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
+                                    "height": '500'//视频的显示高度，请尽量使用视频分辨率高度
+                                });
+                            </script>
+                        </td>
+                    </tr>
+
+                    {/if}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

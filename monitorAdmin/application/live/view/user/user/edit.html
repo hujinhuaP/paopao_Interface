@@ -1,0 +1,108 @@
+<style>
+    .profile-avatar-container {
+        position:relative;
+        width:100px;margin:0 auto;
+    }
+    .profile-avatar-container .profile-user-img{
+        width:100px;
+        height:100px;
+    }
+    .profile-avatar-container .profile-avatar-text {
+        display:none;
+    }
+    .profile-avatar-container:hover .profile-avatar-text {
+        display:block;
+        position:absolute;
+        height:100px;
+        width:100px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .profile-avatar-container button{
+        position:absolute;
+        top:0;left:0;width:100px;height:100px;opacity: 0;
+    }
+    .profile-user-nickname {
+        font-size: 21px;
+        margin-top: 5px;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" id="c-avatar" name="row[user_avatar]" value="{$row.user_avatar}" data-rule="url"/>
+    <div class="profile-avatar-container">
+        <img class="profile-img img-responsive img-circle plupload" src="{$row.user_avatar}" onerror="this.src='__CDN__/assets/img/avatar.png'" alt="">
+        <div class="profile-avatar-text img-circle">{:__('Click to edit')}</div>
+        <button id="plupload-avatar" class="plupload" data-input-id="c-avatar"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+    </div>
+
+    <h3 class="profile-user-nickname text-center">{$row.user_nickname}</h3>
+
+    <p class="text-muted text-center">{$row.user_intro?:__('Empty intro')}</p>
+
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_nickname]" value="{$row.user_nickname}"  id="c-nickname" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_intro" class="control-label col-xs-12 col-sm-2">{:__('User intro')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_intro]" value="{$row.user_intro}"  id="c-user_intro" class="form-control" placeholder="{:__('Empty intro')}" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_certification_status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_sex]" id="user_sex" value="0" data-rule="checked" {$row.user_sex == "0" ? "checked" : ""} > {:__('Unset')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_sex]" id="user_sex" value="1" data-rule="checked" {$row.user_sex == "1" ? "checked" : ""} > {:__('Man')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_sex]" id="user_sex" value="2" data-rule="checked" {$row.user_sex == "2" ? "checked" : ""} > {:__('Woman')}
+            </label>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="c-user_certification_status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_is_superadmin]" id="user_is_superadmin" value="N" data-rule="checked" {$row.user_is_superadmin == "N" ? "checked" : ""} > {:__('普通')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_is_superadmin]" id="user_is_superadmin" value="Y" data-rule="checked" {$row.user_is_superadmin == "Y" ? "checked" : ""} > {:__('官方账号')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_is_superadmin]" id="user_is_superadmin" value="C" data-rule="checked" {$row.user_is_superadmin == "C" ? "checked" : ""} > {:__('客服账号')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_is_superadmin]" id="user_is_superadmin" value="S" data-rule="checked" {$row.user_is_superadmin == "S" ? "checked" : ""} > {:__('禁止消费')}
+            </label>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('Phone')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_phone]" value="{$oUserAccount.user_phone}"  id="c-nickname" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

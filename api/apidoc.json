@@ -1,0 +1,11 @@
+{
+  "name": "JK LIVE",
+  "version": "1.4.0",
+  "description": "",
+  "title": "JK LIVE接口",
+  "url": "http://dev.xxxxxxxx.com/v1",
+  "header": {
+    "title":"注意事项",
+    "filename":"header.md"
+  }
+}

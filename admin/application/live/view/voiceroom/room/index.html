@@ -1,0 +1,77 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-room_name" class="control-label col-xs-12 col-sm-2">{:__('房间名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[room_name]" value="{$row.room_name}"  id="c-room_name" class="form-control"  />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-room_user_id" class="control-label col-xs-12 col-sm-2">{:__('房主用户ID')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[room_user_id]" value="{$row.room_user_id}"  id="c-room_user_id" class="form-control"  />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('房间封面')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-room_cover" data-rule="required" class="form-control" size="50" name="row[room_cover]" type="text" value="{$row.room_cover|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-room_cover" class="btn btn-danger plupload" data-input-id="c-room_cover" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-room_cover"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-room_cover" class="btn btn-primary fachoose" data-input-id="c-room_cover" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-room_cover"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-room_cover"></ul>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('房间欢迎语')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-room_welcome_word" class="form-control " rows="5" name="row[room_welcome_word]" cols="50">{$row.room_welcome_word|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('公告标题')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-room_notice_title" class="form-control" name="row[room_notice_title]" type="text" value="{$row.room_notice_title|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('公告内容')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-room_notice_word" class="form-control " rows="5" name="row[room_notice_word]" cols="50">{$row.room_notice_word|htmlentities}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('系统通知')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-room_system_notice" class="form-control " rows="5" name="row[room_system_notice]" cols="50">{$row.room_system_notice|htmlentities}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('APP聊天室入口')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-room_open_flg" data-rule="required" class="form-control selectpicker" name="row[room_open_flg]">
+                {foreach name="roomOpenFlgList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.room_open_flg"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

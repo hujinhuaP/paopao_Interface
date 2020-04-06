@@ -1,0 +1,52 @@
+<table class="table table-bordered table-condensed table-hover">
+    <thead>
+        <colgroup>
+            <col width="20%">
+            <col>
+        </colgroup>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-right">{:__("用户ID")}：</td>
+            <td>{$oUser.user_id}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("用户昵称")}：</td>
+            <td>{$oUser.user_nickname}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("主播用户ID")}：</td>
+            <td>{$oAnchorUser.user_id}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("主播用户昵称")}：</td>
+            <td>{$oAnchorUser.user_nickname}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("等待时长(s)")}：</td>
+            <td>{$row.dispatch_chat_wait_duration}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("派单状态")}：</td>
+            <td>{$row.dispatch_chat_status}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("派单价格")}：</td>
+            <td>{$row.dispatch_chat_price}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("通话记录ID")}：</td>
+            <td>{$row.dispatch_chat_chat_id}</td>
+        </tr>
+        <tr>
+            <td class="text-right">{:__("通话时长")}：</td>
+            <td>{$rowChat.duration}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="hide layer-footer">
+    <label class="control-label col-xs-12 col-sm-2"></label>
+    <div class="col-xs-12 col-sm-8">
+        <button type="reset" class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();">{:__('Close')}</button>
+    </div>
+</div>

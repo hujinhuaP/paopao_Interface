@@ -1,0 +1,661 @@
+{php} use app\live\model\live\Kv; {/php}
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        <!-- <div class="panel-lead"><em>系统配置</em>可以在此增改系统的变量和分组,也可以自定义分组和变量,如果需要删除请从数据库中删除</div> -->
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#defaultTab" data-toggle="tab">基础设置</a></li>
+            <li><a href="#levelTab" data-toggle="tab">等级设置</a></li>
+            <li><a href="#postsTab" data-toggle="tab">社区设置</a></li>
+            <li><a href="#guideImageTab" data-toggle="tab">引导图片设置</a></li>
+            <li><a href="#anchorSayHiTab" data-toggle="tab">主播打招呼设置</a></li>
+            <li><a href="#taskTab" data-toggle="tab">任务设置</a></li>
+            <li><a href="#wechatTab" data-toggle="tab">微信设置</a></li>
+            <li><a href="#dispatchTab" data-toggle="tab">派单设置</a></li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active" id="defaultTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-{:Kv::KEY_CONTACT_US}" class="control-label col-xs-12 col-sm-2">{:__('Contact phone number')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="row[{:Kv::KEY_CONTACT_US}]" value="{$row[Kv::KEY_CONTACT_US]}"
+                                       id="c-{:Kv::KEY_CONTACT_US}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::KEY_COIN_NAME}" class="control-label col-xs-12 col-sm-2">{:__('Rechargeable coin')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="row[{:Kv::KEY_COIN_NAME}]" value="{$row[Kv::KEY_COIN_NAME]}"
+                                       id="c-{:Kv::KEY_COIN_NAME}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::KEY_DOT_NAME}" class="control-label col-xs-12 col-sm-2">{:__('Withdraw coin')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="row[{:Kv::KEY_DOT_NAME}]" value="{$row[Kv::KEY_DOT_NAME]}"
+                                       id="c-{:Kv::KEY_DOT_NAME}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::PRIVATE_PRICE_MIN}"
+                                   class="control-label col-xs-12 col-sm-2">私聊价格(最小):</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::PRIVATE_PRICE_MIN}]"
+                                       value="{$row[Kv::PRIVATE_PRICE_MIN]}" id="c-{:Kv::PRIVATE_PRICE_MIN}"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::PRIVATE_PRICE_MAX}"
+                                   class="control-label col-xs-12 col-sm-2">私聊价格(最大):</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::PRIVATE_PRICE_MAX}]"
+                                       value="{$row[Kv::PRIVATE_PRICE_MAX]}" id="c-{:Kv::PRIVATE_PRICE_MAX}"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::CHARGE_VIDEO_PRICE_MIN}" class="control-label col-xs-12 col-sm-2">私密视频价格(最小):</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::CHARGE_VIDEO_PRICE_MIN}]"
+                                       value="{$row[Kv::CHARGE_VIDEO_PRICE_MIN]}" id="c-{:Kv::CHARGE_VIDEO_PRICE_MIN}"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::CHARGE_VIDEO_PRICE_MAX}" class="control-label col-xs-12 col-sm-2">私密视频价格(最大):</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::CHARGE_VIDEO_PRICE_MAX}]"
+                                       value="{$row[Kv::CHARGE_VIDEO_PRICE_MAX]}" id="c-{:Kv::CHARGE_VIDEO_PRICE_MAX}"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::CHAT_FREE_COUNT}"
+                                   class="control-label col-xs-12 col-sm-2">私聊免费条数:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::CHAT_FREE_COUNT}]"
+                                       value="{$row[Kv::CHAT_FREE_COUNT]}" id="c-{:Kv::CHAT_FREE_COUNT}"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::CHAT_PRICE}" class="control-label col-xs-12 col-sm-2">单条私聊价格:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::CHAT_PRICE}]" value="{$row[Kv::CHAT_PRICE]}"
+                                       id="c-{:Kv::CHAT_PRICE}" min="0" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::VIP_VIDEO_DISCOUNT}" class="control-label col-xs-12 col-sm-2">VIP私密视频观看折扣（%）:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::VIP_VIDEO_DISCOUNT}]"
+                                       value="{$row[Kv::VIP_VIDEO_DISCOUNT]}" id="c-{:Kv::VIP_VIDEO_DISCOUNT}" min="0"
+                                       max="100" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::NEW_USER_VIDEO_PLAY_TIME}" class="control-label col-xs-12 col-sm-2">新用户诱导匹配视频播放时长（如果为0则表示关闭）:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::NEW_USER_VIDEO_PLAY_TIME}]"
+                                       value="{$row[Kv::NEW_USER_VIDEO_PLAY_TIME]}"
+                                       id="c-{:Kv::NEW_USER_VIDEO_PLAY_TIME}" min="0" max="60" class="form-control"
+                                       data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">苹果上线:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::APPLE_ONLINE}]" value="1" {$apple_online== "1" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::APPLE_ONLINE}]" value="2" {$apple_online== "2" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">是否开启主播回复普通用户诱导:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::ANCHOR_REPLY_NORMAL_USER}]" value="1"
+                                           {$anchor_reply_normal_user== "1" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::ANCHOR_REPLY_NORMAL_USER}]" value="2"
+                                           {$anchor_reply_normal_user== "2" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::GUARD_MIN_COIN}"
+                                   class="control-label col-xs-12 col-sm-2">守护最小支付金额:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::GUARD_MIN_COIN}]"
+                                       value="{$row[Kv::GUARD_MIN_COIN]}" id="c-{:Kv::GUARD_MIN_COIN}"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::GUARD_INTERVAL_COIN}" class="control-label col-xs-12 col-sm-2">守护每次抢需要超出多少金币:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::GUARD_INTERVAL_COIN}]"
+                                       value="{$row[Kv::GUARD_INTERVAL_COIN]}" id="c-{:Kv::GUARD_INTERVAL_COIN}" min="1"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::GUARD_DOT_RADIO}" class="control-label col-xs-12 col-sm-2">守护主播可以获得分成比例（%）:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::GUARD_DOT_RADIO}]"
+                                       value="{$row[Kv::GUARD_DOT_RADIO]}" id="c-{:Kv::GUARD_DOT_RADIO}" min="0"
+                                       max="100" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">是否开启活动提醒弹窗:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::ACTIVITY_NOTICE_FLG}]" value="Y"
+                                           {$row['activity:notice_flg']== "Y" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::ACTIVITY_NOTICE_FLG}]" value="N"
+                                           {$row['activity:notice_flg']== "N" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::ACTIVITY_SHOW_URL}" class="control-label col-xs-12 col-sm-2">{:__('活动H5地址')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="row[{:Kv::ACTIVITY_SHOW_URL}]" value="{$row[Kv::ACTIVITY_SHOW_URL]}"
+                                       id="c-{:Kv::ACTIVITY_SHOW_URL}" class="form-control">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">用户一键打招呼功能开关:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::USER_SAY_HI_FLG}]" value="Y"
+                                           {$row['user_say_hi_flg']== "Y" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::USER_SAY_HI_FLG}]" value="N"
+                                           {$row['user_say_hi_flg']== "N" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::USER_NICKNAME_CHANGE_INTERVAL_DAY}" class="control-label col-xs-12 col-sm-2">用户修改昵称间隔天数:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::USER_NICKNAME_CHANGE_INTERVAL_DAY}]"
+                                       value="{$row[Kv::USER_NICKNAME_CHANGE_INTERVAL_DAY]}" id="c-{:Kv::USER_NICKNAME_CHANGE_INTERVAL_DAY}" min="0"
+                                       class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">自动修改离线主播状态:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::ANCHOR_OFFLINE_MODIFY}]" value="Y"
+                                           {$row['anchor_offline_modify']  == "Y" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::ANCHOR_OFFLINE_MODIFY}]" value="N"
+                                           {$row['anchor_offline_modify'] == "N" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="levelTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-{:Kv::COIN_TO_EXP}" class="control-label col-xs-12 col-sm-2">{:__('消费1金币获取经验值')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::COIN_TO_EXP}]" value="{$row[Kv::COIN_TO_EXP]}"
+                                       id="c-{:Kv::COIN_TO_EXP}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-{:Kv::SCROLL_LEVEL_ONLINE}" class="control-label col-xs-12 col-sm-2">{:__('用户上线滚屏等级')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::SCROLL_LEVEL_ONLINE}]" value="{$row[Kv::SCROLL_LEVEL_ONLINE]}"
+                                       id="c-{:Kv::SCROLL_LEVEL_ONLINE}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::HIDE_RANK_LEVEL}" class="control-label col-xs-12 col-sm-2">{:__('用户可隐藏排行榜等级')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::HIDE_RANK_LEVEL}]" value="{$row[Kv::HIDE_RANK_LEVEL]}"
+                                       id="c-{:Kv::HIDE_RANK_LEVEL}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::COIN_TO_INTIMATE}" class="control-label col-xs-12 col-sm-2">{:__('消费1金币获取亲密度')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::COIN_TO_INTIMATE}]" value="{$row[Kv::COIN_TO_INTIMATE]}"
+                                       id="c-{:Kv::COIN_TO_INTIMATE}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::DOT_TO_ANCHOR_EXP}" class="control-label col-xs-12 col-sm-2">{:__('获得1收益获取主播经验（魅力值）')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::DOT_TO_ANCHOR_EXP}]" value="{$row[Kv::DOT_TO_ANCHOR_EXP]}"
+                                       id="c-{:Kv::DOT_TO_ANCHOR_EXP}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="postsTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-{:Kv::POSTS_COMMENT_LEVEL}" class="control-label col-xs-12 col-sm-2">{:__('用户评论等级')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::POSTS_COMMENT_LEVEL}]" value="{$row[Kv::POSTS_COMMENT_LEVEL]}"
+                                       id="c-{:Kv::POSTS_COMMENT_LEVEL}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">用户发帖是否需要VIP:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::POSTS_ADD_VIP_FLG}]" value="Y"
+                                           {$row['posts:add_vip_flg']== "Y" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::POSTS_ADD_VIP_FLG}]" value="N"
+                                           {$row['posts:add_vip_flg']== "N" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">发帖是否需要审核:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::POSTS_NEW_CHECK}]" value="Y"
+                                           {$row['posts:new_check']== "Y" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::POSTS_NEW_CHECK}]" value="N"
+                                           {$row['posts:new_check']== "N" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::POSTS_MIN_PRICE}" class="control-label col-xs-12 col-sm-2">{:__('动态最小价格')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::POSTS_MIN_PRICE}]" value="{$row[Kv::POSTS_MIN_PRICE]}"
+                                       id="c-{:Kv::POSTS_MIN_PRICE}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::POSTS_MAX_PRICE}" class="control-label col-xs-12 col-sm-2">{:__('动态最大价格')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::POSTS_MAX_PRICE}]" value="{$row[Kv::POSTS_MAX_PRICE]}"
+                                       id="c-{:Kv::POSTS_MAX_PRICE}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::POSTS_INTERVAL_PRICE}" class="control-label col-xs-12 col-sm-2">{:__('动态设置步长')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::POSTS_INTERVAL_PRICE}]" value="{$row[Kv::POSTS_INTERVAL_PRICE]}"
+                                       id="c-{:Kv::POSTS_INTERVAL_PRICE}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="guideImageTab">
+                <style>
+                    .gift-container {
+                        position:relative;
+                        width:500px;
+                    }
+                    .gift-container .gift-img{
+                        width:500px;
+                        height:100px;
+                    }
+                    .gift-container .gift-text {
+                        display:none;
+                    }
+                    .gift-container:hover .gift-text {
+                        display:block;
+                        position:absolute;
+                        height:100px;
+                        width:500px;
+                        background:#444;
+                        opacity: .6;
+                        color: #fff;
+                        top:0;
+                        left:0;
+                        line-height: 100px;
+                        text-align: center;
+                    }
+                    .gift-container button{
+                        position:absolute;
+                        top:0;left:0;width:500px;height:100px;opacity: 0;
+                    }
+                </style>
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-become_anchor_guide_url" class="control-label col-xs-12 col-sm-2">申请主播引导{:__('Image')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="form-inline">
+                                    <input type="hidden" id="c-become_anchor_guide_url" name="row[{:Kv::BECOME_ANCHOR_GUIDE_IMAGE}]" value="{$row[Kv::BECOME_ANCHOR_GUIDE_IMAGE]}" data-rule="url|required"/>
+                                    <div class="gift-container">
+                                        <img class="become_anchor_guide_url-img img-responsive plupload" src="{$row[Kv::BECOME_ANCHOR_GUIDE_IMAGE]}" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                                        <div class="gift-text">{:__('Click to edit')}</div>
+                                        <button id="plupload-become_anchor_guide_url" class="plupload" data-input-id="c-become_anchor_guide_url"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                                    </div>
+
+                                    <span>比例4:1 格式可为jpg,png</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="c-invite_user_guide_image_url" class="control-label col-xs-12 col-sm-2">邀请用户引导{:__('Image')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="form-inline">
+                                    <input type="hidden" id="c-invite_user_guide_image_url" name="row[{:Kv::INVITE_USER_GUIDE_IMAGE}]" value="{$row[Kv::INVITE_USER_GUIDE_IMAGE]}" data-rule="url|required"/>
+                                    <div class="gift-container">
+                                        <img class="invite_user_guide_image_url-img img-responsive plupload" src="{$row[Kv::INVITE_USER_GUIDE_IMAGE]}" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                                        <div class="gift-text">{:__('Click to edit')}</div>
+                                        <button id="plupload-invite_user_guide_image_url" class="plupload" data-input-id="c-invite_user_guide_image_url"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                                    </div>
+
+                                    <span>比例4:1 格式可为jpg,png</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="anchorSayHiTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-{:Kv::ANCHOR_BATCH_SAY_HI_INTERVAL}" class="control-label col-xs-12 col-sm-2">{:__('主播一键打招呼间隔时间秒')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::ANCHOR_BATCH_SAY_HI_INTERVAL}]" value="{$row[Kv::ANCHOR_BATCH_SAY_HI_INTERVAL]}"
+                                       id="c-{:Kv::ANCHOR_BATCH_SAY_HI_INTERVAL}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::ANCHOR_BATCH_SAY_HI_NUM}" class="control-label col-xs-12 col-sm-2">{:__('主播一键打招呼单次用户数')}（不能超过总单位时间内用户数）:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::ANCHOR_BATCH_SAY_HI_NUM}]" value="{$row[Kv::ANCHOR_BATCH_SAY_HI_NUM]}"
+                                       id="c-{:Kv::ANCHOR_BATCH_SAY_HI_NUM}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::ANCHOR_SAY_HI_TOTAL_INTERVAL}" class="control-label col-xs-12 col-sm-2">{:__('主播打招呼总间隔时间')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::ANCHOR_SAY_HI_TOTAL_INTERVAL}]" value="{$row[Kv::ANCHOR_SAY_HI_TOTAL_INTERVAL]}"
+                                       id="c-{:Kv::ANCHOR_SAY_HI_TOTAL_INTERVAL}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::ANCHOR_SAY_HI_TOTAL_NUM}" class="control-label col-xs-12 col-sm-2">{:__('主播打招呼总单位时间内用户数')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::ANCHOR_SAY_HI_TOTAL_NUM}]" value="{$row[Kv::ANCHOR_SAY_HI_TOTAL_NUM]}"
+                                       id="c-{:Kv::ANCHOR_SAY_HI_TOTAL_NUM}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="taskTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-{:Kv::TASK_DAILY_COIN_MAX}" class="control-label col-xs-12 col-sm-2">{:__('任务每日金币获得最大数')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::TASK_DAILY_COIN_MAX}]" value="{$row[Kv::TASK_DAILY_COIN_MAX]}"
+                                       id="c-{:Kv::TASK_DAILY_COIN_MAX}" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="wechatTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::WECHAT_MIN_PRICE}" class="control-label col-xs-12 col-sm-2">收费微信最小价格:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::WECHAT_MIN_PRICE}]" value="{$row[Kv::WECHAT_MIN_PRICE]}"
+                                       id="c-{:Kv::WECHAT_MIN_PRICE}" min="0" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::WECHAT_MAX_PRICE}" class="control-label col-xs-12 col-sm-2">收费微信最大价格:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::WECHAT_MAX_PRICE}]" value="{$row[Kv::WECHAT_MAX_PRICE]}"
+                                       id="c-{:Kv::WECHAT_MAX_PRICE}" min="0" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::WECHAT_INTERVAL_PRICE}" class="control-label col-xs-12 col-sm-2">收费微信选择间隔:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::WECHAT_INTERVAL_PRICE}]" value="{$row[Kv::WECHAT_INTERVAL_PRICE]}"
+                                       id="c-{:Kv::WECHAT_INTERVAL_PRICE}" min="0" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::WECHAT_CHANGE_INTERVAL_DAY}" class="control-label col-xs-12 col-sm-2">微信修改间隔时间（天）:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::WECHAT_CHANGE_INTERVAL_DAY}]" value="{$row[Kv::WECHAT_CHANGE_INTERVAL_DAY]}"
+                                       id="c-{:Kv::WECHAT_CHANGE_INTERVAL_DAY}" min="0" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-{:Kv::WECHAT_FIRST_CHECK_ANCHOR_EXP}" class="control-label col-xs-12 col-sm-2">首次审核通过赠送魅力值:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::WECHAT_FIRST_CHECK_ANCHOR_EXP}]" value="{$row[Kv::WECHAT_FIRST_CHECK_ANCHOR_EXP]}"
+                                       id="c-{:Kv::WECHAT_FIRST_CHECK_ANCHOR_EXP}" min="0" class="form-control" data-rule="required">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">是否开启亲密度解锁微信:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::INTIMATE_WECHAT_SHOW}]" value="Y"
+                                           {$row['intimate_wechat_show']== "Y" ? "checked" : ""} > 开启
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="row[{:Kv::INTIMATE_WECHAT_SHOW}]" value="N"
+                                           {$row['intimate_wechat_show']== "N" ? "checked" : ""} > 关闭
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="dispatchTab">
+                <div class="widget-body no-padding">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="">
+                        <div class="form-group">
+                            <label for="c-{:Kv::DISPATCH_OVER_TIME}" class="control-label col-xs-12 col-sm-2">{:__('派单主播接听超时（秒）')}:最大15秒:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="number" name="row[{:Kv::DISPATCH_OVER_TIME}]" value="{$row[Kv::DISPATCH_OVER_TIME]}"
+                                       id="c-{:Kv::DISPATCH_OVER_TIME}" class="form-control" data-rule="required" max="15">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-match_show_number_config" class="control-label col-xs-12 col-sm-2">{:__('匹配显示匹配数')}（时间不能重叠，结束时间不能超过23:59，自行把控）:</label>
+                            <div class="col-xs-12 col-sm-9">
+                            <dl class="fieldlist" data-name="row[match_show_number_config]" data-template="addMatchShowConfig">
+                                <dd>
+                                    <ins>{:__('开始时间')}</ins>
+                                    <ins>{:__('结束时间')}</ins>
+                                    <ins>{:__('最小值')}</ins>
+                                    <ins>{:__('最大值')}</ins>
+                                </dd>
+                                <dd><a href="javascript:;" class="btn btn-sm btn-success btn-append"><i class="fa fa-plus"></i> {:__('Append')}</a></dd>
+                                <textarea name="row[match_show_number_config]" id="c-match_show_number_config" class="form-control hide" cols="30" rows="5">{$row['match_show_number_config']}</textarea>
+                            </dl>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('匹配显示匹配数默认时间值')}:</label>
+                            <div class="col-xs-12 col-sm-9">
+                                <dl  data-name="row[match_show_number_config_default]" >
+                                    <dd>
+                                        <ins>{:__('最小值')}</ins>
+                                        <ins>{:__('最大值')}</ins>
+                                    </dd>
+                                    <dd class="form-inline">
+                                        <input type="number" data-rule="int" name="row[match_show_number_config_min]" class="form-control" value="{$row.match_show_number_config_min}" style="width: 8%;" />
+                                        <input type="number" data-rule="int"  name="row[match_show_number_config_max]" class="form-control" value="{$row.match_show_number_config_max}" style="width: 8%;" />
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-9">
+                                <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addMatchShowConfig" class="hidden">
+    <dd class="form-inline">
+        <input type="text" name="<%=name%>[<%=index%>][start_time]" class="form-control" value="<%=row.start_time%>" style="width: 6%" />
+        <input type="text" name="<%=name%>[<%=index%>][end_time]" class="form-control" value="<%=row.end_time%>" style="width: 6%;" />
+        <input type="text" name="<%=name%>[<%=index%>][number_min]" class="form-control" value="<%=row.number_min%>" style="width: 8%;" />
+        <input type="text" name="<%=name%>[<%=index%>][number_max]" class="form-control" value="<%=row.number_max%>" style="width: 8%;" />
+        <span class="btn btn-sm btn-danger btn-remove"><i class="fa fa-times"></i></span>
+        <span class="btn btn-sm btn-primary btn-dragsort"><i class="fa fa-arrows"></i></span>
+    </dd>
+</div>
+

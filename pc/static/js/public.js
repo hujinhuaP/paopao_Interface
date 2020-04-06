@@ -1,0 +1,9 @@
+$(function(){
+	$("#person_setting").click(function(){
+		if($(".setting_list").css('display','none')){
+			$(".setting_list").show();
+		}else{
+			$(".setting_list").hide();
+		}
+	})
+})

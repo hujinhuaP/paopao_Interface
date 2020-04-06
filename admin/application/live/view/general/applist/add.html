@@ -1,0 +1,271 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-app_name" class="control-label col-xs-12 col-sm-2">{:__('APP名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[app_name]" id="c-app_name" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_flg" class="control-label col-xs-12 col-sm-2">{:__('APP标识')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[app_flg]" id="c-app_flg" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-company_name" class="control-label col-xs-12 col-sm-2">{:__('公司名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[company_name]" id="c-company_name" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-vip_apple_goods_prefix" class="control-label col-xs-12 col-sm-2">{:__('苹果充值VIP内购前缀')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[vip_apple_goods_prefix]" id="c-vip_apple_goods_prefix" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-recharge_apple_goods_prefix" class="control-label col-xs-12 col-sm-2">{:__('苹果充值金币内购前缀')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[recharge_apple_goods_prefix]" id="c-recharge_apple_goods_prefix" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-anchor_prefix" class="control-label col-xs-12 col-sm-2">{:__('主播名字前缀')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[anchor_prefix]" id="c-anchor_prefix" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-platform_prefix" class="control-label col-xs-12 col-sm-2">{:__('平台前缀')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[platform_prefix]" id="c-platform_prefix" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-service_phone" class="control-label col-xs-12 col-sm-2">{:__('客服电话')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[service_phone]" id="c-service_phone" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-service_wechat" class="control-label col-xs-12 col-sm-2">{:__('客服微信')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[service_wechat]" id="c-service_wechat" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-service_email" class="control-label col-xs-12 col-sm-2">{:__('客服邮箱')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[service_email]" id="c-service_email" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-check_user_id" class="control-label col-xs-12 col-sm-2">{:__('审核账号id')}(多个账号以半角逗号分隔):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[check_user_id]" id="c-check_user_id" class="form-control" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-check_pwd" class="control-label col-xs-12 col-sm-2">{:__('审核账号密码')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[check_pwd]" id="c-check_pwd" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-qq_appid" class="control-label col-xs-12 col-sm-2">{:__('QQ登录APPID')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[qq_appid]" id="c-qq_appid" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-qq_appkey" class="control-label col-xs-12 col-sm-2">{:__('QQ登录APPKEY')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[qq_appkey]" id="c-qq_appkey" class="form-control" value="" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-wx_appid" class="control-label col-xs-12 col-sm-2">{:__('微信登录APPID')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[wx_appid]" id="c-wx_appid" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-wx_appkey" class="control-label col-xs-12 col-sm-2">{:__('微信登录APPKEY')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[wx_appkey]" id="c-wx_appkey" class="form-control"  value="" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-wb_appid" class="control-label col-xs-12 col-sm-2">{:__('微博登录APPID')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[wb_appid]" id="c-wb_appid" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-wb_appkey" class="control-label col-xs-12 col-sm-2">{:__('微博登录APPKEY')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[wb_appkey]" id="c-wb_appkey" class="form-control" value="" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-jpush_app_key" class="control-label col-xs-12 col-sm-2">{:__('极光推送APP KEY')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[jpush_app_key]" id="c-jpush_app_key" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-jpush_master_secret" class="control-label col-xs-12 col-sm-2">{:__('极光推送MASTER SECRET')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[jpush_master_secret]" id="c-jpush_master_secret" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-on_publish" class="control-label col-xs-12 col-sm-2">{:__('是否上架中')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[on_publish]" id="on_publish" value="Y" data-rule="checked" > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[on_publish]" id="on_publish" value="N" data-rule="checked" > {:__('No')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-on_publish_agent_id" class="control-label col-xs-12 col-sm-2">{:__('上架中的渠道（不填为所有渠道；以半角逗号分隔；是否上架中开启后生效）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea name="row[on_publish_agent_id]" class="form-control" rows="3"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-on_publish_version" class="control-label col-xs-12 col-sm-2">{:__('上架中的版本号（是否上架中开启后生效）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[on_publish_version]" id="c-on_publish_version" class="form-control" value="" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-app_os" class="control-label col-xs-12 col-sm-2">{:__('系统类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[app_os]" id="app_os" value="Android" data-rule="checked" > {:__('安卓')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[app_os]" id="app_os" value="iOS" data-rule="checked" > {:__('苹果')}
+            </label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-ios_pay" class="control-label col-xs-12 col-sm-2">{:__('苹果内购是否开启（系统类型为苹果时生效）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[ios_pay]" id="ios_pay" value="Y" data-rule="checked"  > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[ios_pay]" id="ios_pay" value="N" data-rule="checked"  checked> {:__('No')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-app_guide_msg_flg" class="control-label col-xs-12 col-sm-2">{:__('视频诱导是否开启')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[app_guide_msg_flg]" id="app_guide_msg_flg" value="Y" data-rule="checked"  > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[app_guide_msg_flg]" id="app_guide_msg_flg" value="N" data-rule="checked"  checked> {:__('No')}
+            </label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-check_login_change_status" class="control-label col-xs-12 col-sm-2">{:__('是否开启审核状态自动改变（开启后审核账号登录，则直接改为审核环境）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[check_login_change_status]" id="check_login_change_status" value="Y" data-rule="checked"  > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[check_login_change_status]" id="check_login_change_status" value="N" data-rule="checked"  checked> {:__('No')}
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-send_posts_check_flg" class="control-label col-xs-12 col-sm-2">{:__('发动态是否需要判断权限验证')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[send_posts_check_flg]" id="send_posts_check_flg" value="Y" data-rule="checked"  checked > {:__('Yes')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[send_posts_check_flg]" id="send_posts_check_flg" value="N" data-rule="checked"  > {:__('No')}
+            </label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="c-msg_register_template_id" class="control-label col-xs-12 col-sm-2">{:__('云片短信模板ID（注册）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[msg_register_template_id]" id="c-msg_register_template_id" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-msg_bind_template_id" class="control-label col-xs-12 col-sm-2">{:__('云片短信模板ID（绑定）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[msg_bind_template_id]" id="c-msg_bind_template_id" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-msg_change_template_id" class="control-label col-xs-12 col-sm-2">{:__('云片短信模板ID（修改手机号）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[msg_change_template_id]" id="c-msg_change_template_id" class="form-control" value="" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-msg_withdraw_template_id" class="control-label col-xs-12 col-sm-2">{:__('云片短信模板ID（提现）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[msg_withdraw_template_id]" id="c-msg_withdraw_template_id" class="form-control" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-company_address" class="control-label col-xs-12 col-sm-2">{:__('公司地址')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[company_address]" id="c-company_address" class="form-control" data-rule="required" value="" />
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

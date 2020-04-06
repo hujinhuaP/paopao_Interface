@@ -1,0 +1,1070 @@
+
+#V2-xoyo-topNav .top_list, #V2-xoyo-topNav .top_log, #V2-xoyo-topNav .top_reg {
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 22px;
+    height: 22px;
+}
+
+.nav li, .quick_channel li {
+    text-align: center;
+}
+
+#V2-xoyo-topNav .hot, #V2-xoyo-topNav .new, #V2-xoyo-topNav .top_list, #V2-xoyo-topNav .top_log, #V2-xoyo-topNav .top_reg, .android_down, .android_down_b, .apple_down, .apple_down_b, .code_down, .game_down, .game_down:hover, .game_type, .game_type.pc, .game_type.phone, .hot, .icon, .more span, .new, .quick_channel span, .title {
+    background-image: url("../img/sprite.png")/*tpa=http://www.huayisz168.com/img/sprite.png*//*tpa=#/img/sprite.png*/;
+}
+
+#V2-xoyo-topNav .h-1 ul li a {
+    position: relative;
+    top: 3px;
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+}
+
+#V2-xoyo-topNav .top_log {
+    background-position: -4px -126px;
+    display: inline-block;
+    float: left;
+}
+
+#V2-xoyo-topNav .top_reg {
+    background-position: -4px -156px;
+    display: inline-block . adm a span;
+    float: left;
+}
+
+#V2-xoyo-topNav .top_list {
+    background-position: -4px -96px;
+    display: inline-block;
+    float: left;
+}
+
+#V2-xoyo-topNav .hot, #V2-xoyo-topNav .new, .hot, .new {
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 11px;
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+
+#V2-xoyo-topNav .hot, .hot {
+    background-position: -4px -4px;
+}
+
+#V2-xoyo-topNav .new, .new {
+    background-position: -4px -23px;
+}
+
+.fl, .fr {
+    display: inline;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.of {
+    overflow: hidden;
+}
+
+.blank_10 {
+    height: 10px;
+}
+
+.blank_20 {
+    height: 20px;
+}
+
+.site_bc {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.site_bc.navBox {
+    width: 840px;
+}
+
+.nav, .top {
+    width: 100%;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.foot {
+    margin-top: 20px;
+}
+
+.nav {
+    height: 75px;
+    background: url("../img/menu_bg.jpg")/*tpa=http://www.huayisz168.com/img/menu_bg.jpg*//*tpa=#/img/menu_bg.jpg*/ no-repeat;
+}
+
+.nav a, .nav li {
+    display: inline;
+    width: 120px;
+    float: left;
+}
+
+.nav ul {
+    overflow: hidden;
+}
+
+.nav li {
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav li#blob {
+    position: absolute;
+    border-bottom: 5px solid #f6491c;
+    width: 120px;
+    height: 70px;
+    zoom: 1;
+    top: 40px;
+    z-index: 1;
+    -webkit-transition: left .3s ease-out;
+    -moz-transition: left .3s ease-out;
+    -ms-transition: left .3s ease-out;
+    -o-transition: left .3s ease-out;
+    transition: left .3s ease-out;
+}
+
+.nav a {
+    display: inline-block;
+    height: 70px;
+    color: #926d01;
+    font-weight: 700;
+}
+
+.banner li, .banner li div {
+    width: 100%;
+    height: 445px;
+}
+
+.banner {
+    position: relative;
+    height: 445px;
+    background: url("../pic.xoyo.com/cms/www/2015/10/30/pic/bg.jpg")/*tpa=http://www.huayisz168.com/pic.xoyo.com/cms/www/2015/10/30/pic/bg.jpg*//*tpa=http://pic.xoyo.com/cms/www/2015/10/30/pic/bg.jpg*/;
+    overflow: hidden;
+}
+
+.banner li div {
+    background-position: center top;
+}
+
+.banner .btnNum-box {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 5;
+    overflow: hidden;
+    zoom: 1;
+    width: 115px;
+}
+
+.banner .btnNum {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.banner .btnNum a {
+    float: left;
+    margin: 0 3px;
+    display: inline;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #f6491c;
+    overflow: hidden;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+
+.more {
+    float: right;
+    display: inline;
+}
+
+.more span {
+    display: block;
+}
+
+.more span, .title {
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.banner .btnNum .cur, .banner .btnNum a:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.title {
+    background-position: -4px -67px;
+    display: block;
+    height: 21px;
+    padding-left: 25px;
+    width: auto;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.more {
+    color: #000;
+    font-size: 12px;
+}
+
+.more span {
+    background-position: -4px -42px;
+    width: 17px;
+    height: 17px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.game_list {
+    padding-top: 25px;
+    overflow: hidden;
+}
+
+.game_list li {
+    float: left;
+    display: inline;
+    margin: 0px 10.25px 20px;
+    width: 306px;
+    border: 1px solid #eaeaea;
+}
+
+.game_img,.product_img{
+    position: relative;
+    width: 306px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.game_type {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.game_type.pc, .game_type.phone {
+    background-repeat: no-repeat;
+    display: block;
+    width: 49px;
+    height: 55px;
+    overflow: hidden;
+}
+
+.game_type {
+    z-index: 5;
+}
+
+.game_type.pc {
+    background-position: -4px -773px;
+}
+
+.game_type.phone {
+    background-position: -4px -710px;
+}
+
+.game_title {
+    height: 85px;
+    background: #fff;
+    overflow: hidden;
+    width: 306px;
+}
+
+.game_name {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.game_detail {
+    float: left;
+    display: inline;
+    padding-left: 10px;
+    font-size: 18px;
+    width: 53%;
+    height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #979797;
+    line-height: 50px;
+}
+
+.links_list {
+    float: right;
+    display: inline;
+    padding: 10px;
+}
+
+.game_down, .game_down:hover {
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: block;
+    width: 91px;
+    height: 30px;
+}
+
+.links_list a {
+    margin: 0 5px;
+}
+
+.game_down {
+    background-position: -4px -404px;
+}
+
+.game_down:hover {
+    background-position: -4px -366px;
+}
+
+.android_down, .apple_down {
+    height: 28px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: block;
+    width: 28px;
+}
+
+.apple_down {
+    background-position: -4px -294px;
+}
+
+.android_down {
+    background-position: -4px -222px;
+}
+
+.code_down {
+    background-position: -4px -258px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+.android_down_b, .apple_down_b {
+    background-repeat: no-repeat;
+    width: 96px;
+    height: 28px;
+    display: none;
+    overflow: hidden;
+}
+
+.apple_down_b {
+    background-position: -4px -186px;
+}
+
+.android_down_b {
+    background-position: -4px -330px;
+}
+
+.game_iterm {
+    position: relative;
+    display: block;
+    width: 306px;
+    /* height: 148px; */
+}
+
+.game_iterm.cur .game_img img, .game_iterm:hover .game_img img {
+    position: relative;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    -moz-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    z-index: 2;
+}
+
+.game_intro {
+    width: 55%;
+    margin-left: 10px;
+}
+
+.news_list li {
+    margin-top: 23px;
+    color: #666;
+    height: 26px;
+    overflow: hidden;
+}
+
+.news_list a {
+    color: #666;
+}
+
+.news_list em {
+    font-style: normal;
+    color: #333;
+}
+
+.news_list .date {
+    float: right;
+    display: inline;
+}
+
+.adm a img, .adm a span {
+    display: block;
+    position: relative;
+}
+
+.adm a img {
+}
+
+.adm a span {
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in; /*padding-left: 20px; */
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    color: #cecece;
+    background: rgba(0, 0, 0, 0.5);
+    *background: #000;
+    text-align: center;
+}
+
+.adm a:hover span {
+    margin-top: -44px;
+}
+
+.games .games_title {
+    margin-top: 20px;
+}
+
+.quick_channel {
+    position: relative;
+    margin: -87px auto 0;
+    padding-left: 2px;
+    width: 267px;
+    height: 87px;
+    background: #eee;
+    z-index: 5;
+}
+
+.quick_channel li {
+    float: left;
+    display: inline;
+    margin-left: 2px;
+    width: 87px;
+    height: 87px;
+    background: url("../pic.xoyo.com/cms/www/2015/10/30/pic/q_border.png")/*tpa=http://www.huayisz168.com/pic.xoyo.com/cms/www/2015/10/30/pic/q_border.png*//*tpa=http://pic.xoyo.com/cms/www/2015/10/30/pic/q_border.png*/ no-repeat;
+}
+
+.quick_channel li.not {
+    background: 0 0;
+}
+
+.quick_channel a {
+    float: left;
+    -moz-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    display: inline-block;
+    width: 87px;
+    height: 72px;
+    padding-top: 15px;
+    color: #dfa300;
+    background: url("../pic.xoyo.com/cms/www/2015/10/30/pic/q_bg.png")/*tpa=http://www.huayisz168.com/pic.xoyo.com/cms/www/2015/10/30/pic/q_bg.png*//*tpa=http://pic.xoyo.com/cms/www/2015/10/30/pic/q_bg.png*/ 0 -87px no-repeat;
+}
+
+.quick_channel span.q_game, .quick_channel span.q_j3, .quick_channel span.q_msg, .quick_channel span.q_reg, .quick_channel span.q_safe {
+    background-repeat: no-repeat;
+    display: block;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+}
+
+.quick_channel a:hover {
+    background-position: 0 0;
+}
+
+.quick_channel span {
+    margin: 0 auto;
+}
+
+.quick_channel span.q_reg {
+    background-position: -4px -618px;
+}
+
+.quick_channel span.q_game {
+    background-position: -4px -480px;
+}
+
+.quick_channel span.q_safe {
+    background-position: -4px -526px;
+}
+
+.quick_channel span.q_msg {
+    background-position: -4px -664px;
+}
+
+.quick_channel span.q_j3 {
+    background-position: -4px -572px;
+}
+
+.news .adm, .news .banner, .news .news_box {
+    float: left;
+    display: inline;
+}
+
+.news .adm {
+    float: right;
+    position: relative;
+}
+
+.recommon_game {
+    padding: 20px 0;
+    background: #eee;
+}
+
+.recommon_game .title {
+    color: #228bfe;
+}
+
+.recommon_game .more {
+    color: #228cfe;
+    float: right;
+    display: inline-block;
+    width: 50px;
+    _width: 60px;
+}
+
+.recommon_game .game_list li {
+    border: none;
+}
+
+.news {
+    padding-top: 20px
+}
+
+.news .site_bc {
+    border: 1px solid #eaeaea;
+    width: 988px;
+    overflow: hidden;
+    height: 270px;
+}
+
+.news .banner {
+    width: 210px;
+    height: 267px;
+    border-right: 1px #eaeaea solid;
+}
+
+.site_bc>.banner {
+    margin-top: 2px;
+}
+
+.news .banner li, .news .banner li div {
+    height: 270px;
+}
+
+.news .news_box {
+    padding: 20px 20px 0;
+    width: 525px;
+}
+
+.news .hot_news {
+    height: 37px;
+    line-height: 37px;
+    border-bottom: 1px #e5e5e5 solid;
+    font-size: 20px;
+    color: #e92c00;
+}
+
+.news .hot_news .more {
+    margin-top: 10px;
+}
+
+.news .hot_news a {
+    color: #e92c00;
+}
+
+.news .adm {
+    width: 210px;
+    height: 267px;
+    overflow: hidden;
+    margin-top: 2px;
+}
+
+.game_box {
+    margin-top: 20px;
+}
+
+.game_box .title {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contanct_us {
+    position: fixed;
+    top: 120px;
+    right: 0;
+    z-index: 100;
+    _position: absolute;
+    _margin-top: 100px;
+}
+
+/*kingsoft_game*/
+.kingsoft_game {
+    padding: 0; /*_width:644px;*/
+    height: 205px;
+}
+
+.kingsoft_game dl {
+    width: 140px;
+    height: 100%;
+    float: left;
+    padding: 0 30px;
+    border-right: 1px solid #f3f3f3;
+}
+
+.kingsoft_game dl.noline {
+    border-right: none;
+}
+
+.kingsoft_game dl.column {
+    width: 200px;
+}
+
+.kingsoft_game dl dt {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 0;
+    border-bottom: 0px solid #E0E0E0;
+    color: #e92c00;
+}
+
+.kingsoft_game dl dt dd {
+    *font-size: 12px;
+    *font-weight: 400;
+}
+
+.kingsoft_game dl dd {
+    background-repeat: no-repeat;
+    margin: 5px 0 0;
+    font-size: 12px;
+}
+
+/* 姝ゅ澶氬垪璁捐浠跨収bootstrap*/
+.kingsoft_game dl .col6 {
+    float: left;
+    width: 50%;
+}
+
+.kingsoft_game dl .col3 {
+    float: left;
+    width: 25%;
+}
+
+.kingsoft_game dl .col2 {
+    float: left;
+    width: 16.6%;
+}
+
+.kingsoft_game dl .col4 {
+    float: left;
+    width: 33.3%;
+}
+
+/*E top-game*/
+.kingsoft_game a {
+    color: #333;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-top: 3px \9;
+    line-height: 17px \9;
+    *padding-top: 4px;
+    *line-height: 16px;
+    _padding-top: 0;
+    _line-height: 20px;
+}
+
+.kingsoft_game a:hover {
+    color: #EE5F1B;
+    text-decoration: none;
+}
+
+/*banner update*/
+.kingsoft_game a:hover {
+    color: #EE5F1B;
+    text-decoration: none;
+}
+
+.focusWap ul {
+    width: 100%;
+    height: 270px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#v5-banner {
+    width: 100%;
+    position: relative;
+    height: 445px;
+    overflow: hidden;
+}
+
+#v5-banner:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#v5-banner > li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    display: none;
+}
+
+#v5-banner > li:nth-child(1) {
+    background: url("../img/1-160G9164300417.jpg")/*tpa=http://www.huayisz168.com/img/1-160G9164300417.jpg*//*tpa=#/img/1-160G9164300417.jpg*/ no-repeat center;
+    background-size: cover;
+    display: block;
+}
+
+#v5-banner > li:nth-child(2) {
+    background: url("../img/1_1607356591.jpg")/*tpa=http://www.huayisz168.com/img/1_1607356591.jpg*//*tpa=#/img/1_1607356591.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+#v5-banner > li:nth-child(3) {
+    background: url("../img/1-150H214344RZ.jpg")/*tpa=http://www.huayisz168.com/img/1-150H214344RZ.jpg*//*tpa=#/img/1-150H214344RZ.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+#v5-banner > li:nth-child(4) {
+    background: url("../img/1-150H214342C34.jpg")/*tpa=http://www.huayisz168.com/img/1-150H214342C34.jpg*//*tpa=#/img/1-150H214342C34.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.focusWap ul li {
+    width: 210px;
+}
+
+.game_code {
+    width: 107px;
+    height: 107px;
+    overflow: hidden;
+}
+
+.news_list li span {
+    float: right;
+}
+
+#xoyo_top {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: url("../pic.xoyo.com/cms/www/v2/header-bg-1.png")/*tpa=http://www.huayisz168.com/pic.xoyo.com/cms/www/v2/header-bg-1.png*//*tpa=http://pic.xoyo.com/cms/www/v2/header-bg-1.png*/ repeat-x scroll 0 0;
+    cursor: default;
+    z-index: 99;
+    min-width: 980px;
+}
+
+#xoyo_top_main {
+    width: 980px;
+    height: 40px;
+    margin: 0 auto;
+    color: #4a4a4a;
+    font-family: "宋体";
+    font-size: 12px;
+}
+
+.xoyo_top_logo {
+    width: 150px;
+    height: 33px;
+    margin-top: 3px;
+    padding-right: 13px;
+    border-right: 1px solid #CECECE;
+    float: left;
+}
+
+.xoyo_top_logo a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+}
+
+.xoyo_top_nav {
+    float: right;
+    height: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.xoyo_top_nav_li {
+    display: block;
+    position: relative;
+    float: left;
+    width: auto;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#xoyo_top_main a {
+    color: #333333;
+}
+
+#xoyo_top a {
+    text-decoration: none;
+}
+
+.xoyo_top_nav_li a {
+    font-family: "宋体";
+    font-size: 13px;
+}
+
+element.style {
+}
+
+.xoyo_top_nav_li {
+    display: block;
+    position: relative;
+    float: left;
+    width: auto;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+ul, ol {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+user agent stylesheet
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.xoyo_top_login_icon {
+    background-position: -114px 0;
+}
+
+.xoyo_top_li_icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 8px 5px 0 0;
+    float: left;
+    -webkit-transition: -webkit-transform .4s ease-out;
+    -moz-transition: -moz-transform .4s ease-out;
+    transition: transform .4s ease-out;
+}
+
+.xoyo_top_tipsbox b, .xoyo_top_categroylist a, .xoyo_top_webgame, .xoyo_top_li_icon, .xoyo_top_gm_select_icon {
+    background-image: url("../img/xoyo_sprite.png")/*tpa=http://www.huayisz168.com/img/xoyo_sprite.png*//*tpa=#/img/xoyo_sprite.png*/;
+    background-repeat: no-repeat;
+}
+
+.xoyo_top_reg_icon {
+    background-position: -139px 0;
+}
+
+.xoyo_top_li_icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 8px 5px 0 0;
+    float: left;
+    -webkit-transition: -webkit-transform .4s ease-out;
+    -moz-transition: -moz-transform .4s ease-out;
+    transition: transform .4s ease-out;
+
+}
+
+#xoyo_top_main .xoyo_top_recharge a:hover {
+    color: #ee5f1b;
+}
+
+.xoyo_top_pay_icon {
+    background-position: -189px 0;
+}
+
+.xoyo_top_li_icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 8px 5px 0 0;
+    float: left;
+    -webkit-transition: -webkit-transform .4s ease-out;
+    -moz-transition: -moz-transform .4s ease-out;
+    transition: transform .4s ease-out;
+}
+
+.xoyo_top_tips {
+    width: 112px;
+    padding: 0px;
+    border: 1px solid #E1E1E1;
+    border-bottom: none;
+    border-top: none;
+    margin-left: -1px;
+}
+
+.xoyo_top_tipsbox {
+    _display: inline;
+    float: left;
+    width: 100%;
+    padding: 0;
+    line-height: 0;
+    font-size: 0;
+}
+
+.xoyo_top_tipsbox b {
+    display: block;
+    background-position: -118px -130px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.xoyo_top_nav_li a:hover .xoyo_top_li_icon {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+#xoyo_top_main .xoyo_top_reg a:hover {
+    color: #ee5f1b;
+}
+
+.game_list li:nth-child(1) .product_img {
+    background: url("../img/product-1.jpg")/*tpa=http://www.huayisz168.com/img/1-1512102023304P.jpg*//*tpa=#/img/1-1512102023304P.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(2) .product_img {
+    background: url("../img/product-2.jpg")/*tpa=http://www.huayisz168.com/img/1-1512102023304P.jpg*//*tpa=#/img/1-1512102023304P.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(1) .game_img {
+    background: url("../img/1-1512102023304P.jpg")/*tpa=http://www.huayisz168.com/img/1-1512102023304P.jpg*//*tpa=#/img/1-1512102023304P.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(2) .game_img {
+    background: url("../img/1-1512101T200c1.jpg")/*tpa=http://www.huayisz168.com/img/1-1512101T200c1.jpg*//*tpa=#/img/1-1512101T200c1.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(3) .game_img {
+    background: url("../img/1-15121021525K49.jpg")/*tpa=http://www.huayisz168.com/img/1-15121021525K49.jpg*//*tpa=#/img/1-15121021525K49.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(4) .game_img {
+    background: url("../img/1-1601141F3241X.jpg")/*tpa=http://www.huayisz168.com/img/1-1601141F3241X.jpg*//*tpa=#/img/1-1601141F3241X.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(5) .game_img {
+    background: url("../img/1-161021154H63F.jpg")/*tpa=http://www.huayisz168.com/img/1-161021154H63F.jpg*//*tpa=#/img/1-161021154H63F.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.game_list li:nth-child(6) .game_img {
+    background: url("../img/1-15122Q35T0N4.jpg")/*tpa=http://www.huayisz168.com/img/1-15122Q35T0N4.jpg*//*tpa=#/img/1-15122Q35T0N4.jpg*/ no-repeat center;
+    background-size: cover;
+}
+
+.focusWap.focusWap-b ul li a {
+    width: 213px;
+    height: 271px;
+    border: none;
+}
+
+.V2-FT-XOYO {
+    background: #222;
+    padding: 20px 0
+}
+
+#V2-footer {
+    color: #cbcbcb;
+    font-family: microsoft yahei;
+    font-size: 12px;
+    text-align: center;
+    line-height: 22px
+}
+
+#V2-footer a {
+    color: #cbcbcb;
+    text-decoration: none;
+    transition: color .5s;
+    -moz-transition: color .5s;
+    -webkit-transition: color .5s;
+    -o-transition: color .5s
+}
+
+#V2-footer a:hover {
+    color: #ffa200
+}
+
+#V2-footer .ft-links {
+    line-height: 26px
+}
+
+#V2-footer p a {
+    margin: 0 6px
+}
+
+#V2-footer img {
+    border: 0;
+}

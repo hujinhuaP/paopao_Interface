@@ -1,0 +1,311 @@
+<?php 
+
+/*
+ +------------------------------------------------------------------------+
+ | Green Live                                                             |
+ +------------------------------------------------------------------------+
+ | Copyright (c) 2017-2017 Green Live Team (https://www.greenlive.com)    |
+ +------------------------------------------------------------------------+
+ |房间控制器                                                              |
+ +------------------------------------------------------------------------+
+ |                                      |
+ +------------------------------------------------------------------------+
+ */
+
+namespace app\http\controllers\live;
+
+use app\services\IntimateService;
+use Exception;
+
+use app\models\User;
+use app\models\UserFollow;
+use app\models\UserGiftRank;
+use app\http\controllers\ControllerBase;
+
+/**
+* RankingController 直播排行榜
+*/
+class RankingController extends ControllerBase
+{
+    /**
+     * anchorFansAction 主播粉丝贡献榜
+     *
+     * @param  int $nUserId
+     */
+    public function anchorFansAction($nUserId=0)
+    {
+        $nAnchorUserId = $this->getParams('anchor_user_id', 'int', 0);
+        $nPage         = $this->getParams('page', 'int', 0);
+        $nPagesize     = $this->getParams('pagesize', 'int', 10);
+        $sType         = $this->getParams('type', 'string', 'day');
+
+        try {
+            $builder = $this->modelsManager
+                            ->createBuilder()
+                            ->from(['ur'=>UserGiftRank::class])
+                            ->join(User::class, 'u.user_id=ur.user_id', 'u')
+                            ->columns('ur.user_id,MAX(u.user_nickname) user_nickname,MAX(u.user_avatar) user_avatar,SUM(ur.live_gift_coin) live_gift_coin,SUM(ur.live_gift_dot) live_gift_dot')
+                            ->where('ur.anchor_user_id=:anchor_user_id:', ['anchor_user_id'=>$nAnchorUserId])
+                            ->groupBy('ur.user_id')
+                            ->orderBy('live_gift_dot desc');
+
+            switch ($sType) {
+                // 日榜
+                case UserGiftRank::RANK_DAY:
+                // 日榜
+                case UserGiftRank::RANK_WEEK:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>$sType]);
+                    break;
+                // 总榜
+                default:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>UserGiftRank::RANK_ALL]);
+                    break;
+            }
+
+            $row['rank'] = $this->page($builder, $nPage, $nPagesize);
+
+            foreach ($row['rank']['items'] as &$v) {
+                $v['live_gift_coin'] = sprintf('%.2f', $v['live_gift_coin']);
+                $v['live_gift_dot'] = sprintf('%.2f', $v['live_gift_dot']);
+            }
+
+        } catch (Exception $e) {
+            $this->error($e->getCode(), $e->getMessage());
+        }
+        $this->success($row);
+    }
+
+    /**
+     * anchorAction 主播排行榜
+     * 
+     * @param  int $nUserId
+     */
+    public function anchorAction($nUserId=0)
+    {
+        $nPage         = $this->getParams('page', 'int', 1);
+        $nPagesize     = $this->getParams('pagesize', 'int', 10);
+        $sType         = $this->getParams('type', 'string', 'week');
+
+        try {
+            $builder = $this->modelsManager
+                            ->createBuilder()
+                            ->from(['ur'=>UserGiftRank::class])
+                            ->join(User::class, 'u.user_id=ur.anchor_user_id', 'u')
+                            ->leftJoin(UserFollow::class, sprintf('uf.to_user_id=ur.anchor_user_id AND uf.user_id=%d', $nUserId), 'uf')
+                            ->columns('ur.anchor_user_id user_id,
+                            MAX(u.user_nickname) user_nickname,MAX(u.user_avatar) user_avatar,SUM(ur.live_gift_coin) live_gift_coin,MAX(u.user_member_expire_time) user_member_expire_time,
+                            SUM(ur.live_gift_dot) live_gift_dot,MAX(uf.to_user_id) is_follow')
+                            ->groupBy('ur.anchor_user_id')
+                            ->orderBy('live_gift_dot desc');
+
+            $sDeadline = '0';
+
+            switch ($sType) {
+                // 日榜
+                case UserGiftRank::RANK_DAY:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>$sType]);
+                    $sDeadline = (string)strtotime(date('Y-m-d 23:59:59'));
+                    break;
+                // 周榜
+                case UserGiftRank::RANK_WEEK:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>$sType]);
+                    $sDeadline = (string)strtotime(date('Y-m-d 23:59:59', strtotime('last day next week')));
+                    break;
+                // 总榜
+                default:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>UserGiftRank::RANK_ALL]);
+                    break;
+            }
+
+            $row['rank'] = $this->page($builder, $nPage, $nPagesize);
+
+            foreach ($row['rank']['items'] as &$v) {
+                $v['user_is_member'] = $v['user_member_expire_time'] == 0 ? 'N' : (time() > $v['user_member_expire_time'] ? 'O' : 'Y');
+                $v['is_follow'] = $v['is_follow'] ? 'Y' : 'N';
+                $v['live_gift_coin'] = sprintf('%.2f', $v['live_gift_coin']);
+                $v['live_gift_dot'] = sprintf('%.2f', $v['live_gift_dot']) * 100;
+            }
+
+            // 截止时间
+            $row['deadline']    = $sDeadline;
+
+        } catch (Exception $e) {
+            $this->error($e->getCode(), $e->getMessage());
+        }
+
+        $this->success($row);
+    }
+
+    /**
+     * userAction 用户排行榜
+     * 
+     * @param  int $nUserId
+     */
+    public function userAction($nUserId=0)
+    {
+        $nPage         = $this->getParams('page', 'int', 0);
+        $nPagesize     = $this->getParams('pagesize', 'int', 10);
+        $sType         = $this->getParams('type', 'string', 'week');
+
+        try {
+            $builder = $this->modelsManager
+                            ->createBuilder()
+                            ->from(['ur'=>UserGiftRank::class])
+                            ->join(User::class, 'u.user_id=ur.user_id', 'u')
+                            ->columns('u.user_remind,u.user_id,MAX(u.user_nickname) user_nickname,MAX(u.user_avatar) user_avatar,MAX(u.user_level) user_level,
+                            MAX(u.user_member_expire_time) user_member_expire_time,
+                            SUM(ur.live_gift_coin) live_gift_coin,SUM(ur.live_gift_dot) live_gift_dot')
+                            ->groupBy('ur.user_id')
+                            ->orderBy('live_gift_coin desc');
+
+            $sDeadline = '0';
+
+            switch ($sType) {
+                // 日榜
+                case UserGiftRank::RANK_DAY:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>$sType]);
+                    $sDeadline = (string)strtotime(date('Y-m-d 23:59:59'));
+                    break;
+                // 周榜
+                case UserGiftRank::RANK_WEEK:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>$sType]);
+                    $sDeadline = (string)strtotime(date('Y-m-d 23:59:59', strtotime('last day next week')));
+                    break;
+                // 总榜
+                default:
+                    $builder->andWhere('ur.user_gift_rank_type=:type:', ['type'=>UserGiftRank::RANK_ALL]);
+                    break;
+            }
+
+            $row['rank'] = $this->page($builder, $nPage, $nPagesize);
+
+            foreach ($row['rank']['items'] as &$v) {
+                if(!$v['user_remind']){
+                    $v['user_nickname'] = '神秘人';
+                    $v['user_avatar'] = 'https://lebolive-1255651273.image.myqcloud.com/static/images/hide_avatar.png';
+                }
+
+                $v['user_is_member'] = $v['user_member_expire_time'] == 0 ? 'N' : (time() > $v['user_member_expire_time'] ? 'O' : 'Y');
+                $v['live_gift_coin'] = sprintf('%.2f', $v['live_gift_coin']);
+                $v['live_gift_dot'] = sprintf('%.2f', $v['live_gift_dot']);
+            }
+
+            // 截止时间
+            $row['deadline']    = $sDeadline;
+
+        } catch (Exception $e) {
+            $this->error($e->getCode(), $e->getMessage());
+        }
+
+        $this->success($row);
+    }
+
+    /**
+     * @apiVersion 1.3.0
+     * @apiSampleRequest http://dev.api.yuyin-tv.com/v1/live/ranking/intimate
+     * @api {get} /live/ranking/intimate 亲密榜
+     * @apiName rank-intimate
+     * @apiGroup rank
+     * @apiDescription 亲密榜  1分钟更新一次
+     * @apiParam (正常请求){String} access_token  token值
+     * @apiParam (debug) {String} debug  debug
+     * @apiParam (debug) {String} cli_api_key  debug
+     * @apiParam (debug) {String} uid  用户id
+     * @apiSuccess {number} c 返回码
+     * @apiSuccess {string} m 返回文字信息
+     * @apiSuccess {number} t 服务器当前时间戳
+     * @apiSuccess {Object} d 内容
+     * @apiSuccess {object[]} d.rank 排行榜
+     * @apiSuccess {object} d.rank.anchor  排行榜 主播信息
+     * @apiSuccess {number} d.rank.anchor.user_id  主播用户id
+     * @apiSuccess {String} d.rank.anchor.user_nickname 主播昵称
+     * @apiSuccess {String} d.rank.anchor.user_avatar 主播头像
+     * @apiSuccess {number} d.rank.anchor.user_sex 主播性别
+     * @apiSuccess {object} d.rank.user   用户信息
+     * @apiSuccess {number} d.rank.user.user_id 用户id
+     * @apiSuccess {String} d.rank.user.user_nickname 昵称
+     * @apiSuccess {String} d.rank.user.user_avatar 头像
+     * @apiSuccess {number} d.rank.user.user_sex 性别
+     * @apiSuccess {number} d.rank.score 分数
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *         "c": 0,
+     *         "m": "请求成功",
+     *         "d": {
+     *                 "rank": [
+     *                 {
+     *                     "anchor": {
+     *                         "user_id": "168",
+     *                         "user_nickname": "啦啦啦",
+     *                         "user_avatar": "http://thirdwx.qlogo.cn/mmopen/vi_32/e1u7Ut4rUff6QDfsRXuTjJwpuqaEBeyBL8FC7bIu6fcuXkogvUBRYLVCIRFLQicgwxVVC3dibibSbkxM88BXsQVSA/132",
+     *                         "user_sex": "2"
+     *                     },
+     *                     "user": {
+     *                         "user_id": "251",
+     *                         "user_nickname": "Dawn09101048222",
+     *                         "user_avatar": "http://thirdqq.qlogo.cn/qqapp/1106652113/9012BAEA9B36E6AE8846D0EFE9C05A13/100",
+     *                         "user_sex": "1"
+     *                     },
+     *                     "score": "660"
+     *                 }
+     *             ]
+     *         },
+     *         "t": "1542079949"
+     *     }
+     * @apiError UserNotFound The id of the User was not found.
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 404 Not Found
+     *     {
+     *       "error": "UserNotFound"
+     *     }
+     */
+    public function intimateAction($nUserId=0)
+    {
+        $oIntimateService = new IntimateService();
+
+        $resultJson = $oIntimateService->getCacheData();
+        if($resultJson){
+            $result = json_decode($resultJson);
+            $this->success($result);
+        }
+
+        $rank = $oIntimateService->getData(10);
+
+        $row = [];
+        $userIds = [];
+        foreach ($rank as $dataKey => $dataScore){
+            $tmp = explode('-',$dataKey);
+            $userIds[] = $tmp[0];
+            $userIds[] = $tmp[1];
+        }
+        if(!$userIds){
+            $this->success($row);
+        }
+        $userIdsStr = implode(',',$userIds);
+        $oUserListModel = User::find([
+            "user_id in ($userIdsStr)",
+            'columns' => 'user_id,user_nickname,user_avatar,user_level,user_sex',
+        ]);
+        // 获得用户信息
+        $oUserList = [];
+        foreach ($oUserListModel as $userItem){
+            $oUserList[$userItem->user_id] = $userItem->toArray();
+        }
+
+        foreach ($rank as $dataKey => $dataScore){
+            $tmp = explode('-',$dataKey);
+            $row[] = [
+                'anchor' => $oUserList[$tmp[0]],
+                'user' => $oUserList[$tmp[1]],
+                'score' => (string)$dataScore
+            ];
+        }
+        $result = [
+            'rank' => $row
+        ];
+        $oIntimateService->saveCacheData(json_encode($result));
+        $this->success($result);
+
+    }
+}

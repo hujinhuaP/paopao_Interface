@@ -1,0 +1,42 @@
+<?php
+    require_once '../config.php';
+    require_once dirname ( __FILE__ ).'/wappay/service/AlipayTradeService.php';
+    require_once dirname ( __FILE__ ).'/wappay/buildermodel/AlipayTradeWapPayContentBuilder.php';
+    require 'config.php';
+
+    $result = getChargeMoney();
+    if($result){
+        $param['charge_money'] = (float)$result['user_recharge_combo_fee'];
+        if($param['charge_money'] == 0){
+            echo 'db error';
+            exit;
+        }else{
+
+        }
+    }else{
+        echo 'db error';
+        exit;
+    }
+    $param['charge_money'] = $result['user_recharge_combo_fee'];
+//    if($_SESSION['user_id'] == 66667724){
+//        $param['charge_money'] = 0.01;
+//    }
+    $param['order_id'] = createOrderNO();
+    $param['user_id'] = $_SESSION['user_id'];
+    $param['charge_id'] = $result['user_recharge_combo_id'];
+    $param['pay_type'] = 'alipayh5';     //alipayh5
+    $param['charge_coin'] = $result['user_recharge_combo_coin'];
+    $param['charge_give_coin'] = $result['user_recharge_combo_give_coin'];
+    //插入订单
+    $db = new DB();
+    $db->createOrder($param);
+    //超时时间
+    $timeout_express="1m";
+    $payRequestBuilder = new AlipayTradeWapPayContentBuilder();
+    $payRequestBuilder->setBody(BODY);
+    $payRequestBuilder->setSubject(BODY);
+    $payRequestBuilder->setOutTradeNo($param['order_id']);
+    $payRequestBuilder->setTotalAmount($param['charge_money']);
+    $payRequestBuilder->setTimeExpress($timeout_express);
+    $payResponse = new AlipayTradeService($config);
+    $payResponse->wapPay($payRequestBuilder,$config['return_url']."?mod=return&uid=".$_SESSION['user_id'],$config['notify_url']);

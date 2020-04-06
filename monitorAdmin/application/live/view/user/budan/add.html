@@ -1,0 +1,52 @@
+
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('ID')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_id]" value="{$row.user_id}"  id="c-user_id" class="form-control" disabled required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_nickname]" value="{$row.user_nickname}"  id="c-nickname" class="form-control" disabled required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_budan_type" class="control-label col-xs-12 col-sm-2">{:__('Budan type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_budan_type]" id="user_budan_type" value="free_coin" checked data-rule="required" > {:__('赠送金币')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_budan_type]" id="user_budan_type" value="coin"  data-rule="required" > {:__('充值金币')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_budan_type]" id="user_budan_type" value="dot" data-rule="required" > {:__('Dot')}
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_budan_type]" id="user_budan_type" value="vip" data-rule="required" > {:__('VIP')}
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-inline">
+            <label for="c-user_budan_amount" class="control-label col-xs-12 col-sm-2">{:__('Budan amount')}（或 VIP天数）:</label>
+            <div class="col-xs-12 col-sm-8">
+                <select class="form-control col-xs-4" name="row[operate_type]">
+                    <option value="+" selected>{:__('Increase')}</option>
+                    <option value="-">{:__('Reduce')}</option>
+                </select>
+                <input type="number" name="row[user_budan_amount]" value="" min="0" id="c-user_budan_amount" class="form-control col-xs-8" data-rule="required" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

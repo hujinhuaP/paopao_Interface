@@ -1,0 +1,291 @@
+.wrap {
+  width: 100%;
+}
+header {
+  padding: 0.1rem 4%;
+  background: #ff9a9e;
+  height: 1.14rem;
+}
+header.noAccount {
+  background: none;
+  color: #333333;
+}
+header .title {
+  height: 0.76rem;
+  line-height: 0.76rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.3rem;
+}
+header.noAccount .title {
+  color: #333333;
+}
+header.noAccount h2 {
+  text-align: left;
+}
+header .title a {
+  display: inline-block;
+  width: 0.36rem;
+  margin-left: -0.04rem;
+}
+header .title img {
+  width: 0.18rem;
+  vertical-align: -0.08rem;
+}
+header.noAccount .editInfo {
+  color: #999999;
+  font-size: 0.24rem;
+}
+header.noAccount .editInfo p {
+  cursor: pointer;
+}
+header.noAccount .editInfo img {
+  width: 0.26rem;
+  margin-right: 0.15rem;
+  vertical-align: -0.03rem;
+}
+
+header .person {
+  padding: 0.15rem 0;
+  color: #ffffff;
+  padding-left: 1.02rem;
+}
+header .person .photo {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.45rem;
+  border: 1px solid #ffffff;
+  float: left;
+  margin-left: -1.02rem;
+}
+header .person p {
+  font-size: 0.24rem;
+  line-height: 0.46rem;
+}
+header .person p span.extra {
+  font-size: 0.34rem;
+}
+h2 {
+  color: #333333;
+  font-size: 0.28rem;
+  line-height: 0.66rem;
+  text-align: left;
+}
+
+.recharge {
+  padding: 0 4%;
+}
+.recharge h2 {
+  margin: 0.21rem 0;
+}
+.recharge ul li {
+  min-height:1.5rem;
+  float: left;
+  width: calc(50% - 0.1rem);
+  padding: 0.25rem 0.15rem 0.25rem 0.1rem;
+  margin-bottom: 0.2rem;
+  border: 0.02rem solid #dddddd;
+  border-radius: 0.08rem;
+}
+.recharge ul li.cur {
+  border-color: #ff9a9e; 
+}
+.recharge ul li:nth-child(2n) {
+  float: right;
+}
+.recharge .chargeInfo p.money {
+  font-size: 0.3rem;
+  line-height: 0.5rem;
+}
+.recharge .chargeInfo p:last-child {
+  font-size: 0.24rem;
+  line-height: 0.4rem;
+}
+.recharge .chargeInfo p:last-child img {
+  width: 0.22rem;
+  margin-right: 0.06rem;
+}
+.recharge .chargeInfo p:last-child span {
+  font-size: 0.2rem;
+  color: #ff436c;
+}
+.recharge .chargeInfo {
+  position: relative;
+}
+.recharge .chargeInfo .forVip {
+  position: absolute;
+  right: -0.17rem;
+  top: -0.27rem;
+  padding: 0 0.1rem 0 0.13rem;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  border-radius: 0 0.08rem; 
+  background: #ff436c;
+  color: #ffffff;
+  font-size: 0.2rem;
+}
+.choose {
+  padding: 0 4%;
+}
+.choose h2 span {
+  font-size: 0.2rem;
+  color: #999999;
+}
+.choose .way p {
+  line-height: 0.42rem;
+  font-size: 0.24rem;
+  display: flex;
+}
+.choose .way p span {
+  flex: 1;
+}
+.choose .way p img {
+  height: 0.42rem;
+  vertical-align: 0.02rem;
+  margin-right: 0.1rem;
+}
+.choose .way p:first-child {
+  margin-bottom: 0.38rem;
+}
+.choose .way p i.check {
+  /* display: inline-block; */
+  width: 0.32rem;
+  height: 0.32rem;
+  background: url(../img/check.png) 0 0 no-repeat;
+  background-size: contain;
+  float: right;
+  margin-top: 0.06rem;
+}
+.choose .way p i.checked {
+  background: url(../img/checked.png) 0 0 no-repeat;
+  background-size: contain;
+}
+.tips {
+  padding: 0 4%;
+  margin-bottom: 40px;
+}
+.tips h2 {
+  margin: 0.28rem 0 0.20rem;
+}
+.tips p {
+  line-height: 0.38rem;
+  color: #999999;
+  font-size: 0.2rem;
+}
+.tips p span {
+  color: #ff9a9e;
+}
+.btn {
+  width: 5.4rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  display: block;
+  margin: 0 auto 20px;
+  background: #ff9a9e;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.24rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+.dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 101;
+}
+.diaContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 102;
+  background: #ffffff;
+  width: 6.6rem;
+  height: 6rem;
+  margin-left: -3.3rem;
+  margin-top: -3rem;
+  border-radius: 8px;
+  display: none;
+}
+.diaContent>div {
+  padding: 0.6rem;
+}
+.diaContent h3 {
+  line-height: 0.6rem;
+  color: #333333;
+  font-size: 0.34rem;
+  text-align: center;
+}
+.diaContent .tip {
+  text-align: center;
+  line-height: 0.6rem;
+  font-size: 0.24rem;
+  color: #ff436c;
+  margin: 0.1rem 0 0.15rem;
+}
+.diaContent .order {
+  width: 90%;
+  margin: 0 auto;
+  line-height: 0.5rem;
+  font-size: 0.24rem;
+  color: #333333;
+}
+.diaContent .key {
+  display: inline-block;
+  width: 1.4rem;
+  text-align: right;
+}
+.diaContent .value {
+  float: right;
+}
+.btnContainer {
+  margin-top: 0.6rem;
+}
+.btnContainer .btn {
+  width: 2.25rem;
+  float: left;
+}
+.cancel {
+  background: #cccccc;
+
+}
+.btnContainer .confirm {
+  background: #ff436c;
+  float: right;
+}
+.inputBox {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.1rem;
+  padding-left: 0.1rem;
+  margin-top: 0.5rem;
+}
+.inputBox.warn {
+  border-color: #ff436c;
+}
+.inputBox input {
+  width: 90%;
+  font-size: 0.24rem;
+}
+.diaContent2 {
+  height: 5rem;
+  margin-top: -2.5rem;
+}
+@media (max-width: 600px) {
+  .recharge .chargeInfo p:last-child img {
+    margin-right: 0;
+  }
+}

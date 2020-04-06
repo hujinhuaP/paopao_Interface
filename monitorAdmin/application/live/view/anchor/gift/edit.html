@@ -1,0 +1,119 @@
+<style>
+    .gift-container {
+        position:relative;
+        width:100px;
+    }
+    .gift-container .gift-img{
+        width:100px;
+        height:100px;
+    }
+    .gift-container .gift-text {
+        display:none;
+    }
+    .gift-container:hover .gift-text {
+        display:block;
+        position:absolute;
+        height:100px;
+        width:100px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .gift-container button{
+        position:absolute;
+        top:0;left:0;width:100px;height:100px;opacity: 0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-live_gift_name" class="control-label col-xs-12 col-sm-2">{:__('Gift name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[live_gift_name]" value="{$row.live_gift_name}"  id="c-live_gift_name" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-live_gift_detail" class="control-label col-xs-12 col-sm-2">{:__('Gift detail')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[live_gift_detail]" value="{$row.live_gift_detail}"  id="c-live_gift_detail" class="form-control" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-live_gift_category_id" class="control-label col-xs-12 col-sm-2">{:__('Gift type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[live_gift_category_id]" id="c-live_gift_category_id" class="form-control" data-rule="required">
+                <option value="">{:__('Select')}</option>
+                {foreach $row_category as $category}
+                <option value="{$category.live_gift_category_id}" {$category.live_gift_category_id == $row.live_gift_category_id ? 'selected' : ''}>{$category.live_gift_category_name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="c-live_gift_logo" class="control-label col-xs-12 col-sm-2">{:__('Gift Logo')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-live_gift_logo" name="row[live_gift_logo]" value="{$row.live_gift_logo}" data-rule="url|required"/>
+                <div class="gift-container">
+                    <img class="live_gift_logo-img img-responsive plupload" src="{$row.live_gift_logo}" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                    <div class="gift-text">{:__('Click to edit')}</div>
+                    <button id="plupload-live_gift_logo" class="plupload" data-input-id="c-live_gift_logo"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+                
+                <span>{:__('Gift logo upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_small_gif" class="control-label col-xs-12 col-sm-2">{:__('Gift small gif')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-live_gift_small_gif" name="row[live_gift_small_gif]" value="{$row.live_gift_small_gif}" data-rule="url"/>
+                <div class="gift-container">
+                    <img class="live_gift_small_gif-img img-responsive plupload" src="{$row.live_gift_small_gif}" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                    <div class="gift-text">{:__('Click to edit')}</div>
+
+                    <button id="plupload-live_gift_small_gif" class="plupload" data-input-id="c-live_gift_small_gif" data-url="{php} echo \think\Config::get('upload.uploadurl_gif') {/php}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+                <span>{:__('Gift small gif upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_gif" class="control-label col-xs-12 col-sm-2">{:__('Gift gif')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-live_gift_gif" name="row[live_gift_gif]" value="{$row.live_gift_gif}" data-rule="url"/>
+                <button id="plupload-live_gift_gif" class="plupload" data-input-id="c-live_gift_gif" data-url="{php} echo \think\Config::get('upload.uploadurl_zip') {/php}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                <input type="text" id="c-live_gift_gif2" name="row[live_gift_gif2]" class="form-control" value="{$row.live_gift_gif}" disabled data-rule="url|required"/>
+                <span>{:__('Gift gif upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-live_gift_coin" class="control-label col-xs-12 col-sm-2">{:__('Gift coin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[live_gift_coin]" value="{$row.live_gift_coin}"  id="c-live_gift_coin" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-live_gift_sort" class="control-label col-xs-12 col-sm-2">{:__('Sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[live_gift_sort]" value="{$row.live_gift_sort}"  id="c-live_gift_sort" class="form-control" data-rule="required" min="0" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

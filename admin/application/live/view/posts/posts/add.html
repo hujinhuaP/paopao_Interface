@@ -1,0 +1,224 @@
+<style>
+    .gift-container {
+        position: relative;
+        min-height: 200px;
+        width: 200px;
+    }
+
+    .gift-container .gift-img {
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .gift-container .gift-text {
+        display: none;
+    }
+
+    .gift-container:hover .gift-text {
+        display: block;
+        position: absolute;
+        height: auto;
+        width: 200px;
+        min-height: 200px;
+        background: #444;
+        opacity: .6;
+        color: #fff;
+        top: 0;
+        left: 0;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .gift-container button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: auto;
+        min-height: 200px;
+        opacity: 0;
+    }
+
+    .mult-upload {
+        float: left;
+        position: relative;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        min-height: 200px;
+    }
+
+    .mult-upload .btn-delone {
+        width: 25px;
+        height: 25px;
+        background-color: #555555;
+        border: 0px none;
+        border-radius: 5px;
+        position: absolute;
+        float: right;
+        top: 0px;
+        right: 0px;
+        display: block;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-short_posts_check_remark" class="control-label col-xs-12 col-sm-2">{:__('发布人')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[short_posts_user_id]"  value="" id="c-short_posts_user_id"
+                   class="form-control selectpage" data-source="user/user/selectpage" data-primary_key="user_id" data-field="user_nickname" data-orderBy="user_is_superadmin"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_get_user_id" class="control-label col-xs-12 col-sm-2">{:__('购买收益人(没有填则为发布人)')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[short_posts_get_user_id]"  value="" id="c-short_posts_get_user_id"
+                   class="form-control selectpage" data-source="user/user/selectpage" data-primary_key="user_id" data-field="user_nickname" data-orderBy="user_is_superadmin"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">类型:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_type]" value="word" checked> 纯文字
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_type]" value="image"> 图文
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_type]" value="video"> 视频文字
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_type]" value="exhibition"> 作品
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">付费类型:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_pay_type]" value="free" checked> 免费
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_pay_type]" value="part_free"> 图片前两张免费
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[short_posts_pay_type]" value="pay"> 付费
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_price" class="control-label col-xs-12 col-sm-2">{:__('价格')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[short_posts_price]" class="form-control">
+                <option value="0">0</option>
+                {foreach name="priceList" item="vo" }
+                <option value="{$vo}">{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-short_posts_check_remark" class="control-label col-xs-12 col-sm-2">{:__('文字内容')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea class="form-control" name="row[short_posts_word]" rows="20"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group type-div-image type-div-exhibition type-div" style="display: none;">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-short_posts_images" data-rule="required" class="form-control" size="50" name="row[short_posts_images]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-short_posts_images" class="btn btn-danger plupload" data-input-id="c-short_posts_images" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="true" data-preview-id="p-short_posts_images"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-short_posts_images"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-short_posts_images"></ul>
+        </div>
+    </div>
+
+    <div class="form-group type-div-video type-div" style="display: none;">
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('视频封面')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-cover" name="row[cover]" value="" data-rule="url"/>
+                <div class="gift-container">
+                    <img class="cover_img img-responsive plupload" src=""  width="200px" height="200px" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                    <div class="gift-text">{:__('Click to add')}</div>
+                    <button id="upload_cover_url" class="plupload" data-input-id="c-cover"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video"></div>
+    <div class="form-group type-div-video type-div" style="margin-top: 50px;display: none;">
+        <label for="c-cover" class="control-label col-xs-12 col-sm-2">{:__('视频文件')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="text" id="c-down_url" name="row[short_posts_video]" value="" data-rule="url"/>
+                <button id="plupload-down_url" class="plupload" data-input-id="c-down_url" data-url="{$upload_url}"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                <input type="text" id="c-down_url2" name="row[short_posts_video]" class="form-control" value="" disabled data-rule="url"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group type-div-video type-div-exhibition type-div" style="margin-top: 50px;display: none;">
+        <label for="c-short_posts_show_width" class="control-label col-xs-12 col-sm-2">{:__('显示宽')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[short_posts_show_width]"  value="" id="c-short_posts_show_width"
+                   class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group type-div-video type-div-exhibition type-div" style="margin-top: 50px;display: none;">
+        <label for="c-short_posts_show_height" class="control-label col-xs-12 col-sm-2">{:__('显示高')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[short_posts_show_height]"  value="" id="c-short_posts_show_height"
+                   class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+<div style="display: none;" id="multUploadDiv">
+    <div class="mult-upload">
+        <input type="hidden" class="c-uploud_url" name="row[img_url][]" value=""/>
+        <a href="javascript:;" class="btn btn-xs btn-danger btn-delone" title="删除" onclick="deleteImage(this);"><i class="fa fa-trash"></i></a>
+        <a href="" target="_blank" class="img-a">
+            <img class="upload-img img-responsive" src="__CDN__/assets/img/loading200x200.png" width="200px"
+                 height="200px" alt="">
+        </a>
+    </div>
+</div>
+<script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.0.js" charset="utf-8"></script>
+<script>
+    function deleteImage(obj){
+        var layindex = Layer.confirm('是否确定删除本张图片？', {
+            btn: ['删除', '取消'] //可以无限个按钮
+        }, function(index, layero){
+            $(obj).parent('div').remove();
+            let existsImageSize = $("#multUploadResultDiv").find('.mult-upload').size();
+            if(existsImageSize < 9 ){
+                // 小于9张 则显示添加按钮
+                $("#uploadAddDiv").show();
+            }
+            Layer.close(layindex);
+        });
+    }
+
+</script>
+

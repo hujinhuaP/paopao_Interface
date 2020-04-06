@@ -1,0 +1,1354 @@
+/**
+* Author: Charies
+* Author URI: http://www.google.com/profiles/charies.html
+* Name: 娉ㄥ唽椤甸潰-register
+* Last Changed By Charies
+* Last Update : 2010骞�5鏈�11鏃�10:44:19
+*/
+
+/* =============================================== */
+/** Xoyo CSS Reset 0.3, (c)2009 Xoyo UED Team, Some rights reserved */
+/* ----------------------------------------------- */
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+hr {
+    border: none;
+    height: 1px;
+}
+
+body, button, input, select, textarea {
+    font: 12px/1 Arial, Tahoma, Helvetica, SimSun, san-serif;
+}
+
+/* =============================================== */
+/** 01. Layout - 椤甸潰妗嗘灦 */
+/* ----------------------------------------------- */
+body {
+    background: url("../pic.xoyo.com/cms/www/v_bg_1.jpg")/*tpa=http://www.huayisz168.com/pic.xoyo.com/cms/www/v_bg_1.jpg*//*tpa=https://pic.xoyo.com/cms/www/v_bg_1.jpg*/ no-repeat center 0;
+}
+
+.wrap {
+    width: 1000px;
+    margin: 0 auto;
+    /**
+    background:#F4F4F4 url(//my.xoyo.com/application/my/view/images/v_bg_2.jpg) repeat-x scroll 0 0;
+    **/
+    min-height: 560px;
+    _height: 560px;
+}
+
+.wrap a.darkGreen,
+.wrap .darkGreen {
+    color: #26689C;
+}
+
+.wrap .fr {
+    float: right;
+}
+
+.wrap .section .aside,
+.wrap .section .details {
+    float: left;
+    display: inline;
+}
+
+.wrap .section .aside {
+    width: 170px;
+    margin: 0 20px 0 0;
+}
+
+.wrap .section .details {
+    width: 724px;
+    overflow: hidden;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #D8DADA;
+}
+
+.regWrap {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.wrap .details .regWrap {
+    width: auto;
+    min-height: 410px;
+    _height: 410px;
+}
+
+.regWrap a {
+    color: #369;
+    text-decoration: none;
+    outline: none;
+}
+
+.regWrap a:hover {
+    text-decoration: underline;
+}
+
+.regWrap hr {
+    border-bottom: 1px solid #E0E0E0;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+/* =============================================== */
+/** 01. header - 鐧诲綍鍓嶉〉闈㈠ご閮� */
+/* ----------------------------------------------- */
+.wrap .header {
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrap .header h1 {
+    padding: 12px 0 0;
+}
+
+.wrap .header p {
+    position: relative;
+    top: -26px;
+}
+
+.wrap .header p a {
+    background: url("../img/arrow.gif")/*tpa=http://www.huayisz168.com/img/arrow.gif*//*tpa=#/img/arrow.gif*/ no-repeat 0 50%;
+    padding: 0 0 0 16px;
+    color: #336699;
+    text-decoration: none;
+}
+
+/* =============================================== */
+/** 02. head - 鐧诲綍鍚庨〉闈㈠ご閮� */
+/* ----------------------------------------------- */
+.wrap #head,
+.wrap .section {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#head {
+    height: 75px;
+    border-bottom: 1px solid #ddd;
+}
+
+#head .h_1 {
+    height: 64px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kingsoft_v_xoyo {
+    position: absolute;
+    top: 14px;
+    left: 5px;
+}
+
+.kingsoft_v_xoyo a {
+    display: block;
+}
+
+.login, .leave {
+    text-align: right;
+    clear: both;
+    margin: 10px 0 8px;
+}
+
+.login a {
+    margin: 0 0 0 10px;
+}
+
+.leave .out {
+    background: url("../application/my/view/images/leave.png")/*tpa=http://www.huayisz168.com/application/my/view/images/leave.png*//*tpa=#/application/my/view/images/leave.png*/ no-repeat 0 50%;
+    padding: 0 0 0 22px;
+    margin: 0 0 0 10px;
+    color: #333;
+}
+
+.leave a:hover {
+    color: #f90;
+}
+
+.leave a.t_mail,
+.leave a.f_mail {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.leave a.t_mail {
+    background-image: url("../application/my/view/images/t-mail.png")/*tpa=http://www.huayisz168.com/application/my/view/images/t-mail.png*//*tpa=#/application/my/view/images/t-mail.png*/;
+}
+
+.leave a.f_mail {
+    background-image: url("../application/my/view/images/f-mail.png")/*tpa=http://www.huayisz168.com/application/my/view/images/f-mail.png*//*tpa=#/application/my/view/images/f-mail.png*/;
+}
+
+.login span.kingsoft_pass {
+    text-decoration: none;
+    padding: 0 0 0 20px;
+    background: url("../application/my/view/images/kingsoft_pass.png")/*tpa=http://www.huayisz168.com/application/my/view/images/kingsoft_pass.png*//*tpa=#/application/my/view/images/kingsoft_pass.png*/ no-repeat 0 0;
+}
+
+.extra_nav {
+    height: 31px;
+}
+
+.extra_nav ul {
+    float: right;
+}
+
+.extra_nav ul li {
+    float: left;
+    display: inline;
+    margin: 0 0 0 5px;
+}
+
+.extra_nav ul li a {
+    display: block;
+    height: 31px;
+    line-height: 28px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+}
+
+.extra_nav ul li.e_n_1 a {
+    width: 64px;
+    background: url("../application/my/view/images/e_n_1.png")/*tpa=http://www.huayisz168.com/application/my/view/images/e_n_1.png*//*tpa=#/application/my/view/images/e_n_1.png*/ no-repeat 0 0;
+    padding: 0 0 0 34px;
+}
+
+.extra_nav ul li.e_n_2 a {
+    width: 42px;
+    background: url("../application/my/view/images/e_n_2.png")/*tpa=http://www.huayisz168.com/application/my/view/images/e_n_2.png*//*tpa=#/application/my/view/images/e_n_2.png*/ no-repeat 0 0;
+    padding: 0 0 0 36px;
+}
+
+.extra_nav ul li.e_n_3 a {
+    width: 57px;
+    background: url("../application/my/view/images/e_n_3.png")/*tpa=http://www.huayisz168.com/application/my/view/images/e_n_3.png*//*tpa=#/application/my/view/images/e_n_3.png*/ no-repeat 0 0;
+    padding: 0 0 0 30px;
+}
+
+.extra_nav ul li.e_n_4 a {
+    width: 44px;
+    background: url("../application/my/view/images/e_n_4.png")/*tpa=http://www.huayisz168.com/application/my/view/images/e_n_4.png*//*tpa=#/application/my/view/images/e_n_4.png*/ no-repeat 0 0;
+    padding: 0 0 0 34px;
+}
+
+.extra_nav ul li.e_n_5 a {
+    width: 87px;
+    background: url("../application/my/view/images/e_n_5.png")/*tpa=http://www.huayisz168.com/application/my/view/images/e_n_5.png*//*tpa=#/application/my/view/images/e_n_5.png*/ no-repeat 0 0;
+    padding: 0 0 0 28px;
+}
+
+/* =============================================== */
+/** 03. crumbs - 闈㈠寘灞� */
+/* ----------------------------------------------- */
+.wrap .crumbs {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.wrap .crumbs p {
+    font-family: Verdana, Geneva, sans-serif;
+    background: url("../application/my/view/images/crumbs.png")/*tpa=http://www.huayisz168.com/application/my/view/images/crumbs.png*//*tpa=#/application/my/view/images/crumbs.png*/ no-repeat 0 50%;
+    padding: 0 0 0 24px;
+}
+
+.wrap .crumbs p strong {
+    font-weight: 400;
+}
+
+.wrap .crumbs {
+    height: 46px;
+    line-height: 46px;
+    clear: both;
+}
+
+.wrap .crumbs p a,
+.wrap .crumbs p span {
+    margin: 0 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.wrap .crumbs p a:hover {
+    color: #FE6700;
+}
+
+.wrap .crumbs p span {
+    font-weight: 700;
+}
+
+/* =============================================== */
+/** 01. regWay - 鍏呭€兼柟寮忛€夋嫨 */
+/* ----------------------------------------------- */
+.regWrap .regWay {
+    line-height: 22px;
+    margin: 12px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.regWrap .regWay h3.tit {
+    font-size: 14px;
+    border-bottom: 1px solid #E0E0E0;
+    line-height: 30px;
+}
+
+.regWrap .regWay ol.regCon {
+    width: 744px;
+    margin: 0 auto;
+}
+
+.regWrap .regWay ol.regCon li h3 {
+    font-size: 14px;
+    text-align: center;
+    height: 24px;
+    padding-top: 70px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.regWrap .regWay ol.regCon li.regU h3 {
+    background-image: url("../application/my/view/images/regu.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regu.png*//*tpa=#/application/my/view/images/regu.png*/;
+}
+
+.regWrap .regWay ol.regCon li.regE h3 {
+    background-image: url("../application/my/view/images/rege.png")/*tpa=http://www.huayisz168.com/application/my/view/images/rege.png*//*tpa=#/application/my/view/images/rege.png*/;
+}
+
+.regWrap .regWay ol.regCon li.regP h3 {
+    background-image: url("../application/my/view/images/regp.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regp.png*//*tpa=#/application/my/view/images/regp.png*/;
+}
+
+.regWrap .regWay ol.regCon li {
+    float: left;
+    display: inline;
+    margin: 24px;
+    padding: 15px;
+    width: 168px;
+    height: 190px;
+    border: 1px solid #B8E2FF;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.regWrap .regWay ol.regCon li:hover {
+    cursor: pointer;
+}
+
+.regWrap .regWay ol.regCon li em {
+    color: #FF7200;
+    margin-left: 6px;
+}
+
+.regWrap .regWay ol.regCon li span {
+    display: block;
+    width: 61px;
+    height: 61px;
+    background: url("../application/my/view/images/rec.png")/*tpa=http://www.huayisz168.com/application/my/view/images/rec.png*//*tpa=#/application/my/view/images/rec.png*/ no-repeat 0 0;
+    text-indent: -999em;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.regWrap .regWay ol.regCon li.current {
+    border-color: #7BC9FF;
+    background: #fff url("../application/my/view/images/regH.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/regH.jpg*//*tpa=#/application/my/view/images/regH.jpg*/ repeat-x 0 top;
+}
+
+.regWrap .regWay ol.regCon li.lock {
+    border-color: #d2d2d2;
+    cursor: default;
+    background-image: url("../application/my/view/images/regB.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/regB.jpg*//*tpa=#/application/my/view/images/regB.jpg*/;
+}
+
+.regWrap .regWay ol.regCon .regBtn {
+    text-align: center;
+    margin: 12px 0 6px;
+}
+
+.regWrap .regWay ol.regCon .regBtn a,
+.regWrap .sucWrap .safgame .regBtn a,
+.regWrap .sucWrap .safcard .regBtn a,
+.regWrap .bindWrap .regBtn a {
+    display: inline-block;
+    width: 88px;
+    height: 24px;
+    margin: 4px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    background: #5B92EC url("../application/my/view/images/chg-chaBtn.png")/*tpa=http://www.huayisz168.com/application/my/view/images/chg-chaBtn.png*//*tpa=#/application/my/view/images/chg-chaBtn.png*/ repeat-x 0 bottom;
+    border: 1px solid #2189D0;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border =
+    radius: 4px;
+}
+
+.regWrap .regWay ol.regCon li.current .regBtn a {
+    background-image: none;
+    background-color: #7DBDFE;
+}
+
+/* =============================================== */
+/** 02. regForm - 鍏呭€艰〃鍗� */
+/* ----------------------------------------------- */
+.regWrap .regForm {
+    font-size: 14px;
+    line-height: 26px;
+    margin: 12px;
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.regWrap .regForm form {
+    /*width:590px;*/
+    margin: 0 auto;
+}
+
+.regWrap .regForm form table {
+    width: 100%;
+}
+
+.regWrap .regForm legend {
+    padding: 12px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.regWrap .regForm legend span {
+    font-family: Verdana, Geneva, sans-serif;
+    vertical-align: middle;
+    color: #FF7200;
+}
+
+.regWrap .regForm h3.tit a {
+    float: right;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.regWrap .regForm h3.tit {
+    font-size: 14px;
+    color: #FF7200;
+    border-bottom: 1px solid #E0E0E0;
+    line-height: 30px;
+    padding-left: 28px;
+    background: url("../application/my/view/images/h3tit.png")/*tpa=http://www.huayisz168.com/application/my/view/images/h3tit.png*//*tpa=#/application/my/view/images/h3tit.png*/ no-repeat 0 center;
+}
+
+/*map - 鍏呭€兼楠�*/
+.regWrap .map {
+    margin: -30px 0 0 160px;
+}
+
+.wrap .details .regWrap .map {
+    margin: 0;
+    border-bottom: 1px solid #D8DADA;
+}
+
+.regWrap .map ol li b {
+    font: italic 700 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #D0D0D0;
+    margin-right: 8px;
+    position: relative;
+    top: 2px;
+}
+
+.regWrap .map ol li.current b {
+    color: #5E94F6;
+}
+
+.regWrap .map ol li.current {
+    font-weight: 700;
+    color: #000;
+}
+
+.regWrap .map ol li {
+    float: left;
+    display: inline;
+    height: 36px;
+    padding-right: 30px;
+    margin-left: 4px;
+    color: #ccc;
+    font-weight: 700;
+    background: url("../application/my/view/images/chg-map.png")/*tpa=http://www.huayisz168.com/application/my/view/images/chg-map.png*//*tpa=#/application/my/view/images/chg-map.png*/ no-repeat right center;
+}
+
+.regWrap .map ol li.last {
+    background: none;
+    padding-right: 0;
+}
+
+/*regFWrap - table*/
+.regWrap .regFWrap table td {
+    padding: 4px;
+    vertical-align: top;
+}
+
+.regWrap .regFWrap table td.line {
+    line-height: 6px;
+    background: url("../application/my/view/images/line.png")/*tpa=http://www.huayisz168.com/application/my/view/images/line.png*//*tpa=#/application/my/view/images/line.png*/ repeat-x 0 50%;
+}
+
+.regWrap .regFWrap table td label {
+    float: right;
+    white-space: nowrap;
+}
+
+.regWrap .regFWrap table td label a {
+    font-size: 12px;
+}
+
+.regWrap .regFWrap table td label b {
+    vertical-align: middle;
+    color: #FF7200;
+    margin-right: 2px;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.regWrap .regFWrap table td em {
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 24px;
+    width: 200px;
+    padding: 0 6px 0 22px;
+    display: inline-block;
+}
+
+.regWrap .regFWrap table tr.wrong td em {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FF8585;
+    background: #fee url("../application/my/view/images/wrongico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/wrongico.png*//*tpa=#/application/my/view/images/wrongico.png*/ no-repeat 3px 4px;
+}
+
+.regWrap .regFWrap table tr.cue td em {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #47B6FF;
+    background: #DFF2FE url("../application/my/view/images/cueico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/cueico.png*//*tpa=#/application/my/view/images/cueico.png*/ no-repeat 3px 4px;
+}
+
+.regWrap .regFWrap table tr.right td em {
+    border-width: 1px;
+    border-style: solid;
+    background: url("../application/my/view/images/rightico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/rightico.png*//*tpa=#/application/my/view/images/rightico.png*/ no-repeat 3px 4px;
+    border: none;
+}
+
+.regWrap .regFWrap table td input.text {
+    border: 1px solid #ADB1C3;
+    padding: 4px 2px 5px;
+    font-size: 12px;
+    width: 180px;
+}
+
+.regWrap .regFWrap table tr.current td {
+    background-color: #EFF9FE;
+    border: 1px solid #C4E8FD;
+}
+
+.regWrap p b {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* =============================================== */
+/** 03. sucWrap - 娉ㄥ唽鎴愬姛 */
+/* ----------------------------------------------- */
+.regWrap .sucWrap .details {
+    height: 228px;
+    font-size: 14px;
+    background: url("../application/my/view/images/bg1.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/bg1.jpg*//*tpa=#/application/my/view/images/bg1.jpg*/ repeat-x 0 0;
+    border: 1px solid #70CEFF;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+}
+
+.regWrap .sucWrap .details h3 {
+    color: #f00;
+    margin-top: 74px;
+}
+
+.regWrap .sucWrap .details p em {
+    color: #FF7200;
+    font-weight: 700;
+}
+
+.regWrap .sucWrap .details p,
+.regWrap .sucWrap .details h3 {
+    margin-left: 225px;
+}
+
+.regWrap .sucWrap .details a.myBtn {
+    display: block;
+    width: 158px;
+    height: 56px;
+    background: url("../application/my/view/images/mybtn.png")/*tpa=http://www.huayisz168.com/application/my/view/images/mybtn.png*//*tpa=#/application/my/view/images/mybtn.png*/ no-repeat 0 0;
+    text-indent: -999em;
+    overflow: hidden;
+    position: absolute;
+    top: 85px;
+    left: 560px;
+}
+
+.regWrap .sucWrap .details img.zw {
+    width: 114px;
+    height: 192px;
+    background: url("../application/my/view/images/img1.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/img1.jpg*//*tpa=#/application/my/view/images/img1.jpg*/ no-repeat 0 0;
+    position: absolute;
+    top: 30px;
+    left: 80px;
+}
+
+.regWrap .sucWrap .saflevel,
+.regWrap .sucWrap .safgame,
+.regWrap .sucWrap .safcard,
+.regWrap .sucWrap .safGlist {
+    width: 400px;
+    overflow: hidden;
+    zoom: 1;
+    clear: both;
+    line-height: 38px;
+    height: 150px;
+}
+
+.regWrap .sucWrap .saflevel,
+.regWrap .sucWrap .safgame {
+    height: 140px;
+}
+
+.regWrap .sucWrap .safgame,
+.regWrap .sucWrap .safGlist {
+    position: absolute;
+    right: 0;
+    top: 319px;
+}
+
+.regWrap .sucWrap .safGlist {
+    top: 487px;
+}
+
+.regWrap .sucWrap .saflevel h4.tit,
+.regWrap .sucWrap .safcard h4.tit,
+.regWrap .sucWrap .safGlist h4.tit {
+    font-size: 14px;
+}
+
+/*saflevel*/
+.regWrap .sucWrap .saflevel p {
+    padding: 0 0 0 22px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+
+.regWrap .sucWrap .saflevel p a {
+    color: #f00;
+    text-decoration: underline;
+}
+
+.regWrap .sucWrap .saflevel p.asfl1 {
+    background-image: url("../application/my/view/images/icon1.png")/*tpa=http://www.huayisz168.com/application/my/view/images/icon1.png*//*tpa=#/application/my/view/images/icon1.png*/;
+}
+
+.regWrap .sucWrap .saflevel p.asfl2 {
+    background-image: url("../application/my/view/images/icon2.png")/*tpa=http://www.huayisz168.com/application/my/view/images/icon2.png*//*tpa=#/application/my/view/images/icon2.png*/;
+}
+
+.regWrap .sucWrap .saflevel p.asfl1 strong {
+    display: inline-block;
+    width: 181px;
+    height: 31px;
+    vertical-align: middle;
+    text-indent: -999em;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.regWrap .sucWrap .saflevel p.asfl1 strong.m {
+    background-image: url("../application/my/view/images/safm.png")/*tpa=http://www.huayisz168.com/application/my/view/images/safm.png*//*tpa=#/application/my/view/images/safm.png*/;
+}
+
+.regWrap .sucWrap .saflevel p.asfl1 strong.h {
+    background-image: url("../application/my/view/images/safh.png")/*tpa=http://www.huayisz168.com/application/my/view/images/safh.png*//*tpa=#/application/my/view/images/safh.png*/;
+}
+
+.regWrap .sucWrap .saflevel p.asfl1 strong.l {
+    background-image: url("../application/my/view/images/safl.png")/*tpa=http://www.huayisz168.com/application/my/view/images/safl.png*//*tpa=#/application/my/view/images/safl.png*/;
+}
+
+/*safgame*/
+.regWrap .sucWrap .safgame {
+    border-bottom: 1px solid #E0E0E0;
+    line-height: 26px;
+}
+
+.regWrap .sucWrap .saflevel {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.regWrap .sucWrap .safgame a.tit {
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    margin-top: 7px;
+}
+
+.regWrap .sucWrap .safgame .regBtn {
+    margin: 16px 0 0 12px;
+}
+
+.regWrap .sucWrap .safgame .regBtn a:hover,
+.regWrap .sucWrap .safcard .regBtn a:hover,
+.regWrap .bindWrap .regBtn a:hover {
+    background-image: none;
+}
+
+.regWrap .sucWrap .safgame {
+    width: 280px;
+    padding-left: 120px;
+    background: url("../application/my/view/images/chg-jx3.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/chg-jx3.jpg*//*tpa=#/application/my/view/images/chg-jx3.jpg*/ no-repeat 0 15px;
+}
+
+.regWrap .sucWrap .safgame p {
+    font-size: 12px;
+}
+
+/*safcard*/
+.regWrap .sucWrap .safcard {
+    line-height: 24px;
+    padding-top: 24px;
+}
+
+.regWrap .sucWrap .safcard .con {
+    background: url("../application/my/view/images/card.png")/*tpa=http://www.huayisz168.com/application/my/view/images/card.png*//*tpa=#/application/my/view/images/card.png*/ no-repeat 0 center;
+    padding-left: 110px;
+}
+
+.regWrap .sucWrap .safcard .con h5 {
+    font-weight: 400;
+}
+
+.regWrap .sucWrap .safcard .con p {
+    font-size: 12px;
+}
+
+.regWrap .sucWrap .safcard .regBtn {
+    text-align: center;
+}
+
+/*safGlist*/
+.regWrap .sucWrap .safGlist ul li {
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 22px;
+    background-image: url("../application/my/view/images/sprites-bg.png")/*tpa=http://www.huayisz168.com/application/my/view/images/sprites-bg.png*//*tpa=#/application/my/view/images/sprites-bg.png*/;
+    background-repeat: no-repeat;
+    padding: 0 0 0 22px;
+    width: 110px;
+}
+
+.regWrap .sucWrap .safGlist ul li a {
+    display: block;
+}
+
+.regWrap .sucWrap .safGlist ul li.jx2wz {
+    background-position: -150px -26px;
+}
+
+.regWrap .sucWrap .safGlist ul li.jk {
+    background-position: -300px -86px;
+}
+
+.regWrap .sucWrap .safGlist ul li.dg {
+    background-position: -300px -116px;
+}
+
+.regWrap .sucWrap .safGlist ul li.jxsj {
+    background-position: -150px -56px;
+}
+
+.regWrap .sucWrap .safGlist ul li.jx3 {
+    background-position: -150px 4px;
+}
+
+.regWrap .sucWrap .safGlist ul li.jx {
+    background-position: -150px -116px;
+}
+
+.regWrap .sucWrap .safGlist ul li a.top_game,
+.regWrap .sucWrap .safGlist ul li a.hot_game {
+    background-image: url("../application/my/view/images/sprites-bg.png")/*tpa=http://www.huayisz168.com/application/my/view/images/sprites-bg.png*//*tpa=#/application/my/view/images/sprites-bg.png*/;
+    background-repeat: no-repeat;
+}
+
+.regWrap .sucWrap .safGlist ul li.jx3 a.top_game {
+    background-position: 90px -116px;
+}
+
+.regWrap .sucWrap .safGlist ul li.jx2wz a.top_game {
+    background-position: 62px -116px;
+}
+
+.regWrap .sucWrap .safGlist ul li.jxsj a.hot_game {
+    background-position: 50px -148px;
+}
+
+/* =============================================== */
+/** 04. bindWrap - 缁戝畾娉ㄥ唽 */
+/* ----------------------------------------------- */
+.regWrap .bindWrap h4.tit {
+    font-size: 14px;
+    margin: 12px 0 12px 50px;
+}
+
+.regWrap .bindWrap .regBtn {
+    margin: 12px 0 0;
+    height: 40px;
+    text-align: center;
+}
+
+.regWrap .bindWrap h5 {
+    background: url("../application/my/view/images/tips.png")/*tpa=http://www.huayisz168.com/application/my/view/images/tips.png*//*tpa=#/application/my/view/images/tips.png*/ no-repeat 0 50%;
+    padding-left: 20px;
+    zoom: 1;
+}
+
+.regWrap .bindWrap h5,
+.regWrap .bindWrap ol li {
+    color: #999;
+    margin-left: 100px;
+}
+
+.regWrap .bindWrap ol li {
+    font-size: 14px;
+}
+
+.regWrap .bindWrap .regBtn a {
+    font-size: 12px;
+}
+
+.regWrap .bindWrap h4.tit,
+.regWrap .bindWrap p {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.regWrap .bindWrap h4.tit {
+    margin-left: 150px;
+}
+
+.regWrap .bindWrap h4.tit2 {
+    margin-left: 100px;
+}
+
+.regWrap .bindWrap p {
+    margin: 0 0 6px 100px;
+}
+
+.regWrap .bindWrap p label {
+    display: inline-block;
+    text-align: right;
+    width: 120px;
+}
+
+.regWrap .bindWrap p input.text {
+    border: 1px solid #ADB1C3;
+    font-size: 12px;
+    width: 160px;
+    padding: 4px 2px 5px;
+    vertical-align: middle;
+}
+
+.regWrap .bindWrap p span {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+.regWrap .bindWrap p span.error {
+    padding: 0 6px 0 22px;
+    border: 1px solid #FF8585;
+    background: #FFEEEE url("../application/my/view/images/wrongico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/wrongico.png*//*tpa=#/application/my/view/images/wrongico.png*/ no-repeat scroll 3px 4px;
+}
+
+.regWrap .bindWrap p span.right {
+    padding: 0 6px 0 22px;
+    background: transparent url("../application/my/view/images/rightico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/rightico.png*//*tpa=#/application/my/view/images/rightico.png*/ no-repeat scroll 3px 4px;
+    border: none;
+}
+
+.regWrap .bindWrap p span.cue {
+    padding: 0 7px 0 24px;
+    _padding-top: 4px;
+    _height: 22px;
+    overflow: hidden;
+    border: 1px solid #47B6FF;
+    background: #DFF2FE url("../application/my/view/images/cueico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/cueico.png*//*tpa=#/application/my/view/images/cueico.png*/ no-repeat 3px 4px;
+}
+
+.regWrap p span.statusBar {
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    padding: 1px;
+    overflow: hidden;
+    vertical-align: middle;
+    border: 1px solid #42BF26;
+}
+
+.regWrap p span.statusBar span {
+    display: block;
+    height: 8px;
+    background-color: #42BF26;
+    padding: 0;
+}
+
+.regWrap .bindWrap em {
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 24px;
+    width: 200px;
+    padding: 0 6px 0 22px;
+    display: inline-block;
+}
+
+.regWrap .bindWrap .wrong em {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FF8585;
+    background: #fee url("../application/my/view/images/wrongico.png")/*tpa=http://www.huayisz168.com/application/my/view/images/wrongico.png*//*tpa=#/application/my/view/images/wrongico.png*/ no-repeat 3px 4px;
+}
+
+/* =============================================== */
+/** 05. backCon - 鎵惧洖瀵嗙爜 */
+/* ----------------------------------------------- */
+.regWrap .regWay ol.backCon li {
+    height: 110px;
+    width: 184px;
+    margin: 14px;
+    background: #fff url("../application/my/view/images/regC.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/regC.jpg*//*tpa=#/application/my/view/images/regC.jpg*/ repeat-x 0 top;
+}
+
+.details .regWay ol.backCon li {
+    margin: 8px;
+}
+
+.details .regWay ol.backCon li a:hover {
+    text-decoration: none;
+}
+
+.regWrap .regWay ol.backCon li h3 {
+    background-position: 0 center;
+    padding: 0 0 0 34px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+
+.regWrap .regWay ol.backCon li.regU h3 {
+    background-image: url("../application/my/view/images/regus.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regus.png*//*tpa=#/application/my/view/images/regus.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regE h3 {
+    background-image: url("../application/my/view/images/reges.png")/*tpa=http://www.huayisz168.com/application/my/view/images/reges.png*//*tpa=#/application/my/view/images/reges.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regP h3 {
+    background-image: url("../application/my/view/images/regps.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regps.png*//*tpa=#/application/my/view/images/regps.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regI h3 {
+    background-image: url("../application/my/view/images/regid_gray.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regid_gray.png*//*tpa=#/application/my/view/images/regid_gray.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regU h3.lock {
+    background-image: url("../application/my/view/images/regusB.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regusB.png*//*tpa=#/application/my/view/images/regusB.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regE h3.lock {
+    background-image: url("../application/my/view/images/regesB.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regesB.png*//*tpa=#/application/my/view/images/regesB.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regP h3.lock {
+    background-image: url("../application/my/view/images/regpsB.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regpsB.png*//*tpa=#/application/my/view/images/regpsB.png*/;
+}
+
+.regWrap .regWay ol.backCon li.regI h3 {
+    background-image: url("../application/my/view/images/regid.png")/*tpa=http://www.huayisz168.com/application/my/view/images/regid.png*//*tpa=#/application/my/view/images/regid.png*/;
+}
+
+/* =============================================== */
+/** 06. sub-nav - 渚у鑸� */
+/* ----------------------------------------------- */
+.wrap .section .sub-nav dl dt a {
+    display: block;
+    height: 38px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+    background: url("../application/my/view/images/sub_navigation.png")/*tpa=http://www.huayisz168.com/application/my/view/images/sub_navigation.png*//*tpa=#/application/my/view/images/sub_navigation.png*/ no-repeat 0 0;
+    padding-left: 55px;
+    color: #333;
+    text-decoration: none;
+}
+
+.wrap .section .sub-nav dl dt.last a {
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.wrap .section .sub-nav dl dt a.current {
+    background-image: url("../application/my/view/images/sub_navigation-c.png")/*tpa=http://www.huayisz168.com/application/my/view/images/sub_navigation-c.png*//*tpa=#/application/my/view/images/sub_navigation-c.png*/;
+    color: #FE6700;
+}
+
+.wrap .section .sub-nav dl dd a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    background: url("../application/my/view/images/triangle.png")/*tpa=http://www.huayisz168.com/application/my/view/images/triangle.png*//*tpa=#/application/my/view/images/triangle.png*/ no-repeat 52px 50%;
+    padding-left: 62px;
+    outline: none;
+}
+
+.wrap .section .sub-nav dl dd a:hover {
+    background-image: url("../application/my/view/images/triangle2.png")/*tpa=http://www.huayisz168.com/application/my/view/images/triangle2.png*//*tpa=#/application/my/view/images/triangle2.png*/;
+}
+
+.wrap .section .sub-nav dl dd a.current {
+    color: #FE6700;
+    background-color: #E9F2FE;
+    background-image: url("../application/my/view/images/triangle2.png")/*tpa=http://www.huayisz168.com/application/my/view/images/triangle2.png*//*tpa=#/application/my/view/images/triangle2.png*/;
+}
+
+.wrap .section .sub-nav dl dd {
+    line-height: 26px;
+    background-color: #F9F9F9;
+    border: 1px solid #D9D9D9;
+    border-width: 0 1px;
+}
+
+.wrap .section .sub-nav dl dt.account_safe a,
+.sub_navigation ul li.account_safe a {
+    background-image: url("../application/my/view/images/sub_navigation_account_safe.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/sub_navigation_account_safe.jpg*//*tpa=#/application/my/view/images/sub_navigation_account_safe.jpg*/;
+}
+
+.wrap .section .sub-nav dl dt.account_safe a.current {
+    background-image: url("../application/my/view/images/sub_navigation-c-account_safe.jpg")/*tpa=http://www.huayisz168.com/application/my/view/images/sub_navigation-c-account_safe.jpg*//*tpa=#/application/my/view/images/sub_navigation-c-account_safe.jpg*/;
+}
+
+/*S 110922*/
+/** 01. account-manage - 璐﹀彿鍐荤粨瑙ｅ喕韪㈠彿 */
+/* ----------------------------------------------- */
+.account-manage {
+    line-height: 22px;
+    margin: 12px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.account-manage h3.tit {
+    font-size: 14px;
+    border-bottom: 1px solid #E0E0E0;
+    line-height: 30px;
+}
+
+.account-manage ol.regCon {
+    width: 744px;
+    margin: 0 auto;
+}
+
+.account-manage ol.regCon li h3 {
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    padding: 0 0 0 34px;
+    height: 30px;
+    line-height: 35px;
+    margin-bottom: 12px;
+}
+
+.account-manage ol.regCon li {
+    float: left;
+    display: inline;
+    margin: 0 20px 20px;
+    padding: 8px 5px 8px 15px;
+    width: 146px;
+    height: 34px;
+    border: 1px solid #B8E2FF;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.account-manage ol.regCon li:hover {
+    cursor: pointer;
+}
+
+.account-manage ol.regCon li em {
+    color: #FF7200;
+    margin-left: 6px;
+}
+
+.account-manage ol.regCon li span {
+    display: block;
+    width: 61px;
+    height: 61px;
+    background: url("../my.xoyo.com/application/my/view/images/rec.png")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/rec.png*//*tpa=http://my.xoyo.com/application/my/view/images/rec.png*/ no-repeat 0 0;
+    text-indent: -999em;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.account-manage ol.regCon li.current {
+    border-color: #7BC9FF;
+    background: #fff url("../my.xoyo.com/application/my/view/images/regH.jpg")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/regH.jpg*//*tpa=http://my.xoyo.com/application/my/view/images/regH.jpg*/ repeat-x 0 -40px;
+}
+
+.account-manage ol.regCon li:hover {
+    cursor: pointer;
+    background: #fff url("../my.xoyo.com/application/my/view/images/regH.jpg")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/regH.jpg*//*tpa=http://my.xoyo.com/application/my/view/images/regH.jpg*/ repeat-x 0 -40px;
+}
+
+.account-manage ol.regCon li.lock {
+    border-color: #d2d2d2;
+    cursor: default;
+    background-image: url("../my.xoyo.com/application/my/view/images/regB.jpg")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/regB.jpg*//*tpa=http://my.xoyo.com/application/my/view/images/regB.jpg*/;
+}
+
+.account-manage ol.regCon .regBtn {
+    text-align: center;
+    margin: 12px 0 6px;
+}
+
+.account-manage ol.regCon .regBtn a,
+.account-manage .safgame .regBtn a,
+.account-manage .safcard .regBtn a,
+.account-manage .bindWrap .regBtn a {
+    display: inline-block;
+    width: 88px;
+    height: 24px;
+    margin: 4px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    background: #5B92EC url("../my.xoyo.com/application/my/view/images/chg-chaBtn.png")/*tpa=http://www.huayisz168.com/my.xoyo.com/application/my/view/images/chg-chaBtn.png*//*tpa=http://my.xoyo.com/application/my/view/images/chg-chaBtn.png*/ repeat-x 0 bottom;
+    border: 1px solid #2189D0;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    radius: 4px;
+}
+
+.account-manage ol.regCon li.current .regBtn a {
+    background-image: none;
+    background-color: #7DBDFE;
+}
+
+.account-tips {
+    padding: 0 0 12px 30px;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.account-tips dl {
+    line-height: 1.6;
+    width: 645px;
+}
+
+.account-tips dl dt {
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.account-table {
+    padding: 12px 0 12px 30px;
+}
+
+.account-table h4 {
+    font-weight: 400;
+    padding-bottom: 12px;
+}
+
+.account-table table {
+    width: 555px;
+    margin: 0 auto;
+}
+
+.account-table table th,
+.account-table table td {
+    border: #dddddd solid 1px;
+    padding: 2px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.account-table table th {
+    background: #f4f4f4;
+}
+
+/* =============================================== */
+
+/** 03. account-manage - 鑷姪鍐荤粨 */
+/* ----------------------------------------------- */
+.account-lock {
+    padding: 20px 0 20px 20px;
+}
+
+.account-lock h4 {
+    padding: 0 0 15px 20px;
+}
+
+.account-lock ul {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.account-lock ul li {
+    float: left;
+    display: inline;
+    margin: 0 20px 20px 0;
+}
+
+/* =============================================== */
+
+/** 07. account-manage - 鑷姪瑙ｅ喕 */
+/* ----------------------------------------------- */
+.account-unlock {
+    margin: 64px 0 100px 90px;
+    background: url("../images/icon.jpg")/*tpa=http://www.huayisz168.com/images/icon.jpg*//*tpa=#/images/icon.jpg*/ no-repeat 483px 92px;
+    width: 615px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.unlock-c {
+    width: 482px;
+    height: auto;
+    background: url("../images/unlock-c.png")/*tpa=http://www.huayisz168.com/images/unlock-c.png*//*tpa=#/images/unlock-c.png*/ repeat-y;
+}
+
+.unlock-t {
+    width: 482px;
+    height: auto;
+    background: url("../images/unlock-t.png")/*tpa=http://www.huayisz168.com/images/unlock-t.png*//*tpa=#/images/unlock-t.png*/ left top no-repeat;
+}
+
+.unlock-b {
+    background: url("../images/unlock-b.png")/*tpa=http://www.huayisz168.com/images/unlock-b.png*//*tpa=#/images/unlock-b.png*/ left bottom scroll no-repeat;
+    min-height: 170px;
+    height: auto !important;
+    height: 170px;
+    padding: 70px 0 30px;
+    line-height: 1.8;
+}
+
+.unlock-b p {
+    padding: 0 40px;
+}
+
+.unlock-b p.p1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ff0000;
+}
+
+.unlock-b p.p1 span {
+    color: #ff7200;
+}
+
+/* =============================================== */
+/*E 110922*/
+
+/* Float Clear */
+.regWrap .regWay ol.regCon,
+.regWrap .map ol,
+.regWrap .sucWrap .safGlist ul,
+.extra_nav ul,
+.wrap .section,
+.wrap {
+    zoom: 1;
+}
+
+.regWrap .regWay ol.regCon:after,
+.regWrap .map ol:after,
+.regWrap .sucWrap .safGlist ul:after,
+.extra_nav ul:after,
+.wrap .section:after,
+.wrap:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+

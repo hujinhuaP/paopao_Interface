@@ -1,0 +1,98 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding row">
+                    <form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator"
+                          method="POST" action="voiceroom/egggoods/defaultset">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="c-consolation_name" class="control-label col-xs-12 col-sm-4">{:__('默认奖励名称')}:</label>
+                                <div class="col-xs-12 col-sm-6">
+                                    <input type="text" name="row[consolation_name]"
+                                           value="{$defaultRow.consolation_name}" id="c-consolation_name"
+                                           class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-12 col-sm-4">{:__('默认奖励图标')}:</label>
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="input-group">
+                                        <input id="c-egg_goods_image" data-rule="required" class="form-control"
+                                               size="50" name="row[consolation_image]" type="text"
+                                               value="{$defaultRow.consolation_image|htmlentities}">
+                                        <div class="input-group-addon no-border no-padding">
+                                            <span><button type="button" id="plupload-egg_goods_image"
+                                                          class="btn btn-danger plupload"
+                                                          data-input-id="c-egg_goods_image"
+                                                          data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp"
+                                                          data-multiple="false" data-preview-id="p-egg_goods_image"><i
+                                                    class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        </div>
+                                        <span class="msg-box n-right" for="c-egg_goods_image"></span>
+                                    </div>
+                                    <ul class="row list-inline plupload-preview" id="p-egg_goods_image"></ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="control-label col-xs-12 col-sm-4">{:__('默认奖励类型')}:</label>
+                                <div class="col-xs-12 col-sm-6">
+                                    <select id="c-egg_goods_category" data-rule="required"
+                                            class="form-control selectpicker" name="row[consolation_category]">
+                                        {foreach name="eggGoodsCategoryList" item="vo"}
+                                        <option value="{$key}" {in name="key" value="$defaultRow.consolation_category"
+                                                }selected{
+                                        /in}>{$vo}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-12 col-sm-4">{:__('奖励价值')} 注：VIP单位为天:</label>
+                                <div class="col-xs-12 col-sm-6">
+                                    <input id="c-egg_goods_value" class="form-control" name="row[consolation_value]"
+                                           type="number" value="{$defaultRow.consolation_value|htmlentities}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-xs-12 col-sm-4">{:__('砸蛋锤子价格')}:</label>
+                                <div class="col-xs-12 col-sm-6">
+                                    <input id="c-eggs_hammer_coin" class="form-control" name="row[eggs_hammer_coin]"
+                                           type="number" value="{$defaultRow.eggs_hammer_coin|htmlentities}">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="control-label col-xs-12 col-sm-2"></label>
+                                <div class="col-xs-12 col-sm-8">
+                                    <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                                    <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        {:build_toolbar('refresh,add')}
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover" width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

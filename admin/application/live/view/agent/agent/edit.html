@@ -1,0 +1,150 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-recharge_distribution_profits" class="control-label col-xs-12 col-sm-2">{:__('User recharge distribution of profits')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[recharge_distribution_profits]" value="{$row.recharge_distribution_profits}" data-rule="required" id="c-recharge_distribution_profits" class="form-control"  min="{$minRechargeProfits}" max="{$maxRechargeProfits}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-vip_distribution_profits" class="control-label col-xs-12 col-sm-2">{:__('Buy VIP distribution of profits')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[vip_distribution_profits]"  value="{$row.vip_distribution_profits}" data-rule="required" id="c-vip_distribution_profits" class="form-control" min="{$minVipProfits}" max="{$maxVipProfits}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+    </div>
+    不能超过上级的比例，不能低于所有下级中最高的比例
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="password" name="row[password]" value="" data-rule="password" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否可以看广告banner:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[ad_visible]"  value="Y"  {$row.ad_visible == "Y" ? "checked" : ""} > 开启
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[ad_visible]"  value="N"  {$row.ad_visible == "N" ? "checked" : ""} > 关闭
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-agent_recharge_reward_radio" class="control-label col-xs-12 col-sm-2">{:__('每笔充值有奖励的概率')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline input-group">
+                <input type="number" name="row[agent_recharge_reward_radio]"  value="{$row.agent_recharge_reward_radio}" data-rule="required" id="c-agent_recharge_reward_radio" class="form-control" min="0" max="100">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否有停留诱导:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[stay_guide_msg_flg]"  value="Y"  {$row.stay_guide_msg_flg == "Y" ? "checked" : ""} > 开启
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[stay_guide_msg_flg]"  value="N"  {$row.stay_guide_msg_flg == "N" ? "checked" : ""} > 关闭
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否有视频诱导:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[video_guide_flg]"  value="Y"  {$row.video_guide_flg == "Y" ? "checked" : ""} > 开启
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[video_guide_flg]"  value="N"  {$row.video_guide_flg == "N" ? "checked" : ""} > 关闭
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[video_guide_flg]"  value="S"  {$row.video_guide_flg == "S" ? "checked" : ""} > 定时
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group guide-select" style="{$row.video_guide_flg == 'S' ? 'display:block' : 'display:none'}" >
+        <label for="c-app_app_id" class="control-label col-xs-12 col-sm-2">{:__('视频诱导时间段')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[app_id]" id="c-app_id" class="form-control guideTimestampSelect" >
+                <option value="">自定义</option>
+                {foreach $timestampConfig as $timestampConfigItem}
+                <option value="{$timestampConfigItem.start_hour}-{$timestampConfigItem.end_hour}" >{$timestampConfigItem.start_hour} 点 到 {$timestampConfigItem.end_hour} 点</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group guide-select" style="{$row.video_guide_flg == 'S' ? 'display:block' : 'display:none'}" >
+        <label for="c-video_guide_hour_start" class="control-label col-xs-12 col-sm-2">{:__('视频诱导开始小时')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[video_guide_hour_start]" id="c-video_guide_hour_start" class="form-control">
+                {for start="0" end="24"}
+                <option value="{$i}" {$row.video_guide_hour_start == $i ? 'selected' : ''}>{$i} 点</option>
+                {/for}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group guide-select" style="{$row.video_guide_flg == 'S' ? 'display:block' : 'display:none'}" >
+        <label for="c-video_guide_hour_end" class="control-label col-xs-12 col-sm-2">{:__('视频诱导结束小时')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[video_guide_hour_end]" id="c-video_guide_hour_end" class="form-control">
+                {for start="0" end="24"}
+                <option value="{$i}" {$row.video_guide_hour_end == $i ? 'selected' : ''}>{$i} 点</option>
+                {/for}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否文字聊天免费:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[chat_free_flg]"  value="Y"  {$row.chat_free_flg == "Y" ? "checked" : ""} > 开启
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[chat_free_flg]"  value="N"  {$row.chat_free_flg == "N" ? "checked" : ""} > 关闭
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="has_reward_recharge_max_money" class="control-label col-xs-12 col-sm-2">{:__('单笔充值分成额度限制（大于等于次值的充值不算分成；0为不限制）')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" class="form-control" id="has_reward_recharge_max_money" name="row[has_reward_recharge_max_money]" value="{$row.has_reward_recharge_max_money}" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">用户注册是否能获得注册奖励:</label>
+        <div class="col-xs-12 col-sm-9">
+            <label class="radio-inline">
+                <input type="radio" name="row[user_register_reward_flg]"  value="Y"  {$row.user_register_reward_flg == "Y" ? "checked" : ""} > 开启
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="row[user_register_reward_flg]"  value="N"  {$row.user_register_reward_flg == "N" ? "checked" : ""} > 关闭
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

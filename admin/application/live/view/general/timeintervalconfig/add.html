@@ -1,0 +1,35 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+
+    <div class="form-group">
+        <label for="c-start_hour" class="control-label col-xs-12 col-sm-2">{:__('开始小时')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[start_hour]" id="c-start_hour" class="form-control" data-rule="required">
+                {for start="0" end="24"}
+                <option value="{$i}">{$i} 点</option>
+                {/for}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-end_hour" class="control-label col-xs-12 col-sm-2">{:__('结束小时')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select name="row[end_hour]" id="c-end_hour" class="form-control" data-rule="required">
+                {for start="0" end="24"}
+                <option value="{$i}">{$i} 点</option>
+                {/for}
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

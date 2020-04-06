@@ -1,0 +1,62 @@
+<style>
+    .gift-container {
+        position:relative;
+        width:500px;
+    }
+    .gift-container .gift-img{
+        width:500px;
+        height:100px;
+    }
+    .gift-container .gift-text {
+        display:none;
+    }
+    .gift-container:hover .gift-text {
+        display:block;
+        position:absolute;
+        height:356px;
+        width:200px;
+        background:#444;
+        opacity: .6;
+        color: #fff;
+        top:0;
+        left:0;
+        line-height: 100px;
+        text-align: center;
+    }
+    .gift-container button{
+        position:absolute;
+        top:0;left:0;width:500px;height:100px;opacity: 0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-title" class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[title]" value="{$row.title}"  id="c-title" class="form-control" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-shareimg_url" class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input type="hidden" id="c-shareimg_url" name="row[img_url]" value="{$row.img_url}" data-rule="url|required"/>
+                <div class="gift-container">
+                    <img class="shareimg_url-img img-responsive plupload" src="{$row.img_url}" width="200px" height="356px" onerror="this.src='__CDN__/assets/img/loading200x200.png'" alt="">
+                    <div class="gift-text">{:__('Click to edit')}</div>
+                    <button id="plupload-shareimg_url" class="plupload" data-input-id="c-shareimg_url"><i class="fa fa-upload"></i> {:__('Upload')}</button>
+                </div>
+
+                <span>{:__('shareimg upload tips')}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

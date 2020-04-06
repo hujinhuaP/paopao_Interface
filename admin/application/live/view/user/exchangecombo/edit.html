@@ -1,0 +1,37 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('兑换类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select  id="c-exchange_category" data-rule="required" class="form-control selectpicker" name="row[exchange_category]">
+                {foreach name="exchangeCategoryList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.exchange_category"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-combo_coin" class="control-label col-xs-12 col-sm-2">{:__('Coin')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[combo_coin]" value="{$row.combo_coin}"  id="c-combo_coin" class="form-control" min="1" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-combo_cash" class="control-label col-xs-12 col-sm-2">{:__('Amount')}/钻石:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[combo_cash]" value="{$row.combo_cash}"  id="c-combo_cash" class="form-control" min="1" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

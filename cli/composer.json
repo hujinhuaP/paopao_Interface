@@ -1,0 +1,12 @@
+{
+	"repositories": {
+	    "packagist": {
+	        "type": "composer",
+	        "url": "https://packagist.phpcomposer.com"
+	    }
+	},
+	"require" : {
+		"duncan3dc/fork-helper": "1.1.6",
+		"jpush/jpush": "v3.5.23"
+	}
+}

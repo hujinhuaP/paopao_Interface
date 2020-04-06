@@ -1,0 +1,37 @@
+<form id="edit-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-nickname" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[user_nickname]" value="{$row.user_nickname}"  id="c-nickname" class="form-control" data-rule="required" disabled="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-anchor_level" class="control-label col-xs-12 col-sm-2">{:__('Anchor level')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="number" name="row[anchor_level]" value="{$row.anchor_level}"  id="c-anchor_level" class="form-control" data-rule="required" min="0" max="{$row.max_anchor_level}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-system_withdraw_ratio" class="control-label col-xs-12 col-sm-2">{:__('System withdraw ratio')}:</label>
+        <div class="form-inline">
+            <div class="col-xs-12 col-sm-8">
+                <input type="number" name="row[system_withdraw_ratio]" value="{$row.system_withdraw_ratio}"  id="c-system_withdraw_ratio" class="form-control" disabled data-rule="required" min="0" max="100" /><i>%</i>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_withdraw_ratio" class="control-label col-xs-12 col-sm-2">{:__('User withdraw ratio')}:</label>
+        <div class="form-inline">
+            <div class="col-xs-12 col-sm-8">
+                <input type="number" name="row[user_withdraw_ratio]" value="{$row.user_withdraw_ratio}"  id="c-user_withdraw_ratio" class="form-control" data-rule="required" min="0" max="100" /><i>%</i>
+            </div>
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
