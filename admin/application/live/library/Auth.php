@@ -268,7 +268,7 @@ class Auth extends \fast\Auth
      */
     public function getChildrenAdminIds($withself = false)
     {
-        $groupIds = $this->getChildrenGroupIds(false);
+        $groupIds = $this->getChildrenGroupIds($withself);
         $childrenAdminIds = [];
         $authGroupList = model('admin.AuthGroupAccess')
                 ->field('uid,group_id')
