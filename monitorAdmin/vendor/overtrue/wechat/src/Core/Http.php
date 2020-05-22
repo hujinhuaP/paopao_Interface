@@ -54,15 +54,20 @@ class Http
     protected $middlewares = [];
 
     /**
-     * Guzzle client default settings.
-     *
      * @var array
      */
-    protected static $defaults = [
+    protected static $globals = [
         'curl' => [
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ],
     ];
+
+    /**
+     * Guzzle client default settings.
+     *
+     * @var array
+     */
+    protected static $defaults = [];
 
     /**
      * Set guzzle default settings.
@@ -71,7 +76,7 @@ class Http
      */
     public static function setDefaultOptions($defaults = [])
     {
-        self::$defaults = $defaults;
+        self::$defaults = array_merge(self::$globals, $defaults);
     }
 
     /**
@@ -116,24 +121,24 @@ class Http
         return $this->request($url, 'POST', [$key => $options]);
     }
 
-     /**
-      * JSON request.
-      *
-      * @param string       $url
-      * @param string|array $options
-      * @param array $queries
-      * @param int          $encodeOption
-      *
-      * @return ResponseInterface
-      *
-      * @throws HttpException
-      */
-     public function json($url, $options = [], $encodeOption = JSON_UNESCAPED_UNICODE, $queries = [])
-     {
-         is_array($options) && $options = json_encode($options, $encodeOption);
+    /**
+     * JSON request.
+     *
+     * @param string       $url
+     * @param string|array $options
+     * @param array        $queries
+     * @param int          $encodeOption
+     *
+     * @return ResponseInterface
+     *
+     * @throws HttpException
+     */
+    public function json($url, $options = [], $encodeOption = JSON_UNESCAPED_UNICODE, $queries = [])
+    {
+        is_array($options) && $options = json_encode($options, $encodeOption);
 
-         return $this->request($url, 'POST', ['query' => $queries, 'body' => $options, 'headers' => ['content-type' => 'application/json']]);
-     }
+        return $this->request($url, 'POST', ['query' => $queries, 'body' => $options, 'headers' => ['content-type' => 'application/json']]);
+    }
 
     /**
      * Upload file.
@@ -259,7 +264,7 @@ class Http
     public function parseJSON($body)
     {
         if ($body instanceof ResponseInterface) {
-            $body = $body->getBody();
+            $body = mb_convert_encoding($body->getBody(), 'UTF-8');
         }
 
         // XXX: json maybe contains special chars. So, let's FUCK the WeChat API developers ...
@@ -269,7 +274,7 @@ class Http
             return false;
         }
 
-        $contents = json_decode($body, true);
+        $contents = json_decode($body, true, 512, JSON_BIGINT_AS_STRING);
 
         Log::debug('API response decoded:', compact('contents'));
 

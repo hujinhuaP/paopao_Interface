@@ -69,9 +69,9 @@ class Notify
      *
      * @return bool
      */
-    public function isValid()
+    public function isValid($signkey)
     {
-        $localSign = generate_sign($this->getNotify()->except('sign')->all(), $this->merchant->key, 'md5');
+        $localSign = generate_sign($this->getNotify()->except('sign')->all(), $signkey, 'md5');
 
         return $localSign === $this->getNotify()->get('sign');
     }
@@ -88,6 +88,7 @@ class Notify
         if (!empty($this->notify)) {
             return $this->notify;
         }
+
         try {
             $xml = XML::parse(strval($this->request->getContent()));
         } catch (\Throwable $t) {

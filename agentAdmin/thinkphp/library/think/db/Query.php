@@ -53,6 +53,8 @@ class Query
     protected static $info = [];
     // 回调事件
     private static $event = [];
+    // 读取主库
+    protected static $readMaster = [];
 
     /**
      * 构造函数
@@ -90,6 +92,13 @@ class Query
             $name         = Loader::parseName(substr($method, 10));
             $where[$name] = $args[0];
             return $this->where($where)->value($args[1]);
+        } elseif ($this->model && method_exists($this->model, 'scope' . $method)) {
+            // 动态调用命名范围
+            $method = 'scope' . $method;
+            array_unshift($args, $this);
+
+            call_user_func_array([$this->model, $method], $args);
+            return $this;
         } else {
             throw new Exception('method not exist:' . __CLASS__ . '->' . $method);
         }
@@ -138,6 +147,25 @@ class Query
     public function getModel()
     {
         return $this->model;
+    }
+
+    /**
+     * 设置后续从主库读取数据
+     * @access public
+     * @param  bool $allTable
+     * @return void
+     */
+    public function readMaster($allTable = false)
+    {
+        if ($allTable) {
+            $table = '*';
+        } else {
+            $table = isset($this->options['table']) ? $this->options['table'] : $this->getTable();
+        }
+
+        static::$readMaster[$table] = true;
+
+        return $this;
     }
 
     /**
@@ -238,7 +266,7 @@ class Query
      */
     public function execute($sql, $bind = [])
     {
-        return $this->connection->execute($sql, $bind);
+        return $this->connection->execute($sql, $bind, $this);
     }
 
     /**
@@ -415,12 +443,13 @@ class Query
                 // 返回SQL语句
                 return $pdo;
             }
+
             $result = $pdo->fetchColumn();
             if ($force) {
-                $result += 0;
+                $result = (float) $result;
             }
 
-            if (isset($cache)) {
+            if (isset($cache) && false !== $result) {
                 // 缓存数据
                 $this->cacheData($key, $result, $cache);
             }
@@ -510,13 +539,43 @@ class Query
     public function count($field = '*')
     {
         if (isset($this->options['group'])) {
+            if (!preg_match('/^[\w\.\*]+$/', $field)) {
+                throw new Exception('not support data:' . $field);
+            }
             // 支持GROUP
             $options = $this->getOptions();
             $subSql  = $this->options($options)->field('count(' . $field . ')')->bind($this->bind)->buildSql();
-            return $this->table([$subSql => '_group_count_'])->value('COUNT(*) AS tp_count', 0, true);
+
+            $count = $this->table([$subSql => '_group_count_'])->value('COUNT(*) AS tp_count', 0, true);
+        } else {
+            $count = $this->aggregate('COUNT', $field, true);
         }
 
-        return $this->value('COUNT(' . $field . ') AS tp_count', 0, true);
+        return is_string($count) ? $count : (int) $count;
+
+    }
+
+    /**
+     * 聚合查询
+     * @access public
+     * @param  string $aggregate    聚合方法
+     * @param  string $field        字段名
+     * @param  bool   $force        强制转为数字类型
+     * @return mixed
+     */
+    public function aggregate($aggregate, $field, $force = false)
+    {
+        if (0 === stripos($field, 'DISTINCT ')) {
+            list($distinct, $field) = explode(' ', $field);
+        }
+
+        if (!preg_match('/^[\w\.\+\-\*]+$/', $field)) {
+            throw new Exception('not support data:' . $field);
+        }
+
+        $result = $this->value($aggregate . '(' . (!empty($distinct) ? 'DISTINCT ' : '') . $field . ') AS tp_' . strtolower($aggregate), 0, $force);
+
+        return $result;
     }
 
     /**
@@ -527,7 +586,7 @@ class Query
      */
     public function sum($field)
     {
-        return $this->value('SUM(' . $field . ') AS tp_sum', 0, true);
+        return $this->aggregate('SUM', $field, true);
     }
 
     /**
@@ -539,7 +598,7 @@ class Query
      */
     public function min($field, $force = true)
     {
-        return $this->value('MIN(' . $field . ') AS tp_min', 0, $force);
+        return $this->aggregate('MIN', $field, $force);
     }
 
     /**
@@ -551,7 +610,7 @@ class Query
      */
     public function max($field, $force = true)
     {
-        return $this->value('MAX(' . $field . ') AS tp_max', 0, $force);
+        return $this->aggregate('MAX', $field, $force);
     }
 
     /**
@@ -562,7 +621,7 @@ class Query
      */
     public function avg($field)
     {
-        return $this->value('AVG(' . $field . ') AS tp_avg', 0, true);
+        return $this->aggregate('AVG', $field, true);
     }
 
     /**
@@ -903,7 +962,7 @@ class Query
      * @access public
      * @param string|array $table 数据表
      * @param string|array $field 查询字段
-     * @param string|array $on    JOIN条件
+     * @param mixed        $on    JOIN条件
      * @param string       $type  JOIN类型
      * @return $this
      */
@@ -2071,14 +2130,23 @@ class Query
                 $this->field('*');
             }
             foreach ($relations as $key => $relation) {
-                $closure = false;
+                $closure = $name = null;
                 if ($relation instanceof \Closure) {
                     $closure  = $relation;
                     $relation = $key;
+                } elseif (!is_int($key)) {
+                    $name     = $relation;
+                    $relation = $key;
                 }
                 $relation = Loader::parseName($relation, 1, false);
-                $count    = '(' . $this->model->$relation()->getRelationCountQuery($closure) . ')';
-                $this->field([$count => Loader::parseName($relation) . '_count']);
+
+                $count = '(' . $this->model->$relation()->getRelationCountQuery($closure, $name) . ')';
+
+                if (empty($name)) {
+                    $name = Loader::parseName($relation) . '_count';
+                }
+
+                $this->field([$count => $name]);
             }
         }
         return $this;
@@ -2204,7 +2272,7 @@ class Query
         }
 
         // 执行操作
-        $result = 0 === $sql ? 0 : $this->execute($sql, $bind);
+        $result = 0 === $sql ? 0 : $this->execute($sql, $bind, $this);
         if ($result) {
             $sequence  = $sequence ?: (isset($options['sequence']) ? $options['sequence'] : null);
             $lastInsId = $this->getLastInsID($sequence);
@@ -2270,10 +2338,10 @@ class Query
             return $this->connection->getRealSql($sql, $bind);
         } elseif (is_array($sql)) {
             // 执行操作
-            return $this->batchQuery($sql, $bind);
+            return $this->batchQuery($sql, $bind, $this);
         } else {
             // 执行操作
-            return $this->execute($sql, $bind);
+            return $this->execute($sql, $bind, $this);
         }
     }
 
@@ -2299,7 +2367,7 @@ class Query
             return $this->connection->getRealSql($sql, $bind);
         } else {
             // 执行操作
-            return $this->execute($sql, $bind);
+            return $this->execute($sql, $bind, $this);
         }
     }
 
@@ -2366,7 +2434,7 @@ class Query
                 Cache::clear($options['cache']['tag']);
             }
             // 执行操作
-            $result = '' == $sql ? 0 : $this->execute($sql, $bind);
+            $result = '' == $sql ? 0 : $this->execute($sql, $bind, $this);
             if ($result) {
                 if (is_string($pk) && isset($where[$pk])) {
                     $data[$pk] = $where[$pk];
@@ -2838,7 +2906,7 @@ class Query
             Cache::clear($options['cache']['tag']);
         }
         // 执行操作
-        $result = $this->execute($sql, $bind);
+        $result = $this->execute($sql, $bind, $this);
         if ($result) {
             if (!is_array($data) && is_string($pk) && isset($key) && strpos($key, '|')) {
                 list($a, $val) = explode('|', $key);
@@ -2921,6 +2989,10 @@ class Query
             if (!isset($options[$name])) {
                 $options[$name] = false;
             }
+        }
+
+        if (isset(static::$readMaster['*']) || (is_string($options['table']) && isset(static::$readMaster[$options['table']]))) {
+            $options['master'] = true;
         }
 
         foreach (['join', 'union', 'group', 'having', 'limit', 'order', 'force', 'comment'] as $name) {

@@ -144,8 +144,8 @@ class Msg
             'mobile' => $sPhone,
 //            'text' => sprintf(self::WITHDRAW_TEMPLATE_TEXT,$sCode),
             'tpl_id' => $tpl_id,
-            "tpl_value"   => urlencode('#code#').'='.urlencode($sCode).'&'.
-                urlencode('#app#').'='.urlencode($app),
+            "tpl_value"   => urlencode('#code#').'='.urlencode($sCode)
+//                .'&'. urlencode('#app#').'='.urlencode($app),
         ];
 //        $result = json_decode(static::curl('https://sms.yunpian.com/v2/sms/single_send.json', $data), true);
         $result = json_decode(static::curl('https://sms.yunpian.com/v2/sms/tpl_single_send.json', $data), true);

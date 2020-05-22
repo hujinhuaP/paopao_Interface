@@ -41,6 +41,7 @@ trait Jump
         } elseif ('' !== $url && !strpos($url, '://') && 0 !== strpos($url, '/')) {
             $url = Url::build($url);
         }
+
         $type = $this->getResponseType();
         $result = [
             'code' => 1,
@@ -49,6 +50,7 @@ trait Jump
             'url'  => $url,
             'wait' => $wait,
         ];
+
         if ('html' == strtolower($type)) {
             $template = Config::get('template');
             $view = Config::get('view_replace_str');
@@ -56,7 +58,9 @@ trait Jump
             $result = ViewTemplate::instance($template, $view)
                 ->fetch(Config::get('dispatch_success_tmpl'), $result);
         }
+
         $response = Response::create($result, $type)->header($header);
+
         throw new HttpResponseException($response);
     }
 

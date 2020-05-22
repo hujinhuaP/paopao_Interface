@@ -1,1 +1,9 @@
 .idea
+monitorAdmin/thinkphp
+monitorAdmin/vendor
+groupAdmin/thinkphp
+groupAdmin/vendor
+agentAdmin/thinkphp
+agentAdmin/vendor
+admin/thinkphp
+admin/vendor
