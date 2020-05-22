@@ -20,7 +20,7 @@ return [
     // h5 web域名
     'app_web_url'      => sprintf('http://%sh5.sxypaopao.com', APP_URL_PREFIX),
     // 下载域名
-    'app_download_url' => 'http://h5.mastercode.top/register',
+    'app_download_url' => 'http://h5.paopao.yx498.com/register',
     // api域名
     'api_url'          => sprintf('http://%sapi.sxypaopao.com', APP_URL_PREFIX),
     //pc端域名

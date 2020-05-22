@@ -22,7 +22,7 @@ return [
 
     'api_url'                => sprintf('http://%sapi.sxypaopao.com/v1', APP_URL_PREFIX),
     'h5_url'                 => sprintf('http://%sh5.sxypaopao.com/', APP_URL_PREFIX),
-    'download_url'                 => 'http://h5.mastercode.top/register',
+    'download_url'                 => 'http://h5.paopao.yx498.com//register',
     // +----------------------------------------------------------------------
     // | 应用设置
     // +----------------------------------------------------------------------
